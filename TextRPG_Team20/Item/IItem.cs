@@ -19,12 +19,14 @@ namespace TextRPG_Team20.Item
 
         public int Type { get; set; }
 
+
         public bool isEquipped { get; set; }
 
     }
 
     internal abstract class Item : IComponent, IComparable<Item>
     {
+
         public ItemData data;
         
         public int CompareTo(Item? other)
