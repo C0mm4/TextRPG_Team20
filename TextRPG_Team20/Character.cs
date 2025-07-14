@@ -9,8 +9,8 @@ namespace TextRPG_Team20
 {
     internal class Character
     {
-        public string Name { get; }
-        public string Job { get; }
+        public string Name { get; set; }
+        public string Job { get; set; }
         public int Gold { get; private set; }
         public Status status { get; private set; }
 
@@ -29,7 +29,7 @@ namespace TextRPG_Team20
             Name = name;
             Job = job;
             Gold = gold;
-            status = status;
+            this.status = status;
         }
 
         public void Attack(Character target)

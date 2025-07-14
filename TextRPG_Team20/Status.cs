@@ -10,12 +10,12 @@ namespace TextRPG_Team20
 
         public class Status
         {
-            public int Level;
-            public int Hp;
-            public int Atk;
-            public int Def;
-            public int ExtraAtk;
-            public int ExtraDef;
+            public int Level { get; set; }
+            public int Hp {  get; set; }
+            public int Atk {  get; set; }
+            public int Def {  get; set; }
+            public int ExtraAtk {  get; set; }
+            public int ExtraDef {  get; set; }
 
             public Status(int level, int hp, int atk, int def, int extraAtk = 0, int extraDef = 0)
             {
