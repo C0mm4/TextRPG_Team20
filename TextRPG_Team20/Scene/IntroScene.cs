@@ -8,6 +8,7 @@ namespace TextRPG_Team20.Scene
 {
     internal class IntroScene : IScene
     {
+        string? nameInput;
         public bool Action(int input)
         {
             switch (input) 
@@ -15,7 +16,7 @@ namespace TextRPG_Team20.Scene
                 case 1:
                     Console.WriteLine("Welcome");
                     // Add Player Instance Initialize
-
+                    Game.Instance.CreatePlayerInstance(nameInput);
                     Game.Instance.SceneChange(Game.SceneState.Lobby);
                     return false;
                 case 2:
@@ -33,10 +34,10 @@ namespace TextRPG_Team20.Scene
         {
             Console.WriteLine("Welcome to this game");
             Console.Write("Please input your charachor name >> ");
-            string? s = Console.ReadLine();
+            nameInput = Console.ReadLine();
 
             Console.WriteLine();
-            Console.WriteLine($"{s} is your name. right?");
+            Console.WriteLine($"{AnsiColor.Cyan}{nameInput}{AnsiColor.Reset} is your name. right?");
             Console.WriteLine();
             Console.WriteLine("1. Yes");
             Console.WriteLine("2. No");
