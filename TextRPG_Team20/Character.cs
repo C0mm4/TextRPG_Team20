@@ -24,9 +24,16 @@ namespace TextRPG_Team20
 
 
 
-        public Character(string name, string job, int gold, Status status)
+        public Character(string? name, string job, int gold, Status status)
         {
-            Name = name;
+            if(name == null)
+            {
+                Name = "";
+            }
+            else
+            {
+                Name = name;
+            }
             Job = job;
             Gold = gold;
             this.status = status;
