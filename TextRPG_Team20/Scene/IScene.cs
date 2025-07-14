@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_Team20
+namespace TextRPG_Team20.Scene
 {
     internal interface IScene
     {
