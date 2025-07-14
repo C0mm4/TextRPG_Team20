@@ -10,30 +10,45 @@ namespace TextRPG_Team20
 {
     public class Game
     {
-        private Game _instance;
-        public Game Instance
+        private static Game _instance;
+        public static Game Instance
         {
             get 
             { 
                 if(_instance == null)
                 {
                     _instance = new Game();
-                } return _instance;
+                } 
+                return _instance;
             }
         }
 
         public enum SceneState
         {
-            Title, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, 
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, 
         }
 
-        private SceneState _state;
-        private Stack<IScene> sceneStack;
-        private IScene currentScene;
+        private Stack<IScene> _sceneStack;
+        private IScene? _currentScene;
 
         public Game()
         {
+            if(_instance == null)
+            {
+                _instance = this;
+            }
 
+            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
+            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+
+            _sceneStack = new Stack<IScene>();
+
+            SceneChange(SceneState.Title);
+
+            while(_currentScene != null)
+            {
+                _currentScene.Print();
+            }
         }
 
         public void SceneChange(SceneState state)
@@ -42,8 +57,13 @@ namespace TextRPG_Team20
             switch (state)
             {
                 case SceneState.Title:
+                    newScene = new TitleScene();
+                    break;
+                case SceneState.Intro:
+                    newScene = new IntroScene();
                     break;
                 case SceneState.Lobby:
+                    newScene = new LobbyScene();
                     break;
                 case SceneState.DungeonSelect:
                     break;
@@ -69,24 +89,29 @@ namespace TextRPG_Team20
             }
             if (newScene != null) 
             {
-                if(currentScene.GetType().Name != "IntroScene")
+                if(_currentScene != null && _currentScene.GetType().Name != "IntroScene")
                 {
-                    sceneStack.Push(currentScene);
+                    _sceneStack.Push(_currentScene);
                 }
-                currentScene = newScene;
+                _currentScene = newScene;
             }
         }
 
         public void PopScene()
         {
-            if(sceneStack.Count > 0)
+            if(_sceneStack.Count > 0)
             {
-                currentScene = sceneStack.Pop();
+                _currentScene = _sceneStack.Pop();
             }
             else
             {
-                currentScene = null;
+                _currentScene = null;
             }
+        }
+
+        public void GameStart()
+        {
+            SceneChange(SceneState.Intro);
         }
 
         public void SaveGame()
