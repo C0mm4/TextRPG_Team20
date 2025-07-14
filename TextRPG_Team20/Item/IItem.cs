@@ -21,7 +21,7 @@ namespace TextRPG_Team20.Item
 
     }
 
-    internal class Item : IComponent, IComparable<Item>
+    internal abstract class Item : IComponent, IComparable<Item>
     {
         ItemData data;
 
@@ -43,6 +43,8 @@ namespace TextRPG_Team20.Item
         {
 
         }
+
+        public abstract void Action();
     }
 
     internal class ItemWrapper()

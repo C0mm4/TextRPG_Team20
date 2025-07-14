@@ -8,5 +8,6 @@ namespace TextRPG_Team20.Scene
 {
     internal interface IScene
     {
+        public void PrintScene();
     }
 }
