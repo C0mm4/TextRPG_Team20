@@ -19,6 +19,14 @@ namespace TextRPG_Team20
         public int ExtraAtk { get; private set; }
         public int ExtraDef { get; private set; }
 
+        public virtual void Action()
+        {
+            Console.WriteLine();
+        }
+
+
+
+
 
         public Character(int level, string name, string job, int atk, int def, int hp, int gold)
         {
