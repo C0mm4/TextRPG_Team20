@@ -74,6 +74,7 @@ namespace TextRPG_Team20
                 case SceneState.InField:
                     break;
                 case SceneState.Battle:
+                    newScene = new BattleScene();
                     break;
                 case SceneState.Result:
                     break;
