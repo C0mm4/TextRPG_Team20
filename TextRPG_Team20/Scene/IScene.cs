@@ -65,11 +65,12 @@ namespace TextRPG_Team20.Scene
 
         public virtual void Print()
         {
+            Console.Clear();
             ClearBuffer();
             DrawUI();
             SetPlayerInfo();
-            PrintScene();
             PrintUIViews();
+            PrintScene();
             var input = GetAction();
             var isDelay = Action(input);
             if(isDelay)

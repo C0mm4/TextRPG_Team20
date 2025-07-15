@@ -39,8 +39,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
 
-            Console.SetCursorPosition(38, 43);
-            nameInput = Console.ReadLine();
+            nameInput = ConsoleUI.Read(ref ConsoleUI.inputView);
 
             ConsoleUI.mainView.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
