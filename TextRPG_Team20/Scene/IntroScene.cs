@@ -37,7 +37,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("Welcome to this game", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("Please input your charachor name >> ", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "middle");
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
 
             Console.SetCursorPosition(38, 43);
             nameInput = Console.ReadLine();

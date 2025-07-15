@@ -29,6 +29,4 @@ namespace TextRPG_Team20
             public int TotalAtk => Atk + ExtraAtk;
             public int TotalDef => Def + ExtraDef;
         }
-    }
-
-
+}

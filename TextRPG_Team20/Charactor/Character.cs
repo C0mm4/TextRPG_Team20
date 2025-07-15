@@ -20,8 +20,6 @@ namespace TextRPG_Team20
         }
 
 
-
-
         public Character(string? name, string job, int gold, Status status)
         {
             if(name == null)
