@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Item;
@@ -21,57 +22,56 @@ namespace TextRPG_Team20
         {
             if (Items == null || Items.Count == 0)
             {
-                Console.WriteLine("아이템이 없습니다.");
+                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
                 return;
             }
             else
             {
+
+                //아이템이 있으면
+                //장착했으면 / 안했으면  - 행동시 해제 / 장착
+                //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
+
                 foreach (var item in Items)
-                {
-                    Console.WriteLine($" - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}");
+                {   int i = 0;
+                    ConsoleUI.Instance.DrawTextInBox(($" {i + 1}. {(item.data.isEquipped == true ? "[E]" : " ")} - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}"), ref ConsoleUI.mainView); 
+                    i++;
                 }
             }
 
         }
 
-        public void EquipItem(Item.Item item)
+        public void EquipItem(int index)
         {
-
-            if (Items == null || Items.Count == 0)
+           
+            index -= 1;
+            if (Items == null || Items.Count < index || index < 0)
             {
-                Console.WriteLine("장착할 아이템이 없습니다.");
+                ((IScene)this).InvalidInput();
                 return;
             }
-            else
-            {
+            var item = Items[index];
+            item.data.isEquipped = !item.data.isEquipped;
 
-                item.data.isEquipped = true;
+            string doEquip = item.data.isEquipped ? "장착" : "해제";
 
-                foreach (var inventoryItem in Items)
-                {
-                    string equipMark = item.data.isEquipped ? "[E]" : "";
-                    if (item.data.Atk > 0)
-                        Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Atk} | {item.data.Description}");
-                    else if (item.data.Def > 0)
-                        Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
-                }
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{item.data.Name} 을(를) {doEquip}했습니다.!{AnsiColor.Reset}", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
+            
 
-                Console.WriteLine($"{item.data.Name} 을(를) 장착했습니다.");
+            //foreach (var inventoryitem in Items)
+            //{
 
-            }
+            //    //string equipmark = item.data.isEquipped ? "[E]" : "";
+            //    //if (item.data.Atk > 0)
+            //    //    Console.WriteLine($" - {equipmark}{item.data.Name} | {item.data.Type} +{item.data.Atk} | {item.data.Description}");
+            //    //else if (item.data.Def > 0)
+            //    //    Console.WriteLine($" - {equipmark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
+            //}
 
-                       
         }
-        public void UnequipItem(Item.Item item)
-        {
-            if (item == null)
-            {
-                Console.WriteLine("해제할 아이템이 없습니다.");
-                return;
-            }
-            item.data.isEquipped = false;
-            Console.WriteLine($"{item.data.Name} 을(를) 해제했습니다.");
-        }
+       
         public void AddItem(Item.Item item)
         {
             //상점에서 구입하면

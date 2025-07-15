@@ -45,7 +45,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.PopScene();
                     return true;
                 case 1:
-                    Game.Instance.Inventory();
+                    Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
                 default:
                     Console.WriteLine("Input Error!");

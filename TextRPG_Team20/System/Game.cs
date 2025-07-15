@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
 
+
 namespace TextRPG_Team20
 {
     public class Game
@@ -79,6 +80,7 @@ namespace TextRPG_Team20
                 case SceneState.Result:
                     break;
                 case SceneState.Shop:
+                    newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
                     newScene = new InventoryScene(playerInstance.Inventory);
