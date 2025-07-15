@@ -21,10 +21,9 @@ namespace TextRPG_Team20.System
             }
         }
 
-        List<Item.Item> itemOrigins = new();
-
         private ItemManager() 
         {
+
             var itemDataStr = JsonLoader.LoadJson("ItemData.json");
             try
             {
@@ -38,9 +37,27 @@ namespace TextRPG_Team20.System
                     {
                         foreach (var data in datas) 
                         {
-                            Item.Item item = new Item.Item();
-                            item.data = data;
-                            Register(item);
+                            string? className = data.ClassName;
+                            Type? itemType = AppDomain.CurrentDomain
+                                                .GetAssemblies()
+                                                .SelectMany(a => a.GetTypes())
+                                                .FirstOrDefault(t => t.Name == className && typeof(Item.Item).IsAssignableFrom(t));
+                            if (itemType != null)
+                            {
+                                if(Activator.CreateInstance(itemType) is Item.Item item)
+                                {
+                                    item.data = data;
+                                    Register(item);
+                                }
+                                else
+                                {
+                                    ConsoleUI.Instance.DrawTextInBox($"{itemType.Name} 은 Item.Item 을 상속하지 않습니다.", ref ConsoleUI.logView);
+                                }
+                            }
+                            else
+                            {
+                                ConsoleUI.Instance.DrawTextInBox($"클래스 {data.ClassName} 을 찾을 수 없습니다.", ref ConsoleUI.logView);
+                            }
                         }
                     }
                 }

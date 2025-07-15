@@ -24,7 +24,7 @@ namespace TextRPG_Team20
 
         private ShopManager()
         {
-            
+            SetSellItems();
         }
 
         private void SetSellItems()
