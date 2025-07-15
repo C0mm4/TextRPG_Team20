@@ -14,19 +14,7 @@ namespace TextRPG_Team20
 
     internal class Inventory
     {
-
-
-        //public Inventory()
-        //{
-        //    Console.Clear();
-        //    Console.WriteLine("인벤토리");
-        //    Console.WriteLine();
-        //    Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
-        //    Console.WriteLine();
-        //    Console.WriteLine("[아이템 목록]");
-        //    Console.WriteLine();
-        //    Items = new List<Item.Item>();
-        //
+                    
         public List<Item.Item> Items { get; private set; }
 
         public void showItem()

@@ -24,9 +24,20 @@ namespace TextRPG_Team20.Scene
                     return true;
             }
         }
+   
+  
 
         public void PrintScene()
-        {
+        {            
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}인벤토리{AnsiColor.Reset}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("1. 장착 관리", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.info1View);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View, "center", "middle");
+
+
             Console.Clear();
             Console.WriteLine("인벤토리");
             Console.WriteLine();
@@ -35,7 +46,6 @@ namespace TextRPG_Team20.Scene
             Console.WriteLine("[아이템 목록]");
             Console.WriteLine();
 
-            
 
             Console.WriteLine("1. 장착 관리");
             Console.WriteLine("0. 나가기");
