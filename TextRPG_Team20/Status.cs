@@ -7,7 +7,6 @@ using TextRPG_Team20;
 
 namespace TextRPG_Team20
 {
-
         public class Status
         {
             public int Level { get; set; }
@@ -30,6 +29,4 @@ namespace TextRPG_Team20
             public int TotalAtk => Atk + ExtraAtk;
             public int TotalDef => Def + ExtraDef;
         }
-    }
-
-
+}

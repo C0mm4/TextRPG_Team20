@@ -14,37 +14,47 @@ namespace TextRPG_Team20
 
     internal class Inventory
     {
-        public List<Item.Item> Items { get; private set; }
-     
 
-        public Inventory()
+
+        //public Inventory()
+        //{
+        //    Console.Clear();
+        //    Console.WriteLine("인벤토리");
+        //    Console.WriteLine();
+        //    Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
+        //    Console.WriteLine();
+        //    Console.WriteLine("[아이템 목록]");
+        //    Console.WriteLine();
+        //    Items = new List<Item.Item>();
+        //
+        public List<Item.Item> Items { get; private set; }
+
+        public void showItem()
         {
-            Console.Clear();
-            Console.WriteLine("인벤토리");
-            Console.WriteLine();
-            Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
-            Console.WriteLine();
-            Console.WriteLine("[아이템 목록]");
-            Console.WriteLine();
-            Items = new List<Item.Item>();
+            if (Items == null || Items.Count == 0)
+            {
+                Console.WriteLine("아이템이 없습니다.");
+                return;
+            }
+            else
+            {
+                foreach (var item in Items)
+                {
+                    Console.WriteLine($" - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}");
+                }
+            }
+
         }
 
         public void EquipItem(Item.Item item)
         {
-            bool hasItem = false;
-            bool isequipped = false;
 
-            if (Items[0] == null)
+            if (Items == null || Items.Count == 0)
             {
                 Console.WriteLine("장착할 아이템이 없습니다.");
                 return;
             }
-
-                     
-            item.data.isEquipped = true;
-
-            
-            foreach (var it in Items)
+            else
             {
 
                 item.data.isEquipped = true;
@@ -62,8 +72,7 @@ namespace TextRPG_Team20
 
             }
 
-            Console.WriteLine($"{item.data.Name} 을(를) 장착했습니다.");
-        
+                       
         }
         public void UnequipItem(Item.Item item)
         {

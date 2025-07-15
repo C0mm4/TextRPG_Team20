@@ -42,7 +42,7 @@ namespace TextRPG_Team20
 
             Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
-
+            Console.Clear();
             _sceneStack = new Stack<IScene>();
 
             SceneChange(SceneState.Title);
@@ -69,10 +69,12 @@ namespace TextRPG_Team20
                     newScene = new LobbyScene();
                     break;
                 case SceneState.DungeonSelect:
+                    newScene = new DungeonSelectScene();
                     break;
                 case SceneState.InField:
                     break;
                 case SceneState.Battle:
+                    newScene = new BattleScene();
                     break;
                 case SceneState.Result:
                     break;
@@ -132,6 +134,25 @@ namespace TextRPG_Team20
         public void LoadGame() 
         {
 
+        }
+
+        public void ReturnToLobby()
+        {
+            if(_currentScene != null)
+            {
+                while (_currentScene.GetType().Name != "LobbyScene")
+                {
+                    PopScene();
+                }
+            }
+        }
+
+        public void GameEnd()
+        {
+            while (_sceneStack.Count > 0)
+            {
+                PopScene();
+            }
         }
     }
 }

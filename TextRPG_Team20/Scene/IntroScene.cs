@@ -14,16 +14,18 @@ namespace TextRPG_Team20.Scene
             switch (input) 
             {
                 case 1:
-                    Console.WriteLine("Welcome");
+                    ConsoleUI.Instance.DrawTextInBox("Welcome", ref ConsoleUI.mainView);
                     // Add Player Instance Initialize
                     Game.Instance.CreatePlayerInstance(nameInput);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     Game.Instance.SceneChange(Game.SceneState.Lobby);
                     return false;
                 case 2:
-                    Console.WriteLine("Okay...");
+                    ConsoleUI.Instance.DrawTextInBox("Okay...", ref ConsoleUI.mainView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     return true;
                 default:
-                    Console.WriteLine("Input Error!");
+                    ((IScene)this).InvalidInput();
                     return true;
 
             }
@@ -31,16 +33,24 @@ namespace TextRPG_Team20.Scene
         }
 
         public void PrintScene()
-        {
-            Console.WriteLine("Welcome to this game");
-            Console.Write("Please input your charachor name >> ");
+        {            
+            ConsoleUI.Instance.DrawTextInBox("Welcome to this game", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("Please input your charachor name >> ", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
+
+            Console.SetCursorPosition(38, 43);
             nameInput = Console.ReadLine();
 
-            Console.WriteLine();
-            Console.WriteLine($"{AnsiColor.Cyan}{nameInput}{AnsiColor.Reset} is your name. right?");
-            Console.WriteLine();
-            Console.WriteLine("1. Yes");
-            Console.WriteLine("2. No");
+            ConsoleUI.mainView.ClearBuffer();
+            ConsoleUI.inputView.ClearBuffer();
+
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{nameInput}{AnsiColor.Reset} is your name. right?", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1. Yes", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2. No", ref ConsoleUI.mainView);
+            
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
         }
     }
 }
