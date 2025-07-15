@@ -62,67 +62,30 @@ namespace TextRPG_Team20
             public void DrawRect()
             {
                 int border = 0;
-                char text = '┌';
+                char text = '=';
                 for (int j = y - 1; j <= y + height; j++)
                 {
-                    if(j == y - 1)
-                    {
-                        border = 0;
-                    }
-                    else if(j == y + height)
-                    {
-                        border = 1;
-                    }
-                    else
-                    {
+                    if (j > y - 1 && j < y + height)
                         border = 2;
-                    }
-                    for (int i = x - 2; i <= x + width; i += 2)
+                    else 
+                        border = 0;
+                    for (int i = x - 2; i <= x + width; i ++)
                     {
                         switch (border)
                         {
-                            case 0:
-                                if(i == x - 2)
-                                {
-                                    text = '┌';
-                                }
-                                else if(i == x + width)
-                                {
-                                    text = '┐';
-                                }
-                                else
-                                {
-                                    text = '─';
-                                }
-                                break;
-                            case 1:
-                                if (i == x - 2)
-                                {
-                                    text = '└';
-                                }
-                                else if (i == x + width)
-                                {
-                                    text = '┘';
-                                }
-                                else
-                                {
-                                    text = '─';
-                                }
-                                break;
                             case 2:
-                                if (i == x - 2)
+                                if (i > x-2 && i < x + width)
                                 {
-                                    text = '│';
-                                }
-                                else if (i == x + width)
-                                {
-                                    text = '│';
-                                }
-                                else
-                                {
-                                    i = x + width-2;
+                                    i = x + width-1;
                                     continue;
                                 }
+                                else
+                                {
+                                    text = '│';
+                                }
+                                break;
+                            default:
+                                text = '=';
                                 break;
                         }
                         Console.SetCursorPosition(i, j);
