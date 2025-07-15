@@ -7,8 +7,12 @@ using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20
 {
-    internal class Shop : IScene
+    internal class ShopScene : IScene
     {
+        public bool Action(int input)
+        {
+            throw new NotImplementedException();
+        }
 
         //씬 출력 메서드
         public void PrintScene()

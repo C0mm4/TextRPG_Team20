@@ -32,7 +32,73 @@ namespace TextRPG_Team20.Scene
 
         public void PrintScene()
         {
-            Console.WriteLine("Welcome to this game");
+            ConsoleUI.Instance.DrawTextInBox("메인 뷰 테스트", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("메인 뷰 테스트", ref ConsoleUI.mainView);
+
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트1", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트2", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트3", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트4", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트5", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트6", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트7", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트8", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트9", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트10", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트11", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트12", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트13", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트14", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트15", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트16", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트17", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트18", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트19", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트20", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트21", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트22", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트23", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트24", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트25", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트26", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트27", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트28", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트29", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트30", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트31", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트32", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트33", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트34", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트35", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트36", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트37", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트38", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트39", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트40", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트41", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트42", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트43", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트44", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트44", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트44", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트44", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트44", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("로그 뷰 테스트43", ref ConsoleUI.logView);
+
+            ConsoleUI.Instance.DrawTextInBox("Info1 테스트", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("Info2 테스트", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("Input 테스트", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox("Info1 테스트", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox("Info2 테스트", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("Input 테스트", ref ConsoleUI.inputView);
+
+            ConsoleUI.Instance.PrintView(ConsoleUI.mainView, "right", "top");
+            ConsoleUI.Instance.PrintView(ConsoleUI.logView, "right", "top");
+            ConsoleUI.Instance.PrintView(ConsoleUI.info1View, "right", "top");
+            ConsoleUI.Instance.PrintView(ConsoleUI.info2View, "right", "top");
+            ConsoleUI.Instance.PrintView(ConsoleUI.inputView, "right", "top");
+            /*
+            ConsoleUI.Instance.DrawTextInBox("Welcome to this game", ref ConsoleUI.mainView);
             Console.Write("Please input your charachor name >> ");
             nameInput = Console.ReadLine();
 
@@ -41,6 +107,7 @@ namespace TextRPG_Team20.Scene
             Console.WriteLine();
             Console.WriteLine("1. Yes");
             Console.WriteLine("2. No");
+            */
         }
     }
 }
