@@ -15,7 +15,7 @@ namespace TextRPG_Team20
 
     internal class Inventory
     {
-                    
+
         public List<Item.Item> Items { get; private set; }
 
         public Inventory()
@@ -24,40 +24,60 @@ namespace TextRPG_Team20
 
 
         }
+
+        public string showItem(int itemNum)
         
-
-        public string showItem()
         {
-            if (Items == null || Items.Count == 0)
-            {
-                return "아이템이 없습니다";
-            }
-            else
-            {
-                //아이템이 있으면
-                //장착했으면 / 안했으면  - 행동시 해제 / 장착
-                //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
+            if (itemNum < 0 || itemNum >= Items.Count) return "";
 
+            var item = Items[itemNum];
 
-                var sb = new StringBuilder();
+            string equipMark = item.data.isEquipped ? "[E]" : "";
+            string whatType = item.data.Type == 0 ? "무기" : "방어구";
+            string whatStatString = whatType == "무기" ? "공격력" : "방어력";
+            int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
 
-                for (int i = 0; i < Items.Count; i++)
-                {
-                    var item = Items[i];
-                    string equipMark = item.data.isEquipped ? "[E]" : "";
-                    string whatType = item.data.Type == 0 ? "무기" : "방어구";
-                    string whatStatString = whatType == "무기" ? "공격력" : "방어력";
-                    int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
+            // 안전하게 개행 제거
+            string safeName = (item.data.Name ?? "").Replace("\n", " ").Replace("\r", " ");
+            string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
-                    sb.AppendLine($"{i + 1}. {equipMark}{item.data.Name} | {whatType} | {whatStatString} {whatStatInt} | {item.data.Description}");
+            return $"{(itemNum + 1).ToString().PadRight(3)} | " +
+           $"{equipMark}{safeName.PadRight(15)} | " +
+           $"{whatType.PadRight(6)} | " +
+           $"{whatStatString} + {whatStatInt,-3} | " +
+           $"{safeDesc}";
+        } 
+
+            //if (Items == null || Items.Count == 0)
+            //{
+            //    return "아이템이 없습니다";
+            //}
+            //else
+            //{
+            //    //아이템이 있으면
+            //    //장착했으면 / 안했으면  - 행동시 해제 / 장착
+            //    //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
+                              
+
+            //    var sb = new StringBuilder();
+
+            //    for (int i = 0; i < Items.Count; i++)
+            //    {
+            //        var item = Items[i];
+            //        string equipMark = item.data.isEquipped ? "[E]" : "";
+            //        string whatType = item.data.Type == 0 ? "무기" : "방어구";
+            //        string whatStatString = whatType == "무기" ? "공격력" : "방어력";
+            //        int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
+
+            //        sb.Append($"{i + 1}. {equipMark}{item.data.Name} | {whatType} | {whatStatString} {whatStatInt} | {item.data.Description}");
                    
-                }
+            //    }
 
-                return sb.ToString();
+            //    return sb.ToString();
                           
-            }
+            //}
 
-        }
+        
 
         public void EquipItem(int index)
         {

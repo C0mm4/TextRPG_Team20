@@ -32,7 +32,7 @@ namespace TextRPG_Team20.Scene
             {
                 data = new ItemData
                 {
-                    Name = "테스트검2",
+                    Name = "테스트방패2",
                     Atk = 10,
                     Def = 10,
                     Type = 1,
@@ -63,7 +63,10 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("[아이템 목록]", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"{_inventory.showItem()}", ref ConsoleUI.mainView);
+            for (int i = 0; i < _inventory.Items.Count; i++)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{_inventory.showItem(i)}", ref ConsoleUI.mainView);
+            }
             ConsoleUI.Instance.DrawTextInBox("장착할 아이템 번호를 입력하세요.", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
 
