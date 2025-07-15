@@ -29,7 +29,6 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("장착할 아이템 번호를 입력하세요.", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
 
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
         }
 
