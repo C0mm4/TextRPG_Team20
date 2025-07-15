@@ -25,7 +25,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("[아이템 목록]", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"{_inventory.showItem}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"{_inventory.showItem()}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("장착할 아이템 번호를 입력하세요.", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
 
@@ -38,12 +39,19 @@ namespace TextRPG_Team20.Scene
             {
                 case 0:
 
-                    Game.Instance.SceneChange(Game.SceneState.Lobby);
+                    Game.Instance.PopScene();
                     return true;
 
                 default:
-                    _inventory.EquipItem(input);
-                    Game.Instance.SceneChange(Game.SceneState.Inventory);
+                    if (_inventory.Items == null)
+                    {
+                        ((IScene)this).InvalidInput();
+                    }
+                    else
+                    {
+                        _inventory.EquipItem(input);
+                        Game.Instance.SceneChange(Game.SceneState.Inventory);
+                    }
                     return true;
             }
         }

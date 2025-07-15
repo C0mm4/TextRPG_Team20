@@ -18,28 +18,33 @@ namespace TextRPG_Team20
                     
         public List<Item.Item> Items { get; private set; }
 
-        public void showItem()
+        public string showItem()
         {
             if (Items == null || Items.Count == 0)
             {
-                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.mainView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
-
-                return;
+                return "아이템이 없습니다";
             }
             else
             {
+                StringBuilder sb = new StringBuilder();
+
 
                 //아이템이 있으면
                 //장착했으면 / 안했으면  - 행동시 해제 / 장착
                 //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
 
                 foreach (var item in Items)
-                {   int i = 0;
-                    ConsoleUI.Instance.DrawTextInBox(($" {i + 1}. {(item.data.isEquipped == true ? "[E]" : " ")} - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}"), ref ConsoleUI.mainView); 
-                    i++;
+                {   int index = 0;
+                    string equipMark = item.data.isEquipped ? "[E]" : "";
+                    sb.AppendLine($" {index}. {equipMark}{item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}");
+                    index++;
+                    //ConsoleUI.Instance.DrawTextInBox(($" {i + 1}. {(item.data.isEquipped == true ? "[E]" : " ")} - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}"), ref ConsoleUI.mainView); 
+                    //i++;
+
+                  
                 }
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
+                return sb.ToString();
+
             }
 
         }
@@ -50,7 +55,7 @@ namespace TextRPG_Team20
             index -= 1;
             if (Items == null || Items.Count < index || index < 0)
             {
-                ((IScene)this).InvalidInput();
+                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.mainView); 
                 return;
             }
             var item = Items[index];
