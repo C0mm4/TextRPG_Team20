@@ -18,6 +18,14 @@ namespace TextRPG_Team20
                     
         public List<Item.Item> Items { get; private set; }
 
+        public Inventory()
+        {
+            Items = new List<Item.Item>();
+
+
+        }
+        
+
         public string showItem()
         {
             if (Items == null || Items.Count == 0)
@@ -26,36 +34,39 @@ namespace TextRPG_Team20
             }
             else
             {
-                StringBuilder sb = new StringBuilder();
-
-
                 //아이템이 있으면
                 //장착했으면 / 안했으면  - 행동시 해제 / 장착
                 //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
 
-                foreach (var item in Items)
-                {   int index = 0;
+
+                var sb = new StringBuilder();
+
+                for (int i = 0; i < Items.Count; i++)
+                {
+                    var item = Items[i];
                     string equipMark = item.data.isEquipped ? "[E]" : "";
-                    sb.AppendLine($" {index}. {equipMark}{item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}");
-                    index++;
-                    //ConsoleUI.Instance.DrawTextInBox(($" {i + 1}. {(item.data.isEquipped == true ? "[E]" : " ")} - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}"), ref ConsoleUI.mainView); 
-                    //i++;
+                    string whatType = item.data.Type == 0 ? "무기" : "방어구";
+                    string whatStatString = whatType == "무기" ? "공격력" : "방어력";
+                    int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
 
-                  
+                    sb.AppendLine($"{i + 1}. {equipMark}{item.data.Name} | {whatType} | {whatStatString} {whatStatInt} | {item.data.Description}");
+                   
                 }
-                return sb.ToString();
 
+                return sb.ToString();
+                          
             }
 
         }
 
         public void EquipItem(int index)
         {
-           
             index -= 1;
-            if (Items == null || Items.Count < index || index < 0)
+
+            if (Items == null || index < 0 || index >= Items.Count)
             {
-                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.mainView); 
+                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
                 return;
             }
             var item = Items[index];
