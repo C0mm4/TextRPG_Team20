@@ -43,7 +43,7 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    Game.Instance.SceneChange(Game.SceneState.Lobby);
+                    Game.Instance.PopScene();
                     return false;
                 case 1:
                     Game.Instance.SceneChange(Game.SceneState.EquipControl);
