@@ -18,5 +18,18 @@ namespace TextRPG_Team20
                 return _instance;
             } 
         }
+
+        public List<Item.Item> sellItems = [];
+        public int[] itemCnt = [];
+
+        private ShopManager()
+        {
+            SetSellItems();
+        }
+
+        private void SetSellItems()
+        {
+
+        }
     }
 }

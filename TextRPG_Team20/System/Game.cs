@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
+using TextRPG_Team20.System;
 
 
 namespace TextRPG_Team20
@@ -28,7 +29,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, 
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win
         }
 
         private Stack<IScene> _sceneStack;
@@ -44,6 +45,7 @@ namespace TextRPG_Team20
             Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
             Console.Clear();
+            var a = ItemManager.Instance;
             _sceneStack = new Stack<IScene>();
 
             SceneChange(SceneState.Title);
@@ -93,7 +95,9 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.UseItem:
                     break;
-
+                case SceneState.Win:
+                    newScene = new WinScene();
+                    break;
             }
             if (newScene != null) 
             {

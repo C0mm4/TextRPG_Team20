@@ -9,9 +9,9 @@ namespace TextRPG_Team20.Item
     internal class ItemData
     {
         public int Id { get; set; }
-        public required string Name { get; set; }
-        public required string Description { get; set; }
-        public required string FlavorText { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public string? FlavorText { get; set; }
         public int Gold { get; set; }
         public int Atk { get; set; }
         public int Def { get; set; }
@@ -19,16 +19,42 @@ namespace TextRPG_Team20.Item
 
         public int Type { get; set; }
 
+        public string? ClassName { get; set; }   
 
-        public bool isEquipped { get; set; }
 
+        public bool isEquipped = false;
+        
     }
 
-    internal abstract class Item : IComponent, IComparable<Item>
+    internal class Item : IComponent, IComparable<Item>, ICloneable
     {
+        public ItemData data = new();
 
-        public ItemData data;
-        
+        public Item()
+        {
+            // For Test Log
+            ConsoleUI.Instance.DrawTextInBox($"{GetType().Name}", ref ConsoleUI.logView);
+        }
+
+        public virtual object Clone()
+        {
+            var clone = (Item)Activator.CreateInstance(this.GetType())!;
+            clone.data = new ItemData
+            {
+                Id = data.Id,
+                Name = data.Name,
+                Description = data.Description,
+                FlavorText = data.FlavorText,
+                Gold = data.Gold,
+                Atk = data.Atk,
+                Def = data.Def,
+                HP = data.HP,
+                Type = data.Type,
+                isEquipped = data.isEquipped
+            };
+            return clone;
+        }
+
         public int CompareTo(Item? other)
         {
             if (other != null)

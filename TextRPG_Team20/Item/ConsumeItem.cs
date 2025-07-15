@@ -8,14 +8,13 @@ namespace TextRPG_Team20.Item
 {
     internal class ConsumeItem : Item, ICommand
     {
-        public ConsumeItem() { }
 
         public void Execute()
         {
             useitem();
         }
 
-        public void useitem()
+        public virtual void useitem()
         {
             //아이템의 종류를 받아온다(체력 포션인지, 큰 포션인지 작은 포션인지)
             int ItemType = 0;/*아이템 종류*/

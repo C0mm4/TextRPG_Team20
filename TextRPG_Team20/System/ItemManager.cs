@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using TextRPG_Team20.Item;
+
+namespace TextRPG_Team20.System
+{
+    internal class ItemManager
+    {
+        private static ItemManager? _instance;
+        public static ItemManager Instance
+        {
+            get
+            {
+                if(_instance == null)
+                    _instance = new ItemManager();
+                return _instance;
+            }
+        }
+
+        private ItemManager() 
+        {
+
+            var itemDataStr = JsonLoader.LoadJson("ItemData.json");
+            try
+            {
+                ItemWrapper? wrapper = JsonSerializer.Deserialize<ItemWrapper>(itemDataStr);
+                ItemData[]? datas;
+                if (wrapper != null)
+                {
+                    datas = wrapper.Items.ToArray();
+
+                    if (datas != null)
+                    {
+                        foreach (var data in datas) 
+                        {
+                            string? className = data.ClassName;
+                            Type? itemType = AppDomain.CurrentDomain
+                                                .GetAssemblies()
+                                                .SelectMany(a => a.GetTypes())
+                                                .FirstOrDefault(t => t.Name == className && typeof(Item.Item).IsAssignableFrom(t));
+                            if (itemType != null)
+                            {
+                                if(Activator.CreateInstance(itemType) is Item.Item item)
+                                {
+                                    item.data = data;
+                                    Register(item);
+                                }
+                                else
+                                {
+                                    ConsoleUI.Instance.DrawTextInBox($"{itemType.Name} 은 Item.Item 을 상속하지 않습니다.", ref ConsoleUI.logView);
+                                }
+                            }
+                            else
+                            {
+                                ConsoleUI.Instance.DrawTextInBox($"클래스 {data.ClassName} 을 찾을 수 없습니다.", ref ConsoleUI.logView);
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch(Exception ex)
+            {
+                ConsoleUI.Instance.DrawTextInBox("JSON 파일 파싱 중 오류 발생: " + ex.Message, ref ConsoleUI.logView);
+            }
+
+
+        }
+
+        private readonly Dictionary<int, Item.Item> _prototypes = new();
+
+        public void Register(Item.Item item)
+        {
+            _prototypes[item.data.Id] = item;
+        }
+
+        public T Create<T>(int id) where T : Item.Item
+        {
+            return (T)_prototypes[id].Clone();
+        }
+    }
+}
