@@ -98,18 +98,32 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
 
             if (doEquip == "장착")
-            {                
-                if (item.data.Type == 0)
-                    Game.playerInstance.status.Atk += item.data.Atk;
-                else
-                    Game.playerInstance.status.Def += item.data.Def;
-            }
-            else 
             {
                 if (item.data.Type == 0)
-                    Game.playerInstance.status.Atk -= item.data.Atk;
+                {
+                    Game.playerInstance.status.Atk += item.data.Atk;
+                    Game.playerInstance.status.ExtraAtk += item.data.Atk;
+                }
                 else
+                {
+                    Game.playerInstance.status.Def += item.data.Def;
+                    Game.playerInstance.status.ExtraDef += item.data.Def;
+
+                }
+            }
+            else if (doEquip == "해제")
+            {
+                if (item.data.Type == 0)
+                {
+                    Game.playerInstance.status.Atk -= item.data.Atk;
+                    Game.playerInstance.status.ExtraAtk -= item.data.Atk;
+                    
+                }
+                else
+                {
                     Game.playerInstance.status.Def -= item.data.Def;
+                    Game.playerInstance.status.ExtraDef -= item.data.Def;
+                }
             }
 
         }
