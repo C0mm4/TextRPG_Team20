@@ -9,7 +9,7 @@ namespace TextRPG_Team20.Scene
 {
     internal class DungeonSelectScene : IScene
     {
-
+     
         public bool Action(int input)
         {
             switch (input)
