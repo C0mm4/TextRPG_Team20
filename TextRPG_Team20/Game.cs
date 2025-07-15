@@ -69,6 +69,7 @@ namespace TextRPG_Team20
                     newScene = new LobbyScene();
                     break;
                 case SceneState.DungeonSelect:
+                    newScene = new DungeonSelectScene();
                     break;
                 case SceneState.InField:
                     break;
