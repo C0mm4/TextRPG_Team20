@@ -58,6 +58,79 @@ namespace TextRPG_Team20
                 lines.Clear();
                 ResetCursor();
             }
+
+            public void DrawRect()
+            {
+                int border = 0;
+                char text = '┌';
+                for (int j = y - 1; j <= y + height; j++)
+                {
+                    if(j == y - 1)
+                    {
+                        border = 0;
+                    }
+                    else if(j == y + height)
+                    {
+                        border = 1;
+                    }
+                    else
+                    {
+                        border = 2;
+                    }
+                    for (int i = x - 2; i <= x + width; i += 2)
+                    {
+                        switch (border)
+                        {
+                            case 0:
+                                if(i == x - 2)
+                                {
+                                    text = '┌';
+                                }
+                                else if(i == x + width)
+                                {
+                                    text = '┐';
+                                }
+                                else
+                                {
+                                    text = '─';
+                                }
+                                break;
+                            case 1:
+                                if (i == x - 2)
+                                {
+                                    text = '└';
+                                }
+                                else if (i == x + width)
+                                {
+                                    text = '┘';
+                                }
+                                else
+                                {
+                                    text = '─';
+                                }
+                                break;
+                            case 2:
+                                if (i == x - 2)
+                                {
+                                    text = '│';
+                                }
+                                else if (i == x + width)
+                                {
+                                    text = '│';
+                                }
+                                else
+                                {
+                                    i = x + width-2;
+                                    continue;
+                                }
+                                break;
+                        }
+                        Console.SetCursorPosition(i, j);
+                        Console.Write(text);
+                    }
+                
+                }
+            }
         }
 
         public static Rect mainView, logView, info1View, info2View, inputView;
@@ -120,11 +193,6 @@ namespace TextRPG_Team20
             rect.lines.AddRange(newLines);
         }
 
-        private void ClearLine(int x, int y, int width)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(new string(' ', width));
-        }
 
         public static int GetDisplayWidth(string text)
         {
