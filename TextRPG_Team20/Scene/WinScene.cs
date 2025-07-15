@@ -10,12 +10,6 @@ namespace TextRPG_Team20.Scene
     {
         public void PrintScene()
         {
-            ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.logView.ClearBuffer();
-            ConsoleUI.info1View.ClearBuffer();
-            ConsoleUI.info2View.ClearBuffer();
-            ConsoleUI.inputView.ClearBuffer();
-
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}전투에서 승리했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("계속 진행하시겠습니까?", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);

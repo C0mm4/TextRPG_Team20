@@ -49,12 +49,6 @@ namespace TextRPG_Team20.Scene
         //씬 출력 메서드
         public void PrintScene()
         {
-            ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.logView.ClearBuffer();
-            ConsoleUI.info1View.ClearBuffer();
-            ConsoleUI.info2View.ClearBuffer();
-            ConsoleUI.inputView.ClearBuffer();
-
             // mainView 출력
             if (BuyShop == false)
             {

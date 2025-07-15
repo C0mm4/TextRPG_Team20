@@ -16,5 +16,17 @@ namespace TextRPG_Team20
         {
             Console.WriteLine($"{Name}의 차례입니다. 행동을 선택하세요.");
         }
+
+
+        public override void CharacterInfo()
+        {
+            ConsoleUI.Instance.DrawTextInBox($"캐릭터 정보", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"Lv. {status.Level:D2}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"{Name} {Job}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.TotalAtk}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.TotalDef}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"체력 : {status.Hp}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"Gold : {Gold} G", ref ConsoleUI.info1View);
+        }
     }
 }

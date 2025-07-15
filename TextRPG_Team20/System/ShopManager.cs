@@ -31,5 +31,15 @@ namespace TextRPG_Team20
         {
 
         }
+
+        public void BuyItem()
+        {
+
+        }
+
+        public void SellItem()
+        {
+
+        }
     }
 }

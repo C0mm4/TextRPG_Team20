@@ -123,6 +123,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.info2View.ClearBuffer();
 
+            if (Game.playerInstance != null)
+                Game.playerInstance.CharacterInfo();
         }
 
         public void PrintUIViews()

@@ -128,7 +128,7 @@ namespace TextRPG_Team20
         public void CreatePlayerInstance(string? name)
         {
             Status status = new Status(0, 100, 5, 10);
-            playerInstance = new Character(name, "", 0, status);
+            playerInstance = new Player(name, "Job", 0, status);
         }
 
         public void SaveGame()
