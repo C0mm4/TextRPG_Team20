@@ -81,6 +81,7 @@ namespace TextRPG_Team20
                 case SceneState.Result:
                     break;
                 case SceneState.Shop:
+                    newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
                     newScene = new InventoryScene();
