@@ -28,7 +28,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, 
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win
         }
 
         private Stack<IScene> _sceneStack;
@@ -81,9 +81,10 @@ namespace TextRPG_Team20
                 case SceneState.Result:
                     break;
                 case SceneState.Shop:
+                    newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
-                    newScene = new InventoryScene();
+                    newScene = new InventoryScene(playerInstance.Inventory);
                     break;
                 case SceneState.EquipControl:
                     break;
@@ -93,7 +94,9 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.UseItem:
                     break;
-
+                case SceneState.Win:
+                    newScene = new WinScene();
+                    break;
             }
             if (newScene != null) 
             {

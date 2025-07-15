@@ -13,6 +13,8 @@ namespace TextRPG_Team20
         public string Job { get; set; }
         public int Gold { get; private set; }
         public Status status { get; private set; }
+        public Inventory Inventory { get; private set; }
+        
 
         public virtual void Action()
         {
@@ -33,6 +35,8 @@ namespace TextRPG_Team20
             Job = job;
             Gold = gold;
             this.status = status;
+
+            Inventory = new Inventory();
         }
 
         public void Attack(Character target)
