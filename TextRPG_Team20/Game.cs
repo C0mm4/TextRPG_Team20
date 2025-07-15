@@ -133,5 +133,24 @@ namespace TextRPG_Team20
         {
 
         }
+
+        public void ReturnToLobby()
+        {
+            if(_currentScene != null)
+            {
+                while (_currentScene.GetType().Name != "LobbyScene")
+                {
+                    PopScene();
+                }
+            }
+        }
+
+        public void GameEnd()
+        {
+            while (_sceneStack.Count > 0)
+            {
+                PopScene();
+            }
+        }
     }
 }
