@@ -41,8 +41,8 @@ namespace TextRPG_Team20
                 _instance = this;
             }
 
-            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
-            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
+//            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+//            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
             _sceneStack = new Stack<IScene>();
