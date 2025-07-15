@@ -82,5 +82,11 @@ namespace TextRPG_Team20.System
         {
             return (T)_prototypes[id].Clone();
         }
+
+        public List<Item.Item> FindItems(Predicate<Item.Item> match)
+        {
+            var items = _prototypes.Values.ToList();
+            return items.FindAll(match);
+        }
     }
 }
