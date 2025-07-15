@@ -69,6 +69,7 @@ namespace TextRPG_Team20
                     newScene = new LobbyScene();
                     break;
                 case SceneState.DungeonSelect:
+                    newScene = new DungeonSelectScene();
                     break;
                 case SceneState.InField:
                     break;
@@ -131,6 +132,25 @@ namespace TextRPG_Team20
         public void LoadGame() 
         {
 
+        }
+
+        public void ReturnToLobby()
+        {
+            if(_currentScene != null)
+            {
+                while (_currentScene.GetType().Name != "LobbyScene")
+                {
+                    PopScene();
+                }
+            }
+        }
+
+        public void GameEnd()
+        {
+            while (_sceneStack.Count > 0)
+            {
+                PopScene();
+            }
         }
     }
 }

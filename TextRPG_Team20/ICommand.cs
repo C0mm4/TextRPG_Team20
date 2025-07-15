@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_Team20.Skill
+namespace TextRPG_Team20
 {
-    internal interface ISkill : ICommand
+    internal interface ICommand
     {
-        public void Action();
+        public void Execute();
     }
 }
