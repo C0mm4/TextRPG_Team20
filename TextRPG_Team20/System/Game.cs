@@ -94,7 +94,7 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.UseItem:
                     break;
-                case SceneState.win:
+                case SceneState.Win:
                     newScene = new WinScene();
 
             }
