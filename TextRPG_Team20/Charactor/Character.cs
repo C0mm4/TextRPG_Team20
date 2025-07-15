@@ -14,8 +14,6 @@ namespace TextRPG_Team20
         public int Gold { get; private set; }
         public Status status { get; private set; }
 
-
-
         public virtual void Action()
         {
             Console.WriteLine();

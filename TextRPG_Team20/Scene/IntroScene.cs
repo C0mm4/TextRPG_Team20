@@ -45,14 +45,12 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.mainView.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
 
-            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{nameInput}{AnsiColor.Reset} is your name. right?", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1. Yes", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("2. No", ref ConsoleUI.mainView);
             
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
         }
     }
 }

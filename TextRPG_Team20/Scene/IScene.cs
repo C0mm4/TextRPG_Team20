@@ -10,6 +10,7 @@ namespace TextRPG_Team20.Scene
     {
         public void DrawUI()
         {
+            Console.SetCursorPosition(0, 0);
             Console.WriteLine("┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐ ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐");
             Console.WriteLine("│                                                                                                               │ │                                           │");
             Console.WriteLine("│                                                                                                               │ │                                           │");
@@ -64,10 +65,11 @@ namespace TextRPG_Team20.Scene
 
         public virtual void Print()
         {
-            Console.Clear();
             ClearBuffer();
             DrawUI();
+            SetPlayerInfo();
             PrintScene();
+            PrintUIViews();
             var input = GetAction();
             var isDelay = Action(input);
             if(isDelay)
@@ -116,6 +118,19 @@ namespace TextRPG_Team20.Scene
         /// <returns>딜레이 트리거 boolean</returns>
         public bool Action(int input);
 
+        public void SetPlayerInfo()
+        {
+            ConsoleUI.info1View.ClearBuffer();
+            ConsoleUI.info2View.ClearBuffer();
 
+        }
+
+        public void PrintUIViews()
+        {
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
+        }
     }
 }
