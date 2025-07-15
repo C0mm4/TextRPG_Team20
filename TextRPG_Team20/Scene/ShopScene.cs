@@ -7,7 +7,7 @@ using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20
 {
-    internal class Shop : IScene
+    internal class ShopScene : IScene
     {
 
         //씬 출력 메서드
