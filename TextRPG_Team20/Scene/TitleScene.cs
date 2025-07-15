@@ -11,14 +11,16 @@ namespace TextRPG_Team20.Scene
 
         public void PrintScene()
         {
-            Console.WriteLine($"{AnsiColor.Yellow}Game Title{AnsiColor.Reset}");
-            Console.WriteLine();
-            Console.WriteLine("1. Start Game");
-            Console.WriteLine("2. Resume Game");
-            Console.WriteLine();
-            Console.WriteLine("0. End Game");
-            Console.WriteLine();
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}Game Title{AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1. Start Game", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2. Resume Game", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0. End Game", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
 
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
         }
 
 
@@ -28,7 +30,9 @@ namespace TextRPG_Team20.Scene
             {
                 case 0:
                     Game.Instance.PopScene();
-                    Console.WriteLine("Bye bye");
+                    ConsoleUI.Instance.DrawTextInBox("Bye Bye", ref ConsoleUI.mainView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+                    Console.SetCursorPosition(0, 49);
                     return true;
                 case 1:
                     Game.Instance.GameStart();
@@ -37,7 +41,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.LoadGame();
                     return false;
                 default:
-                    Console.WriteLine("Input Error!");
+                    ((IScene)this).InvalidInput();
                     return true;
             }
         }

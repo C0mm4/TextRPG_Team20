@@ -20,7 +20,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.SceneChange(Game.SceneState.EquipControl);
                     return false;
                 default:
-                    Console.WriteLine("Input Error!");
+                    ((IScene)this).InvalidInput();
                     return true;
             }
         }

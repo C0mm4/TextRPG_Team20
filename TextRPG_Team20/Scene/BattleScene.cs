@@ -41,11 +41,11 @@ namespace TextRPG_Team20.Scene
 
 
 
-            ConsoleUI.Instance.PrintView(ConsoleUI.mainView);
-            ConsoleUI.Instance.PrintView(ConsoleUI.logView);
-            ConsoleUI.Instance.PrintView(ConsoleUI.info1View);
-            ConsoleUI.Instance.PrintView(ConsoleUI.info2View);
-            ConsoleUI.Instance.PrintView(ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
 
         }
             public bool Action(int input)
@@ -78,10 +78,10 @@ namespace TextRPG_Team20.Scene
                     break;
 
                 default:
-                    ConsoleUI.Instance.DrawTextInBox("Invalid input. Please try again.", ref ConsoleUI.logView);
+                    ((IScene)this).InvalidInput();
                     break;
             }
-            ConsoleUI.Instance.PrintView(ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;
         }
     }
