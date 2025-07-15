@@ -85,8 +85,6 @@ namespace TextRPG_Team20.System
         {
             return _prototypes[id].Clone() as Item.Item;
         }
-<<<<<<< Updated upstream
-=======
 
         public Item.Item? FindItem(Predicate<Item.Item> predicate)
         {
@@ -98,6 +96,5 @@ namespace TextRPG_Team20.System
             var items = _prototypes.Values.ToList();
             return items.FindAll(predicate);
         }
->>>>>>> Stashed changes
     }
 }
