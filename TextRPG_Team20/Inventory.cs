@@ -46,11 +46,20 @@ namespace TextRPG_Team20
             
             foreach (var it in Items)
             {
-                string equipMark = item.data.isEquipped ? "[e]" : "";
-                if (item.data.Atk > 0)
-                Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Atk} | {item.data.Description}");
-                else if(item.data.Def >0)
-                Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
+
+                item.data.isEquipped = true;
+
+                foreach (var inventoryItem in Items)
+                {
+                    string equipMark = item.data.isEquipped ? "[E]" : "";
+                    if (item.data.Atk > 0)
+                        Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Atk} | {item.data.Description}");
+                    else if (item.data.Def > 0)
+                        Console.WriteLine($" - {equipMark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
+                }
+
+                Console.WriteLine($"{item.data.Name} 을(를) 장착했습니다.");
+
             }
 
             Console.WriteLine($"{item.data.Name} 을(를) 장착했습니다.");
