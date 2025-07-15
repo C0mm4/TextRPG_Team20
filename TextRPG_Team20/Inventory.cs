@@ -23,7 +23,8 @@ namespace TextRPG_Team20
             if (Items == null || Items.Count == 0)
             {
                 ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.mainView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
+
                 return;
             }
             else
@@ -38,6 +39,7 @@ namespace TextRPG_Team20
                     ConsoleUI.Instance.DrawTextInBox(($" {i + 1}. {(item.data.isEquipped == true ? "[E]" : " ")} - {item.data.Name} | {item.data.Type} +{(item.data.Type == 0 ? item.data.Atk : item.data.Def)} | {item.data.Description}"), ref ConsoleUI.mainView); 
                     i++;
                 }
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
             }
 
         }
@@ -69,6 +71,11 @@ namespace TextRPG_Team20
             //    //else if (item.data.Def > 0)
             //    //    Console.WriteLine($" - {equipmark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
             //}
+
+        }
+
+        public void useItem(int index)
+        {
 
         }
        
