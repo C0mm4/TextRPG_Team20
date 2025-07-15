@@ -20,15 +20,34 @@ namespace TextRPG_Team20.Item
         public int Type { get; set; }
 
 
-        public bool isEquipped { get; set; }
+        public bool isEquipped = false;
 
     }
 
-    internal abstract class Item : IComponent, IComparable<Item>
+    internal class Item : IComponent, IComparable<Item>, ICloneable
     {
 
         public ItemData data;
-        
+
+        public virtual object Clone()
+        {
+            var clone = (Item)Activator.CreateInstance(this.GetType())!;
+            clone.data = new ItemData
+            {
+                Id = data.Id,
+                Name = data.Name,
+                Description = data.Description,
+                FlavorText = data.FlavorText,
+                Gold = data.Gold,
+                Atk = data.Atk,
+                Def = data.Def,
+                HP = data.HP,
+                Type = data.Type,
+                isEquipped = data.isEquipped
+            };
+            return clone;
+        }
+
         public int CompareTo(Item? other)
         {
             if (other != null)
