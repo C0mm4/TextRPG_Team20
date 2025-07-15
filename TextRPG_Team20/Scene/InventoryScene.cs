@@ -37,10 +37,13 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
+
                     Game.Instance.SceneChange(Game.SceneState.Lobby);
                     return true;
+
                 default:
                     _inventory.EquipItem(input);
+                    Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return true;
             }
         }

@@ -10,6 +10,7 @@ namespace TextRPG_Team20.System
     {
         public static string LoadJson(string path)
         {
+            path = "Resources\\" + path;
             if (!File.Exists(path))
             {
                 return "";
