@@ -10,7 +10,11 @@ namespace TextRPG_Team20
 {
     public class Game
     {
+<<<<<<< HEAD
         private static Game _instance;
+=======
+        private static Game? _instance;
+>>>>>>> Develop
         public static Game Instance
         {
             get 
@@ -22,6 +26,8 @@ namespace TextRPG_Team20
                 return _instance;
             }
         }
+
+        internal static Character? playerInstance;
 
         public enum SceneState
         {
@@ -44,6 +50,10 @@ namespace TextRPG_Team20
             _sceneStack = new Stack<IScene>();
 
             SceneChange(SceneState.Title);
+<<<<<<< HEAD
+=======
+            playerInstance = null;
+>>>>>>> Develop
 
             while(_currentScene != null)
             {
@@ -114,6 +124,15 @@ namespace TextRPG_Team20
             SceneChange(SceneState.Intro);
         }
 
+<<<<<<< HEAD
+=======
+        public void CreatePlayerInstance(string? name)
+        {
+            Status status = new Status(0, 100, 5, 10);
+            playerInstance = new Character(name, "", 0, status);
+        }
+
+>>>>>>> Develop
         public void SaveGame()
         {
 
