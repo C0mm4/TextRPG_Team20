@@ -10,8 +10,9 @@ namespace TextRPG_Team20.Scene
     internal class InventoryScene : IScene
     {
         private Inventory _inventory;
-        //Inventory equipInventory = new Inventory();
-        //Inventory consumableInventory = new Inventory();
+
+        //Inventory equipInventory = new Inventory();          //장착 아이템
+        //Inventory consumableInventory = new Inventory();     //소비 아이템
 
 
         public InventoryScene(Inventory inventory)

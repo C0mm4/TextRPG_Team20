@@ -26,7 +26,7 @@ namespace TextRPG_Team20
         }
 
         public string showItem(int itemNum)
-        
+
         {
             if (itemNum < 0 || itemNum >= Items.Count) return "";
 
@@ -46,38 +46,38 @@ namespace TextRPG_Team20
            $"{whatType.PadRight(6)} | " +
            $"{whatStatString} + {whatStatInt,-3} | " +
            $"{safeDesc}";
-        } 
+        }
 
-            //if (Items == null || Items.Count == 0)
-            //{
-            //    return "아이템이 없습니다";
-            //}
-            //else
-            //{
-            //    //아이템이 있으면
-            //    //장착했으면 / 안했으면  - 행동시 해제 / 장착
-            //    //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
-                              
+        //if (Items == null || Items.Count == 0)
+        //{
+        //    return "아이템이 없습니다";
+        //}
+        //else
+        //{
+        //    //아이템이 있으면
+        //    //장착했으면 / 안했으면  - 행동시 해제 / 장착
+        //    //공격력이면 / 방어력이면 - 공격력 + / 방어력 +
 
-            //    var sb = new StringBuilder();
 
-            //    for (int i = 0; i < Items.Count; i++)
-            //    {
-            //        var item = Items[i];
-            //        string equipMark = item.data.isEquipped ? "[E]" : "";
-            //        string whatType = item.data.Type == 0 ? "무기" : "방어구";
-            //        string whatStatString = whatType == "무기" ? "공격력" : "방어력";
-            //        int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
+        //    var sb = new StringBuilder();
 
-            //        sb.Append($"{i + 1}. {equipMark}{item.data.Name} | {whatType} | {whatStatString} {whatStatInt} | {item.data.Description}");
-                   
-            //    }
+        //    for (int i = 0; i < Items.Count; i++)
+        //    {
+        //        var item = Items[i];
+        //        string equipMark = item.data.isEquipped ? "[E]" : "";
+        //        string whatType = item.data.Type == 0 ? "무기" : "방어구";
+        //        string whatStatString = whatType == "무기" ? "공격력" : "방어력";
+        //        int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
 
-            //    return sb.ToString();
-                          
-            //}
+        //        sb.Append($"{i + 1}. {equipMark}{item.data.Name} | {whatType} | {whatStatString} {whatStatInt} | {item.data.Description}");
 
-        
+        //    }
+
+        //    return sb.ToString();
+
+        //}
+
+
 
         public void EquipItem(int index)
         {
@@ -85,7 +85,7 @@ namespace TextRPG_Team20
 
             if (Items == null || index < 0 || index >= Items.Count)
             {
-                ConsoleUI.Instance.DrawTextInBox("아이템이 없습니다", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}아이템이 없습니다{AnsiColor.Reset}", ref ConsoleUI.inputView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
                 return;
             }
@@ -94,19 +94,23 @@ namespace TextRPG_Team20
 
             string doEquip = item.data.isEquipped ? "장착" : "해제";
 
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{item.data.Name} 을(를) {doEquip}했습니다.!{AnsiColor.Reset}", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{item.data.Name} 을(를) {doEquip}했습니다.!{AnsiColor.Reset}", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
-            
 
-            //foreach (var inventoryitem in Items)
-            //{
-
-            //    //string equipmark = item.data.isEquipped ? "[E]" : "";
-            //    //if (item.data.Atk > 0)
-            //    //    Console.WriteLine($" - {equipmark}{item.data.Name} | {item.data.Type} +{item.data.Atk} | {item.data.Description}");
-            //    //else if (item.data.Def > 0)
-            //    //    Console.WriteLine($" - {equipmark}{item.data.Name} | {item.data.Type} +{item.data.Def} | {item.data.Description}");
-            //}
+            if (doEquip == "장착")
+            {                
+                if (item.data.Type == 0)
+                    Game.playerInstance.status.Atk += item.data.Atk;
+                else
+                    Game.playerInstance.status.Def += item.data.Def;
+            }
+            else 
+            {
+                if (item.data.Type == 0)
+                    Game.playerInstance.status.Atk -= item.data.Atk;
+                else
+                    Game.playerInstance.status.Def -= item.data.Def;
+            }
 
         }
 
@@ -114,7 +118,7 @@ namespace TextRPG_Team20
         {
 
         }
-       
+
         public void AddItem(Item.Item item)
         {
             //상점에서 구입하면
