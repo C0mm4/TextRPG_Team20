@@ -80,6 +80,7 @@ namespace TextRPG_Team20
                 case SceneState.Shop:
                     break;
                 case SceneState.Inventory:
+                    newScene = new InventoryScene();
                     break;
                 case SceneState.EquipControl:
                     break;
