@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Item
 {
-    internal class ConsumeItem : Item
+    internal class ConsumeItem : Item, ICommand
     {
         public ConsumeItem() { }
 
-        public override void Action()
+        public void Execute()
         {
             useitem();
         }

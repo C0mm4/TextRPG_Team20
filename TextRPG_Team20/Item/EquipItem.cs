@@ -8,10 +8,6 @@ namespace TextRPG_Team20.Item
 {
     internal class EquipItem : Item
     {
-        public override void Action()
-        {
-
-        }
 
         public void equip()
         {
