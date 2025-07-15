@@ -18,17 +18,20 @@ namespace TextRPG_Team20.Scene
                 case 1:
                     return false;
                 default:
-                    Console.WriteLine("Input Error!");
+                    ((IScene)this).InvalidInput();
                     return true;
             }
         }
 
         public void PrintScene()
         {
-            Console.WriteLine($"{AnsiColor.Yellow}Lobby{AnsiColor.Reset}");
-            Console.WriteLine("Please input your action");
-            Console.WriteLine("1. Enter Dungeon");
-            Console.WriteLine("0. Go to Title");
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}Lobby{AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1. Enter Dungeon", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
         }
     }
 }

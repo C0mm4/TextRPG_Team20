@@ -9,7 +9,7 @@ namespace TextRPG_Team20.Scene
 {
     internal class DungeonSelectScene : IScene
     {
-
+     
         public bool Action(int input)
         {
             switch (input)
@@ -26,7 +26,7 @@ namespace TextRPG_Team20.Scene
 
 
                 default:
-                    Console.WriteLine("Invalid input. Try again."); // 잘못된 입력
+                    ((IScene)this).InvalidInput();
                     return true;
             }
         }
@@ -44,11 +44,11 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Back to Lobby", ref ConsoleUI.mainView);
 
-            ConsoleUI.Instance.PrintView(ConsoleUI.mainView);
-            ConsoleUI.Instance.PrintView(ConsoleUI.logView);
-            ConsoleUI.Instance.PrintView(ConsoleUI.info1View);
-            ConsoleUI.Instance.PrintView(ConsoleUI.info2View);
-            ConsoleUI.Instance.PrintView(ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
         }
     }
     
