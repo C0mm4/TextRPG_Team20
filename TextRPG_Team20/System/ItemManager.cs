@@ -42,11 +42,6 @@ namespace TextRPG_Team20.System
                                             .FirstOrDefault(t => t.Name == className && typeof(Item.Item).IsAssignableFrom(t));
                         if (itemType != null)
                         {
-<<<<<<< Updated upstream
-                            Item.Item item = new Item.Item();
-                            item.data = data;
-                            Register(item);
-=======
                             // Create itemType class instance by Activator
                             // if created Instance is inherit Item, Register prototype
                             if (Activator.CreateInstance(itemType) is Item.Item item)
@@ -58,7 +53,6 @@ namespace TextRPG_Team20.System
                             {
                                 ConsoleUI.Instance.DrawTextInBox($"{itemType.Name} 은 Item.Item 을 상속하지 않습니다.", ref ConsoleUI.logView);
                             }
->>>>>>> Stashed changes
                         }
                         else
                         {
@@ -81,8 +75,8 @@ namespace TextRPG_Team20.System
             _prototypes[item.data.Id] = item;
         }
 
-        public Item.Item? Create(int id)
-        {
+        public Item.Item? Create(int id) 
+        { 
             return _prototypes[id].Clone() as Item.Item;
         }
 
