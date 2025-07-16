@@ -27,13 +27,13 @@ namespace TextRPG_Team20.Scene
 
 
             //  플레이어 정보
-            ConsoleUI.Instance.DrawTextInBox($"[{player.Name}] - {player.Job}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"[{player.status.Name}] - {player.Job}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"HP: {player.status.Hp}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"ATK: {player.status.TotalAtk}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"DEF: {player.status.TotalDef}", ref ConsoleUI.info1View);
 
             //  적 정보
-            ConsoleUI.Instance.DrawTextInBox($"[{enemy.Name}] - {enemy.Job}", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"[{enemy.status.Name}] - {enemy.Job}", ref ConsoleUI.info2View);
             ConsoleUI.Instance.DrawTextInBox($"HP: {enemy.status.Hp}", ref ConsoleUI.info2View);
             ConsoleUI.Instance.DrawTextInBox($"ATK: {enemy.status.TotalAtk}", ref ConsoleUI.info2View);
             ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
@@ -55,23 +55,23 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 1: // 공격
-                    ConsoleUI.Instance.DrawTextInBox($"{player.Name} attacks {enemy.Name}!", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name} attacks {enemy.status.Name}!", ref ConsoleUI.logView);
                     player.Attack(enemy);
 
                     if (enemy.status.Hp <= 0)
                     {
-                        ConsoleUI.Instance.DrawTextInBox($"{enemy.Name} has been defeated!", ref ConsoleUI.logView);
+                        ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name} has been defeated!", ref ConsoleUI.logView);
                         Game.Instance.PopScene(); // 전투 종료
                         return false;
                     }
 
                     // 몬스터 공격
-                    ConsoleUI.Instance.DrawTextInBox($"{enemy.Name} attacks back!", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name} attacks back!", ref ConsoleUI.logView);
                     enemy.Attack(player);
 
                     if (player.status.Hp <= 0)
                     {
-                        ConsoleUI.Instance.DrawTextInBox($"{player.Name} has fallen...", ref ConsoleUI.logView);
+                        ConsoleUI.Instance.DrawTextInBox($"{player.status.Name} has fallen...", ref ConsoleUI.logView);
                         Game.Instance.SceneChange(Game.SceneState.Result);
                         return false;
                     }

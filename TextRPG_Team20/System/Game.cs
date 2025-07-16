@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
 
+
 namespace TextRPG_Team20
 {
     public class Game
@@ -41,8 +42,8 @@ namespace TextRPG_Team20
                 _instance = this;
             }
 
-            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
-            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+//            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+//            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
             _sceneStack = new Stack<IScene>();
@@ -128,8 +129,8 @@ namespace TextRPG_Team20
 
         public void CreatePlayerInstance(string? name)
         {
-            Status status = new Status(0, 100, 5, 10);
-            playerInstance = new Player(name, "Job", 0, status);
+            Status status = new Status(0, 1, 100, 5, 10);
+            playerInstance = new Player(name ?? "", "Job", 0, status);
         }
 
         public void SaveGame()

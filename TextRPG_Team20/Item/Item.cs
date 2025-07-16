@@ -8,7 +8,7 @@ namespace TextRPG_Team20.Item
 {
     internal class ItemData
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public string? FlavorText { get; set; }
@@ -20,7 +20,6 @@ namespace TextRPG_Team20.Item
         public int Type { get; set; }
 
         public string? ClassName { get; set; }   
-
 
         public bool isEquipped = false;
         
@@ -38,10 +37,10 @@ namespace TextRPG_Team20.Item
 
         public virtual object Clone()
         {
-            var clone = (Item)Activator.CreateInstance(this.GetType())!;
+            var clone = Activator.CreateInstance(this.GetType()) as Item;
             clone.data = new ItemData
             {
-                Id = data.Id,
+                ID = data.ID,
                 Name = data.Name,
                 Description = data.Description,
                 FlavorText = data.FlavorText,
@@ -59,7 +58,7 @@ namespace TextRPG_Team20.Item
         {
             if (other != null)
             {
-                return data.Id.CompareTo(other.data.Id);
+                return data.ID.CompareTo(other.data.ID);
             }
             return 0;
         }

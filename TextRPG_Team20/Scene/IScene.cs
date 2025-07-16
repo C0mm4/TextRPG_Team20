@@ -67,7 +67,7 @@ namespace TextRPG_Team20.Scene
         {
             Console.Clear();
             ClearBuffer();
-            DrawUI();
+//            DrawUI();
             SetPlayerInfo();
             PrintUIViews();
             PrintScene();
@@ -85,13 +85,19 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
+
+            ConsoleUI.mainView.DrawRect();
+            ConsoleUI.info1View.DrawRect();
+            ConsoleUI.info2View.DrawRect();
+            ConsoleUI.inputView.DrawRect();
+            ConsoleUI.logView.DrawRect();
         }
 
 
 
         public void PrintScene();
 
-        public int GetAction()
+        public virtual int GetAction()
         {
             ConsoleUI.Instance.DrawTextInBox("Please input your action >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
