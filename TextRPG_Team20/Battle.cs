@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Scene;
 
-namespace TextRPG_Team20
+namespace TextRPG_Team20.Scene
 {
     internal class Battle
     {
@@ -16,31 +17,33 @@ namespace TextRPG_Team20
         // player attack
         // enemy turn 
         // enemy attack
-        public List<Enemy.> Items { get; private set; }
-        private Inventory _inventory;
 
-
-        public static bool OnBattle(Character player, Character enemy)
+        public static bool OnBattle(Player player, Enemy enemy)
         {
-            // 1. 플레이어 턴
-            int playerDamage = Math.Max(player.status.TotalAtk - enemy.status.TotalDef, 1);
-            enemy.status.Hp -= playerDamage;
 
-            if (enemy.status.Hp <= 0)
             {
-                return true;  // 전투 종료 신호
-            }
+                //player turn
+                player.Action();
 
-            // 2. 적 턴
-            int enemyDamage = Math.Max(enemy.status.TotalAtk - player.status.TotalDef, 1);
-            player.status.Hp -= enemyDamage;
+                ConsoleUI.inputView.ClearBuffer();
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{player.status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
 
-            if (player.status.Hp <= 0)
-            {
-                return true;  // 전투 종료
+
+
+                player.Attack(enemy);
+
+
             }
+            ;
+
+
 
             return false; // 둘 다 살아있으면 전투 계속
         }
     }
-}
+
+    
+    }
