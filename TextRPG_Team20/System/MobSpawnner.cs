@@ -72,14 +72,14 @@ namespace TextRPG_Team20.System
 
         public void Register(Enemy item)
         {
-//            _prototypes[item.data.Id] = item;
+            _prototypes[item.data.Id] = item;
         }
 
-/*        public Enemy? Create(int id)
+        public Enemy? Create(int id)
         {
             return _prototypes[id].Clone() as Enemy;
         }
-*/
+
         public List<Enemy> FindItems(Predicate<Enemy> match)
         {
             var items = _prototypes.Values.ToList();
