@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20.System
 {
@@ -10,7 +12,7 @@ namespace TextRPG_Team20.System
     {
 
         private readonly Dictionary<int, Enemy> _prototypes = new();
-
+        public static MobSpawnner? _instance;
         public static MobSpawnner Instance
         {
             get
