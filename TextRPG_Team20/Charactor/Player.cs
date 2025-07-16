@@ -14,7 +14,7 @@ namespace TextRPG_Team20
         {
 
         }
-        public bool IsDead => status.Hp <= 0;
+
         public int SelectedAction { get; private set; }
 
 

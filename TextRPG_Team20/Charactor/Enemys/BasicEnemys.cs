@@ -8,7 +8,7 @@ namespace TextRPG_Team20.Charactor.Enemys
 {
     internal class BlueSnail : Enemy
     {    //id, level, hp, atk, def, extraAtk, extraDef
-        public BlueSnail() : base("파란 달팽이", 10, new Status(1, 1, 10, 5, 0))
+        public BlueSnail() : base("파란 달팽이", 10, new Status(1, 1, 10, 50, 0))
         {
 
         }
