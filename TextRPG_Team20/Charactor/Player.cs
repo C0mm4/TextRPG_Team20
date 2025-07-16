@@ -60,10 +60,10 @@ namespace TextRPG_Team20
 
         public void playercollision(int x, int y)
         {
-
-            DungeonManager.Instance.currentField[this.y, this.x] = 0;
+            var CurrentField = DungeonManager.Instance.currentField;
+            DungeonManager.Instance.currentField[this.y, this.x] = currentPosData;
             int[] newpos = { this.x + x, this.y + y };
-            if (newpos[0] < 0 || newpos[1] < 0 || newpos[0] > 4 || newpos[1] > 4)
+            if (newpos[0] < 0 || newpos[1] < 0 || newpos[0] > CurrentField.GetLength(1) || newpos[1] > CurrentField.GetLength(0))
             { }
             else
             {
@@ -78,14 +78,14 @@ namespace TextRPG_Team20
 
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 2)
                 {
-                    Console.WriteLine("상자를 발견했습니다. 축하합니다 5골드를 획득하셨습니다.");
+                    ConsoleUI.Instance.DrawTextInBox("상자를 발견했습니다. 축하합니다 5골드를 획득하셨습니다.", ref ConsoleUI.logView);
                     DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
                     this.x = newpos[0];
                     this.y = newpos[1];
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 3)
                 {
-                    Console.WriteLine("닫힌 문입니다 지금은 지나가실 수 없습니다.");
+                    ConsoleUI.Instance.DrawTextInBox("닫힌 문입니다 지금은 지나가실 수 없습니다.", ref ConsoleUI.logView);
 
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 4)
@@ -98,10 +98,12 @@ namespace TextRPG_Team20
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 5)
                 {
-                    Console.WriteLine("다음방으로 넘어갑니다.");
+                    ConsoleUI.Instance.DrawTextInBox("다음방으로 넘어갑니다.", ref ConsoleUI.logView);
+                    DungeonManager.Instance.MoveField(CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[1] && c.FromCell[1] == newpos[0])));
+                    return;
                 }
             }
-
+            currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
         }
 

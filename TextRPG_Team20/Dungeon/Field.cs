@@ -113,6 +113,10 @@ namespace TextRPG_Team20.Dungeon
                             ansi = AnsiColor.Magenta;
                             tile = "B";
                             break;
+                        case 5:
+                            ansi = AnsiColor.Blue;
+                            tile = "P";
+                            break;
                         case 0:
                             tile = " ";
                             break;
@@ -126,6 +130,19 @@ namespace TextRPG_Team20.Dungeon
             }
 
             return ret;
+        }
+
+        public int GetLength(int layer)
+        {
+            if (layer == 0)
+            {
+                return GridData.Count;
+            }
+            if (layer == 1)
+            {
+                return GridData[0].Count;
+            }
+            return 0;
         }
 
         public int this[int i, int j]
@@ -156,9 +173,9 @@ namespace TextRPG_Team20.Dungeon
     {
         public List<Dungeon> Dungeons { get; set; }
 
-        public Dungeon GetDungeonById(int dungeonId)
+        public Dungeon? GetDungeonById(int dungeonId)
         {
-            return Dungeons.FirstOrDefault(d => d.DungeonID == dungeonId);
+            return Dungeons.FirstOrDefault(d => d.DungeonID == dungeonId) ?? null;
         }
     }
 }
