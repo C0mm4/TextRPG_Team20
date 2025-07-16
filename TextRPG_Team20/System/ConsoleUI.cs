@@ -189,7 +189,7 @@ namespace TextRPG_Team20
         /// <summary>
         /// 전각/반각을 고려해 우측 공백을 채워 출력 폭을 맞춥니다.
         /// </summary>
-        private string PadRightDisplay(string text, int targetWidth)
+        public static string PadRightDisplay(string text, int targetWidth)
         {
             int currentWidth = GetDisplayWidth(text);
             int padding = Math.Max(0, targetWidth - currentWidth);

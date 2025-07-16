@@ -32,7 +32,7 @@ namespace TextRPG_Team20
 
             var item = Items[itemNum];
 
-            string equipMark = item.data.isEquipped ? "[E]" : "";
+            string equipMark = item.data.isEquipped ? $"{AnsiColor.Green}[E]" : "";
             string whatType = item.data.Type == 0 ? "무기" : "방어구";
             string whatStatString = whatType == "무기" ? "공격력" : "방어력";
             int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
@@ -42,10 +42,10 @@ namespace TextRPG_Team20
             string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
             return $"{(itemNum + 1).ToString().PadRight(3)} | " +
-           $"{equipMark}{safeName.PadRight(15)} | " +
-           $"{whatType.PadRight(6)} | " +
+           $"{ConsoleUI.PadRightDisplay(equipMark+safeName, 15)} | " +
+           $"{ConsoleUI.PadRightDisplay(whatType, 6)} | " +
            $"{whatStatString} + {whatStatInt,-3} | " +
-           $"{safeDesc}";
+           $"{safeDesc}{AnsiColor.Reset}";
         }
 
         //if (Items == null || Items.Count == 0)

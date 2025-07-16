@@ -90,6 +90,7 @@ namespace TextRPG_Team20
                 case SceneState.EquipControl:
                     break;
                 case SceneState.Status:
+                    newScene = new StatScene(playerInstance.status);
                     break;
                 case SceneState.SkillList:
                     break;

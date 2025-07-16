@@ -9,7 +9,7 @@ namespace TextRPG_Team20.Scene
     internal class StatScene : IScene
     {
 
-            private readonly Status Nowstatus;
+        private readonly Status Nowstatus;
         public StatScene(Status status)
         {
             Nowstatus = status;
@@ -31,7 +31,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("1. Go to Inventory", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Go to lobby", ref ConsoleUI.mainView);
 
-
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
 
 
         }
@@ -43,7 +43,7 @@ namespace TextRPG_Team20.Scene
             {
                 case 0:
                     Game.Instance.PopScene();
-                    return true;
+                    return false;
                 case 1:
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
