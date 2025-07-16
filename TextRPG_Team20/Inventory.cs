@@ -85,8 +85,8 @@ namespace TextRPG_Team20
 
             if (Items == null || index < 0 || index >= Items.Count)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}아이템이 없습니다{AnsiColor.Reset}", ref ConsoleUI.inputView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}아이템이 없습니다{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                 return;
             }
             var item = Items[index];
@@ -94,8 +94,8 @@ namespace TextRPG_Team20
 
             string doEquip = item.data.isEquipped ? "장착" : "해제";
 
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{item.data.Name} 을(를) {doEquip}했습니다.!{AnsiColor.Reset}", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{item.data.Name} 을(를) {doEquip}했습니다.!{AnsiColor.Reset}", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
 
             if (doEquip == "장착")
             {

@@ -37,14 +37,6 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"ATK: {player.status.TotalAtk}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"DEF: {player.status.TotalDef}", ref ConsoleUI.info1View);
 
-            //  적 정보
-            ConsoleUI.Instance.DrawTextInBox($"[{enemy.status.Name}] - {enemy.Job}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox($"HP: {enemy.status.Hp}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox($"ATK: {enemy.status.TotalAtk}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
-
-            //결과보기
-            ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
 
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
@@ -67,7 +59,7 @@ namespace TextRPG_Team20.Scene
                         Battle.OnNormalAttack(player, enemy);
                         break;
 
-                        case 2: //스킬사용
+                    case 2: //스킬사용
                         Battle.OnSkillAttack(player, enemy);
                         break;
 
@@ -76,6 +68,10 @@ namespace TextRPG_Team20.Scene
                         ((Scene)this).InvalidInput();
                         break;
                 }
+            }
+            else
+            {
+
             }
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;

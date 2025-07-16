@@ -30,10 +30,8 @@ namespace TextRPG_Team20.Scene
         public static void OnSkillAttack(Player player, Enemy enemy)
         {
             player.UseSkill(enemy);
-
             CheckWin(player, enemy);
-            enemy.Action();
-            enemy.Attack(player);
+        
         }
 
         public static void Miss(Player player, Enemy enemy)
@@ -49,7 +47,6 @@ namespace TextRPG_Team20.Scene
             {   //  적 사망 체크
                 ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
-                Console.ReadKey();
                 Game.Instance.SceneChange(Game.SceneState.Win);
                 return;
             }
