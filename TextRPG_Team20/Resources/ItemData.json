@@ -1,7 +1,7 @@
 {
   "Items": [
     {
-        "Id" : 1,
+        "ID" : 1,
         "Name" : "수련자 갑옷",
         "Description" : "방어력 +5",
         "FlavorText" : "수련에 도움을 주는 갑옷입니다",
@@ -17,7 +17,7 @@
 
 
     {
-        "Id" : 500,
+        "ID" : 500,
         "Name" : "하급 무기 상자",
         "Description" : "낮은 등급의 무기를 획득합니다",
         "FlavorText" : "",
@@ -29,7 +29,7 @@
         "ClassName" : "LowWeaonBox"
     },
     {
-        "Id" : 501,
+        "ID" : 501,
         "Name" : "중급 무기 상자",
         "Description" : "보통 등급의 무기를 획득합니다",
         "FlavorText" : "",
@@ -42,7 +42,7 @@
     },
     
     {
-        "Id" : 502,
+        "ID" : 502,
         "Name" : "상급 무기 상자",
         "Description" : "높은 등급의 무기를 획득합니다",
         "FlavorText" : "",

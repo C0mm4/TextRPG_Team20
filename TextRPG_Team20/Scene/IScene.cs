@@ -97,7 +97,7 @@ namespace TextRPG_Team20.Scene
 
         public void PrintScene();
 
-        public int GetAction()
+        public virtual int GetAction()
         {
             ConsoleUI.Instance.DrawTextInBox("Please input your action >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);

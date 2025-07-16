@@ -70,7 +70,7 @@ namespace TextRPG_Team20.System
 
         public void Register(Item.Item item)
         {
-            _prototypes[item.data.Id] = item;
+            _prototypes[item.data.ID] = item;
         }
 
         public Item.Item? Create(int id) 
