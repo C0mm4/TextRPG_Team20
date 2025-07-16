@@ -109,6 +109,11 @@ namespace TextRPG_Team20
             inputView = new Rect(2, 41, 110, 5);
         }
 
+        public void InsertTextInBox(List<string> strings, ref Rect rect)
+        {
+            rect.lines.AddRange(strings);
+        }
+
 
         public void DrawTextInBox(string text, ref Rect rect)
         {

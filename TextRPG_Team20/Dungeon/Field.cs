@@ -110,7 +110,11 @@ namespace TextRPG_Team20.Dungeon
             return ret;
         }
 
-        public int this[int i, int j] => GridData[i][j];
+        public int this[int i, int j]
+        {
+            get => GridData[i][j];
+            set => GridData[i][j] = value;
+        }
 
     }
 
