@@ -17,6 +17,8 @@ namespace TextRPG_Team20
 
         public int x, y;
 
+        protected int currentPosData;
+
         public virtual void Action()
         {
             Console.WriteLine();
@@ -42,17 +44,12 @@ namespace TextRPG_Team20
 
         public void SetPos(int x, int y)
         {
+            currentPosData = DungeonManager.Instance.currentField[x, y];
+
             this.x = x; this.y = y;
 
             DungeonManager.Instance.currentField[x, y] = -1;
 
-        }
-
-        public virtual void Move(int x, int y)
-        {
-            DungeonManager.Instance.currentField[y, x] = 0;
-            this.x += x; this.y += y;
-            DungeonManager.Instance.currentField[y, x] = -1;
         }
 
         public virtual void Attack(Character target)

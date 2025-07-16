@@ -64,7 +64,7 @@ namespace TextRPG_Team20.Dungeon
         /// <returns>해당 던전 객체 또는 null</returns>
         public Dungeon? GetDungeon(int dungeonId)
         {
-            return _dungeonData?.GetDungeonById(dungeonId);
+            return new Dungeon(_dungeonData?.GetDungeonById(dungeonId));
         }
 
         // 예시: 현재 필드 정보를 출력하는 메서드 (게임 로직에서 활용)
@@ -116,6 +116,15 @@ namespace TextRPG_Team20.Dungeon
             currentDungeon = GetDungeon(DungeonID);
             currentField = currentDungeon.GetStartField();
             Game.playerInstance.SetPos(currentDungeon.StartX, currentDungeon.StartY);
+        }
+
+        public void MoveField(Connection? connection)
+        {
+            if(connection != null)
+            {
+                currentField = currentDungeon.GetFieldById(connection.ToFieldID);
+                Game.playerInstance.SetPos(connection.ToCell[0], connection.ToCell[1]);
+            }
         }
     }
 }
