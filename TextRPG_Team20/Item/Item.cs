@@ -21,7 +21,6 @@ namespace TextRPG_Team20.Item
 
         public string? ClassName { get; set; }   
 
-
         public bool isEquipped = false;
         
     }
