@@ -57,5 +57,48 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{status.Name}의 스킬 사용!{AnsiColor.Reset}", ref ConsoleUI.logView);
             ConsoleUI.Instance.DrawTextInBox($"{target.status.Name}에게 {AnsiColor.Red}{actualDamage}{AnsiColor.Reset}의 피해를 입혔습니다!", ref ConsoleUI.logView);
         }
+
+        public void playercollision(int x, int y)
+        {
+            int[] newpos = { nowpos[0] + x, nowpos[1] + y };
+            if (newpos[0] < 0 || newpos[1] < 0 || newpos[0] > 4 || newpos[1] > 4)
+            { }
+            else
+            {
+
+                if (map[newpos[0], newpos[1]] == 0)
+                {
+                    nowpos[0] = newpos[0];
+                    nowpos[1] = newpos[1];
+                }
+                else if (map[newpos[0], newpos[1]] == 1)
+                { }
+
+                else if (map[newpos[0], newpos[1]] == 2)
+                {
+                    Console.WriteLine("상자를 발견했습니다. 축하합니다 5골드를 획득하셨습니다.");
+                    map[newpos[0], newpos[1]] = 0;
+                    nowpos[0] = newpos[0];
+                    nowpos[1] = newpos[1];
+                }
+                else if (map[newpos[0], newpos[1]] == 3)
+                {
+                    Console.WriteLine("닫힌 문입니다 지금은 지나가실 수 없습니다.");
+
+                }
+                else if (map[newpos[0], newpos[1]] == 4)
+                {
+                    Console.WriteLine("발판이 눌렸습니다 어딘가의 문이나 상자가 열렸을지도 모르겠네요.");
+                    map[newpos[0], newpos[1]] = 0;
+
+                    nowpos[0] = newpos[0];
+                    nowpos[1] = newpos[1];
+                }
+                else if (map[newpos[0], newpos[1]] == 5)
+                {
+                    Console.WriteLine("다음방으로 넘어갑니다.");
+                }
+            }
+        }
     }
 }
