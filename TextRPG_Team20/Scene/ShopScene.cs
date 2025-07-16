@@ -105,7 +105,7 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.DrawTextInBox("[0] 구매 종료", ref ConsoleUI.info2View);
             }
 
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);

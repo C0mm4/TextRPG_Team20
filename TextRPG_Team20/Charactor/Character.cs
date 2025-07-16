@@ -38,7 +38,7 @@ namespace TextRPG_Team20
             Inventory = new Inventory();
         }
 
-        public void Attack(Character target)
+        public virtual void Attack(Character target)
         {
             int damage = status.TotalAtk;
             Console.WriteLine($"{status.Name}이(가) {target.status.Name}을(를) 공격했습니다! ({damage} 데미지)");
