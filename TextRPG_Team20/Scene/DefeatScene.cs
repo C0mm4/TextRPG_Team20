@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class DefeatScene : IScene
+    internal class DefeatScene : Scene
     {
 
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}패배했습니다.{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("로비로 돌아가시겠습니까?", ref ConsoleUI.mainView);
@@ -25,7 +25,7 @@ namespace TextRPG_Team20.Scene
 
    
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {

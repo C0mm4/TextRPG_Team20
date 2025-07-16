@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Dungeon;
 using static TextRPG_Team20.Game;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class DungeonSelectScene : IScene
+    internal class DungeonSelectScene : Scene
     {
      
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {
@@ -20,17 +21,18 @@ namespace TextRPG_Team20.Scene
 
                 case 1:
                     Console.WriteLine("Enetering Dungeon...");
+                    DungeonManager.Instance.StartDungone(1);
                     Game.Instance.SceneChange(Game.SceneState.InField);
                     return true;
 
 
 
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     return true;
             }
         }
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.mainView.ClearBuffer();
             ConsoleUI.logView.ClearBuffer();

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class SkillListScene : IScene
+    internal class SkillListScene : Scene
     {
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}스킬 목록{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
@@ -21,7 +21,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {
@@ -30,7 +30,7 @@ namespace TextRPG_Team20.Scene
                     return false;
 
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     return true;
             }
         }

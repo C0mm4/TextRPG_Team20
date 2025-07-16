@@ -13,7 +13,7 @@
 		<None Update="Resources\ItemData.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Resources\EnemyData.json">
+		<None Update="Resources\DungeonData.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
