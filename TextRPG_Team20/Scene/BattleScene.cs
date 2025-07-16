@@ -10,7 +10,13 @@ namespace TextRPG_Team20.Scene
     {
         private Player player;
         private Enemy enemy;
-                     
+
+        public BattleScene(Player player, Enemy enemy)
+        {
+            this.player = player;
+            this.enemy = enemy;
+        }
+
         public override void PrintScene()
 
         {
@@ -24,10 +30,7 @@ namespace TextRPG_Team20.Scene
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
 
-            Battle.OnBattle(player, enemy); 
-
-            ConsoleUI.Instance.DrawTextInBox("1. Attack", ref ConsoleUI.mainView);
-
+            Battle.OnBattle(player, enemy);
 
             //  플레이어 정보
             ConsoleUI.Instance.DrawTextInBox($"[{player.status.Name}] - {player.Job}", ref ConsoleUI.info1View);
@@ -42,15 +45,16 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
 
 
-
-
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+                        
+            
 
         }
+
         public override bool Action(int input)
         {
             ConsoleUI.logView.ClearBuffer();

@@ -9,17 +9,10 @@ namespace TextRPG_Team20.Scene
 {
     internal class Battle
     {
-        //충돌하면
-        //player enemy join
-        // OnBattle
-
-        // player turn
-        // player attack
-        // enemy turn 
-        // enemy attack
-
+       
         public static bool OnBattle(Player player, Enemy enemy)
         {
+            player.Action();
             int action = player.GetPlayerAction();
                         
             switch (action)
@@ -31,7 +24,7 @@ namespace TextRPG_Team20.Scene
                     player.UseSkill(enemy);
                     break;
                 default:
-                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 턴을 소모합니다.", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 적이 공격해옵니다.", ref ConsoleUI.logView);
                     break;
             }
 
@@ -43,6 +36,7 @@ namespace TextRPG_Team20.Scene
             }
 
             // 3. 적 턴
+            enemy.Action();
             enemy.Attack(player);
 
             // 4. 플레이어 사망 체크
@@ -53,7 +47,10 @@ namespace TextRPG_Team20.Scene
             }
 
             return true; // 둘 다 살아있으면 계속 전투
+
+            
         }
+
     }
 
 

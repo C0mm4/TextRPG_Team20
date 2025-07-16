@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
 
@@ -25,7 +26,7 @@ namespace TextRPG_Team20
             }
         }
 
-        internal static Character? playerInstance;
+        internal static Player? playerInstance;
         
 
         public enum SceneState
@@ -80,7 +81,7 @@ namespace TextRPG_Team20
                     newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
-                    newScene = new BattleScene();
+                    newScene = new BattleScene(playerInstance, new BlueSnail());
                     break;
                 case SceneState.Result:
                     break;
