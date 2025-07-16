@@ -89,10 +89,5 @@ namespace TextRPG_Team20.System
             return items.FindAll(predicate);
         }
 
-        public List<Item.Item> FindItems(Predicate<Item.Item> match)
-        {
-            var items = _prototypes.Values.ToList();
-            return items.FindAll(match);
-        }
     }
 }
