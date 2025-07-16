@@ -27,11 +27,12 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-
+        internal static List<Enemy> enemys = new List<Enemy>();
+        
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat
         }
 
         private Stack<Scene.Scene> _sceneStack;
@@ -81,21 +82,21 @@ namespace TextRPG_Team20
                     newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
-                    newScene = new BattleScene(playerInstance, new BlueSnail());
+                    newScene = new BattleScene(playerInstance, enemys);
                     break;
                 case SceneState.Result:
+                    newScene = new ResultScene();
                     break;
                 case SceneState.Shop:
                     newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
-                    newScene = new BattleScene(playerInstance, new BlueSnail());
-                    //newScene = new InventoryScene(playerInstance.Inventory);
+                    newScene = new InventoryScene(playerInstance.Inventory);   
                     break;
                 case SceneState.EquipControl:
                     break;
                 case SceneState.Status:
-                    newScene = new StatScene(playerInstance.status);
+                    newScene = new BattleScene(playerInstance, enemys); //newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 정상화
                     break;
                 case SceneState.SkillList:
                     break;
@@ -103,6 +104,9 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.Win:
                     newScene = new WinScene();
+                    break;
+                case SceneState.Defeat:
+                    newScene = new DefeatScene();
                     break;
             }
             if (newScene != null) 

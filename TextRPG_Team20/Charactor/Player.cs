@@ -20,11 +20,10 @@ namespace TextRPG_Team20
 
         public override void Action()
         {
-
-            ConsoleUI.inputView.ClearBuffer();
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.inputView);      
+            ConsoleUI.info2View.ClearBuffer();
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.info2View);      
         }
 
         public override void CharacterInfo()
@@ -40,22 +39,22 @@ namespace TextRPG_Team20
 
         public override void Attack(Character target)
         {
-            int damage = status.TotalAtk;
-            int actualDamage = Math.Max(1, damage - target.status.TotalDef); //최소한 1의 피해는 무조건 입힌다
+            int damage = status.Atk;
+            int actualDamage = Math.Max(1, damage - target.status.Def); //최소한 1의 피해는 무조건 입힌다
             target.DecreaseHp(actualDamage);
 
-            ConsoleUI.Instance.DrawTextInBox($"{status.Name}이(가) {target.status.Name}에게 일반 공격!", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{actualDamage}{AnsiColor.Reset}의 피해를 입혔습니다.", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{status.Name}{AnsiColor.Reset}이(가) {AnsiColor.Green}{target.status.Name}{AnsiColor.Reset}에게 일반 공격!", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{actualDamage}{AnsiColor.Reset}의 피해를 입혔습니다.", ref ConsoleUI.logView);
         }
 
         public void UseSkill(Character target)
         {
-            int skillDamage = status.TotalAtk * 2;
-            int actualDamage = Math.Max(1, skillDamage - target.status.TotalDef);
+            int skillDamage = status.Atk * 2;
+            int actualDamage = Math.Max(1, skillDamage - target.status.Def);
             target.DecreaseHp(actualDamage);
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{status.Name}의 스킬 사용!{AnsiColor.Reset}", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox($"{target.status.Name}에게 {AnsiColor.Red}{actualDamage}{AnsiColor.Reset}의 피해를 입혔습니다!", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}에게 {actualDamage}의 피해를 입혔습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
         }
 
         public void playercollision(int x, int y)
@@ -103,6 +102,13 @@ namespace TextRPG_Team20
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
+        }
+
+        public int LastBattleGold { get; private set; }
+        public override void AddGold(int gold)
+        {
+            base.AddGold(gold);
+            LastBattleGold += gold;
         }
 
         public override void PrintData()
