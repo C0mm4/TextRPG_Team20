@@ -7,12 +7,28 @@ using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20
 {
-    internal class Enemy : Character
+    internal class Enemy : Character, ICloneable
     {
 
         public Enemy(string name, int gold,  Status status) : base(name, "Enemy", gold, status)
         {
 
+        }
+
+        public object Clone()
+        {
+            var clone = Activator.CreateInstance(this.GetType()) as Enemy;
+            clone.status = new Status
+            (
+                status.ID,
+                status.Level,
+                status.Hp,
+                status.Atk,
+                status.Def,
+                status.ExtraAtk,
+                status.ExtraDef
+            );
+            return clone;
         }
 
         public override void Action()
