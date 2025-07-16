@@ -82,6 +82,10 @@ namespace TextRPG_Team20
             Console.WriteLine($"체력 : {status.Hp}");
             Console.WriteLine($"Gold : {Gold} G");
         }
+        public void AddGold(int amount)
+        {
+            Gold += amount;
+        }
 
         public abstract void PrintData();
 

@@ -37,31 +37,36 @@ namespace TextRPG_Team20.Scene
         public static void Miss(Player player, Enemy enemy)
         {
             ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 적이 공격해옵니다.", ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
             enemy.Attack(player);
             CheckWin(player, enemy);
         }
 
         public static void CheckWin(Player player, Enemy enemy)
         {
+            if (player.status.Hp <= 0)
+            { //  플레이어 사망 체크
+                ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                Game.Instance.SceneChange(Game.SceneState.Result);
+                return;
+            }
+
             if (enemy.status.Hp <= 0)
             {   //  적 사망 체크
                 ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
+                player.AddGold(enemy.Gold);
                 Game.Instance.SceneChange(Game.SceneState.Win);
                 return;
             }
             else
             {
-
-                if (player.status.Hp <= 0)
-                { //  플레이어 사망 체크
-                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                    Console.ReadKey();
-                    Game.Instance.SceneChange(Game.SceneState.Result);
-                    return;
-                }
-                
+                enemy.Attack(player);
             }
+            
+                
+                
+            
 
         }
 

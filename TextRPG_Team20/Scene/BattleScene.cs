@@ -21,6 +21,7 @@ namespace TextRPG_Team20.Scene
         public override void PrintScene()
 
         {
+            
             // 모든 영역 초기화
             ConsoleUI.mainView.ClearBuffer();
             ConsoleUI.info1View.ClearBuffer();
@@ -50,7 +51,7 @@ namespace TextRPG_Team20.Scene
 
         public override bool Action(int input)
         {
-            ConsoleUI.logView.ClearBuffer();
+            
             if (player.status.Hp > 0)
             {
                 switch (input)

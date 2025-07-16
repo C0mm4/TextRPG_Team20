@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class WinScene : Scene
+    internal class ResultScene : Scene
     {
         public override void PrintScene()
         {
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}전투에서 승리했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}획득한 골드 : {Game.enemy1.Gold} {AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("계속 진행하시겠습니까?", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}전투에서 패배했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);
+
+            //획득한 골드
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}이번 던전에서 얻은 골드는 {/*얼마*/""} 입니다.{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. 던전으로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
@@ -31,7 +31,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.ReturnToLobby();
                     return true;
                 case 1:
-                    Game.Instance.SceneChange(Game.SceneState.Battle);
+                    Game.Instance.GameStart();
                     return false;
                 default:
                     ConsoleUI.Instance.DrawTextInBox("입력이 잘못되었습니다. 다시 입력해주세요.", ref ConsoleUI.logView);
@@ -41,3 +41,4 @@ namespace TextRPG_Team20.Scene
         }
     }
 }
+

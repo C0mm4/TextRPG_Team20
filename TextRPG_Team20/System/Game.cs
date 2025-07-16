@@ -27,7 +27,7 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-
+        internal static Enemy enemy1 = new BlueSnail();
 
         public enum SceneState
         {
@@ -81,16 +81,16 @@ namespace TextRPG_Team20
                     newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
-                    newScene = new BattleScene(playerInstance, new BlueSnail());
+                    newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 배틀과 인벤토리 바꿔줘야함
                     break;
                 case SceneState.Result:
+                    newScene = new ResultScene();
                     break;
                 case SceneState.Shop:
                     newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
-                    newScene = new BattleScene(playerInstance, new BlueSnail());
-                    //newScene = new InventoryScene(playerInstance.Inventory);
+                    newScene = new BattleScene(playerInstance, enemy1);    // 몬스터와 충돌 구현 후 배틀과 인벤토리 바꿔줘야함
                     break;
                 case SceneState.EquipControl:
                     break;
