@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class IntroScene : IScene
+    internal class IntroScene : Scene
     {
         string? nameInput;
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input) 
             {
@@ -25,14 +25,14 @@ namespace TextRPG_Team20.Scene
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     return true;
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     return true;
 
             }
 
         }
 
-        public void PrintScene()
+        public override void PrintScene()
         {            
             ConsoleUI.Instance.DrawTextInBox("Welcome to this game", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("Please input your charachor name >> ", ref ConsoleUI.inputView);

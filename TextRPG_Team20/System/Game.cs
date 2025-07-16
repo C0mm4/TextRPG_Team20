@@ -32,8 +32,8 @@ namespace TextRPG_Team20
             Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win
         }
 
-        private Stack<IScene> _sceneStack;
-        private IScene? _currentScene;
+        private Stack<Scene.Scene> _sceneStack;
+        private Scene.Scene? _currentScene;
 
         public Game()
         {
@@ -46,7 +46,8 @@ namespace TextRPG_Team20
 //            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
-            _sceneStack = new Stack<IScene>();
+            var d = new Dungeon.DungeonManager();
+            _sceneStack = new Stack<Scene.Scene>();
 
             SceneChange(SceneState.Title);
             playerInstance = null;
@@ -59,7 +60,7 @@ namespace TextRPG_Team20
 
         public void SceneChange(SceneState state)
         {
-            IScene? newScene = null;
+            Scene.Scene? newScene = null;
             switch (state)
             {
                 case SceneState.Title:
@@ -75,6 +76,7 @@ namespace TextRPG_Team20
                     newScene = new DungeonSelectScene();
                     break;
                 case SceneState.InField:
+                    newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
                     newScene = new BattleScene();

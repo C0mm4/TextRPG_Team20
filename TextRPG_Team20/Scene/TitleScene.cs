@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class TitleScene : IScene
+    internal class TitleScene : Scene
     {
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}Game Title{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
@@ -24,7 +24,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {
@@ -41,7 +41,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.LoadGame();
                     return false;
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     return true;
             }
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class BattleScene : IScene
+    internal class BattleScene : Scene
     {
         private Character player;
         private Character enemy;
@@ -17,8 +17,9 @@ namespace TextRPG_Team20.Scene
             this.enemy = enemy;
         }
 
-      
-        public void PrintScene()
+
+        public override void PrintScene()
+
         {
             // 모든 영역 초기화
             ConsoleUI.mainView.ClearBuffer();
@@ -60,7 +61,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
 
         }
-            public bool Action(int input)
+        public override bool Action(int input)
         {
             ConsoleUI.logView.ClearBuffer();
 
@@ -90,7 +91,7 @@ namespace TextRPG_Team20.Scene
                     break;
 
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     break;
             }
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class StatScene : IScene
+    internal class StatScene : Scene
     {
 
         private readonly Status Nowstatus;
@@ -16,7 +16,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             
 
@@ -37,7 +37,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {

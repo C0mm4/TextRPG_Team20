@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class ShopScene : IScene
+    internal class ShopScene : Scene
     {
         private bool BuyShop = false;   //상점 구매전환 변수
         private bool SellShop = false;   //상점 판매전환 변수
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             if (BuyShop == false && SellShop == false)
             {
@@ -30,7 +30,7 @@ namespace TextRPG_Team20.Scene
                         return false;
 
                     default:
-                        ((IScene)this).InvalidInput();
+                        ((Scene)this).InvalidInput();
                         return true;
                 }
             }
@@ -44,7 +44,7 @@ namespace TextRPG_Team20.Scene
                         return false;
 
                     default:
-                        ((IScene)this).InvalidInput();
+                        ((Scene)this).InvalidInput();
                         return true;
                 }
             }
@@ -52,7 +52,7 @@ namespace TextRPG_Team20.Scene
         }
 
         //씬 출력 메서드
-        public void PrintScene()
+        public override void PrintScene()
         {
             // mainView 출력
             if (BuyShop == false && SellShop == false)      // 상점 제목

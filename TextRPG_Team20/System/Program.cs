@@ -41,6 +41,8 @@ namespace TextRPG_Team20
 
             Console.CursorVisible = false;
             Game game = new Game();
+
+
         }
     }
 }

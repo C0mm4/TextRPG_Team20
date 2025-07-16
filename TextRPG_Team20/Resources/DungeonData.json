@@ -1,0 +1,76 @@
+{
+  "Dungeons": [
+    {
+      "DungeonID": 1,
+      "DungeonName": "불의 던전",
+      "Fields": [
+        {
+          "FieldID": 101,
+          "FieldName": "화염 통로",
+          "GridData": [
+            [1, 1, 0, 0, 2],
+            [1, 0, 0, 0, 2],
+            [1, 1, 1, 0, 2],
+            [0, 0, 1, 0, 0],
+            [3, 3, 1, 1, 1]
+          ],
+          "Connections": [
+            {
+              "FromCell": [4, 4],
+              "ToCell": [0, 0],
+              "ToFieldID": 102
+            }
+          ]
+        },
+        {
+          "FieldID": 102,
+          "FieldName": "용암 동굴",
+          "GridData": [
+            [1, 1, 1, 1, 1],
+            [0, 0, 0, 0, 1],
+            [1, 1, 1, 0, 1],
+            [1, 0, 1, 0, 1],
+            [1, 1, 1, 1, 1]
+          ],
+          "Connections": []
+        }
+      ]
+    },
+    {
+      "DungeonID": 2,
+      "DungeonName": "얼음의 미궁",
+      "Fields": [
+        {
+          "FieldID": 201,
+          "FieldName": "얼어붙은 복도",
+          "GridData": [
+            [1, 0, 0, 1, 1],
+            [1, 1, 0, 0, 1],
+            [0, 1, 1, 1, 1],
+            [0, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1]
+          ],
+          "Connections": [
+            {
+              "FromCell": [4, 4],
+              "ToCell": [0, 0],
+              "ToFieldID": 202
+            }
+          ]
+        },
+        {
+          "FieldID": 202,
+          "FieldName": "빙결의 제단",
+          "GridData": [
+            [1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 1],
+            [1, 0, 3, 0, 1],
+            [1, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1]
+          ],
+          "Connections": []
+        }
+      ]
+    }
+  ]
+}

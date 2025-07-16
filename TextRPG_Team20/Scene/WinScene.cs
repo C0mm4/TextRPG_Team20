@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class WinScene : IScene
+    internal class WinScene : Scene
     {
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}전투에서 승리했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("계속 진행하시겠습니까?", ref ConsoleUI.mainView);
@@ -21,7 +21,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
         }
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {

@@ -7,7 +7,7 @@ using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class InventoryScene : IScene
+    internal class InventoryScene : Scene
     {
         private Inventory _inventory;
 
@@ -54,7 +54,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}인벤토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
@@ -76,7 +76,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "left", "top");
         }
 
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {
@@ -88,7 +88,7 @@ namespace TextRPG_Team20.Scene
                 default:
                     if (_inventory.Items == null)
                     {
-                        ((IScene)this).InvalidInput();
+                        ((Scene)this).InvalidInput();
                     }
                     else
                     {

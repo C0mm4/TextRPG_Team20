@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class LobbyScene : IScene
+    internal class LobbyScene : Scene
     {
-        public bool Action(int input)
+        public override bool Action(int input)
         {
             switch (input)
             {
@@ -28,12 +29,12 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
                 default:
-                    ((IScene)this).InvalidInput();
+                    ((Scene)this).InvalidInput();
                     return true;
             }
         }
 
-        public void PrintScene()
+        public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}Lobby{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
