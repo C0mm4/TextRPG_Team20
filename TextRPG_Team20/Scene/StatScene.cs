@@ -9,7 +9,7 @@ namespace TextRPG_Team20.Scene
     internal class StatScene : IScene
     {
 
-            private readonly Status Nowstatus;
+        private readonly Status Nowstatus;
         public StatScene(Status status)
         {
             Nowstatus = status;
