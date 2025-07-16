@@ -16,18 +16,22 @@ namespace TextRPG_Team20
         private static Game? _instance;
         public static Game Instance
         {
-            get 
-            { 
-                if(_instance == null)
+            get
+            {
+                if (_instance == null)
                 {
                     _instance = new Game();
-                } 
+                }
                 return _instance;
             }
         }
 
         internal static Player? playerInstance;
-        internal static Enemy enemy1 = new BlueSnail();
+        internal static List<Enemy> enemies = new List<Enemy> 
+        {new BlueSnail(),
+         new StoneGolem(),
+         new BlueSnail() };
+      
 
         public enum SceneState
         {
@@ -39,13 +43,13 @@ namespace TextRPG_Team20
 
         public Game()
         {
-            if(_instance == null)
+            if (_instance == null)
             {
                 _instance = this;
             }
 
-//            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
-//            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
+            //            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+            //            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
             var d = new Dungeon.DungeonManager();
@@ -54,7 +58,7 @@ namespace TextRPG_Team20
             SceneChange(SceneState.Title);
             playerInstance = null;
 
-            while(_currentScene != null)
+            while (_currentScene != null)
             {
                 _currentScene.Print();
             }
@@ -90,7 +94,7 @@ namespace TextRPG_Team20
                     newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
-                    newScene = new BattleScene(playerInstance, enemy1);    // 몬스터와 충돌 구현 후 배틀과 인벤토리 바꿔줘야함
+                    newScene = new BattleScene(playerInstance, enemies);    // 몬스터와 충돌 구현 후 배틀과 인벤토리 바꿔줘야함
                     break;
                 case SceneState.EquipControl:
                     break;
@@ -105,9 +109,9 @@ namespace TextRPG_Team20
                     newScene = new WinScene();
                     break;
             }
-            if (newScene != null) 
+            if (newScene != null)
             {
-                if(_currentScene != null && _currentScene.GetType().Name != "IntroScene")
+                if (_currentScene != null && _currentScene.GetType().Name != "IntroScene")
                 {
                     _sceneStack.Push(_currentScene);
                 }
@@ -117,7 +121,7 @@ namespace TextRPG_Team20
 
         public void PopScene()
         {
-            if(_sceneStack.Count > 0)
+            if (_sceneStack.Count > 0)
             {
                 _currentScene = _sceneStack.Pop();
             }
@@ -143,14 +147,14 @@ namespace TextRPG_Team20
 
         }
 
-        public void LoadGame() 
+        public void LoadGame()
         {
 
         }
 
         public void ReturnToLobby()
         {
-            if(_currentScene != null)
+            if (_currentScene != null)
             {
                 while (_currentScene.GetType().Name != "LobbyScene")
                 {
