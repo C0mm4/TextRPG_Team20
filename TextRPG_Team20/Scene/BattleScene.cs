@@ -9,13 +9,12 @@ namespace TextRPG_Team20.Scene
     internal class BattleScene : Scene
     {
         private Player player;
-        private Enemy enemy;
         private List<Enemy> enemys = new List<Enemy>();
 
-        public BattleScene(Player player, Enemy enemy)
+        public BattleScene(Player player, List<Enemy> enemys)
         {
             this.player = player;
-            this.enemy = enemy;
+            this.enemys = enemys;
         }
 
         public override void PrintScene()
@@ -30,7 +29,7 @@ namespace TextRPG_Team20.Scene
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
-            Battle.OnBattle(player, enemy);
+            Battle.OnBattle(player, enemys);
 
             //  플레이어 정보
             ConsoleUI.Instance.DrawTextInBox($"[{player.status.Name}] - {player.Job}", ref ConsoleUI.info1View);
@@ -57,15 +56,15 @@ namespace TextRPG_Team20.Scene
                 switch (input)
                 {
                     case 1: // 공격
-                        Battle.OnNormalAttack(player, enemy);
+                        Battle.OnNormalAttack(player, enemys);
                         break;
 
                     case 2: //스킬사용
-                        Battle.OnSkillAttack(player, enemy);
+                        Battle.OnSkillAttack(player, enemys);
                         break;
 
                     default: // 잘못입력
-                        Battle.Miss(player, enemy);
+                        Battle.Miss(player, enemys);
                         ((Scene)this).InvalidInput();
                         break;
                 }

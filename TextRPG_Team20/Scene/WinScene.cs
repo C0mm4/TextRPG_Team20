@@ -11,7 +11,7 @@ namespace TextRPG_Team20.Scene
         public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}전투에서 승리했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}획득한 골드 : {Game.enemy1.Gold} {AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}획득한 골드 : {Game.enemys.Sum(e=>e.Gold)} {AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("계속 진행하시겠습니까?", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1. 던전으로 돌아가기", ref ConsoleUI.mainView);
