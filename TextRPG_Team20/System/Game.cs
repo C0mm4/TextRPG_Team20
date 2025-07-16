@@ -26,6 +26,7 @@ namespace TextRPG_Team20
         }
 
         internal static Character? playerInstance;
+        
 
         public enum SceneState
         {
@@ -79,7 +80,7 @@ namespace TextRPG_Team20
                     newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
-                    newScene = new BattleScene(playerInstance);
+                    newScene = new BattleScene();
                     break;
                 case SceneState.Result:
                     break;

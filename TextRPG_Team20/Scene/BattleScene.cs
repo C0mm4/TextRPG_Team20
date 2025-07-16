@@ -8,16 +8,9 @@ namespace TextRPG_Team20.Scene
 {
     internal class BattleScene : Scene
     {
-        private Character player;
-        private Character enemy;
-               
-        public BattleScene(Character player, Character enemy)
-        {
-            this.player = player;
-            this.enemy = enemy;
-        }
-
-
+        private Player player;
+        private Enemy enemy;
+                     
         public override void PrintScene()
 
         {
@@ -30,11 +23,8 @@ namespace TextRPG_Team20.Scene
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
-            do
-            {
-                Battle.OnBattle(player, enemy);
-                break;
-            } while (true);
+
+            Battle.OnBattle(player, enemy); 
 
             ConsoleUI.Instance.DrawTextInBox("1. Attack", ref ConsoleUI.mainView);
 

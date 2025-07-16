@@ -14,6 +14,10 @@ namespace TextRPG_Team20
         {
 
         }
+
+        public int SelectedAction { get; private set; }
+
+
         public override void Action()
         {
 
@@ -21,10 +25,20 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.inputView);
             ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.inputView);
             ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
-            
-            
+                          
 
+        }
+
+        public int GetPlayerAction()
+        {
+            ConsoleUI.Instance.DrawTextInBox("Please input your action >>", ref ConsoleUI.inputView);
+
+            string? s = ConsoleUI.Read(ref ConsoleUI.inputView);
+            if (int.TryParse(s, out int action))
+            {
+                return action;
+            }
+            return -1;
         }
 
 

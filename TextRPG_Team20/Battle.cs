@@ -20,30 +20,41 @@ namespace TextRPG_Team20.Scene
 
         public static bool OnBattle(Player player, Enemy enemy)
         {
-
+            int action = player.GetPlayerAction();
+                        
+            switch (action)
             {
-                //player turn
-                player.Action();
-
-                ConsoleUI.inputView.ClearBuffer();
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{player.status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.inputView);
-                ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.inputView);
-                ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.inputView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
-
-
-
-                player.Attack(enemy);
-
-
+                case 1:
+                    player.Attack(enemy);
+                    break;
+                case 2:
+                    player.UseSkill(enemy);
+                    break;
+                default:
+                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 턴을 소모합니다.", ref ConsoleUI.logView);
+                    break;
             }
-            ;
 
+            // 2. 적 사망 체크
+            if (enemy.status.Hp <= 0)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                return false; // 전투 종료
+            }
 
+            // 3. 적 턴
+            enemy.Attack(player);
 
-            return false; // 둘 다 살아있으면 전투 계속
+            // 4. 플레이어 사망 체크
+            if (player.status.Hp <= 0)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                return false; // 전투 종료
+            }
+
+            return true; // 둘 다 살아있으면 계속 전투
         }
     }
 
-    
-    }
+
+}
