@@ -64,9 +64,7 @@ namespace TextRPG_Team20
             var CurrentField = DungeonManager.Instance.currentField;
             DungeonManager.Instance.currentField[this.y, this.x] = currentPosData;
             int[] newpos = { this.x + x, this.y + y };
-            if (newpos[0] < 0 || newpos[1] < 0 || newpos[0] > CurrentField.GetLength(1) || newpos[1] > CurrentField.GetLength(0))
-            { }
-            else
+            if (newpos[0] >= 0 && newpos[1] >= 0 && newpos[0] < CurrentField.GetLength(0) && newpos[1] < CurrentField.GetLength(1))
             {
 
                 if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 0)
