@@ -54,7 +54,7 @@ namespace TextRPG_Team20
             target.DecreaseHp(actualDamage);
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{status.Name}의 스킬 사용!{AnsiColor.Reset}", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox($"{target.status.Name}에게 {AnsiColor.Red}{actualDamage}{AnsiColor.Reset}의 피해를 입혔습니다!", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}에게 {actualDamage}의 피해를 입혔습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
         }
 
         public void playercollision(int x, int y)
@@ -102,6 +102,13 @@ namespace TextRPG_Team20
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
+        }
+
+        public int LastBattleGold { get; private set; }
+        public override void AddGold(int gold)
+        {
+            base.AddGold(gold);
+            LastBattleGold += gold;
         }
 
         public override void PrintData()

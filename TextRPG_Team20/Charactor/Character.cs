@@ -19,6 +19,11 @@ namespace TextRPG_Team20
 
         protected int currentPosData;
 
+        public virtual void AddGold(int gold)
+        {
+            Gold += gold;
+        }
+        
         public virtual void Action()
         {
             Console.WriteLine();
@@ -27,7 +32,7 @@ namespace TextRPG_Team20
 
         public Character(string? name, string job, int gold, Status status)
         {
-            if(name == null)
+            if (name == null)
             {
                 status.Name = "";
             }
@@ -82,10 +87,8 @@ namespace TextRPG_Team20
             Console.WriteLine($"체력 : {status.Hp}");
             Console.WriteLine($"Gold : {Gold} G");
         }
-        public void AddGold(int amount)
-        {
-            Gold += amount;
-        }
+  
+
 
         public abstract void PrintData();
 
