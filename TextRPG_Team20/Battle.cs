@@ -21,10 +21,8 @@ namespace TextRPG_Team20.Scene
         {
             {
                 player.Attack(enemy);
-
                 CheckWin(player, enemy);
-                enemy.Action();
-                enemy.Attack(player);
+                
             }
         }
 
@@ -50,6 +48,8 @@ namespace TextRPG_Team20.Scene
             if (enemy.status.Hp <= 0)
             {   //  적 사망 체크
                 ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
+                Console.ReadKey();
                 Game.Instance.SceneChange(Game.SceneState.Win);
                 return;
             }
@@ -59,6 +59,7 @@ namespace TextRPG_Team20.Scene
                 if (player.status.Hp <= 0)
                 { //  플레이어 사망 체크
                     ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                    Console.ReadKey();
                     Game.Instance.SceneChange(Game.SceneState.Result);
                     return;
                 }
