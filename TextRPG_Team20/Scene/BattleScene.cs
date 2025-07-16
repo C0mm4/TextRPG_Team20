@@ -10,8 +10,14 @@ namespace TextRPG_Team20.Scene
     {
         private Character player;
         private Character enemy;
+               
+        public BattleScene(Character player, Character enemy)
+        {
+            this.player = player;
+            this.enemy = enemy;
+        }
 
-
+      
         public void PrintScene()
         {
             // 모든 영역 초기화
@@ -23,6 +29,12 @@ namespace TextRPG_Team20.Scene
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
+            do
+            {
+                Battle.OnBattle(player, enemy);
+                break;
+            } while (true);
+
             ConsoleUI.Instance.DrawTextInBox("1. Attack", ref ConsoleUI.mainView);
 
 
