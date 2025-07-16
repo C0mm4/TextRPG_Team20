@@ -16,8 +16,9 @@ namespace TextRPG_Team20
 
         public override void Action()
         {
-            Console.WriteLine($"{Name}이(가) 공격을 준비합니다.");
-            
+            ConsoleUI.Instance.DrawTextInBox($"{Name}이(가) 공격을 준비합니다.", ref ConsoleUI.logView);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);         
         }
     }
 }
