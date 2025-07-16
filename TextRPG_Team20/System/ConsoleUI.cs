@@ -58,6 +58,42 @@ namespace TextRPG_Team20
                 lines.Clear();
                 ResetCursor();
             }
+
+            public void DrawRect()
+            {
+                int border = 0;
+                char text = '=';
+                for (int j = y - 1; j <= y + height; j++)
+                {
+                    if (j > y - 1 && j < y + height)
+                        border = 2;
+                    else 
+                        border = 0;
+                    for (int i = x - 2; i <= x + width; i ++)
+                    {
+                        switch (border)
+                        {
+                            case 2:
+                                if (i > x-2 && i < x + width)
+                                {
+                                    i = x + width-1;
+                                    continue;
+                                }
+                                else
+                                {
+                                    text = '│';
+                                }
+                                break;
+                            default:
+                                text = '=';
+                                break;
+                        }
+                        Console.SetCursorPosition(i, j);
+                        Console.Write(text);
+                    }
+                
+                }
+            }
         }
 
         public static Rect mainView, logView, info1View, info2View, inputView;
@@ -120,11 +156,6 @@ namespace TextRPG_Team20
             rect.lines.AddRange(newLines);
         }
 
-        private void ClearLine(int x, int y, int width)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(new string(' ', width));
-        }
 
         public static int GetDisplayWidth(string text)
         {

@@ -65,11 +65,12 @@ namespace TextRPG_Team20.Scene
 
         public virtual void Print()
         {
+            Console.Clear();
             ClearBuffer();
-            DrawUI();
+//            DrawUI();
             SetPlayerInfo();
-            PrintScene();
             PrintUIViews();
+            PrintScene();
             var input = GetAction();
             var isDelay = Action(input);
             if(isDelay)
@@ -84,6 +85,12 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
+
+            ConsoleUI.mainView.DrawRect();
+            ConsoleUI.info1View.DrawRect();
+            ConsoleUI.info2View.DrawRect();
+            ConsoleUI.inputView.DrawRect();
+            ConsoleUI.logView.DrawRect();
         }
 
 
@@ -123,6 +130,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.info2View.ClearBuffer();
 
+            if (Game.playerInstance != null)
+                Game.playerInstance.CharacterInfo();
         }
 
         public void PrintUIViews()

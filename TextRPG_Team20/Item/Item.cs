@@ -19,17 +19,21 @@ namespace TextRPG_Team20.Item
 
         public int Type { get; set; }
 
-        public string? ClassName {  get; set; }
-
+        public string? ClassName { get; set; }   
 
         public bool isEquipped = false;
-
+        
     }
 
     internal class Item : IComponent, IComparable<Item>, ICloneable
     {
+        public ItemData data = new();
 
-        public ItemData data;
+        public Item()
+        {
+            // For Test Log
+            ConsoleUI.Instance.DrawTextInBox($"{GetType().Name}", ref ConsoleUI.logView);
+        }
 
         public virtual object Clone()
         {

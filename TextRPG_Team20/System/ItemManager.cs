@@ -21,10 +21,9 @@ namespace TextRPG_Team20.System
             }
         }
 
-        List<Item.Item> itemOrigins = new();
-
         private ItemManager() 
         {
+
             var itemDataStr = JsonLoader.LoadJson("ItemData.json");
             try
             {
@@ -60,7 +59,6 @@ namespace TextRPG_Team20.System
                         }
                     }
                 }
-
             }
             catch(Exception ex)
             {
@@ -89,6 +87,12 @@ namespace TextRPG_Team20.System
         {
             var items = _prototypes.Values.ToList();
             return items.FindAll(predicate);
+        }
+
+        public List<Item.Item> FindItems(Predicate<Item.Item> match)
+        {
+            var items = _prototypes.Values.ToList();
+            return items.FindAll(match);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
 
+
 namespace TextRPG_Team20
 {
     public class Game
@@ -28,7 +29,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, 
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win
         }
 
         private Stack<IScene> _sceneStack;
@@ -41,8 +42,8 @@ namespace TextRPG_Team20
                 _instance = this;
             }
 
-            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
-            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+//            Console.SetBufferSize(160, 50);   // 버퍼도 동일하게 설정
+//            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
             _sceneStack = new Stack<IScene>();
@@ -81,9 +82,10 @@ namespace TextRPG_Team20
                 case SceneState.Result:
                     break;
                 case SceneState.Shop:
+                    newScene = new ShopScene();
                     break;
                 case SceneState.Inventory:
-                    newScene = new InventoryScene();
+                    newScene = new InventoryScene(playerInstance.Inventory);
                     break;
                 case SceneState.EquipControl:
                     break;
@@ -93,7 +95,9 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.UseItem:
                     break;
-
+                case SceneState.Win:
+                    newScene = new WinScene();
+                    break;
             }
             if (newScene != null) 
             {
@@ -125,7 +129,7 @@ namespace TextRPG_Team20
         public void CreatePlayerInstance(string? name)
         {
             Status status = new Status(0, 100, 5, 10);
-            playerInstance = new Character(name, "", 0, status);
+            playerInstance = new Player(name, "Job", 0, status);
         }
 
         public void SaveGame()

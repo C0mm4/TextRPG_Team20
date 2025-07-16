@@ -16,6 +16,16 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.PopScene();
                     return false;
                 case 1:
+                    Game.Instance.SceneChange(Game.SceneState.DungeonSelect);
+                    return false;
+                case 2:
+                    Game.Instance.SceneChange(Game.SceneState.Shop);
+                    return false;
+                case 3:
+                    Game.Instance.SceneChange(Game.SceneState.Status);
+                    return false;
+                case 4:
+                    Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
                 default:
                     ((IScene)this).InvalidInput();
@@ -29,6 +39,9 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1. Enter Dungeon", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2. Enter Shop", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("3. View Status", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("4. Inventory", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
