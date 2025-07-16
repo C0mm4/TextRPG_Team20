@@ -27,19 +27,6 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.inputView);      
         }
 
-        public int GetPlayerAction()
-        {
-            ConsoleUI.Instance.DrawTextInBox("Please input your action >>", ref ConsoleUI.inputView);
-
-            string? s = ConsoleUI.Read(ref ConsoleUI.inputView);
-            if (int.TryParse(s, out int action))
-            {
-                return action;
-            }
-            return -1;
-        }
-
-
         public override void CharacterInfo()
         {
             ConsoleUI.Instance.DrawTextInBox($"캐릭터 정보", ref ConsoleUI.info1View);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
@@ -9,49 +10,66 @@ namespace TextRPG_Team20.Scene
 {
     internal class Battle
     {
-       
-        public static bool OnBattle(Player player, Enemy enemy)
+        List<Enemy> enemies = new List<Enemy>();
+
+
+        public static void OnBattle(Player player, Enemy enemy)
         {
             player.Action();
-            int action = player.GetPlayerAction();
-                        
-            switch (action)
+        }
+        public static void OnNormalAttack(Player player, Enemy enemy)
+        {
             {
-                case 1:
-                    player.Attack(enemy);
-                    break;
-                case 2:
-                    player.UseSkill(enemy);
-                    break;
-                default:
-                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 적이 공격해옵니다.", ref ConsoleUI.logView);
-                    break;
-            }
+                player.Attack(enemy);
 
-            // 2. 적 사망 체크
-            if (enemy.status.Hp <= 0)
-            {
-                ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                return false; // 전투 종료
+                CheckWin(player, enemy);
+                enemy.Action();
+                enemy.Attack(player);
             }
+        }
 
-            // 3. 적 턴
+       
+        public static void OnSkillAttack(Player player, Enemy enemy)
+        {
+            player.UseSkill(enemy);
+
+            CheckWin(player, enemy);
             enemy.Action();
             enemy.Attack(player);
+        }
 
-            // 4. 플레이어 사망 체크
-            if (player.status.Hp <= 0)
+        public static void Miss(Player player, Enemy enemy)
+        {
+            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 적이 공격해옵니다.", ref ConsoleUI.logView);
+            enemy.Attack(player);
+            CheckWin(player, enemy);
+        }
+
+        public static void CheckWin(Player player, Enemy enemy)
+        {
+            if (enemy.status.Hp <= 0)
+            {   //  적 사망 체크
+                ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                Game.Instance.SceneChange(Game.SceneState.Win);
+                return;
+            }
+            else
             {
-                ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                return false; // 전투 종료
+
+                if (player.status.Hp <= 0)
+                { //  플레이어 사망 체크
+                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Result);
+                    return;
+                }
+                
             }
 
-            return true; // 둘 다 살아있으면 계속 전투
-
-            
         }
 
     }
 
-
 }
+
+
+

@@ -29,7 +29,7 @@ namespace TextRPG_Team20.Scene
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
-
+            player.Action(); //선택
             Battle.OnBattle(player, enemy);
 
             //  플레이어 정보
@@ -44,49 +44,39 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"ATK: {enemy.status.TotalAtk}", ref ConsoleUI.info2View);
             ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
 
+            //결과보기
+            ConsoleUI.Instance.DrawTextInBox($"DEF: {enemy.status.TotalDef}", ref ConsoleUI.info2View);
+
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
-                        
-            
+
 
         }
 
         public override bool Action(int input)
         {
             ConsoleUI.logView.ClearBuffer();
-
-            switch (input)
+            if (player.status.Hp > 0)
             {
-                case 1: // 공격
-                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name} attacks {enemy.status.Name}!", ref ConsoleUI.logView);
-                    player.Attack(enemy);
+                switch (input)
+                {
+                    case 1: // 공격
+                        Battle.OnNormalAttack(player, enemy);
+                        break;
 
-                    if (enemy.status.Hp <= 0)
-                    {
-                        ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name} has been defeated!", ref ConsoleUI.logView);
-                        Game.Instance.PopScene(); // 전투 종료
-                        return false;
-                    }
+                        case 2: //스킬사용
+                        Battle.OnSkillAttack(player, enemy);
+                        break;
 
-                    // 몬스터 공격
-                    ConsoleUI.Instance.DrawTextInBox($"{enemy.status.Name} attacks back!", ref ConsoleUI.logView);
-                    enemy.Attack(player);
-
-                    if (player.status.Hp <= 0)
-                    {
-                        ConsoleUI.Instance.DrawTextInBox($"{player.status.Name} has fallen...", ref ConsoleUI.logView);
-                        Game.Instance.SceneChange(Game.SceneState.Result);
-                        return false;
-                    }
-                    break;
-
-                default:
-                    ((Scene)this).InvalidInput();
-                    break;
+                    default: // 잘못입력
+                        Battle.Miss(player, enemy);
+                        ((Scene)this).InvalidInput();
+                        break;
+                }
             }
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;
