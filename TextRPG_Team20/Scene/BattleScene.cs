@@ -10,6 +10,7 @@ namespace TextRPG_Team20.Scene
     {
         private Player player;
         private Enemy enemy;
+        private List<Enemy> enemys = new List<Enemy>();
 
         public BattleScene(Player player, Enemy enemy)
         {
@@ -22,14 +23,12 @@ namespace TextRPG_Team20.Scene
         {
             // 모든 영역 초기화
             ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.logView.ClearBuffer();
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
-            player.Action(); //선택
             Battle.OnBattle(player, enemy);
 
             //  플레이어 정보
