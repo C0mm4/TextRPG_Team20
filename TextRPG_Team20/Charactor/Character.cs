@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20;
+using TextRPG_Team20.Dungeon;
 
 namespace TextRPG_Team20
 {
-    internal class Character
+    internal abstract class Character : IComponent
     {
         public string Job { get; set; }
         public int Gold { get; private set; }
@@ -42,11 +43,16 @@ namespace TextRPG_Team20
         public void SetPos(int x, int y)
         {
             this.x = x; this.y = y;
+
+            DungeonManager.Instance.currentField[x, y] = -1;
+
         }
 
-        public void Move(int x, int y)
+        public virtual void Move(int x, int y)
         {
-            this.x += x; this.y += y;    
+            DungeonManager.Instance.currentField[y, x] = 0;
+            this.x += x; this.y += y;
+            DungeonManager.Instance.currentField[y, x] = -1;
         }
 
         public virtual void Attack(Character target)
@@ -79,5 +85,9 @@ namespace TextRPG_Team20
             Console.WriteLine($"체력 : {status.Hp}");
             Console.WriteLine($"Gold : {Gold} G");
         }
+
+        public abstract void PrintData();
+
+        public abstract void PrintInField();
     }
 }

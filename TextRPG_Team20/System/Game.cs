@@ -27,7 +27,7 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-        
+
 
         public enum SceneState
         {

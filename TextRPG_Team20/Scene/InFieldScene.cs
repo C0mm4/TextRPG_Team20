@@ -47,7 +47,29 @@ namespace TextRPG_Team20.Scene
 
         public override bool Action(int input)
         {
+            int deltaX = 0;
+            int deltaY = 0;
+            switch (input)
+            {
+                case 0:
+                    deltaX = -1;
+                    break;
+                case 1:
+                    deltaX = 1;
+                    break;
+                case 2:
+                    deltaY = -1;
+                    break;
+                case 3:
+                    deltaY = 1;
+                    break;
+                default:
+                    InvalidInput();
+                    return true;
 
+            }
+
+            Game.playerInstance.playercollision(deltaX, deltaY);
             return false;
         }
     }

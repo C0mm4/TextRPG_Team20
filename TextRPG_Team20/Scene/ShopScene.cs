@@ -18,6 +18,7 @@ namespace TextRPG_Team20.Scene
                 switch (input)
                 {
                     case 0:
+                        Game.Instance.PopScene();
                         return false;
 
                     case 1:     //구매로 변경
