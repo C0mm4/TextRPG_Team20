@@ -20,7 +20,6 @@ namespace TextRPG_Team20
 
         public override void Action()
         {
-
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.info2View);
             ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.info2View);

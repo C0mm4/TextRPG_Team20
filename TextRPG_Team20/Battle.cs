@@ -21,8 +21,12 @@ namespace TextRPG_Team20.Scene
         {
             {
                 player.Attack(enemy);
-                CheckWin(player, enemy);
-                
+                if (!CheckWin(player, enemy))
+                {
+                    enemy.Attack(player);
+                    CheckWin(player, enemy);
+                }
+               
             }
         }
 
@@ -30,8 +34,12 @@ namespace TextRPG_Team20.Scene
         public static void OnSkillAttack(Player player, Enemy enemy)
         {
             player.UseSkill(enemy);
-            CheckWin(player, enemy);
-        
+            if (!CheckWin(player, enemy))
+            {
+                enemy.Attack(player);
+                CheckWin(player, enemy);
+            }
+
         }
 
         public static void Miss(Player player, Enemy enemy)
@@ -42,13 +50,13 @@ namespace TextRPG_Team20.Scene
             CheckWin(player, enemy);
         }
 
-        public static void CheckWin(Player player, Enemy enemy)
+        public static bool CheckWin(Player player, Enemy enemy)
         {
             if (player.status.Hp <= 0)
             { //  플레이어 사망 체크
-                ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 Game.Instance.SceneChange(Game.SceneState.Result);
-                return;
+                return true;
             }
 
             if (enemy.status.Hp <= 0)
@@ -57,17 +65,9 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
                 player.AddGold(enemy.Gold);
                 Game.Instance.SceneChange(Game.SceneState.Win);
-                return;
+                return true;
             }
-            else
-            {
-                enemy.Attack(player);
-            }
-            
-                
-                
-            
-
+            return false;
         }
 
     }

@@ -72,7 +72,7 @@ namespace TextRPG_Team20.Scene
             }
             else
             {
-
+                Game.Instance.SceneChange(Game.SceneState.Result);
             }
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;
