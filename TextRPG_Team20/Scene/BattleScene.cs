@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Charactor.Enemys;
 
 namespace TextRPG_Team20.Scene
 {
@@ -17,10 +18,28 @@ namespace TextRPG_Team20.Scene
             this.enemys = enemys;
         }
 
+        internal static List<Enemy> CreateEnemys()
+        {
+            return new List<Enemy>
+    {
+        new BlueSnail(),
+        new StoneGolem(),
+        new BlueSnail()
+
+    };
+        }
+
+
         public override void PrintScene()
 
         {
-            
+            if (this.enemys == null || this.enemys.Count == 0)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}적을 마주쳤습니다!!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                this.enemys = CreateEnemys();
+            }
+
+
             // 모든 영역 초기화
             ConsoleUI.mainView.ClearBuffer();
             ConsoleUI.info1View.ClearBuffer();
@@ -31,13 +50,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
             Battle.OnBattle(player, enemys);
 
-            //  플레이어 정보
-            ConsoleUI.Instance.DrawTextInBox($"[{player.status.Name}] - {player.Job}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"HP: {player.status.Hp}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"ATK: {player.status.TotalAtk}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"DEF: {player.status.TotalDef}", ref ConsoleUI.info1View);
-
-
+            // 플레이어 정보
+            player.CharacterInfo();
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
@@ -71,7 +85,7 @@ namespace TextRPG_Team20.Scene
             }
             else
             {
-                Game.Instance.SceneChange(Game.SceneState.Result);
+                Game.Instance.SceneChange(Game.SceneState.Defeat);
             }
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;

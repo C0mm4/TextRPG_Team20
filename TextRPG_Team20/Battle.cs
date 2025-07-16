@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20.Scene
@@ -28,7 +29,7 @@ namespace TextRPG_Team20.Scene
             // 2. 죽었으면 제거
             if (target.status.Hp <= 0)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{target.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 player.AddGold(target.Gold);
                 enemies.Remove(target);
             }
@@ -46,8 +47,8 @@ namespace TextRPG_Team20.Scene
                 enemy.Attack(player);
                 if (player.status.Hp <= 0)
                 {
-                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Result);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Defeat);
                     return;
                 }
             }
@@ -63,7 +64,7 @@ namespace TextRPG_Team20.Scene
 
             if (target.status.Hp <= 0)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{target.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 player.AddGold(target.Gold);
                 enemies.Remove(target);
             }
@@ -79,8 +80,8 @@ namespace TextRPG_Team20.Scene
                 enemy.Attack(player);
                 if (player.status.Hp <= 0)
                 {
-                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Result);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Defeat);
                     return;
                 }
             }
@@ -96,8 +97,8 @@ namespace TextRPG_Team20.Scene
                 enemy.Attack(player);
                 if (player.status.Hp <= 0)
                 {
-                    ConsoleUI.Instance.DrawTextInBox($"{player.status.Name}이(가) 쓰러졌다!", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Result);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Defeat);
                     return;
                 }
             }

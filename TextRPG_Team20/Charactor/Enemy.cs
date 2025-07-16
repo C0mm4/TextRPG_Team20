@@ -43,7 +43,7 @@ namespace TextRPG_Team20
             int actualDamage = Math.Max(1, damage - target.status.TotalDef);
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{status.Name}{AnsiColor.Reset}이(가) {AnsiColor.Red}{target.status.Name}{AnsiColor.Reset}에게 일반 공격!", ref ConsoleUI.logView);
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{actualDamage}{AnsiColor.Reset}의 피해를 받았습니다.", ref ConsoleUI.logView);
-            target.DecreaseHp(damage);
+            target.DecreaseHp(actualDamage);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
         }
