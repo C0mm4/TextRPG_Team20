@@ -28,15 +28,10 @@ namespace TextRPG_Team20.System
             var enemyData = JsonLoader.LoadJson("EnemyData.json");
             try
             {
-                ItemWrapper? wrapper = JsonSerializer.Deserialize<ItemWrapper>(enemyData);
-                ItemData[]? datas;
+                StatusWrap? wrapper = JsonSerializer.Deserialize<StatusWrap>(enemyData);
                 if (wrapper != null)
                 {
-                    datas = wrapper.Items.ToArray();
-
-                    if (datas != null)
-                    {
-                        foreach (var data in datas)
+                        foreach (var data in wrapper.statuses)
                         {
                             string? className = data.ClassName;
                             Type? itemType = AppDomain.CurrentDomain
@@ -59,7 +54,6 @@ namespace TextRPG_Team20.System
                                 ConsoleUI.Instance.DrawTextInBox($"클래스 {data.ClassName} 을 찾을 수 없습니다.", ref ConsoleUI.logView);
                             }
                         }
-                    }
                 }
 
             }
