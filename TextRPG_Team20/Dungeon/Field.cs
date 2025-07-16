@@ -22,6 +22,8 @@ namespace TextRPG_Team20.Dungeon
         public int DungeonID {  get; set; }
         public string DungeonName {  get; set; }
         public List<Field> Fields { get; set; }
+        public int StartX {  get; set; }
+        public int StartY { get; set; }
 
         // 기본 생성자 (JSON 역직렬화용)
         public Dungeon() { }
@@ -91,9 +93,25 @@ namespace TextRPG_Team20.Dungeon
                     string tile = "  ";
                     switch (col)
                     {
+                        case -1:
+                            ansi = AnsiColor.Green;
+                            tile = "@";
+                            break;
                         case 1:
-                            ansi = AnsiColor.Magenta;
+                            ansi = AnsiColor.White;
                             tile = "#";
+                            break;
+                        case 2:
+                            ansi = AnsiColor.Yellow;
+                            tile = "C";
+                            break;
+                        case 3:
+                            ansi = AnsiColor.Cyan;
+                            tile = "D";
+                            break;
+                        case 4:
+                            ansi = AnsiColor.Magenta;
+                            tile = "B";
                             break;
                         case 0:
                             tile = " ";

@@ -47,5 +47,13 @@ namespace TextRPG_Team20
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
         }
+
+        public override void PrintData()
+        {
+        }
+
+        public override void PrintInField()
+        {
+        }
     }
 }

@@ -115,6 +115,7 @@ namespace TextRPG_Team20.Dungeon
         {
             currentDungeon = GetDungeon(DungeonID);
             currentField = currentDungeon.GetStartField();
+            Game.playerInstance.SetPos(currentDungeon.StartX, currentDungeon.StartY);
         }
     }
 }
