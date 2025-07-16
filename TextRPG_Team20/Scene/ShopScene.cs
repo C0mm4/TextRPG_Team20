@@ -84,9 +84,9 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
 
                 // info2View 출력         
-                ConsoleUI.Instance.DrawTextInBox("[0] 상점 나가기", ref ConsoleUI.info2View);
                 ConsoleUI.Instance.DrawTextInBox("[1] 아이템 구매", ref ConsoleUI.info2View);
                 ConsoleUI.Instance.DrawTextInBox("[2] 아이템 판매", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox("[0] 상점 나가기", ref ConsoleUI.info2View);
             }
             else if (BuyShop == true)
             {
@@ -142,7 +142,7 @@ namespace TextRPG_Team20.Scene
 
             ConsoleUI.Instance.PrintView(ref left);
             ConsoleUI.Instance.PrintView(ref right, "center", "middle");
-
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
         }
     }
