@@ -52,6 +52,7 @@ namespace TextRPG_Team20
             var a = ItemManager.Instance;
             var d = Dungeon.DungeonManager.Instance;
             var m = MobSpawnner.Instance;
+            var s = ShopManager.Instance;
             _sceneStack = new Stack<Scene.Scene>();
 
             SceneChange(SceneState.Title);
@@ -90,7 +91,7 @@ namespace TextRPG_Team20
                     newScene = new ResultScene();
                     break;
                 case SceneState.Shop:
-                    newScene = new ShopScene();
+                    newScene = new ShopScene(ShopManager.Instance);
                     break;
                 case SceneState.Inventory:
                     newScene = new InventoryScene(playerInstance.Inventory);   
@@ -184,8 +185,9 @@ namespace TextRPG_Team20
                 }
                
             }
+            // 캐릭터 초기 스텟
             Status status = new Status(0, 1, 100, 5, 10, name, 0, 0);
-            playerInstance = new Player(name ?? "", selectedJob, 0, status);
+            playerInstance = new Player(name ?? "", selectedJob, 50000, status);
 
             
 
