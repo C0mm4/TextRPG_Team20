@@ -14,6 +14,7 @@ namespace TextRPG_Team20
 
         public Inventory(Character owner)
         {
+            MaxCapacity = 50;
             _ownerCharacter = owner;
         }
 
@@ -330,6 +331,30 @@ namespace TextRPG_Team20
         public void RemoveItem(Item.Item item)
         {
             Items.Remove(item);
+        }
+        public bool EquipItem(Item.Item item)
+        {
+            if (item is EquipableItem equipItem)
+            {
+                if (equipItem.EquipableJobs.Contains(_ownerCharacter.Job))
+                {
+                    ConsoleUI.Instance.DrawTextInBox($"{equipItem.Name}을(를) 장착했습니다!", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                    return true;
+                }
+                else
+                {
+                    ConsoleUI.Instance.DrawTextInBox($"{_ownerCharacter.Job}은(는) {equipItem.Name}을(를) 장착할 수 없습니다.", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                    return false;
+                }
+            }
+            else
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{item.Name}은(는) 장착 가능한 아이템이 아닙니다.", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                return false;
+            }
         }
     }
 }

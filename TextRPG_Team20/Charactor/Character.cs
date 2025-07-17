@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20;
 using TextRPG_Team20.Dungeon;
+using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20
 {
     internal abstract class Character : IComponent
     {
-        public string? Job { get; set; }
+        public JobType Job { get; protected set; }
         public Status status { get; set; }
         public Inventory Inventory { get; private set; }
 
@@ -28,10 +29,14 @@ namespace TextRPG_Team20
             Console.WriteLine();
         }
 
-        public Character() { }
+        public Character()
+        {
+            Job = JobType.None;
+        }
+        
 
 
-        public Character(string? name, string job, int gold, Status status)
+        public Character(string? name, JobType jobType, int gold, Status status)
         {
             if (name == null)
             {
@@ -41,11 +46,11 @@ namespace TextRPG_Team20
             {
                 status.Name = name;
             }
-            Job = job;
+            Job = jobType;
             status.Gold = gold;
             this.status = status;
 
-            Inventory = new Inventory();
+            Inventory = new Inventory(this);
         }
 
         public void SetPos(int x, int y)
