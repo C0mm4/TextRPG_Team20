@@ -100,13 +100,13 @@ namespace TextRPG_Team20
 
         private ConsoleUI() 
         {
-            mainView = new Rect(2, 1, 110, 29);
-            logView = new Rect(116, 1, 42, 45);
+            mainView = new Rect(2, 1, 110, 32);
+            logView = new Rect(116, 1, 42, 48);
 
-            info1View = new Rect(2, 32, 52, 7);
-            info2View = new Rect(60, 32, 52, 7);
+            info1View = new Rect(2, 35, 52, 7);
+            info2View = new Rect(60, 35, 52, 7);
 
-            inputView = new Rect(2, 41, 110, 5);
+            inputView = new Rect(2, 44, 110, 5);
         }
 
         public void InsertTextInBox(List<string> strings, ref Rect rect)
@@ -199,6 +199,11 @@ namespace TextRPG_Team20
             int currentWidth = GetDisplayWidth(text);
             int padding = Math.Max(0, targetWidth - currentWidth);
             return text + new string(' ', padding);
+        }
+
+        public static string PadLeftDisplay(string text, int targetWidth)
+        {
+            return "";
         }
 
         public void PrintView(ref Rect rect, string hAlign = "left", string vAlign = "top")
