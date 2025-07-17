@@ -8,6 +8,10 @@ namespace TextRPG_Team20.Item
 {
     internal class ConsumeItem : Item, ICommand
     {
+        public ConsumeItem()
+        {
+            
+        }    
         public ConsumeItem(ItemData itemData) : base(itemData)
         {
 

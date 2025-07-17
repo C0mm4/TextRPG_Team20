@@ -40,6 +40,11 @@ namespace TextRPG_Team20.Item
     {
         public ItemData data = new();
 
+        public Item()
+        {
+
+        }
+
         public int CurrentStack { get; set; } = 1;
 
         public Item(ItemData itemData)

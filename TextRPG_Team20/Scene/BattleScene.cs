@@ -22,9 +22,7 @@ namespace TextRPG_Team20.Scene
         {
             return new List<Enemy>
     {
-        new BlueSnail(),
-        new StoneGolem(),
-        new BlueSnail()
+
 
     };
         }

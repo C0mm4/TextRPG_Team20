@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Item;
+using TextRPG_Team20.System;
 
 namespace TextRPG_Team20.Scene
 {
@@ -19,39 +20,26 @@ namespace TextRPG_Team20.Scene
         {
             _inventory = inventory;
 
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트검",
-                    Atk = 10,
-                    Type = 0,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트방패2",
-                    Atk = 10,
-                    Def = 10,
-                    Type = 1,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트칼2",
-                    Atk = 15,
-                    Type = 0,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
+            _inventory.AddItem(ItemManager.Instance.Create(1));
 
-        }
+            _inventory.AddItem(ItemManager.Instance.Create(2));
+
+            _inventory.AddItem(ItemManager.Instance.Create(3));
+
+            _inventory.AddItem(ItemManager.Instance.Create(4));
+
+            _inventory.AddItem(ItemManager.Instance.Create(1));
+
+            _inventory.AddItem(ItemManager.Instance.Create(2));
+
+            _inventory.AddItem(ItemManager.Instance.Create(3));
+
+            _inventory.AddItem(ItemManager.Instance.Create(4));
+
+
+
+        }   
+            
 
 
         public override void PrintScene()

@@ -8,7 +8,14 @@ namespace TextRPG_Team20.Item
 {
     internal class EquipItem : Item
     {
+        public EquipItem(ItemData itemData) : base(itemData)
+        {
 
+        }
+        public EquipItem() 
+        {
+
+        }
         public void equip()
         {
             //플레이어 정보와 아이템 데이터를 받아와서 때(공격,방어,최대체력)
