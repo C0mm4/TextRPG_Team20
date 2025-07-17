@@ -30,7 +30,7 @@ namespace TextRPG_Team20
 
         private void SetSellItems()
         {
-            sellItems = ItemManager.Instance.FindItems(item => item.data.Type == "소모품");
+            sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == Item.ItemType.Consumable);
         }
 
         public void BuyItem()

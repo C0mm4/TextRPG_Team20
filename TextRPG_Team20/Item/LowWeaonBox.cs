@@ -8,7 +8,15 @@ namespace TextRPG_Team20.Item
 {
     internal class LowWeaonBox : ConsumeItem
     {
+        public LowWeaonBox(ItemData itemData) : base(itemData)
+        {
 
+        }
+
+        public LowWeaonBox()
+        {
+
+        }
         public override void useitem()
         {
             base.useitem();

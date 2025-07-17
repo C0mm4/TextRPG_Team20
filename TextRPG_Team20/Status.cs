@@ -13,16 +13,17 @@ namespace TextRPG_Team20
         public string? Name { get; set; }
         public int Level { get; set; }
         public int HP {  get; set; }
+        public int MaxHP { get; set; }
         public int Atk {  get; set; }
         public int Def {  get; set; }
         public int ExtraAtk {  get; set; }
         public int ExtraDef {  get; set; }
         public string? ClassName {  get; set; }
-        public int AddGold {  get; set; }
         
         public Status(int id, int level, int hp, int atk, int def, string name, int extraAtk = 0, int extraDef = 0)
         {
             Level = level;
+            MaxHP = hp;
             HP = hp;
             Atk = atk;
             Def = def;
