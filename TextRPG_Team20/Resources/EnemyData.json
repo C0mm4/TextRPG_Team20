@@ -8,8 +8,10 @@
       "Def": 5,
       "HP": 5,
       "ClassName": "Enemy",
-      "Gold" :  1
+      "Gold": 1,
+      "Spawn": 0
     }
+    
   ],
   "AsciiData": [
     {

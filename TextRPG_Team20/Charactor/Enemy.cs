@@ -11,6 +11,8 @@ namespace TextRPG_Team20
     {
         public List<string> asciiData = new List<string>();
 
+        public ConsoleUI.Rect targetRect;
+
         public Enemy() { }
 
         public Enemy(string name, int gold,  Status status) : base(name, "Enemy", gold, status)
@@ -64,6 +66,8 @@ namespace TextRPG_Team20
 
         public void DrawAscii(ref ConsoleUI.Rect rect)
         {
+            targetRect = rect;
+
             ConsoleUI.Instance.DrawTextInBox("", ref rect);
             ConsoleUI.Instance.DrawTextInBox("", ref rect);
 

@@ -27,7 +27,6 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-        internal static List<Enemy> enemys = new List<Enemy>();
         
 
         public enum SceneState
@@ -83,7 +82,7 @@ namespace TextRPG_Team20
                     newScene = new InFieldScene();
                     break;
                 case SceneState.Battle:
-                    newScene = new BattleScene(playerInstance, enemys);
+                    newScene = new BattleScene(playerInstance);
                     break;
                 case SceneState.Result:
                     newScene = new ResultScene();
@@ -97,7 +96,7 @@ namespace TextRPG_Team20
                 case SceneState.EquipControl:
                     break;
                 case SceneState.Status:
-                    newScene = new BattleScene(playerInstance, enemys); //newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 정상화
+                    newScene = new BattleScene(playerInstance); //newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 정상화
                     break;
                 case SceneState.SkillList:
                     break;
@@ -139,7 +138,7 @@ namespace TextRPG_Team20
 
         public void CreatePlayerInstance(string? name)
         {
-            Status status = new Status(0, 1, 100, 5, 10, name, 0);
+            Status status = new Status(0, 1, 100, 10, 10, name, 0);
             playerInstance = new Player(name ?? "", "Job", 0, status);
         }
 

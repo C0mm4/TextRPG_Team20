@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -344,6 +345,32 @@ namespace TextRPG_Team20
                 }
             }
 
+        }
+
+        public enum RemoveLinePos
+        {
+            back, front
+        }
+
+        public static void RemoveLines(ref Rect rect, int lines = 1, RemoveLinePos pos = RemoveLinePos.back)
+        {
+            if(rect.lines.Count >= lines)
+            {
+                if(pos == RemoveLinePos.back)
+                {
+                    for(int i = 0;i < lines; i++)
+                    {
+                        rect.lines.RemoveAt(rect.lines.Count - 1);
+                    }
+                }
+                else if(pos == RemoveLinePos.front)
+                {
+                    for(int i = 0; i < lines; i++)
+                    {
+                        rect.lines.RemoveAt(0);
+                    }
+                }
+            }
         }
     }
 }

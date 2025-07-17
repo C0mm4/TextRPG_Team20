@@ -6,12 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
+using TextRPG_Team20.Skill;
+using static TextRPG_Team20.ConsoleUI;
 
 namespace TextRPG_Team20.Scene
 {
     internal class Battle
     {
+        public static List<Enemy> enemies = new List<Enemy>();
 
+        public static int selectIndex;
+        public static int range = 2;
         public static void OnBattle(Player player, List<Enemy> enemies)
         {
             player.Action();
@@ -21,16 +26,18 @@ namespace TextRPG_Team20.Scene
         public static void OnNormalAttack(Player player, List<Enemy> enemies)
         {
             if (enemies.Count == 0) return;
-
+            range = 1;
             // 1. 플레이어가 때릴 적 선택
-            Enemy? target = SelectEnemy(enemies);
-            if (target == null)
+            var targets = SelectEnemy(enemies);
+            if (targets == null)
             {
                 ConsoleUI.Instance.DrawTextInBox("공격을 취소했습니다.", ref ConsoleUI.logView);
                 return; // 공격 사용을 취소하고 아무 일도 안 함
             }
             else
-                player.Attack(target);
+                player.Attack(targets[0]);
+
+            var target = targets[0];
 
             // 2. 죽었으면 제거
             if (target.status.HP <= 0)
@@ -65,21 +72,24 @@ namespace TextRPG_Team20.Scene
         {
             if (enemies.Count == 0) return;
 
-            Enemy? target = SelectEnemy(enemies);
+            Skill.Skill? skill = player.SelectSkill();
+            if (skill == null)
+            {
+                ConsoleUI.Instance.DrawTextInBox("스킬사용을 취소했습니다.", ref ConsoleUI.logView);
+                return;
+            }
+
+            range = skill.Data.Range;
+
+            var target = SelectEnemy(enemies);
             if (target == null)
             {
                 ConsoleUI.Instance.DrawTextInBox("스킬사용을 취소했습니다.", ref ConsoleUI.logView);
                 return; // 스킬 사용을 취소하고 아무 일도 안 함
             }
             else
-                player.UseSkill(target);
+                player.UseSkill(target, skill);
 
-            if (target.status.HP <= 0)
-            {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                player.AddGold(target.status.Gold);
-                enemies.Remove(target);
-            }
 
             if (enemies.Count == 0)
             {
@@ -99,29 +109,62 @@ namespace TextRPG_Team20.Scene
             }
         }
 
-        public static Enemy? SelectEnemy(List<Enemy> enemies)
+        public static List<Enemy>? SelectEnemy(List<Enemy> enemies)
         {
             ConsoleUI.inputView.ClearBuffer();
-            ConsoleUI.Instance.DrawTextInBox("=== 적 선택 ===", ref ConsoleUI.inputView);          //delete~
-            for (int i = 0; i < enemies.Count; i++)
+            selectIndex = enemies.Count / 2;
+            bool isEndFlag = false;
+            while (true)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {enemies[i].status.Name} (HP:{enemies[i].status.HP})", ref ConsoleUI.inputView);
-            }                                                                                     
-            ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("0. 취소", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
-            string? input = ConsoleUI.Read(ref ConsoleUI.inputView);
-            if (int.TryParse(input, out int choice) && choice >= 1 && choice <= enemies.Count)
-            {
-                return enemies[choice - 1];
+                for(int i = Math.Max(0, selectIndex - range + 1); i < Math.Min(enemies.Count, selectIndex + range); i++)
+                {
+                    ConsoleUI.Instance.InsertTextInBox(new List<string> { "", "", "^" }, ref enemies[i].targetRect);
+                    ConsoleUI.Instance.PrintView(ref enemies[i].targetRect, "center", "middle");
+
+                }
+
+                var keyValue = Console.ReadKey();
+
+                for (int i = Math.Max(0, selectIndex - range + 1); i < Math.Min(enemies.Count, selectIndex + range); i++)
+                {
+                    ConsoleUI.RemoveLines(ref enemies[i].targetRect, 3);
+                    ConsoleUI.Instance.PrintView(ref enemies[i].targetRect, "center", "middle");
+
+                }
+
+                switch (keyValue.Key)
+                {
+                    case ConsoleKey.Enter:
+                        isEndFlag = true;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        selectIndex = Math.Max(0, selectIndex - 1);
+                        break;
+                    case ConsoleKey.RightArrow:
+                        selectIndex = Math.Min(enemies.Count - 1, selectIndex + 1);
+                        break;
+                    case ConsoleKey.Escape:
+                        return null;
+                        
+                }
+
+
+                if (isEndFlag)
+                {
+                    break;
+                }
+
             }
-            else 
+
+            List<Enemy> ret = new();
+
+            for (int i = Math.Max(0, selectIndex - range + 1); i < Math.Min(enemies.Count, selectIndex + range); i++)
             {
-                return null;                                                                  //delete~
+                ret.Add(enemies[i]);
             }
-              
+
+            return ret;
         }
 
 

@@ -11,7 +11,7 @@ namespace TextRPG_Team20.System
     {
 
         private readonly Dictionary<int, Enemy> _prototypes = new();
-        public static MobSpawnner? _instance;
+        private static MobSpawnner? _instance;
         public static MobSpawnner Instance
         {
             get

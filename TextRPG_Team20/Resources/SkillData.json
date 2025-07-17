@@ -1,0 +1,22 @@
+{
+  "Skills": [
+    {
+      "ID": 1,
+      "Name": "파워스트라이크",
+      "Description": "강하게 내려친다",
+      "Range": 2,
+      "Cost": 10,
+      "AtkPercent": 1.1
+
+    },
+    {
+      "ID": 2,
+      "Name": "매직볼트",
+      "Description": "마법의 구체를 날린다",
+      "Range": 1,
+      "Cost": 10,
+      "AtkPercent": 1.1
+
+    }
+  ]
+}
