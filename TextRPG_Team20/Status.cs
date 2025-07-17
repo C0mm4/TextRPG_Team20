@@ -21,8 +21,10 @@ namespace TextRPG_Team20
         public string? ClassName {  get; set; }
 
         public int Gold {  get; set; }
-        
-        public Status(int id, int level, int hp, int atk, int def, string name, int gold, int extraAtk = 0, int extraDef = 0)
+
+        public int Spawn {  get; set; }
+
+        public Status(int id, int level, int hp, int atk, int def, string name, int gold, int spawn, int extraAtk = 0, int extraDef = 0)
         {
             Level = level;
             MaxHP = hp;
@@ -34,6 +36,7 @@ namespace TextRPG_Team20
             ID = id;
             Name = name;
             Gold = gold;
+            Spawn = spawn;
         }
 
         public int TotalAtk => Atk + ExtraAtk;
