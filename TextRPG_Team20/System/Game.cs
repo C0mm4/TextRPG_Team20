@@ -50,6 +50,7 @@ namespace TextRPG_Team20
             Console.Clear();
             var a = ItemManager.Instance;
             var d = new Dungeon.DungeonManager();
+            var s = ShopManager.Instance;
             _sceneStack = new Stack<Scene.Scene>();
 
             SceneChange(SceneState.Title);
@@ -88,7 +89,7 @@ namespace TextRPG_Team20
                     newScene = new ResultScene();
                     break;
                 case SceneState.Shop:
-                    newScene = new ShopScene();
+                    newScene = new ShopScene(ShopManager.Instance);
                     break;
                 case SceneState.Inventory:
                     newScene = new InventoryScene(playerInstance.Inventory);   

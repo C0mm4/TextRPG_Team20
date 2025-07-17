@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.Item;
 using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
@@ -20,8 +21,7 @@ namespace TextRPG_Team20
             } 
         }
 
-        public List<Item.Item> sellItems = [];
-        public int[] itemCnt = [];
+        public List<Item.Item> sellItems = new();
 
         private ShopManager()
         {
@@ -30,17 +30,19 @@ namespace TextRPG_Team20
 
         private void SetSellItems()
         {
-            sellItems = ItemManager.Instance.FindItems(item => item.data.Type == 3);
+            List<int> sellItemIds = new List<int> { 998, 999 };
+
+            sellItems = ItemManager.Instance.FindItems(item => sellItemIds.Contains(item.data.ID));
         }
 
         public void BuyItem()
         {
-
+            // TODO: 아이템 구매 로직 구현
         }
 
         public void SellItem()
         {
-
+            // TODO: 아이템 판매 로직 구현
         }
     }
 }

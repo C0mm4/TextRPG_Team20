@@ -8,6 +8,13 @@ namespace TextRPG_Team20.Scene
 {
     internal class ShopScene : Scene
     {
+        private ShopManager shopManager;    // 생성자에 ShopManager형태에 필드 선언
+        public ShopScene(ShopManager shopManager)       // 생성자에 ShopManager를 매개변수로 받아서, shopManager 필드에 저장
+        {
+            this.shopManager = shopManager;
+        }
+
+        
         private bool BuyShop = false;   //상점 구매전환 변수
         private bool SellShop = false;   //상점 판매전환 변수
 
@@ -76,12 +83,18 @@ namespace TextRPG_Team20.Scene
 
             if (BuyShop == false && SellShop == false)      //품목
             {
-                ConsoleUI.Instance.DrawTextInBox($"- [?]일반 무기 상자 \t\t| {AnsiColor.Yellow}50 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}500 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}5000 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]일반 방어구 상자 \t| {AnsiColor.Yellow}20 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}200 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
+                for (int i = 0; i < shopManager.sellItems.Count; i++)
+                {
+                    Item.Item item = shopManager.sellItems[i];
+                    ConsoleUI.Instance.DrawTextInBox($"- {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                }
+
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]일반 무기 상자 \t\t| {AnsiColor.Yellow}50 G{AnsiColor.Reset}", ref left);
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}500 G{AnsiColor.Reset}", ref left);
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}5000 G{AnsiColor.Reset}", ref left);
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]일반 방어구 상자 \t| {AnsiColor.Yellow}20 G{AnsiColor.Reset}", ref left);
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}200 G{AnsiColor.Reset}", ref left);
+                //ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
 
                 // info2View 출력         
                 ConsoleUI.Instance.DrawTextInBox("[1] 아이템 구매", ref ConsoleUI.info2View);
@@ -90,12 +103,12 @@ namespace TextRPG_Team20.Scene
             }
             else if (BuyShop == true)
             {
-                ConsoleUI.Instance.DrawTextInBox($"[1] [?]일반 무기 상자 \t| {AnsiColor.Yellow}50 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[2] [?]{AnsiColor.Blue}레어 무기 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}500 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[3] [?]{AnsiColor.Red}에픽 무기 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}5000 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[4] [?]일반 방어구 상자 \t| {AnsiColor.Yellow}20 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[5] [?]{AnsiColor.Blue}레어 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}200 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[6] [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
+                for (int i = 0; i < shopManager.sellItems.Count; i++)
+                {
+                    Item.Item item = shopManager.sellItems[i];
+                    ConsoleUI.Instance.DrawTextInBox($"[{i + 1}] {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                }
+                 
 
                 // info2View 출력
                 ConsoleUI.Instance.DrawTextInBox("[0] 구매 종료", ref ConsoleUI.info2View);                
