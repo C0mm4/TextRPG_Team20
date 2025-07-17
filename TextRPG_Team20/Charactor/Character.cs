@@ -11,27 +11,25 @@ namespace TextRPG_Team20
 {
     internal abstract class Character : IComponent
     {
-        public JobType Job { get; protected set; }
-        public Status status { get; set; }
-        public Inventory Inventory { get; private set; }
+		public JobType Job { get; protected set; }
+		public Status status { get; set; }
+		public Inventory Inventory { get; private set; }
 
-        
+		public int x, y;
 
-        public int x, y;
+		protected int currentPosData;
 
-        protected int currentPosData;
-
-        public virtual void AddGold(int gold)
-        {
-            status.Gold += gold;
-        }
+		public virtual void AddGold(int gold)
+		{
+			status.Gold += gold;
+		}
 		public void DecreaseGold(int gold)
 		{
-			Gold -= gold;
-            if (Gold <0)
-            {
-                Gold = 0;   // 혹시 모를 음수 방지
-            }
+			status.Gold -= gold;
+			if (status.Gold < 0)
+			{
+				status.Gold = 0;   // 혹시 모를 음수 방지
+			}
 		}
 
 		public virtual void Action()
@@ -43,8 +41,6 @@ namespace TextRPG_Team20
         {
             Job = JobType.None;
         }
-        
-
 
         public Character(string? name, JobType jobType, int gold, Status status)
         {

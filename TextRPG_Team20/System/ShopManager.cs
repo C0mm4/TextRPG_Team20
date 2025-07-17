@@ -47,7 +47,7 @@ namespace TextRPG_Team20
             var itemToBuy = sellItems[itemIndex];
             var player = Game.playerInstance;
 
-            if (player.Gold < itemToBuy.data.Gold)
+            if (player.status.Gold < itemToBuy.data.Gold)
             {
                 return (false, $"{AnsiColor.Red}골드가 부족합니다.{AnsiColor.Reset}");
             }

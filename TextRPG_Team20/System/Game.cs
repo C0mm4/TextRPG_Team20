@@ -186,7 +186,7 @@ namespace TextRPG_Team20
                
             }
             // 캐릭터 초기 스텟
-            Status status = new Status(0, 1, 100, 5, 10, name, 0, 0);
+            Status status = new Status(0, 1, 100, 5, 10, name, 50000, 0);
             playerInstance = new Player(name ?? "", selectedJob, 50000, status);
 
             

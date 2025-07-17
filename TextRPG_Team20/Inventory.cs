@@ -12,7 +12,7 @@ namespace TextRPG_Team20
 
         private Character _ownerCharacter;
 
-        public Inventory(int capacity = 25) 
+        public Inventory(Character owner, int capacity = 25) 
         {
             _ownerCharacter = owner;
             MaxCapacity = capacity;
