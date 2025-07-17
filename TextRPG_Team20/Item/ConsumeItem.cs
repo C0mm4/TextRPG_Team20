@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TextRPG_Team20.Item
+namespace TextRPG_Team20
 {
     internal class ConsumeItem : Item, ICommand
     {
@@ -19,6 +19,10 @@ namespace TextRPG_Team20.Item
         public void Execute()
         {
             useitem();
+            if(--CurrentStack == 0)
+            {
+                Game.playerInstance.Inventory.RemoveItem(this);
+            }
         }
 
         public virtual void useitem()

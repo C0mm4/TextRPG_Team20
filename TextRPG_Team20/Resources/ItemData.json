@@ -6915,6 +6915,20 @@
       "Gold": 100000,
       "GoldUP": 0.43,
       "ClassName": "EquipItem"
+    },
+    {
+      "ID": 500,
+      "ItemType": "소모품",
+      "Grade": "일반",
+      "Class": "공용",
+      "Name": "하급 무기 상자",
+      "Description": "일반 등급부터 에픽 등급까지의 무기를 획득한다",
+      "Atk": 0,
+      "Def": 0,
+      "HP": 0,
+      "Gold": 50,
+      "GoldUP": 0,
+      "ClassName": "LowWeaonBox"
     }
   ]
 }

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.System;
 
-namespace TextRPG_Team20.Item
+namespace TextRPG_Team20
 {
     internal class LowWeaonBox : ConsumeItem
     {
@@ -19,8 +20,33 @@ namespace TextRPG_Team20.Item
         }
         public override void useitem()
         {
-            base.useitem();
+            // Get Weapon Items
+            List<Item> items = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Weapon);
 
+            string quality = "";
+
+            Random random = new Random();
+            int percentage = random.Next(0, 100);
+
+            // 2% Epic
+            if (percentage < 2)
+            {
+                quality = "에픽";
+            }
+            // 38% Rare
+            else if (percentage < 38) 
+            {
+                quality = "레어";
+            }
+            else
+            {
+                quality = "일반";
+            }
+            // Get Target Quality Items
+            var targetItems = items.FindAll(item => item.data.Grade == quality);
+            Item item = targetItems[random.Next(targetItems.Count)];
+
+            Game.playerInstance.Inventory.AddItem(item);
         }
     }
 }

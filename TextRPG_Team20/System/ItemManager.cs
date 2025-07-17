@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20.System
 {
@@ -39,12 +38,12 @@ namespace TextRPG_Team20.System
                         Type? itemType = AppDomain.CurrentDomain
                                             .GetAssemblies()
                                             .SelectMany(a => a.GetTypes())
-                                            .FirstOrDefault(t => t.Name == className && typeof(Item.Item).IsAssignableFrom(t));
+                                            .FirstOrDefault(t => t.Name == className && typeof(Item).IsAssignableFrom(t));
                         if (itemType != null)
                         {
                             // Create itemType class instance by Activator
                             // if created Instance is inherit Item, Register prototype
-                            if (Activator.CreateInstance(itemType) is Item.Item item)
+                            if (Activator.CreateInstance(itemType) is Item item)
                             {
                                 item.data = data;
                                 item.SetType();
@@ -68,24 +67,24 @@ namespace TextRPG_Team20.System
             }
         }
 
-        private readonly Dictionary<int, Item.Item> _prototypes = new();
+        private readonly Dictionary<int, Item> _prototypes = new();
 
-        public void Register(Item.Item item)
+        public void Register(Item item)
         {
             _prototypes[item.data.ID] = item;
         }
 
-        public Item.Item? Create(int id) 
+        public Item? Create(int id) 
         { 
-            return _prototypes[id].Clone() as Item.Item;
+            return _prototypes[id].Clone() as Item  ;
         }
 
-        public Item.Item? FindItem(Predicate<Item.Item> predicate)
+        public Item? FindItem(Predicate<Item> predicate)
         {
-            return _prototypes.Values.ToList().Find(predicate)?.Clone() as Item.Item;
+            return _prototypes.Values.ToList().Find(predicate)?.Clone() as Item;
         }
 
-        public List<Item.Item> FindItems(Predicate<Item.Item> predicate)
+        public List<Item> FindItems(Predicate<Item> predicate)
         {
             var items = _prototypes.Values.ToList();
             return items.FindAll(predicate);

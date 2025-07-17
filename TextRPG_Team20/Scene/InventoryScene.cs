@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextRPG_Team20.Item;
 using TextRPG_Team20.System;
 
 namespace TextRPG_Team20.Scene
@@ -19,24 +18,7 @@ namespace TextRPG_Team20.Scene
         public InventoryScene(Inventory inventory)
         {
             _inventory = inventory;
-
-            _inventory.AddItem(ItemManager.Instance.Create(1));
-
-            _inventory.AddItem(ItemManager.Instance.Create(2));
-
-            _inventory.AddItem(ItemManager.Instance.Create(3));
-
-            _inventory.AddItem(ItemManager.Instance.Create(4));
-
-            _inventory.AddItem(ItemManager.Instance.Create(1));
-
-            _inventory.AddItem(ItemManager.Instance.Create(2));
-
-            _inventory.AddItem(ItemManager.Instance.Create(3));
-
-            _inventory.AddItem(ItemManager.Instance.Create(494));
-
-
+            _inventory.AddItem(ItemManager.Instance.Create(500));
 
         }   
             

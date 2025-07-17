@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TextRPG_Team20.Item;
 using TextRPG_Team20.Scene; 
 
 namespace TextRPG_Team20
 {
     internal class Inventory
     {
-        public List<Item.Item> Items { get; private set; }
+        public List<Item> Items { get; private set; }
         public int MaxCapacity { get; private set; } 
 
         public Inventory(int capacity = 50) 
         {
-            Items = new List<Item.Item>();
+            Items = new List<Item>();
             MaxCapacity = capacity;
         }
 
@@ -111,8 +110,10 @@ namespace TextRPG_Team20
 
             if (selectedItem.data.ItemEquipType == ItemType.Consumable)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{selectedItem.data.Name} 은(는) 장착할 수 없는 아이템입니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                if (Items[index] is ConsumeItem)
+                {
+                    (Items[index] as ConsumeItem).Execute();
+                }
                 return;
             }
 
@@ -126,7 +127,7 @@ namespace TextRPG_Team20
                 return;
             }
 
-            Item.Item equippedItemOfSameType = Items.FirstOrDefault(
+            Item equippedItemOfSameType = Items.FirstOrDefault(
                 i => i.data.isEquipped && i.data.ItemEquipType == selectedItem.data.ItemEquipType
             );
 
@@ -149,7 +150,7 @@ namespace TextRPG_Team20
         }
 
 
-        private void ApplyEquipStats(Item.Item item)
+        private void ApplyEquipStats(Item item)
         {
             switch (item.data.ItemEquipType)
             {
@@ -190,7 +191,7 @@ namespace TextRPG_Team20
             }
         }
 
-        private void RemoveEquipStats(Item.Item item)
+        private void RemoveEquipStats(Item item)
         {
             switch (item.data.ItemEquipType)
             {
@@ -276,12 +277,12 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
         }
-        public void AddItem(Item.Item newItem)
+        public void AddItem(Item newItem)
         {
             // 소모품이고 스택 가능한 아이템인지 확인
             if (newItem.data.ItemEquipType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
             {
-                Item.Item existingStack = Items.FirstOrDefault(i =>
+                Item existingStack = Items.FirstOrDefault(i =>
                     i.data.ID == newItem.data.ID && // 같은 종류의 아이템인지 (ID로 비교)
                     i.CurrentStack < i.data.MaxStackSize); // 스택이 가득 차지 않았는지
 
@@ -306,7 +307,7 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
         }
-        private void RemoveStack(Item.Item itemToReduce)
+        private void RemoveStack(Item itemToReduce)
         {
             if (itemToReduce == null) return;
 
@@ -319,7 +320,7 @@ namespace TextRPG_Team20
                 Items.Remove(itemToReduce);
             }
         }
-        public void RemoveItem(Item.Item item)
+        public void RemoveItem(Item item)
         {
             Items.Remove(item);
         }

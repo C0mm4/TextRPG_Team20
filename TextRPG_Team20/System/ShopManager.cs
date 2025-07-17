@@ -20,7 +20,7 @@ namespace TextRPG_Team20
             } 
         }
 
-        public List<Item.Item> sellItems = [];
+        public List<Item> sellItems = [];
         public int[] itemCnt = [];
 
         private ShopManager()
@@ -30,7 +30,8 @@ namespace TextRPG_Team20
 
         private void SetSellItems()
         {
-            sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == Item.ItemType.Consumable);
+            sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Consumable);
+
         }
 
         public void BuyItem()
