@@ -101,7 +101,7 @@ namespace TextRPG_Team20
         private ConsoleUI() 
         {
             mainView = new Rect(2, 1, 110, 32);
-            logView = new Rect(116, 1, 42, 48);
+            logView = new Rect(116, 1, 80, 48);
 
             info1View = new Rect(2, 35, 52, 7);
             info2View = new Rect(60, 35, 52, 7);
