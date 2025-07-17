@@ -19,37 +19,6 @@ namespace TextRPG_Team20.Scene
         {
             _inventory = inventory;
 
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트검",
-                    Atk = 10,
-                    Type = 0,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트방패2",
-                    Atk = 10,
-                    Def = 10,
-                    Type = 1,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
-            _inventory.AddItem(new Item.Item
-            {
-                data = new ItemData
-                {
-                    Name = "테스트칼2",
-                    Atk = 15,
-                    Type = 0,
-                    Description = "실험용으로 추가한 아이템"
-                }
-            });
 
         }
 

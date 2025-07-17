@@ -49,7 +49,8 @@ namespace TextRPG_Team20
 //            Console.SetWindowSize(160, 50);   // 가로 80, 세로 30
             Console.Clear();
             var a = ItemManager.Instance;
-            var d = new Dungeon.DungeonManager();
+            var d = Dungeon.DungeonManager.Instance;
+            var m = MobSpawnner.Instance;
             _sceneStack = new Stack<Scene.Scene>();
 
             SceneChange(SceneState.Title);
@@ -138,7 +139,7 @@ namespace TextRPG_Team20
 
         public void CreatePlayerInstance(string? name)
         {
-            Status status = new Status(0, 1, 100, 5, 10);
+            Status status = new Status(0, 1, 100, 5, 10, name);
             playerInstance = new Player(name ?? "", "Job", 0, status);
         }
 

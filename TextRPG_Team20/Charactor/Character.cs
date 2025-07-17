@@ -10,7 +10,7 @@ namespace TextRPG_Team20
 {
     internal abstract class Character : IComponent
     {
-        public string Job { get; set; }
+        public string? Job { get; set; }
         public int Gold { get; private set; }
         public Status status { get; set; }
         public Inventory Inventory { get; private set; }
@@ -28,6 +28,8 @@ namespace TextRPG_Team20
         {
             Console.WriteLine();
         }
+
+        public Character() { }
 
 
         public Character(string? name, string job, int gold, Status status)
@@ -66,14 +68,14 @@ namespace TextRPG_Team20
 
         public void IncreaseHp(int amount)
         {
-            status.Hp += amount;
+            status.HP += amount;
             //Console.WriteLine($"{status.Name}의 체력이 {amount}만큼 회복되어 {status.Hp}가 되었습니다.");
         }
 
         public void DecreaseHp(int amount)
         {
-            status.Hp -= amount;
-            if (status.Hp < 0) status.Hp = 0;
+            status.HP -= amount;
+            if (status.HP < 0) status.HP = 0;
 
             //Console.WriteLine($"{status.Name}이(가) {amount}의 피해를 입었습니다. 현재 체력: {status.Hp}");
         }
@@ -84,7 +86,7 @@ namespace TextRPG_Team20
             Console.WriteLine($"{status.Name} {{ {Job} }}");
             Console.WriteLine($"공격력 : {status.TotalAtk}");
             Console.WriteLine($"방어력 : {status.TotalDef}");
-            Console.WriteLine($"체력 : {status.Hp}");
+            Console.WriteLine($"체력 : {status.HP}");
             Console.WriteLine($"Gold : {Gold} G");
         }
   
