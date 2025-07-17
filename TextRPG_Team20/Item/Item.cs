@@ -26,9 +26,10 @@ namespace TextRPG_Team20.Item
         public int Def { get; set; }
         public int HP { get; set; }
 
-        public ItemType Type { get; set; }
+        public ItemType ItemType { get; set; }
 
         public int MaxStackSize { get; set; } = 1;
+        public float GoldUP {  get; set; }
 
         public string? ClassName { get; set; }   
 

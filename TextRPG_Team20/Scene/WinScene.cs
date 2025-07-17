@@ -32,7 +32,8 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.ReturnToLobby();
                     return true;
                 case 1:
-                    Game.Instance.SceneChange(Game.SceneState.Battle);
+
+                    Game.Instance.SceneChange(Game.SceneState.InField);
                     return false;
                 default:
                     ConsoleUI.Instance.DrawTextInBox("입력이 잘못되었습니다. 다시 입력해주세요.", ref ConsoleUI.logView);

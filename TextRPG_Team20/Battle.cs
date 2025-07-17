@@ -33,7 +33,7 @@ namespace TextRPG_Team20.Scene
                 player.Attack(target);
 
             // 2. 죽었으면 제거
-            if (target.status.Hp <= 0)
+            if (target.status.HP <= 0)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 player.AddGold(target.Gold);
@@ -51,7 +51,7 @@ namespace TextRPG_Team20.Scene
             foreach (var enemy in enemies)
             {
                 enemy.Attack(player);
-                if (player.status.Hp <= 0)
+                if (player.status.HP <= 0)
                 {
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     Game.Instance.SceneChange(Game.SceneState.Defeat);
@@ -74,7 +74,7 @@ namespace TextRPG_Team20.Scene
             else
                 player.UseSkill(target);
 
-            if (target.status.Hp <= 0)
+            if (target.status.HP <= 0)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 player.AddGold(target.Gold);
@@ -90,7 +90,7 @@ namespace TextRPG_Team20.Scene
             foreach (var enemy in enemies)
             {
                 enemy.Attack(player);
-                if (player.status.Hp <= 0)
+                if (player.status.HP <= 0)
                 {
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     Game.Instance.SceneChange(Game.SceneState.Defeat);
@@ -105,7 +105,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("=== 적 선택 ===", ref ConsoleUI.inputView);          //delete~
             for (int i = 0; i < enemies.Count; i++)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {enemies[i].status.Name} (HP:{enemies[i].status.Hp})", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {enemies[i].status.Name} (HP:{enemies[i].status.HP})", ref ConsoleUI.inputView);
             }                                                                                     
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.DrawTextInBox("0. 취소", ref ConsoleUI.info2View);

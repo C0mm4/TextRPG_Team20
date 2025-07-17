@@ -9,6 +9,9 @@ namespace TextRPG_Team20
 {
     internal class Enemy : Character, ICloneable
     {
+        public List<string> asciiData = new List<string>();
+
+        public Enemy() { }
 
         public Enemy(string name, int gold,  Status status) : base(name, "Enemy", gold, status)
         {
@@ -22,12 +25,14 @@ namespace TextRPG_Team20
             (
                 status.ID,
                 status.Level,
-                status.Hp,
+                status.HP,
                 status.Atk,
                 status.Def,
+                status.Name,
                 status.ExtraAtk,
                 status.ExtraDef
             );
+            clone.asciiData = asciiData;
             return clone;
         }
 
@@ -54,6 +59,18 @@ namespace TextRPG_Team20
 
         public override void PrintInField()
         {
+        }
+
+        public void DrawAscii(ref ConsoleUI.Rect rect)
+        {
+            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+
+            ConsoleUI.Instance.InsertTextInBox(asciiData, ref rect);
+            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+            ConsoleUI.Instance.PrintView(ref rect, "center", "middle");
+
         }
     }
 }

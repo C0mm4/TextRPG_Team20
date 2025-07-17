@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
+using TextRPG_Team20.System;
 
 namespace TextRPG_Team20.Scene
 {
@@ -22,8 +23,8 @@ namespace TextRPG_Team20.Scene
         {
             return new List<Enemy>
     {
-
-
+                MobSpawnner.Instance.Create(1),
+                MobSpawnner.Instance.Create(2),
     };
         }
 
@@ -39,10 +40,17 @@ namespace TextRPG_Team20.Scene
 
 
             // 모든 영역 초기화
-            ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.info1View.ClearBuffer();
-            ConsoleUI.info2View.ClearBuffer();
-            ConsoleUI.inputView.ClearBuffer();
+
+            ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, enemys.Count, 1);
+
+            for (int i = 0; i < enemys.Count; i++) 
+            {
+                ConsoleUI.Rect rect = rects[i];
+                if (enemys[i] != null)
+                {
+                    enemys[i].DrawAscii(ref rect);
+                }
+            }
 
             // 메인 뷰: 전투 메뉴
             ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
@@ -51,7 +59,6 @@ namespace TextRPG_Team20.Scene
             // 플레이어 정보
             player.CharacterInfo();
 
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
