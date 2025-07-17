@@ -1,7 +1,7 @@
 [
   {
-    "id": 1,
-    "Type": "무기",
+    "Id": 1,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "녹슨 단검",
@@ -10,11 +10,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 2,
-    "Type": "무기",
+    "Id": 2,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "주니어 네키의 물총",
@@ -23,11 +24,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 3,
-    "Type": "무기",
+    "Id": 3,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "커터",
@@ -36,11 +38,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 4,
-    "Type": "무기",
+    "Id": 4,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "과일 단검",
@@ -49,11 +52,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 5,
-    "Type": "무기",
+    "Id": 5,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "리치가 아끼던 인형",
@@ -62,11 +66,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 6,
-    "Type": "무기",
+    "Id": 6,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "냄비 뚜껑",
@@ -75,11 +80,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 7,
-    "Type": "무기",
+    "Id": 7,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "슬라임의 물컹한 방울",
@@ -88,11 +94,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 8,
-    "Type": "무기",
+    "Id": 8,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "공용",
     "Name": "작업용 망치",
@@ -101,11 +108,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 9,
-    "Type": "무기",
+    "Id": 9,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "초보자의 나무검",
@@ -114,11 +122,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 10,
-    "Type": "무기",
+    "Id": 10,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "낡은 너클",
@@ -127,11 +136,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 11,
-    "Type": "무기",
+    "Id": 11,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "목검",
@@ -140,11 +150,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 12,
-    "Type": "무기",
+    "Id": 12,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "가죽 건틀렛",
@@ -153,11 +164,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 13,
-    "Type": "무기",
+    "Id": 13,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "장검",
@@ -166,11 +178,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 14,
-    "Type": "무기",
+    "Id": 14,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "아이언 너클",
@@ -179,11 +192,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 15,
-    "Type": "무기",
+    "Id": 15,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "레이피어",
@@ -192,11 +206,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 16,
-    "Type": "무기",
+    "Id": 16,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "오크의 나무 몽둥이",
@@ -205,11 +220,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 17,
-    "Type": "무기",
+    "Id": 17,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "쇠도끼",
@@ -218,11 +234,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 18,
-    "Type": "무기",
+    "Id": 18,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "스틸 폴암",
@@ -231,11 +248,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 19,
-    "Type": "무기",
+    "Id": 19,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "삼지창",
@@ -244,11 +262,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 20,
-    "Type": "무기",
+    "Id": 20,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "전사",
     "Name": "철제 아대",
@@ -257,11 +276,12 @@
     "Def": 1,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 21,
-    "Type": "무기",
+    "Id": 21,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "허름한 활",
@@ -270,11 +290,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 22,
-    "Type": "무기",
+    "Id": 22,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "이글 크로",
@@ -283,11 +304,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 23,
-    "Type": "무기",
+    "Id": 23,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "컴포지트 보우",
@@ -296,11 +318,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 24,
-    "Type": "무기",
+    "Id": 24,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "배틀 보우",
@@ -309,11 +332,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 25,
-    "Type": "무기",
+    "Id": 25,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "전투 석궁",
@@ -322,11 +346,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 26,
-    "Type": "무기",
+    "Id": 26,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "사냥꾼의 활",
@@ -335,11 +360,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 27,
-    "Type": "무기",
+    "Id": 27,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "궁수",
     "Name": "쇠뇌",
@@ -348,11 +374,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 28,
-    "Type": "무기",
+    "Id": 28,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "견습 마법사의 완드",
@@ -361,11 +388,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 29,
-    "Type": "무기",
+    "Id": 29,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "사파이어 스태프",
@@ -374,11 +402,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 30,
-    "Type": "무기",
+    "Id": 30,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "위저드 완드",
@@ -387,11 +416,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 31,
-    "Type": "무기",
+    "Id": 31,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "위저드 스태프",
@@ -400,11 +430,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 32,
-    "Type": "무기",
+    "Id": 32,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "마법사 지팡이",
@@ -413,11 +444,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 33,
-    "Type": "무기",
+    "Id": 33,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "하급 마법서",
@@ -426,11 +458,12 @@
     "Def": 1,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 34,
-    "Type": "무기",
+    "Id": 34,
+    "ItemType": "무기",
     "Grade": "일반",
     "Class": "마법사",
     "Name": "오리나무 지팡이",
@@ -439,11 +472,12 @@
     "Def": 1,
     "HP": 0,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 35,
-    "Type": "모자",
+    "Id": 35,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "초록색 삿갓",
@@ -452,11 +486,12 @@
     "Def": 2,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 36,
-    "Type": "모자",
+    "Id": 36,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "가죽 모자",
@@ -465,11 +500,12 @@
     "Def": 3,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 37,
-    "Type": "모자",
+    "Id": 37,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "아이언 버고넷",
@@ -478,11 +514,12 @@
     "Def": 5,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 38,
-    "Type": "모자",
+    "Id": 38,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "레드 드래곤 바브트",
@@ -491,11 +528,12 @@
     "Def": 6,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 39,
-    "Type": "모자",
+    "Id": 39,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "마법사 모자",
@@ -504,11 +542,12 @@
     "Def": 4,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 40,
-    "Type": "모자",
+    "Id": 40,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "갈색 삿갓",
@@ -517,11 +556,12 @@
     "Def": 2,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 41,
-    "Type": "모자",
+    "Id": 41,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "하얀색 두건",
@@ -530,11 +570,12 @@
     "Def": 3,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 42,
-    "Type": "모자",
+    "Id": 42,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "스켈레톤 헬멧",
@@ -543,11 +584,12 @@
     "Def": 5,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 43,
-    "Type": "모자",
+    "Id": 43,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "해적 두건",
@@ -556,11 +598,12 @@
     "Def": 4,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 44,
-    "Type": "모자",
+    "Id": 44,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "서클릿",
@@ -569,11 +612,12 @@
     "Def": 4,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 45,
-    "Type": "모자",
+    "Id": 45,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "털모자",
@@ -582,11 +626,12 @@
     "Def": 3,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 46,
-    "Type": "모자",
+    "Id": 46,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "미스릴 크루세이더 헬름",
@@ -595,11 +640,12 @@
     "Def": 7,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 47,
-    "Type": "모자",
+    "Id": 47,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "파란색 두건",
@@ -608,11 +654,12 @@
     "Def": 3,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 48,
-    "Type": "모자",
+    "Id": 48,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "노란색 삿갓",
@@ -621,11 +668,12 @@
     "Def": 2,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 49,
-    "Type": "모자",
+    "Id": 49,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "강철 서클릿",
@@ -634,11 +682,12 @@
     "Def": 6,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 50,
-    "Type": "모자",
+    "Id": 50,
+    "ItemType": "모자",
     "Grade": "일반",
     "Class": "공용",
     "Name": "낡은 두건",
@@ -647,11 +696,12 @@
     "Def": 2,
     "HP": 10,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 51,
-    "Type": "상의",
+    "Id": 51,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "모험가의 티셔츠",
@@ -660,11 +710,12 @@
     "Def": 3,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 52,
-    "Type": "상의",
+    "Id": 52,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "가죽 조끼",
@@ -673,11 +724,12 @@
     "Def": 5,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 53,
-    "Type": "상의",
+    "Id": 53,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "아이언 체인메일",
@@ -686,11 +738,12 @@
     "Def": 8,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 54,
-    "Type": "상의",
+    "Id": 54,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "미스릴 플레이트",
@@ -699,11 +752,12 @@
     "Def": 10,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 55,
-    "Type": "상의",
+    "Id": 55,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "마법사의 로브",
@@ -712,11 +766,12 @@
     "Def": 6,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 56,
-    "Type": "상의",
+    "Id": 56,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "갈색 가죽 조끼",
@@ -725,11 +780,12 @@
     "Def": 5,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 57,
-    "Type": "상의",
+    "Id": 57,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "수련용 도복",
@@ -738,11 +794,12 @@
     "Def": 4,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 58,
-    "Type": "상의",
+    "Id": 58,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "해적 코트",
@@ -751,11 +808,12 @@
     "Def": 6,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 59,
-    "Type": "상의",
+    "Id": 59,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "여행자의 망토",
@@ -764,11 +822,12 @@
     "Def": 4,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 60,
-    "Type": "상의",
+    "Id": 60,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "아이언 플레이트 아머",
@@ -777,11 +836,12 @@
     "Def": 9,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 61,
-    "Type": "상의",
+    "Id": 61,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "푸른색 로브",
@@ -790,11 +850,12 @@
     "Def": 7,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 62,
-    "Type": "상의",
+    "Id": 62,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "붉은색 로브",
@@ -803,11 +864,12 @@
     "Def": 7,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 63,
-    "Type": "상의",
+    "Id": 63,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "평범한 모직 셔츠",
@@ -816,11 +878,12 @@
     "Def": 4,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 64,
-    "Type": "상의",
+    "Id": 64,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "초록색 상의",
@@ -829,11 +892,12 @@
     "Def": 4,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 65,
-    "Type": "상의",
+    "Id": 65,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "강철 조끼",
@@ -842,11 +906,12 @@
     "Def": 7,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 66,
-    "Type": "상의",
+    "Id": 66,
+    "ItemType": "상의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "낡은 조끼",
@@ -855,11 +920,12 @@
     "Def": 3,
     "HP": 15,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 67,
-    "Type": "하의",
+    "Id": 67,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "면바지",
@@ -868,11 +934,12 @@
     "Def": 2,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 68,
-    "Type": "하의",
+    "Id": 68,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "가죽 바지",
@@ -881,11 +948,12 @@
     "Def": 4,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 69,
-    "Type": "하의",
+    "Id": 69,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "아이언 플레이트 레깅스",
@@ -894,11 +962,12 @@
     "Def": 7,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 70,
-    "Type": "하의",
+    "Id": 70,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "미스릴 플레이트 팬츠",
@@ -907,11 +976,12 @@
     "Def": 9,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 71,
-    "Type": "하의",
+    "Id": 71,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "마법사의 팬츠",
@@ -920,11 +990,12 @@
     "Def": 5,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 72,
-    "Type": "하의",
+    "Id": 72,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "갈색 가죽 바지",
@@ -933,11 +1004,12 @@
     "Def": 4,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 73,
-    "Type": "하의",
+    "Id": 73,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "수련용 도복 바지",
@@ -946,11 +1018,12 @@
     "Def": 3,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 74,
-    "Type": "하의",
+    "Id": 74,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "해적 바지",
@@ -959,11 +1032,12 @@
     "Def": 5,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 75,
-    "Type": "하의",
+    "Id": 75,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "청바지",
@@ -972,11 +1046,12 @@
     "Def": 4,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 76,
-    "Type": "하의",
+    "Id": 76,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "강철 각반",
@@ -985,11 +1060,12 @@
     "Def": 8,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 77,
-    "Type": "하의",
+    "Id": 77,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "미스릴 각반",
@@ -998,11 +1074,12 @@
     "Def": 10,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 78,
-    "Type": "하의",
+    "Id": 78,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "마법사 스커트",
@@ -1011,11 +1088,12 @@
     "Def": 6,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 79,
-    "Type": "하의",
+    "Id": 79,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "평범한 모직 바지",
@@ -1024,11 +1102,12 @@
     "Def": 3,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 80,
-    "Type": "하의",
+    "Id": 80,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "초록색 하의",
@@ -1037,11 +1116,12 @@
     "Def": 3,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 81,
-    "Type": "하의",
+    "Id": 81,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "강철 그리브",
@@ -1050,11 +1130,12 @@
     "Def": 8,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 82,
-    "Type": "하의",
+    "Id": 82,
+    "ItemType": "하의",
     "Grade": "일반",
     "Class": "공용",
     "Name": "낡은 바지",
@@ -1063,11 +1144,12 @@
     "Def": 2,
     "HP": 12,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 83,
-    "Type": "악세서리",
+    "Id": 83,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "나무 반지",
@@ -1076,11 +1158,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 84,
-    "Type": "악세서리",
+    "Id": 84,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "가죽 벨트",
@@ -1089,11 +1172,12 @@
     "Def": 3,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 85,
-    "Type": "악세서리",
+    "Id": 85,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "강철 어깨보호대",
@@ -1102,11 +1186,12 @@
     "Def": 5,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 86,
-    "Type": "악세서리",
+    "Id": 86,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "해골 귀고리",
@@ -1115,11 +1200,12 @@
     "Def": 1,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 87,
-    "Type": "악세서리",
+    "Id": 87,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "민첩성의 신발",
@@ -1128,11 +1214,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 88,
-    "Type": "악세서리",
+    "Id": 88,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "힘의 장갑",
@@ -1141,11 +1228,12 @@
     "Def": 1,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 89,
-    "Type": "악세서리",
+    "Id": 89,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "지혜의 목걸이",
@@ -1154,11 +1242,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 90,
-    "Type": "악세서리",
+    "Id": 90,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "보급형 망토",
@@ -1167,11 +1256,12 @@
     "Def": 3,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 91,
-    "Type": "악세서리",
+    "Id": 91,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "실버 링",
@@ -1180,11 +1270,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 92,
-    "Type": "악세서리",
+    "Id": 92,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "아이언 벨트",
@@ -1193,11 +1284,12 @@
     "Def": 4,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 93,
-    "Type": "악세서리",
+    "Id": 93,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "은 귀고리",
@@ -1206,11 +1298,12 @@
     "Def": 1,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 94,
-    "Type": "악세서리",
+    "Id": 94,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "구리 반지",
@@ -1219,11 +1312,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 95,
-    "Type": "악세서리",
+    "Id": 95,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "주니어 예티의 가죽",
@@ -1232,11 +1326,12 @@
     "Def": 4,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 96,
-    "Type": "악세서리",
+    "Id": 96,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "조잡한 귀고리",
@@ -1245,11 +1340,12 @@
     "Def": 1,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 97,
-    "Type": "악세서리",
+    "Id": 97,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "가죽 장갑",
@@ -1258,11 +1354,12 @@
     "Def": 1,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 98,
-    "Type": "악세서리",
+    "Id": 98,
+    "ItemType": "악세서리",
     "Grade": "일반",
     "Class": "공용",
     "Name": "천 망토",
@@ -1271,11 +1368,12 @@
     "Def": 2,
     "HP": 5,
     "Gold": 1,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 99,
-    "Type": "무기",
+    "Id": 99,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "냉동참치",
@@ -1284,11 +1382,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 100,
-    "Type": "무기",
+    "Id": 100,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "뇌전 수리검",
@@ -1297,11 +1396,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 101,
-    "Type": "무기",
+    "Id": 101,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "리버스 듀얼 블레이드",
@@ -1310,11 +1410,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 102,
-    "Type": "무기",
+    "Id": 102,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크 슬레인",
@@ -1323,11 +1424,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 103,
-    "Type": "무기",
+    "Id": 103,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "카타르",
@@ -1336,11 +1438,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 104,
-    "Type": "무기",
+    "Id": 104,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 크리스",
@@ -1349,11 +1452,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 105,
-    "Type": "무기",
+    "Id": 105,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "스틸레토",
@@ -1362,11 +1466,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 106,
-    "Type": "무기",
+    "Id": 106,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "자쿰의 포이즈닉 웨폰",
@@ -1375,11 +1480,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 107,
-    "Type": "무기",
+    "Id": 107,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 가디언",
@@ -1388,11 +1494,12 @@
     "Def": 35,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 108,
-    "Type": "무기",
+    "Id": 108,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 실드",
@@ -1401,11 +1508,12 @@
     "Def": 40,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 109,
-    "Type": "무기",
+    "Id": 109,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "강철의 방패",
@@ -1414,11 +1522,12 @@
     "Def": 38,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 110,
-    "Type": "무기",
+    "Id": 110,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "오리할콘 방패",
@@ -1427,11 +1536,12 @@
     "Def": 39,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 111,
-    "Type": "무기",
+    "Id": 111,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 매직 건틀렛",
@@ -1440,11 +1550,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 112,
-    "Type": "무기",
+    "Id": 112,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 에너지소드",
@@ -1453,11 +1564,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 113,
-    "Type": "무기",
+    "Id": 113,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 너클",
@@ -1466,11 +1578,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 114,
-    "Type": "무기",
+    "Id": 114,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 글로리 소드",
@@ -1479,11 +1592,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 115,
-    "Type": "무기",
+    "Id": 115,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "아이스 스피어",
@@ -1492,11 +1606,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 116,
-    "Type": "무기",
+    "Id": 116,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 칸데오",
@@ -1505,11 +1620,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 117,
-    "Type": "무기",
+    "Id": 117,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "화염의 검",
@@ -1518,11 +1634,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 118,
-    "Type": "무기",
+    "Id": 118,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "크롬",
@@ -1531,11 +1648,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 119,
-    "Type": "무기",
+    "Id": 119,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "호검",
@@ -1544,11 +1662,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 120,
-    "Type": "무기",
+    "Id": 120,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "골든 해머",
@@ -1557,11 +1676,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 121,
-    "Type": "무기",
+    "Id": 121,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "자일즈의 클로",
@@ -1570,11 +1690,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 122,
-    "Type": "무기",
+    "Id": 122,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "블루마린",
@@ -1583,11 +1704,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 123,
-    "Type": "무기",
+    "Id": 123,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "스파타",
@@ -1596,11 +1718,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 124,
-    "Type": "무기",
+    "Id": 124,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "본 스파이럴",
@@ -1609,11 +1732,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 125,
-    "Type": "무기",
+    "Id": 125,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "기간틱 폴암",
@@ -1622,11 +1746,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 126,
-    "Type": "무기",
+    "Id": 126,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "미스릴 해머",
@@ -1635,11 +1760,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 127,
-    "Type": "무기",
+    "Id": 127,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "용아도",
@@ -1648,11 +1774,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 128,
-    "Type": "무기",
+    "Id": 128,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "메이플 켈트 소드",
@@ -1661,11 +1788,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 129,
-    "Type": "무기",
+    "Id": 129,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "플레임 소드",
@@ -1674,11 +1802,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 130,
-    "Type": "무기",
+    "Id": 130,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "강철 너클",
@@ -1687,11 +1816,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 131,
-    "Type": "무기",
+    "Id": 131,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "스톰브레이커",
@@ -1700,11 +1830,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 132,
-    "Type": "무기",
+    "Id": 132,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "전사",
     "Name": "해적의 커틀러스",
@@ -1713,11 +1844,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 133,
-    "Type": "무기",
+    "Id": 133,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "이블 테일러",
@@ -1726,11 +1858,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 134,
-    "Type": "무기",
+    "Id": 134,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "발터2000",
@@ -1739,11 +1872,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 135,
-    "Type": "무기",
+    "Id": 135,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "호진궁",
@@ -1752,11 +1886,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 136,
-    "Type": "무기",
+    "Id": 136,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "레드 헌터",
@@ -1765,11 +1900,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 137,
-    "Type": "무기",
+    "Id": 137,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "스틸노",
@@ -1778,11 +1914,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 138,
-    "Type": "무기",
+    "Id": 138,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "메이플 헌터스",
@@ -1791,11 +1928,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 139,
-    "Type": "무기",
+    "Id": 139,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "메이플 보우",
@@ -1804,11 +1942,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 140,
-    "Type": "무기",
+    "Id": 140,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "다크 듀얼보우건",
@@ -1817,11 +1956,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 141,
-    "Type": "무기",
+    "Id": 141,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "나이트워커의 표창",
@@ -1830,11 +1970,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 142,
-    "Type": "무기",
+    "Id": 142,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "골든 보우",
@@ -1843,11 +1984,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 143,
-    "Type": "무기",
+    "Id": 143,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "궁수",
     "Name": "메이플 소울슈터",
@@ -1856,11 +1998,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 144,
-    "Type": "무기",
+    "Id": 144,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "미스릴 완드",
@@ -1869,11 +2012,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 145,
-    "Type": "무기",
+    "Id": 145,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "메이플 스태프",
@@ -1882,11 +2026,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 146,
-    "Type": "무기",
+    "Id": 146,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "다크니스 완드",
@@ -1895,11 +2040,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 147,
-    "Type": "무기",
+    "Id": 147,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "크리스탈 완드",
@@ -1908,11 +2054,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 148,
-    "Type": "무기",
+    "Id": 148,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "지혜의 스태프",
@@ -1921,11 +2068,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 149,
-    "Type": "무기",
+    "Id": 149,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "아쿠아 스태프",
@@ -1934,11 +2082,12 @@
     "Def": 7,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 150,
-    "Type": "무기",
+    "Id": 150,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "메이플 파이롭 스태프",
@@ -1947,11 +2096,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 151,
-    "Type": "무기",
+    "Id": 151,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "에메랄드 스태프",
@@ -1960,11 +2110,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 152,
-    "Type": "무기",
+    "Id": 152,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "제국의 스태프",
@@ -1973,11 +2124,12 @@
     "Def": 6,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 153,
-    "Type": "무기",
+    "Id": 153,
+    "ItemType": "무기",
     "Grade": "레어",
     "Class": "마법사",
     "Name": "다크 메이지 스태프",
@@ -1986,11 +2138,12 @@
     "Def": 7,
     "HP": 0,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 154,
-    "Type": "모자",
+    "Id": 154,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "자쿰의 투구",
@@ -1999,11 +2152,12 @@
     "Def": 15,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 155,
-    "Type": "모자",
+    "Id": 155,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "네더딘 헬름",
@@ -2012,11 +2166,12 @@
     "Def": 20,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 156,
-    "Type": "모자",
+    "Id": 156,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 필퍼",
@@ -2025,11 +2180,12 @@
     "Def": 18,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 157,
-    "Type": "모자",
+    "Id": 157,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 아너",
@@ -2038,11 +2194,12 @@
     "Def": 21,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 158,
-    "Type": "모자",
+    "Id": 158,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크니스 햇",
@@ -2051,11 +2208,12 @@
     "Def": 17,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 159,
-    "Type": "모자",
+    "Id": 159,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 햇",
@@ -2064,11 +2222,12 @@
     "Def": 18,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 160,
-    "Type": "모자",
+    "Id": 160,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 크루세이더 헬름",
@@ -2077,11 +2236,12 @@
     "Def": 22,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 161,
-    "Type": "모자",
+    "Id": 161,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "해적왕의 모자",
@@ -2090,11 +2250,12 @@
     "Def": 20,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 162,
-    "Type": "모자",
+    "Id": 162,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "오리할콘 버고넷",
@@ -2103,11 +2264,12 @@
     "Def": 25,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 163,
-    "Type": "모자",
+    "Id": 163,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 베레",
@@ -2116,11 +2278,12 @@
     "Def": 16,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 164,
-    "Type": "모자",
+    "Id": 164,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "사제의 관",
@@ -2129,11 +2292,12 @@
     "Def": 19,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 165,
-    "Type": "모자",
+    "Id": 165,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "어쌔신 후드",
@@ -2142,11 +2306,12 @@
     "Def": 18,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 166,
-    "Type": "모자",
+    "Id": 166,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "용비늘 투구",
@@ -2155,11 +2320,12 @@
     "Def": 24,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 167,
-    "Type": "모자",
+    "Id": 167,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "문라이트 햇",
@@ -2168,11 +2334,12 @@
     "Def": 20,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 168,
-    "Type": "모자",
+    "Id": 168,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 와이즈",
@@ -2181,11 +2348,12 @@
     "Def": 19,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 169,
-    "Type": "모자",
+    "Id": 169,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "브라운 골든 서클릿",
@@ -2194,11 +2362,12 @@
     "Def": 18,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 170,
-    "Type": "모자",
+    "Id": 170,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "나이트의 헬멧",
@@ -2207,11 +2376,12 @@
     "Def": 28,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 171,
-    "Type": "모자",
+    "Id": 171,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "고블린 머리뼈",
@@ -2220,11 +2390,12 @@
     "Def": 23,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 172,
-    "Type": "모자",
+    "Id": 172,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "화이트 햇",
@@ -2233,11 +2404,12 @@
     "Def": 20,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 173,
-    "Type": "모자",
+    "Id": 173,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 후드",
@@ -2246,11 +2418,12 @@
     "Def": 19,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 174,
-    "Type": "모자",
+    "Id": 174,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크 스틸레",
@@ -2259,11 +2432,12 @@
     "Def": 26,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 175,
-    "Type": "모자",
+    "Id": 175,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "바이킹 투구",
@@ -2272,11 +2446,12 @@
     "Def": 22,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 176,
-    "Type": "모자",
+    "Id": 176,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 매지션 햇",
@@ -2285,11 +2460,12 @@
     "Def": 21,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 177,
-    "Type": "모자",
+    "Id": 177,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 헌터 후드",
@@ -2298,11 +2474,12 @@
     "Def": 23,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 178,
-    "Type": "모자",
+    "Id": 178,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 베레모",
@@ -2311,11 +2488,12 @@
     "Def": 20,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 179,
-    "Type": "모자",
+    "Id": 179,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 스틸 헬름",
@@ -2324,11 +2502,12 @@
     "Def": 27,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 180,
-    "Type": "모자",
+    "Id": 180,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 라멜",
@@ -2337,11 +2516,12 @@
     "Def": 24,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 181,
-    "Type": "모자",
+    "Id": 181,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 솔리드 베이스",
@@ -2350,11 +2530,12 @@
     "Def": 26,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 182,
-    "Type": "모자",
+    "Id": 182,
+    "ItemType": "모자",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 레전드 헬름",
@@ -2363,11 +2544,12 @@
     "Def": 28,
     "HP": 40,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 183,
-    "Type": "상의",
+    "Id": 183,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "네더딘 아머",
@@ -2376,11 +2558,12 @@
     "Def": 25,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 184,
-    "Type": "상의",
+    "Id": 184,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 필퍼",
@@ -2389,11 +2572,12 @@
     "Def": 23,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 185,
-    "Type": "상의",
+    "Id": 185,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 아너",
@@ -2402,11 +2586,12 @@
     "Def": 26,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 186,
-    "Type": "상의",
+    "Id": 186,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크니스 로브",
@@ -2415,11 +2600,12 @@
     "Def": 22,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 187,
-    "Type": "상의",
+    "Id": 187,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 로브",
@@ -2428,11 +2614,12 @@
     "Def": 23,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 188,
-    "Type": "상의",
+    "Id": 188,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 크루세이더 아머",
@@ -2441,11 +2628,12 @@
     "Def": 28,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 189,
-    "Type": "상의",
+    "Id": 189,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "해적왕의 코트",
@@ -2454,11 +2642,12 @@
     "Def": 25,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 190,
-    "Type": "상의",
+    "Id": 190,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "오리할콘 플레이트",
@@ -2467,11 +2656,12 @@
     "Def": 30,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 191,
-    "Type": "상의",
+    "Id": 191,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 슈트",
@@ -2480,11 +2670,12 @@
     "Def": 20,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 192,
-    "Type": "상의",
+    "Id": 192,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "사제의 로브",
@@ -2493,11 +2684,12 @@
     "Def": 24,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 193,
-    "Type": "상의",
+    "Id": 193,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "어쌔신 슈트",
@@ -2506,11 +2698,12 @@
     "Def": 23,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 194,
-    "Type": "상의",
+    "Id": 194,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "용비늘 갑옷",
@@ -2519,11 +2712,12 @@
     "Def": 29,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 195,
-    "Type": "상의",
+    "Id": 195,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "문라이트 아머",
@@ -2532,11 +2726,12 @@
     "Def": 25,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 196,
-    "Type": "상의",
+    "Id": 196,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 와이즈 로브",
@@ -2545,11 +2740,12 @@
     "Def": 24,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 197,
-    "Type": "상의",
+    "Id": 197,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "브라운 골든 아머",
@@ -2558,11 +2754,12 @@
     "Def": 23,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 198,
-    "Type": "상의",
+    "Id": 198,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "나이트의 플레이트",
@@ -2571,11 +2768,12 @@
     "Def": 33,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 199,
-    "Type": "상의",
+    "Id": 199,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "고블린 가죽옷",
@@ -2584,11 +2782,12 @@
     "Def": 28,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 200,
-    "Type": "상의",
+    "Id": 200,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "화이트 로브",
@@ -2597,11 +2796,12 @@
     "Def": 25,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 201,
-    "Type": "상의",
+    "Id": 201,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 튜닉",
@@ -2610,11 +2810,12 @@
     "Def": 24,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 202,
-    "Type": "상의",
+    "Id": 202,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크 스틸레 아머",
@@ -2623,11 +2824,12 @@
     "Def": 31,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 203,
-    "Type": "상의",
+    "Id": 203,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "바이킹의 갑옷",
@@ -2636,11 +2838,12 @@
     "Def": 27,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 204,
-    "Type": "상의",
+    "Id": 204,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 매지션 로브",
@@ -2649,11 +2852,12 @@
     "Def": 26,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 205,
-    "Type": "상의",
+    "Id": 205,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 헌터 아머",
@@ -2662,11 +2866,12 @@
     "Def": 28,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 206,
-    "Type": "상의",
+    "Id": 206,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 아미 슈트",
@@ -2675,11 +2880,12 @@
     "Def": 25,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 207,
-    "Type": "상의",
+    "Id": 207,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 스틸 아머",
@@ -2688,11 +2894,12 @@
     "Def": 32,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 208,
-    "Type": "상의",
+    "Id": 208,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 라멜 아머",
@@ -2701,11 +2908,12 @@
     "Def": 29,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 209,
-    "Type": "상의",
+    "Id": 209,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 솔리드 아머",
@@ -2714,11 +2922,12 @@
     "Def": 31,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 210,
-    "Type": "상의",
+    "Id": 210,
+    "ItemType": "상의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 레전드 아머",
@@ -2727,11 +2936,12 @@
     "Def": 33,
     "HP": 60,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 211,
-    "Type": "하의",
+    "Id": 211,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "네더딘 그리브",
@@ -2740,11 +2950,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 212,
-    "Type": "하의",
+    "Id": 212,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 필퍼",
@@ -2753,11 +2964,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 213,
-    "Type": "하의",
+    "Id": 213,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 아너",
@@ -2766,11 +2978,12 @@
     "Def": 23,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 214,
-    "Type": "하의",
+    "Id": 214,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크니스 팬츠",
@@ -2779,11 +2992,12 @@
     "Def": 19,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 215,
-    "Type": "하의",
+    "Id": 215,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 팬츠",
@@ -2792,11 +3006,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 216,
-    "Type": "하의",
+    "Id": 216,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 크루세이더 레깅스",
@@ -2805,11 +3020,12 @@
     "Def": 25,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 217,
-    "Type": "하의",
+    "Id": 217,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "해적왕의 바지",
@@ -2818,11 +3034,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 218,
-    "Type": "하의",
+    "Id": 218,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "오리할콘 그리브",
@@ -2831,11 +3048,12 @@
     "Def": 27,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 219,
-    "Type": "하의",
+    "Id": 219,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 팬츠",
@@ -2844,11 +3062,12 @@
     "Def": 18,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 220,
-    "Type": "하의",
+    "Id": 220,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "사제의 팬츠",
@@ -2857,11 +3076,12 @@
     "Def": 21,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 221,
-    "Type": "하의",
+    "Id": 221,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "어쌔신 팬츠",
@@ -2870,11 +3090,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 222,
-    "Type": "하의",
+    "Id": 222,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "용비늘 각반",
@@ -2883,11 +3104,12 @@
     "Def": 26,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 223,
-    "Type": "하의",
+    "Id": 223,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "문라이트 팬츠",
@@ -2896,11 +3118,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 224,
-    "Type": "하의",
+    "Id": 224,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 와이즈 팬츠",
@@ -2909,11 +3132,12 @@
     "Def": 21,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 225,
-    "Type": "하의",
+    "Id": 225,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "브라운 골든 팬츠",
@@ -2922,11 +3146,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 226,
-    "Type": "하의",
+    "Id": 226,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "나이트의 그리브",
@@ -2935,11 +3160,12 @@
     "Def": 30,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 227,
-    "Type": "하의",
+    "Id": 227,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "고블린 가죽바지",
@@ -2948,11 +3174,12 @@
     "Def": 25,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 228,
-    "Type": "하의",
+    "Id": 228,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "화이트 팬츠",
@@ -2961,11 +3188,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 229,
-    "Type": "하의",
+    "Id": 229,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 팬츠",
@@ -2974,11 +3202,12 @@
     "Def": 21,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 230,
-    "Type": "하의",
+    "Id": 230,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크 스틸레 그리브",
@@ -2987,11 +3216,12 @@
     "Def": 28,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 231,
-    "Type": "하의",
+    "Id": 231,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "바이킹의 바지",
@@ -3000,11 +3230,12 @@
     "Def": 24,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 232,
-    "Type": "하의",
+    "Id": 232,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블루 매지션 팬츠",
@@ -3013,11 +3244,12 @@
     "Def": 23,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 233,
-    "Type": "하의",
+    "Id": 233,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 헌터 팬츠",
@@ -3026,11 +3258,12 @@
     "Def": 25,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 234,
-    "Type": "하의",
+    "Id": 234,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 아미 팬츠",
@@ -3039,11 +3272,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 235,
-    "Type": "하의",
+    "Id": 235,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "레드 스틸 그리브",
@@ -3052,11 +3286,12 @@
     "Def": 29,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 236,
-    "Type": "하의",
+    "Id": 236,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "그린 라멜 팬츠",
@@ -3065,11 +3300,12 @@
     "Def": 26,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 237,
-    "Type": "하의",
+    "Id": 237,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 솔리드 팬츠",
@@ -3078,11 +3314,12 @@
     "Def": 28,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 238,
-    "Type": "하의",
+    "Id": 238,
+    "ItemType": "하의",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 레전드 팬츠",
@@ -3091,11 +3328,12 @@
     "Def": 30,
     "HP": 50,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 239,
-    "Type": "악세서리",
+    "Id": 239,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "슈피겔만의 목걸이",
@@ -3104,11 +3342,12 @@
     "Def": 8,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 240,
-    "Type": "악세서리",
+    "Id": 240,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "오리할콘 이어링",
@@ -3117,11 +3356,12 @@
     "Def": 9,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 241,
-    "Type": "악세서리",
+    "Id": 241,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "미스릴 숄더",
@@ -3130,11 +3370,12 @@
     "Def": 15,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 242,
-    "Type": "악세서리",
+    "Id": 242,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "강인함의 벨트",
@@ -3143,11 +3384,12 @@
     "Def": 10,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 243,
-    "Type": "악세서리",
+    "Id": 243,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "날렵함의 부츠",
@@ -3156,11 +3398,12 @@
     "Def": 12,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 244,
-    "Type": "악세서리",
+    "Id": 244,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "군단장의 망토",
@@ -3169,11 +3412,12 @@
     "Def": 10,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 245,
-    "Type": "악세서리",
+    "Id": 245,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "하프 이어링",
@@ -3182,11 +3426,12 @@
     "Def": 12,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 246,
-    "Type": "악세서리",
+    "Id": 246,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "메이플 리프",
@@ -3195,11 +3440,12 @@
     "Def": 10,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 247,
-    "Type": "악세서리",
+    "Id": 247,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "이카루스의 망토",
@@ -3208,11 +3454,12 @@
     "Def": 15,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 248,
-    "Type": "악세서리",
+    "Id": 248,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "아쿠아틱 레터 눈장식",
@@ -3221,11 +3468,12 @@
     "Def": 6,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 249,
-    "Type": "악세서리",
+    "Id": 249,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "응축된 힘의 결정석",
@@ -3234,11 +3482,12 @@
     "Def": 5,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 250,
-    "Type": "악세서리",
+    "Id": 250,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "자수정 귀고리",
@@ -3247,11 +3496,12 @@
     "Def": 12,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 251,
-    "Type": "악세서리",
+    "Id": 251,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "골든 클로버 벨트",
@@ -3260,11 +3510,12 @@
     "Def": 10,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 252,
-    "Type": "악세서리",
+    "Id": 252,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "가넷 링",
@@ -3273,11 +3524,12 @@
     "Def": 8,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 253,
-    "Type": "악세서리",
+    "Id": 253,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "사파이어 링",
@@ -3286,11 +3538,12 @@
     "Def": 12,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 254,
-    "Type": "악세서리",
+    "Id": 254,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "에메랄드 링",
@@ -3299,11 +3552,12 @@
     "Def": 10,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 255,
-    "Type": "악세서리",
+    "Id": 255,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "토파즈 링",
@@ -3312,11 +3566,12 @@
     "Def": 9,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 256,
-    "Type": "악세서리",
+    "Id": 256,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "다크 링",
@@ -3325,11 +3580,12 @@
     "Def": 7,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 257,
-    "Type": "악세서리",
+    "Id": 257,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "크리스탈 링",
@@ -3338,11 +3594,12 @@
     "Def": 11,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 258,
-    "Type": "악세서리",
+    "Id": 258,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "샤프니스 숄더",
@@ -3351,11 +3608,12 @@
     "Def": 13,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 259,
-    "Type": "악세서리",
+    "Id": 259,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "현자의 목걸이",
@@ -3364,11 +3622,12 @@
     "Def": 18,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 260,
-    "Type": "악세서리",
+    "Id": 260,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "기사의 망토",
@@ -3377,11 +3636,12 @@
     "Def": 16,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 261,
-    "Type": "악세서리",
+    "Id": 261,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "정령의 반지",
@@ -3390,11 +3650,12 @@
     "Def": 11,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 262,
-    "Type": "악세서리",
+    "Id": 262,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "실버 폭스 벨트",
@@ -3403,11 +3664,12 @@
     "Def": 13,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 263,
-    "Type": "악세서리",
+    "Id": 263,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "아쿠아 링",
@@ -3416,11 +3678,12 @@
     "Def": 12,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 264,
-    "Type": "악세서리",
+    "Id": 264,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "마법 저항의 망토",
@@ -3429,11 +3692,12 @@
     "Def": 17,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 265,
-    "Type": "악세서리",
+    "Id": 265,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "분노의 반지",
@@ -3442,11 +3706,12 @@
     "Def": 5,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 266,
-    "Type": "악세서리",
+    "Id": 266,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "인내의 목걸이",
@@ -3455,11 +3720,12 @@
     "Def": 15,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 267,
-    "Type": "악세서리",
+    "Id": 267,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "요정의 날개",
@@ -3468,11 +3734,12 @@
     "Def": 13,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 268,
-    "Type": "악세서리",
+    "Id": 268,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "악마의 꼬리",
@@ -3481,11 +3748,12 @@
     "Def": 8,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 269,
-    "Type": "악세서리",
+    "Id": 269,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "블랙 캣 벨트",
@@ -3494,11 +3762,12 @@
     "Def": 9,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 270,
-    "Type": "악세서리",
+    "Id": 270,
+    "ItemType": "악세서리",
     "Grade": "레어",
     "Class": "공용",
     "Name": "화이트 캣 벨트",
@@ -3507,11 +3776,12 @@
     "Def": 9,
     "HP": 20,
     "Gold": 5,
-    "GoldUP": 0
+    "GoldUP": 0,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 271,
-    "Type": "무기",
+    "Id": 271,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "발록의 가죽 채찍",
@@ -3520,11 +3790,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 272,
-    "Type": "무기",
+    "Id": 272,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "팬텀의 케인",
@@ -3533,11 +3804,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 273,
-    "Type": "무기",
+    "Id": 273,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "제논의 에너지 소드",
@@ -3546,11 +3818,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 274,
-    "Type": "무기",
+    "Id": 274,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "블랙 리벤져",
@@ -3559,11 +3832,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 275,
-    "Type": "무기",
+    "Id": 275,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 블레이드",
@@ -3572,11 +3846,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 276,
-    "Type": "무기",
+    "Id": 276,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "여제의 라이트닝 너클",
@@ -3585,11 +3860,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 277,
-    "Type": "무기",
+    "Id": 277,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 트레이스너클",
@@ -3598,11 +3874,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 278,
-    "Type": "무기",
+    "Id": 278,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 트레이스너클",
@@ -3611,11 +3888,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 279,
-    "Type": "무기",
+    "Id": 279,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "여제의 브레이브 소드",
@@ -3624,11 +3902,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 280,
-    "Type": "무기",
+    "Id": 280,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "아란의 폴암",
@@ -3637,11 +3916,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 281,
-    "Type": "무기",
+    "Id": 281,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "데몬의 데몬 슬레이어",
@@ -3650,11 +3930,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 282,
-    "Type": "무기",
+    "Id": 282,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "카이저의 두손검",
@@ -3663,11 +3944,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 283,
-    "Type": "무기",
+    "Id": 283,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "펜살리르 배틀해머",
@@ -3676,11 +3958,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 284,
-    "Type": "무기",
+    "Id": 284,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "펜살리르 핼버드",
@@ -3689,11 +3972,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 285,
-    "Type": "무기",
+    "Id": 285,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "네크로 배틀해머",
@@ -3702,11 +3986,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 286,
-    "Type": "무기",
+    "Id": 286,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "네크로 핼버드",
@@ -3715,11 +4000,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 287,
-    "Type": "무기",
+    "Id": 287,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "펜살리르 블레이드",
@@ -3728,11 +4014,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 288,
-    "Type": "무기",
+    "Id": 288,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "은월의 너클",
@@ -3741,11 +4028,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 289,
-    "Type": "무기",
+    "Id": 289,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "전사",
     "Name": "네크로 스피어",
@@ -3754,11 +4042,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 290,
-    "Type": "무기",
+    "Id": 290,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "여제의 샤프니스 보우",
@@ -3767,11 +4056,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 291,
-    "Type": "무기",
+    "Id": 291,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "메르세데스의 듀얼보우건",
@@ -3780,11 +4070,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 292,
-    "Type": "무기",
+    "Id": 292,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "펜살리르 문슈터",
@@ -3793,11 +4084,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 293,
-    "Type": "무기",
+    "Id": 293,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "네크로 문슈터",
@@ -3806,11 +4098,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 294,
-    "Type": "무기",
+    "Id": 294,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "여제의 피닉스 보우",
@@ -3819,11 +4112,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 295,
-    "Type": "무기",
+    "Id": 295,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "엔젤릭버스터의 소울슈터",
@@ -3832,11 +4126,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 296,
-    "Type": "무기",
+    "Id": 296,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "펜살리르 석궁",
@@ -3845,11 +4140,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 297,
-    "Type": "무기",
+    "Id": 297,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "궁수",
     "Name": "네크로 석궁",
@@ -3858,11 +4154,12 @@
     "Def": 2,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 298,
-    "Type": "무기",
+    "Id": 298,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "여제의 다크니스 스태프",
@@ -3871,11 +4168,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 299,
-    "Type": "무기",
+    "Id": 299,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "에반의 드래곤 스태프",
@@ -3884,11 +4182,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 300,
-    "Type": "무기",
+    "Id": 300,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "루미너스의 샤이닝 로드",
@@ -3897,11 +4196,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 301,
-    "Type": "무기",
+    "Id": 301,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "펜살리르 스펠링완드",
@@ -3910,11 +4210,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 302,
-    "Type": "무기",
+    "Id": 302,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "네크로 스펠링완드",
@@ -3923,11 +4224,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 303,
-    "Type": "무기",
+    "Id": 303,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "여제의 페어리 완드",
@@ -3936,11 +4238,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 304,
-    "Type": "무기",
+    "Id": 304,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "펜살리르 완드",
@@ -3949,11 +4252,12 @@
     "Def": 12,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 305,
-    "Type": "무기",
+    "Id": 305,
+    "ItemType": "무기",
     "Grade": "에픽",
     "Class": "마법사",
     "Name": "네크로 스태프",
@@ -3962,11 +4266,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 306,
-    "Type": "모자",
+    "Id": 306,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 헬름",
@@ -3975,11 +4280,12 @@
     "Def": 50,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 307,
-    "Type": "모자",
+    "Id": 307,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 햇",
@@ -3988,11 +4294,12 @@
     "Def": 45,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 308,
-    "Type": "모자",
+    "Id": 308,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 후드",
@@ -4001,11 +4308,12 @@
     "Def": 48,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 309,
-    "Type": "모자",
+    "Id": 309,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 헬름",
@@ -4014,11 +4322,12 @@
     "Def": 55,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 310,
-    "Type": "모자",
+    "Id": 310,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 햇",
@@ -4027,11 +4336,12 @@
     "Def": 50,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 311,
-    "Type": "모자",
+    "Id": 311,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 후드",
@@ -4040,11 +4350,12 @@
     "Def": 53,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 312,
-    "Type": "모자",
+    "Id": 312,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "블랙 크라운",
@@ -4053,11 +4364,12 @@
     "Def": 58,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 313,
-    "Type": "모자",
+    "Id": 313,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "화이트 라피스 캡",
@@ -4066,11 +4378,12 @@
     "Def": 49,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 314,
-    "Type": "모자",
+    "Id": 314,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "다크니스 캡",
@@ -4079,11 +4392,12 @@
     "Def": 52,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 315,
-    "Type": "모자",
+    "Id": 315,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "골드 와이즈 헬름",
@@ -4092,11 +4406,12 @@
     "Def": 56,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 316,
-    "Type": "모자",
+    "Id": 316,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "임페리얼 캡",
@@ -4105,11 +4420,12 @@
     "Def": 57,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 317,
-    "Type": "모자",
+    "Id": 317,
+    "ItemType": "모자",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "그랜드 헬름",
@@ -4118,11 +4434,12 @@
     "Def": 60,
     "HP": 100,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 318,
-    "Type": "상의",
+    "Id": 318,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 메일",
@@ -4131,11 +4448,12 @@
     "Def": 60,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 319,
-    "Type": "상의",
+    "Id": 319,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 로브",
@@ -4144,11 +4462,12 @@
     "Def": 55,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 320,
-    "Type": "상의",
+    "Id": 320,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 튜닉",
@@ -4157,11 +4476,12 @@
     "Def": 58,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 321,
-    "Type": "상의",
+    "Id": 321,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 메일",
@@ -4170,11 +4490,12 @@
     "Def": 65,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 322,
-    "Type": "상의",
+    "Id": 322,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 로브",
@@ -4183,11 +4504,12 @@
     "Def": 60,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 323,
-    "Type": "상의",
+    "Id": 323,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 튜닉",
@@ -4196,11 +4518,12 @@
     "Def": 63,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 324,
-    "Type": "상의",
+    "Id": 324,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "화이트 라피스 아머",
@@ -4209,11 +4532,12 @@
     "Def": 59,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 325,
-    "Type": "상의",
+    "Id": 325,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "다크니스 아머",
@@ -4222,11 +4546,12 @@
     "Def": 62,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 326,
-    "Type": "상의",
+    "Id": 326,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "골드 와이즈 아머",
@@ -4235,11 +4560,12 @@
     "Def": 66,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 327,
-    "Type": "상의",
+    "Id": 327,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "임페리얼 로브",
@@ -4248,11 +4574,12 @@
     "Def": 64,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 328,
-    "Type": "상의",
+    "Id": 328,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "임페리얼 아머",
@@ -4261,11 +4588,12 @@
     "Def": 67,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 329,
-    "Type": "상의",
+    "Id": 329,
+    "ItemType": "상의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "그랜드 아머",
@@ -4274,11 +4602,12 @@
     "Def": 70,
     "HP": 150,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 330,
-    "Type": "하의",
+    "Id": 330,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 팬츠",
@@ -4287,11 +4616,12 @@
     "Def": 58,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 331,
-    "Type": "하의",
+    "Id": 331,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 스커트",
@@ -4300,11 +4630,12 @@
     "Def": 53,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 332,
-    "Type": "하의",
+    "Id": 332,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "펜살리르 그리브",
@@ -4313,11 +4644,12 @@
     "Def": 56,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.01
+    "GoldUP": 0.01,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 333,
-    "Type": "하의",
+    "Id": 333,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 팬츠",
@@ -4326,11 +4658,12 @@
     "Def": 63,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 334,
-    "Type": "하의",
+    "Id": 334,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 스커트",
@@ -4339,11 +4672,12 @@
     "Def": 58,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 335,
-    "Type": "하의",
+    "Id": 335,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "네크로 그리브",
@@ -4352,11 +4686,12 @@
     "Def": 61,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 336,
-    "Type": "하의",
+    "Id": 336,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "화이트 라피스 팬츠",
@@ -4365,11 +4700,12 @@
     "Def": 57,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 337,
-    "Type": "하의",
+    "Id": 337,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "다크니스 팬츠",
@@ -4378,11 +4714,12 @@
     "Def": 60,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 338,
-    "Type": "하의",
+    "Id": 338,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "골드 와이즈 팬츠",
@@ -4391,11 +4728,12 @@
     "Def": 64,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 339,
-    "Type": "하의",
+    "Id": 339,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "임페리얼 팬츠",
@@ -4404,11 +4742,12 @@
     "Def": 62,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 340,
-    "Type": "하의",
+    "Id": 340,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "임페리얼 팬츠",
@@ -4417,11 +4756,12 @@
     "Def": 65,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 341,
-    "Type": "하의",
+    "Id": 341,
+    "ItemType": "하의",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "그랜드 팬츠",
@@ -4430,11 +4770,12 @@
     "Def": 68,
     "HP": 120,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 342,
-    "Type": "악세서리",
+    "Id": 342,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "데아 시두스 이어링",
@@ -4443,11 +4784,12 @@
     "Def": 30,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 343,
-    "Type": "악세서리",
+    "Id": 343,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "실버블라썸 링",
@@ -4456,11 +4798,12 @@
     "Def": 25,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 344,
-    "Type": "악세서리",
+    "Id": 344,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "고귀한 이피아의 반지",
@@ -4469,11 +4812,12 @@
     "Def": 35,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 345,
-    "Type": "악세서리",
+    "Id": 345,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "로얄 블랙메탈 숄더",
@@ -4482,11 +4826,12 @@
     "Def": 40,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 346,
-    "Type": "악세서리",
+    "Id": 346,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "핑크빛 성배",
@@ -4495,11 +4840,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 347,
-    "Type": "악세서리",
+    "Id": 347,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "골든 클로버 벨트",
@@ -4508,11 +4854,12 @@
     "Def": 30,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 348,
-    "Type": "악세서리",
+    "Id": 348,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "혼테일의 목걸이",
@@ -4521,11 +4868,12 @@
     "Def": 25,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 349,
-    "Type": "악세서리",
+    "Id": 349,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "매커네이터 펜던트",
@@ -4534,11 +4882,12 @@
     "Def": 32,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 350,
-    "Type": "악세서리",
+    "Id": 350,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "카웅의 부적",
@@ -4547,11 +4896,12 @@
     "Def": 33,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 351,
-    "Type": "악세서리",
+    "Id": 351,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "블랙빈 마크",
@@ -4560,11 +4910,12 @@
     "Def": 20,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 352,
-    "Type": "악세서리",
+    "Id": 352,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "분자 분해 장치",
@@ -4573,11 +4924,12 @@
     "Def": 18,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 353,
-    "Type": "악세서리",
+    "Id": 353,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "응축된 마력의 결정석",
@@ -4586,11 +4938,12 @@
     "Def": 45,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 354,
-    "Type": "악세서리",
+    "Id": 354,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "이피아의 목걸이",
@@ -4599,11 +4952,12 @@
     "Def": 35,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 355,
-    "Type": "악세서리",
+    "Id": 355,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "블랙 윙 마스터 뱃지",
@@ -4612,11 +4966,12 @@
     "Def": 37,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 356,
-    "Type": "악세서리",
+    "Id": 356,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "이피아의 귀고리",
@@ -4625,11 +4980,12 @@
     "Def": 40,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 357,
-    "Type": "악세서리",
+    "Id": 357,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "이피아의 반지",
@@ -4638,11 +4994,12 @@
     "Def": 33,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.02
+    "GoldUP": 0.02,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 358,
-    "Type": "악세서리",
+    "Id": 358,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "크리스탈 웬투스 뱃지",
@@ -4651,11 +5008,12 @@
     "Def": 36,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.03
+    "GoldUP": 0.03,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 359,
-    "Type": "악세서리",
+    "Id": 359,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "아쿠아리우스 크라운",
@@ -4664,11 +5022,12 @@
     "Def": 42,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.04
+    "GoldUP": 0.04,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 360,
-    "Type": "악세서리",
+    "Id": 360,
+    "ItemType": "악세서리",
     "Grade": "에픽",
     "Class": "공용",
     "Name": "샤이닝 썬 펜던트",
@@ -4677,11 +5036,12 @@
     "Def": 22,
     "HP": 50,
     "Gold": 500,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 361,
-    "Type": "무기",
+    "Id": 361,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "파프니르 리스크홀더",
@@ -4690,11 +5050,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 362,
-    "Type": "무기",
+    "Id": 362,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온의 폭스 클로",
@@ -4703,11 +5064,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 363,
-    "Type": "무기",
+    "Id": 363,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "파프니르 데스브링어",
@@ -4716,11 +5078,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 364,
-    "Type": "무기",
+    "Id": 364,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "파프니르 체인소드",
@@ -4729,11 +5092,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 365,
-    "Type": "무기",
+    "Id": 365,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "파프니르 에너지소드",
@@ -4742,11 +5106,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 366,
-    "Type": "무기",
+    "Id": 366,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온의 소울슈터",
@@ -4755,11 +5120,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 367,
-    "Type": "무기",
+    "Id": 367,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "파프니르 클레르시엘",
@@ -4768,11 +5134,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 368,
-    "Type": "무기",
+    "Id": 368,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "파프니르 미스틸테인",
@@ -4781,11 +5148,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.1
+    "GoldUP": 0.1,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 369,
-    "Type": "무기",
+    "Id": 369,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "파프니르 골디언해머",
@@ -4794,11 +5162,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 370,
-    "Type": "무기",
+    "Id": 370,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "파프니르 문글레이브",
@@ -4807,11 +5176,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 371,
-    "Type": "무기",
+    "Id": 371,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "반 레온의 발로르 스워드",
@@ -4820,11 +5190,12 @@
     "Def": 10,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 372,
-    "Type": "무기",
+    "Id": 372,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "반 레온의 라이언하트",
@@ -4833,11 +5204,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 373,
-    "Type": "무기",
+    "Id": 373,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "파프니르 기간틱 폴암",
@@ -4846,11 +5218,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 374,
-    "Type": "무기",
+    "Id": 374,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "드래곤의 분노",
@@ -4859,11 +5232,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.15
+    "GoldUP": 0.15,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 375,
-    "Type": "무기",
+    "Id": 375,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "파프니르 브류나크",
@@ -4872,11 +5246,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 376,
-    "Type": "무기",
+    "Id": 376,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "전사",
     "Name": "반 레온의 세이버",
@@ -4885,11 +5260,12 @@
     "Def": 12,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 377,
-    "Type": "무기",
+    "Id": 377,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "파프니르 윈드윙슈터",
@@ -4898,11 +5274,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 378,
-    "Type": "무기",
+    "Id": 378,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "반 레온의 슈팅스타",
@@ -4911,11 +5288,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 379,
-    "Type": "무기",
+    "Id": 379,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "파프니르 윈드체이서",
@@ -4924,11 +5302,12 @@
     "Def": 0,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 380,
-    "Type": "무기",
+    "Id": 380,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "반 레온의 크로스보우",
@@ -4937,11 +5316,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 381,
-    "Type": "무기",
+    "Id": 381,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "파프니르 래피드엣지",
@@ -4950,11 +5330,12 @@
     "Def": 3,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 382,
-    "Type": "무기",
+    "Id": 382,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "반 레온의 보우",
@@ -4963,11 +5344,12 @@
     "Def": 7,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 383,
-    "Type": "무기",
+    "Id": 383,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "궁수",
     "Name": "파프니르 페니트레이터",
@@ -4976,11 +5358,12 @@
     "Def": 5,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 384,
-    "Type": "무기",
+    "Id": 384,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "파프니르 마나크라운",
@@ -4989,11 +5372,12 @@
     "Def": 15,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 385,
-    "Type": "무기",
+    "Id": 385,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "반 레온의 포기브니스",
@@ -5002,11 +5386,12 @@
     "Def": 20,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 386,
-    "Type": "무기",
+    "Id": 386,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "파프니르 마나테이커",
@@ -5015,11 +5400,12 @@
     "Def": 18,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 387,
-    "Type": "무기",
+    "Id": 387,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "반 레온의 마나슬레인",
@@ -5028,11 +5414,12 @@
     "Def": 22,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 388,
-    "Type": "무기",
+    "Id": 388,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "파프니르 마나폴",
@@ -5041,11 +5428,12 @@
     "Def": 8,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 389,
-    "Type": "무기",
+    "Id": 389,
+    "ItemType": "무기",
     "Grade": "유니크",
     "Class": "마법사",
     "Name": "반 레온의 스태프",
@@ -5054,11 +5442,12 @@
     "Def": 25,
     "HP": 0,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 390,
-    "Type": "모자",
+    "Id": 390,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "하이네스 헬름",
@@ -5067,11 +5456,12 @@
     "Def": 100,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 391,
-    "Type": "모자",
+    "Id": 391,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "하이네스 햇",
@@ -5080,11 +5470,12 @@
     "Def": 90,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 392,
-    "Type": "모자",
+    "Id": 392,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "하이네스 보닛",
@@ -5093,11 +5484,12 @@
     "Def": 95,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 393,
-    "Type": "모자",
+    "Id": 393,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 헬름",
@@ -5106,11 +5498,12 @@
     "Def": 110,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 394,
-    "Type": "모자",
+    "Id": 394,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 햇",
@@ -5119,11 +5512,12 @@
     "Def": 100,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 395,
-    "Type": "모자",
+    "Id": 395,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 크라운",
@@ -5132,11 +5526,12 @@
     "Def": 95,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 396,
-    "Type": "모자",
+    "Id": 396,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "임페리얼 크라운",
@@ -5145,11 +5540,12 @@
     "Def": 105,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 397,
-    "Type": "모자",
+    "Id": 397,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "마이스터 헬름",
@@ -5158,11 +5554,12 @@
     "Def": 115,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 398,
-    "Type": "모자",
+    "Id": 398,
+    "ItemType": "모자",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "그랜드 헬름",
@@ -5171,11 +5568,12 @@
     "Def": 120,
     "HP": 180,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 399,
-    "Type": "상의",
+    "Id": 399,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "이글아이 아머",
@@ -5184,11 +5582,12 @@
     "Def": 120,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.12
+    "GoldUP": 0.12,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 400,
-    "Type": "상의",
+    "Id": 400,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "이글아이 로브",
@@ -5197,11 +5596,12 @@
     "Def": 110,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 401,
-    "Type": "상의",
+    "Id": 401,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "이글아이 셔츠",
@@ -5210,11 +5610,12 @@
     "Def": 115,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 402,
-    "Type": "상의",
+    "Id": 402,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 슈트",
@@ -5223,11 +5624,12 @@
     "Def": 130,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 403,
-    "Type": "상의",
+    "Id": 403,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 로브",
@@ -5236,11 +5638,12 @@
     "Def": 120,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 404,
-    "Type": "상의",
+    "Id": 404,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 코트",
@@ -5249,11 +5652,12 @@
     "Def": 115,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 405,
-    "Type": "상의",
+    "Id": 405,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "임페리얼 아머",
@@ -5262,11 +5666,12 @@
     "Def": 125,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 406,
-    "Type": "상의",
+    "Id": 406,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "마이스터 아머",
@@ -5275,11 +5680,12 @@
     "Def": 135,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 407,
-    "Type": "상의",
+    "Id": 407,
+    "ItemType": "상의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "그랜드 아머",
@@ -5288,11 +5694,12 @@
     "Def": 140,
     "HP": 250,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 408,
-    "Type": "하의",
+    "Id": 408,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "트릭스터 팬츠",
@@ -5301,11 +5708,12 @@
     "Def": 115,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 409,
-    "Type": "하의",
+    "Id": 409,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "트릭스터 스커트",
@@ -5314,11 +5722,12 @@
     "Def": 105,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 410,
-    "Type": "하의",
+    "Id": 410,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "트릭스터 그리브",
@@ -5327,11 +5736,12 @@
     "Def": 110,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.06
+    "GoldUP": 0.06,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 411,
-    "Type": "하의",
+    "Id": 411,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 팬츠",
@@ -5340,11 +5750,12 @@
     "Def": 125,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 412,
-    "Type": "하의",
+    "Id": 412,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 스커트",
@@ -5353,11 +5764,12 @@
     "Def": 115,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 413,
-    "Type": "하의",
+    "Id": 413,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "반 레온 그리브",
@@ -5366,11 +5778,12 @@
     "Def": 110,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.05
+    "GoldUP": 0.05,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 414,
-    "Type": "하의",
+    "Id": 414,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "임페리얼 팬츠",
@@ -5379,11 +5792,12 @@
     "Def": 120,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 415,
-    "Type": "하의",
+    "Id": 415,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "마이스터 팬츠",
@@ -5392,11 +5806,12 @@
     "Def": 130,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 416,
-    "Type": "하의",
+    "Id": 416,
+    "ItemType": "하의",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "그랜드 팬츠",
@@ -5405,11 +5820,12 @@
     "Def": 130,
     "HP": 220,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 417,
-    "Type": "악세서리",
+    "Id": 417,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "지휘관의 힘의 결정석",
@@ -5418,11 +5834,12 @@
     "Def": 40,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 418,
-    "Type": "악세서리",
+    "Id": 418,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "마력이 깃든 안대",
@@ -5431,11 +5848,12 @@
     "Def": 60,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 419,
-    "Type": "악세서리",
+    "Id": 419,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "가디언의 마이스터 심볼",
@@ -5444,11 +5862,12 @@
     "Def": 70,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.07
+    "GoldUP": 0.07,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 420,
-    "Type": "악세서리",
+    "Id": 420,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "지옥의 불꽃",
@@ -5457,11 +5876,12 @@
     "Def": 35,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 421,
-    "Type": "악세서리",
+    "Id": 421,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "영생의 돌",
@@ -5470,11 +5890,12 @@
     "Def": 80,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 422,
-    "Type": "악세서리",
+    "Id": 422,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "도미네이터 펜던트",
@@ -5483,11 +5904,12 @@
     "Def": 40,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.1
+    "GoldUP": 0.1,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 423,
-    "Type": "악세서리",
+    "Id": 423,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "마이스터링",
@@ -5496,11 +5918,12 @@
     "Def": 75,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.12
+    "GoldUP": 0.12,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 424,
-    "Type": "악세서리",
+    "Id": 424,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "오션 글로우 이어링",
@@ -5509,11 +5932,12 @@
     "Def": 85,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 425,
-    "Type": "악세서리",
+    "Id": 425,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "타일런트 벨트",
@@ -5522,11 +5946,12 @@
     "Def": 50,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.12
+    "GoldUP": 0.12,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 426,
-    "Type": "악세서리",
+    "Id": 426,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "골든 클로버 벨트",
@@ -5535,11 +5960,12 @@
     "Def": 80,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.11
+    "GoldUP": 0.11,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 427,
-    "Type": "악세서리",
+    "Id": 427,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "지혜의 파피아 링",
@@ -5548,11 +5974,12 @@
     "Def": 70,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 428,
-    "Type": "악세서리",
+    "Id": 428,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "가네샤의 상징",
@@ -5561,11 +5988,12 @@
     "Def": 90,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.08
+    "GoldUP": 0.08,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 429,
-    "Type": "악세서리",
+    "Id": 429,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "블랙 하트",
@@ -5574,11 +6002,12 @@
     "Def": 40,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.12
+    "GoldUP": 0.12,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 430,
-    "Type": "악세서리",
+    "Id": 430,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "샤이니 레드 마이스터 심볼",
@@ -5587,11 +6016,12 @@
     "Def": 68,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.1
+    "GoldUP": 0.1,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 431,
-    "Type": "악세서리",
+    "Id": 431,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "퍼플 펜던트",
@@ -5600,11 +6030,12 @@
     "Def": 78,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.09
+    "GoldUP": 0.09,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 432,
-    "Type": "악세서리",
+    "Id": 432,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "골든 크리스탈 뱃지",
@@ -5613,11 +6044,12 @@
     "Def": 77,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.1
+    "GoldUP": 0.1,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 433,
-    "Type": "악세서리",
+    "Id": 433,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "타일런트 클록",
@@ -5626,11 +6058,12 @@
     "Def": 100,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.11
+    "GoldUP": 0.11,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 434,
-    "Type": "악세서리",
+    "Id": 434,
+    "ItemType": "악세서리",
     "Grade": "유니크",
     "Class": "공용",
     "Name": "블랙 크로스 벨트",
@@ -5639,11 +6072,12 @@
     "Def": 65,
     "HP": 80,
     "Gold": 10000,
-    "GoldUP": 0.11
+    "GoldUP": 0.11,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 435,
-    "Type": "무기",
+    "Id": 435,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 대거",
@@ -5652,11 +6086,12 @@
     "Def": 20,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.25
+    "GoldUP": 0.25,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 436,
-    "Type": "무기",
+    "Id": 436,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "아케인셰이드 튜너",
@@ -5665,11 +6100,12 @@
     "Def": 30,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.35
+    "GoldUP": 0.35,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 437,
-    "Type": "무기",
+    "Id": 437,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "제네시스 너클",
@@ -5678,11 +6114,12 @@
     "Def": 32,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.52
+    "GoldUP": 0.52,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 438,
-    "Type": "무기",
+    "Id": 438,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 케인",
@@ -5691,11 +6128,12 @@
     "Def": 22,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.27
+    "GoldUP": 0.27,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 439,
-    "Type": "무기",
+    "Id": 439,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "아케인셰이드 시클",
@@ -5704,11 +6142,12 @@
     "Def": 25,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.43
+    "GoldUP": 0.43,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 440,
-    "Type": "무기",
+    "Id": 440,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "제네시스 대거",
@@ -5717,11 +6156,12 @@
     "Def": 33,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.53
+    "GoldUP": 0.53,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 441,
-    "Type": "무기",
+    "Id": 441,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "앱솔랩스 세이버",
@@ -5730,11 +6170,12 @@
     "Def": 20,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.25
+    "GoldUP": 0.25,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 442,
-    "Type": "무기",
+    "Id": 442,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "아케인셰이드 엑스",
@@ -5743,11 +6184,12 @@
     "Def": 20,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.35
+    "GoldUP": 0.35,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 443,
-    "Type": "무기",
+    "Id": 443,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "제네시스 해머",
@@ -5756,11 +6198,12 @@
     "Def": 30,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.5
+    "GoldUP": 0.5,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 444,
-    "Type": "무기",
+    "Id": 444,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "앱솔랩스 파일 엑스",
@@ -5769,11 +6212,12 @@
     "Def": 25,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.27
+    "GoldUP": 0.27,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 445,
-    "Type": "무기",
+    "Id": 445,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "아케인셰이드 스피어",
@@ -5782,11 +6226,12 @@
     "Def": 28,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.37
+    "GoldUP": 0.37,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 446,
-    "Type": "무기",
+    "Id": 446,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "전사",
     "Name": "제네시스 소드",
@@ -5795,11 +6240,12 @@
     "Def": 35,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.51
+    "GoldUP": 0.51,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 447,
-    "Type": "무기",
+    "Id": 447,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "앱솔랩스 슈팅 보우",
@@ -5808,11 +6254,12 @@
     "Def": 20,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.35
+    "GoldUP": 0.35,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 448,
-    "Type": "무기",
+    "Id": 448,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "아케인셰이드 보우",
@@ -5821,11 +6268,12 @@
     "Def": 25,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 449,
-    "Type": "무기",
+    "Id": 449,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "제네시스 크로스보우",
@@ -5834,11 +6282,12 @@
     "Def": 35,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.53
+    "GoldUP": 0.53,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 450,
-    "Type": "무기",
+    "Id": 450,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "앱솔랩스 크로스보우",
@@ -5847,11 +6296,12 @@
     "Def": 23,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.27
+    "GoldUP": 0.27,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 451,
-    "Type": "무기",
+    "Id": 451,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "아케인셰이드 크로스보우",
@@ -5860,11 +6310,12 @@
     "Def": 28,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.43
+    "GoldUP": 0.43,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 452,
-    "Type": "무기",
+    "Id": 452,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "궁수",
     "Name": "제네시스 보우",
@@ -5873,11 +6324,12 @@
     "Def": 38,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.54
+    "GoldUP": 0.54,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 453,
-    "Type": "무기",
+    "Id": 453,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "앱솔랩스 스펠링 스태프",
@@ -5886,11 +6338,12 @@
     "Def": 40,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.25
+    "GoldUP": 0.25,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 454,
-    "Type": "무기",
+    "Id": 454,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "아케인셰이드 완드",
@@ -5899,11 +6352,12 @@
     "Def": 40,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 455,
-    "Type": "무기",
+    "Id": 455,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "제네시스 스태프",
@@ -5912,11 +6366,12 @@
     "Def": 50,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.55
+    "GoldUP": 0.55,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 456,
-    "Type": "무기",
+    "Id": 456,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "앱솔랩스 매직 건틀렛",
@@ -5925,11 +6380,12 @@
     "Def": 45,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.27
+    "GoldUP": 0.27,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 457,
-    "Type": "무기",
+    "Id": 457,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "아케인셰이드 로드",
@@ -5938,11 +6394,12 @@
     "Def": 45,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.43
+    "GoldUP": 0.43,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 458,
-    "Type": "무기",
+    "Id": 458,
+    "ItemType": "무기",
     "Grade": "레전더리",
     "Class": "마법사",
     "Name": "제네시스 완드",
@@ -5951,11 +6408,12 @@
     "Def": 55,
     "HP": 0,
     "Gold": 100000,
-    "GoldUP": 0.56
+    "GoldUP": 0.56,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 459,
-    "Type": "모자",
+    "Id": 459,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 헬름",
@@ -5964,11 +6422,12 @@
     "Def": 200,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 460,
-    "Type": "모자",
+    "Id": 460,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 크라운",
@@ -5977,11 +6436,12 @@
     "Def": 180,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 461,
-    "Type": "모자",
+    "Id": 461,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "아케인셰이드 캡",
@@ -5990,11 +6450,12 @@
     "Def": 250,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.3
+    "GoldUP": 0.3,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 462,
-    "Type": "모자",
+    "Id": 462,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "에테르넬 햇",
@@ -6003,11 +6464,12 @@
     "Def": 280,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.37
+    "GoldUP": 0.37,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 463,
-    "Type": "모자",
+    "Id": 463,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "제네시스 헬름",
@@ -6016,11 +6478,12 @@
     "Def": 300,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.58
+    "GoldUP": 0.58,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 464,
-    "Type": "모자",
+    "Id": 464,
+    "ItemType": "모자",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "미트라의 분노",
@@ -6029,11 +6492,12 @@
     "Def": 290,
     "HP": 280,
     "Gold": 100000,
-    "GoldUP": 0.41
+    "GoldUP": 0.41,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 465,
-    "Type": "상의",
+    "Id": 465,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 아머",
@@ -6042,11 +6506,12 @@
     "Def": 250,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 466,
-    "Type": "상의",
+    "Id": 466,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 코트",
@@ -6055,11 +6520,12 @@
     "Def": 220,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 467,
-    "Type": "상의",
+    "Id": 467,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "아케인셰이드 슈트",
@@ -6068,11 +6534,12 @@
     "Def": 300,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.33
+    "GoldUP": 0.33,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 468,
-    "Type": "상의",
+    "Id": 468,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "에테르넬 아머",
@@ -6081,11 +6548,12 @@
     "Def": 330,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.37
+    "GoldUP": 0.37,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 469,
-    "Type": "상의",
+    "Id": 469,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "제네시스 아머",
@@ -6094,11 +6562,12 @@
     "Def": 350,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.49
+    "GoldUP": 0.49,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 470,
-    "Type": "상의",
+    "Id": 470,
+    "ItemType": "상의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "미트라의 분노",
@@ -6107,11 +6576,12 @@
     "Def": 340,
     "HP": 350,
     "Gold": 100000,
-    "GoldUP": 0.41
+    "GoldUP": 0.41,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 471,
-    "Type": "하의",
+    "Id": 471,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 팬츠",
@@ -6120,11 +6590,12 @@
     "Def": 240,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 472,
-    "Type": "하의",
+    "Id": 472,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "앱솔랩스 그리브",
@@ -6133,11 +6604,12 @@
     "Def": 210,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.2
+    "GoldUP": 0.2,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 473,
-    "Type": "하의",
+    "Id": 473,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "아케인셰이드 팬츠",
@@ -6146,11 +6618,12 @@
     "Def": 280,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.33
+    "GoldUP": 0.33,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 474,
-    "Type": "하의",
+    "Id": 474,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "에테르넬 팬츠",
@@ -6159,11 +6632,12 @@
     "Def": 310,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.37
+    "GoldUP": 0.37,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 475,
-    "Type": "하의",
+    "Id": 475,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "제네시스 팬츠",
@@ -6172,11 +6646,12 @@
     "Def": 330,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.49
+    "GoldUP": 0.49,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 476,
-    "Type": "하의",
+    "Id": 476,
+    "ItemType": "하의",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "미트라의 분노",
@@ -6185,11 +6660,12 @@
     "Def": 320,
     "HP": 300,
     "Gold": 100000,
-    "GoldUP": 0.41
+    "GoldUP": 0.41,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 477,
-    "Type": "악세서리",
+    "Id": 477,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "고통의 근원",
@@ -6198,11 +6674,12 @@
     "Def": 100,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.3
+    "GoldUP": 0.3,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 478,
-    "Type": "악세서리",
+    "Id": 478,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "마력이 지배하는 안대",
@@ -6211,11 +6688,12 @@
     "Def": 130,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.3
+    "GoldUP": 0.3,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 479,
-    "Type": "악세서리",
+    "Id": 479,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "루즈 컨트롤 머신 마크",
@@ -6224,11 +6702,12 @@
     "Def": 80,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.25
+    "GoldUP": 0.25,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 480,
-    "Type": "악세서리",
+    "Id": 480,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "칠흑의 보스 세트 링",
@@ -6237,11 +6716,12 @@
     "Def": 140,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 481,
-    "Type": "악세서리",
+    "Id": 481,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "몽환의 벨트",
@@ -6250,11 +6730,12 @@
     "Def": 150,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.45
+    "GoldUP": 0.45,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 482,
-    "Type": "악세서리",
+    "Id": 482,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "창세의 뱃지",
@@ -6263,11 +6744,12 @@
     "Def": 160,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.5
+    "GoldUP": 0.5,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 483,
-    "Type": "악세서리",
+    "Id": 483,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "거대한 공포",
@@ -6276,11 +6758,12 @@
     "Def": 120,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 484,
-    "Type": "악세서리",
+    "Id": 484,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "윌의 거미줄 귀고리",
@@ -6289,11 +6772,12 @@
     "Def": 175,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.37
+    "GoldUP": 0.37,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 485,
-    "Type": "악세서리",
+    "Id": 485,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "저주받은 마도서",
@@ -6302,11 +6786,12 @@
     "Def": 190,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.55
+    "GoldUP": 0.55,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 486,
-    "Type": "악세서리",
+    "Id": 486,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "커맨더 포스 이어링",
@@ -6315,11 +6800,12 @@
     "Def": 165,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 487,
-    "Type": "악세서리",
+    "Id": 487,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "에스텔라 이어링",
@@ -6328,11 +6814,12 @@
     "Def": 155,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 488,
-    "Type": "악세서리",
+    "Id": 488,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "데이브레이크 펜던트",
@@ -6341,11 +6828,12 @@
     "Def": 130,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.26
+    "GoldUP": 0.26,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 489,
-    "Type": "악세서리",
+    "Id": 489,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "황혼의 징표",
@@ -6354,11 +6842,12 @@
     "Def": 140,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 490,
-    "Type": "악세서리",
+    "Id": 490,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "트와일라이트 마크",
@@ -6367,11 +6856,12 @@
     "Def": 145,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.4
+    "GoldUP": 0.4,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 491,
-    "Type": "악세서리",
+    "Id": 491,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "여명의 가디언 엔젤 링",
@@ -6380,11 +6870,12 @@
     "Def": 170,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.54
+    "GoldUP": 0.54,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 492,
-    "Type": "악세서리",
+    "Id": 492,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "나이트메어 이어링",
@@ -6393,11 +6884,12 @@
     "Def": 180,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.44
+    "GoldUP": 0.44,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 493,
-    "Type": "악세서리",
+    "Id": 493,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "리부트 벤젼스 링",
@@ -6406,11 +6898,12 @@
     "Def": 120,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.52
+    "GoldUP": 0.52,
+    "ClassName": "EquipItem"
   },
   {
-    "id": 494,
-    "Type": "악세서리",
+    "Id": 494,
+    "ItemType": "악세서리",
     "Grade": "레전더리",
     "Class": "공용",
     "Name": "글로리온 링 : 슈프림",
@@ -6419,6 +6912,7 @@
     "Def": 188,
     "HP": 120,
     "Gold": 100000,
-    "GoldUP": 0.43
+    "GoldUP": 0.43,
+    "ClassName": "EquipItem"
   }
 ]

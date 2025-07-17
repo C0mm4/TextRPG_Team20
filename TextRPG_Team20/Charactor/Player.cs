@@ -33,7 +33,7 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.Atk} {(status.ExtraAtk == 0 ? "" : $" + ({status.ExtraAtk})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"체력 : {status.Hp}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"Gold : {Gold} G", ref ConsoleUI.info1View);
         }
 
@@ -98,6 +98,15 @@ namespace TextRPG_Team20
                     ConsoleUI.Instance.DrawTextInBox("다음방으로 넘어갑니다.", ref ConsoleUI.logView);
                     DungeonManager.Instance.MoveField(CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[1] && c.FromCell[1] == newpos[0])));
                     return;
+                }
+                else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 6)
+                {
+                    DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
+                    ConsoleUI.Instance.DrawTextInBox("적을 마주쳤다!" , ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Battle);
+
+                    this.x = newpos[0];
+                    this.y = newpos[1];
                 }
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];

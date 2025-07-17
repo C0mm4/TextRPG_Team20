@@ -33,6 +33,7 @@ namespace TextRPG_Team20
             List<int> sellItemIds = new List<int> { 998, 999 };
 
             sellItems = ItemManager.Instance.FindItems(item => sellItemIds.Contains(item.data.ID));
+            //sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == Item.ItemType.Consumable);
         }
 
         public void BuyItem()
