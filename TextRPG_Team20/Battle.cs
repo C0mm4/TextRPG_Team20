@@ -36,7 +36,7 @@ namespace TextRPG_Team20.Scene
             if (target.status.HP <= 0)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                player.AddGold(target.Gold);
+                player.AddGold(target.status.Gold);
                 enemies.Remove(target);
             }
 
@@ -77,7 +77,7 @@ namespace TextRPG_Team20.Scene
             if (target.status.HP <= 0)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                player.AddGold(target.Gold);
+                player.AddGold(target.status.Gold);
                 enemies.Remove(target);
             }
 

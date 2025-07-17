@@ -19,8 +19,10 @@ namespace TextRPG_Team20
         public int ExtraAtk {  get; set; }
         public int ExtraDef {  get; set; }
         public string? ClassName {  get; set; }
+
+        public int Gold {  get; set; }
         
-        public Status(int id, int level, int hp, int atk, int def, string name, int extraAtk = 0, int extraDef = 0)
+        public Status(int id, int level, int hp, int atk, int def, string name, int gold, int extraAtk = 0, int extraDef = 0)
         {
             Level = level;
             MaxHP = hp;
@@ -31,6 +33,7 @@ namespace TextRPG_Team20
             ExtraDef = extraDef;
             ID = id;
             Name = name;
+            Gold = gold;
         }
 
         public int TotalAtk => Atk + ExtraAtk;

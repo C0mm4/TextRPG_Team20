@@ -100,13 +100,13 @@ namespace TextRPG_Team20
 
         private ConsoleUI() 
         {
-            mainView = new Rect(2, 1, 110, 32);
-            logView = new Rect(116, 1, 80, 48);
+            mainView = new Rect(2, 1, 140, 32);
+            logView = new Rect(146, 1, 50, 48);
 
-            info1View = new Rect(2, 35, 52, 7);
-            info2View = new Rect(60, 35, 52, 7);
+            info1View = new Rect(2, 35, 67, 7);
+            info2View = new Rect(75, 35, 67, 7);
 
-            inputView = new Rect(2, 44, 110, 5);
+            inputView = new Rect(2, 44, 140, 5);
         }
 
         public void InsertTextInBox(List<string> strings, ref Rect rect)

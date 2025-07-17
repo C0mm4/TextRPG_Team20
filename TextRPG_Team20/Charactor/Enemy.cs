@@ -29,6 +29,7 @@ namespace TextRPG_Team20
                 status.Atk,
                 status.Def,
                 status.Name,
+                status.Gold,
                 status.ExtraAtk,
                 status.ExtraDef
             );

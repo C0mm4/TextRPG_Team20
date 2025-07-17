@@ -34,7 +34,7 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.Atk} {(status.ExtraAtk == 0 ? "" : $" + ({status.ExtraAtk})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"Gold : {Gold} G", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"Gold : {status.Gold} G", ref ConsoleUI.info1View);
         }
 
         public override void Attack(Character target)

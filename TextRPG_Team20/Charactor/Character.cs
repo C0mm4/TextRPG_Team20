@@ -11,7 +11,6 @@ namespace TextRPG_Team20
     internal abstract class Character : IComponent
     {
         public string? Job { get; set; }
-        public int Gold { get; private set; }
         public Status status { get; set; }
         public Inventory Inventory { get; private set; }
 
@@ -21,7 +20,7 @@ namespace TextRPG_Team20
 
         public virtual void AddGold(int gold)
         {
-            Gold += gold;
+            status.Gold += gold;
         }
         
         public virtual void Action()
@@ -43,7 +42,7 @@ namespace TextRPG_Team20
                 status.Name = name;
             }
             Job = job;
-            Gold = gold;
+            status.Gold = gold;
             this.status = status;
 
             Inventory = new Inventory();
@@ -87,7 +86,7 @@ namespace TextRPG_Team20
             Console.WriteLine($"공격력 : {status.TotalAtk}");
             Console.WriteLine($"방어력 : {status.TotalDef}");
             Console.WriteLine($"체력 : {status.HP}");
-            Console.WriteLine($"Gold : {Gold} G");
+            Console.WriteLine($"Gold : {status.Gold} G");
         }
   
 
