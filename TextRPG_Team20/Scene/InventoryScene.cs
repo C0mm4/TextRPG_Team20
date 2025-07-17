@@ -34,7 +34,7 @@ namespace TextRPG_Team20.Scene
 
             _inventory.AddItem(ItemManager.Instance.Create(3));
 
-            _inventory.AddItem(ItemManager.Instance.Create(4));
+            _inventory.AddItem(ItemManager.Instance.Create(494));
 
 
 

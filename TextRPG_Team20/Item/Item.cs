@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace TextRPG_Team20.Item
         public int Def { get; set; }
         public int HP { get; set; }
 
-        public ItemType ItemType { get; set; }
+        public ItemType ItemEquipType { get; set; }
         public string? Type {  get; set; }
         public string? Grade { get; set; }
         public string? Class { get; set; }
@@ -36,6 +37,24 @@ namespace TextRPG_Team20.Item
 
         public bool isEquipped = false;
         
+        public ItemData() { }
+        public ItemData(ItemData data)
+        {
+            ID = data.ID;
+            Name = data.Name;
+            Description = data.Description;
+            Gold = data.Gold;
+            Atk = data.Atk;
+            Def = data.Def;
+            HP = data.HP;
+            ItemEquipType = data.ItemEquipType;
+            Type = data.Type;
+            Grade = data.Grade;
+            Class = data.Class;
+            MaxStackSize = data.MaxStackSize;
+            GoldUP = data.GoldUP;
+            ClassName = data.ClassName;
+        }
     }
 
     internal class Item : IComponent, IComparable<Item>, ICloneable
@@ -44,16 +63,45 @@ namespace TextRPG_Team20.Item
 
         public Item()
         {
+        }
 
+        public void SetType()
+        {
+            switch (data.Type)
+            {
+                case "무기":
+                    data.ItemEquipType = ItemType.Weapon;
+                    break;
+
+                case "모자":
+                    data.ItemEquipType = ItemType.Head;
+                    break;
+
+                case "상의":
+                    data.ItemEquipType = ItemType.Top;
+                    break;
+
+                case "하의":
+                    data.ItemEquipType = ItemType.Bottom;
+                    break;
+
+                case "악세서리":
+                    data.ItemEquipType = ItemType.Accessory;
+                    break;
+
+                case "소모품":
+                    data.ItemEquipType = ItemType.Consumable;
+                    break;
+            }
         }
 
         public int CurrentStack { get; set; } = 1;
 
         public Item(ItemData itemData)
         {
-            this.data = itemData;
+            data = new ItemData(itemData);
 
-            if (this.data.ItemType == ItemType.Consumable && this.data.MaxStackSize > 1)
+            if (this.data.ItemEquipType == ItemType.Consumable && this.data.MaxStackSize > 1)
             {
                 CurrentStack = 1;
             }
@@ -77,7 +125,7 @@ namespace TextRPG_Team20.Item
                 Atk = data.Atk,
                 Def = data.Def,
                 HP = data.HP,
-                ItemType = data.ItemType,
+                ItemEquipType = data.ItemEquipType,
                 MaxStackSize = data.MaxStackSize,
                 ClassName = data.ClassName,
                 isEquipped = false

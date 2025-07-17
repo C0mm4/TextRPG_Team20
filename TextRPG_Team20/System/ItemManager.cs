@@ -47,6 +47,7 @@ namespace TextRPG_Team20.System
                             if (Activator.CreateInstance(itemType) is Item.Item item)
                             {
                                 item.data = data;
+                                item.SetType();
                                 Register(item);
                             }
                             else

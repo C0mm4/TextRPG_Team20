@@ -30,12 +30,12 @@ namespace TextRPG_Team20
             string stackInfo = ""; 
 
 
-            if (item.data.ItemType == ItemType.Consumable && item.CurrentStack > 1)
+            if (item.data.ItemEquipType == ItemType.Consumable && item.CurrentStack > 1)
             {
                 stackInfo = $" (x{item.CurrentStack})";
             }
 
-            switch (item.data.ItemType)
+            switch (item.data.ItemEquipType)
             {
                 case ItemType.Weapon:
                     whatType = "무기";
@@ -108,7 +108,7 @@ namespace TextRPG_Team20
 
             var selectedItem = Items[index];
 
-            if (selectedItem.data.ItemType == ItemType.Consumable)
+            if (selectedItem.data.ItemEquipType == ItemType.Consumable)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{selectedItem.data.Name} 은(는) 장착할 수 없는 아이템입니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
@@ -126,7 +126,7 @@ namespace TextRPG_Team20
             }
 
             Item.Item equippedItemOfSameType = Items.FirstOrDefault(
-                i => i.data.isEquipped && i.data.ItemType == selectedItem.data.ItemType
+                i => i.data.isEquipped && i.data.ItemEquipType == selectedItem.data.ItemEquipType
             );
 
             if (equippedItemOfSameType != null)
@@ -150,7 +150,7 @@ namespace TextRPG_Team20
 
         private void ApplyEquipStats(Item.Item item)
         {
-            switch (item.data.ItemType)
+            switch (item.data.ItemEquipType)
             {
                 case ItemType.Weapon:
                     Game.playerInstance.status.Atk += item.data.Atk;
@@ -191,7 +191,7 @@ namespace TextRPG_Team20
 
         private void RemoveEquipStats(Item.Item item)
         {
-            switch (item.data.ItemType)
+            switch (item.data.ItemEquipType)
             {
                 case ItemType.Weapon:
                     Game.playerInstance.status.Atk -= item.data.Atk;
@@ -249,7 +249,7 @@ namespace TextRPG_Team20
 
             var itemToUse = Items[index];
 
-            if (itemToUse.data.ItemType == ItemType.Consumable)
+            if (itemToUse.data.ItemEquipType == ItemType.Consumable)
             {
                 if (itemToUse.data.ClassName != null && itemToUse.data.ClassName.Contains("Box"))
                 {
@@ -278,7 +278,7 @@ namespace TextRPG_Team20
         public void AddItem(Item.Item newItem)
         {
             // 소모품이고 스택 가능한 아이템인지 확인
-            if (newItem.data.ItemType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
+            if (newItem.data.ItemEquipType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
             {
                 Item.Item existingStack = Items.FirstOrDefault(i =>
                     i.data.ID == newItem.data.ID && // 같은 종류의 아이템인지 (ID로 비교)
