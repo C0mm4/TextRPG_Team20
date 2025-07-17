@@ -23,8 +23,14 @@ namespace TextRPG_Team20.Scene
             if (enemies.Count == 0) return;
 
             // 1. 플레이어가 때릴 적 선택
-            Enemy target = SelectEnemy(enemies);
-            player.Attack(target);
+            Enemy? target = SelectEnemy(enemies);
+            if (target == null)
+            {
+                ConsoleUI.Instance.DrawTextInBox("공격을 취소했습니다.", ref ConsoleUI.logView);
+                return; // 공격 사용을 취소하고 아무 일도 안 함
+            }
+            else
+                player.Attack(target);
 
             // 2. 죽었으면 제거
             if (target.status.Hp <= 0)
@@ -59,8 +65,14 @@ namespace TextRPG_Team20.Scene
         {
             if (enemies.Count == 0) return;
 
-            Enemy target = SelectEnemy(enemies);
-            player.UseSkill(target);
+            Enemy? target = SelectEnemy(enemies);
+            if (target == null)
+            {
+                ConsoleUI.Instance.DrawTextInBox("스킬사용을 취소했습니다.", ref ConsoleUI.logView);
+                return; // 스킬 사용을 취소하고 아무 일도 안 함
+            }
+            else
+                player.UseSkill(target);
 
             if (target.status.Hp <= 0)
             {
@@ -105,7 +117,7 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public static Enemy SelectEnemy(List<Enemy> enemies)
+        public static Enemy? SelectEnemy(List<Enemy> enemies)
         {
             ConsoleUI.inputView.ClearBuffer();
             ConsoleUI.Instance.DrawTextInBox("=== 적 선택 ===", ref ConsoleUI.inputView);
@@ -114,17 +126,21 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {enemies[i].status.Name} (HP:{enemies[i].status.Hp})", ref ConsoleUI.inputView);
             }
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox("0. 뒤로 가기", ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
             string? input = ConsoleUI.Read(ref ConsoleUI.inputView);
             if (int.TryParse(input, out int choice) && choice >= 1 && choice <= enemies.Count)
             {
                 return enemies[choice - 1];
             }
-            else
+            else if (choice == 0)
             {
-                return enemies[0]; // 잘못입력 시 첫 번째 몬스터
+                return null;
             }
+
+            return null;
         }
 
 
