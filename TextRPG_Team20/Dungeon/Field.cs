@@ -117,6 +117,10 @@ namespace TextRPG_Team20.Dungeon
                             ansi = AnsiColor.Blue;
                             tile = "P";
                             break;
+                        case 6:
+                            ansi = AnsiColor.Red;
+                            tile = "@";
+                            break;
                         case 0:
                             tile = " ";
                             break;
