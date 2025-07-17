@@ -99,34 +99,16 @@ namespace TextRPG_Team20.Scene
             }
         }
 
-        public static void Miss(Player player, List<Enemy> enemies)
-        {
-            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 모든 적이 공격해 옵니다!", ref ConsoleUI.logView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-
-            foreach (var enemy in enemies)
-            {
-                enemy.Attack(player);
-                if (player.status.Hp <= 0)
-                {
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Defeat);
-                    return;
-                }
-            }
-        }
-
-
         public static Enemy? SelectEnemy(List<Enemy> enemies)
         {
             ConsoleUI.inputView.ClearBuffer();
-            ConsoleUI.Instance.DrawTextInBox("=== 적 선택 ===", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox("=== 적 선택 ===", ref ConsoleUI.inputView);          //delete~
             for (int i = 0; i < enemies.Count; i++)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {enemies[i].status.Name} (HP:{enemies[i].status.Hp})", ref ConsoleUI.inputView);
-            }
+            }                                                                                     
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("0. 뒤로 가기", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("0. 취소", ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
@@ -135,12 +117,11 @@ namespace TextRPG_Team20.Scene
             {
                 return enemies[choice - 1];
             }
-            else if (choice == 0)
+            else 
             {
-                return null;
+                return null;                                                                  //delete~
             }
-
-            return null;
+              
         }
 
 

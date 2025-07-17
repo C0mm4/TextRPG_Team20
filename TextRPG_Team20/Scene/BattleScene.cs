@@ -65,8 +65,6 @@ namespace TextRPG_Team20.Scene
         public override bool Action(int input)
         {
             
-            if (player.status.Hp > 0)
-            {
                 switch (input)
                 {
                     case 1: // 공격
@@ -78,15 +76,12 @@ namespace TextRPG_Team20.Scene
                         break;
 
                     default: // 잘못입력
-                        Battle.Miss(player, enemys);
+                        //Battle.Miss(player, enemys);
                         ((Scene)this).InvalidInput();
                         break;
                 }
-            }
-            else
-            {
-                Game.Instance.SceneChange(Game.SceneState.Defeat);
-            }
+            
+
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;
         }
