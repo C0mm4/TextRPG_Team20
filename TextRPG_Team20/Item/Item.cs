@@ -127,6 +127,7 @@ namespace TextRPG_Team20.Item
                 HP = data.HP,
                 ItemEquipType = data.ItemEquipType,
                 MaxStackSize = data.MaxStackSize,
+                Class = data.Class,
                 ClassName = data.ClassName,
                 isEquipped = false
             };

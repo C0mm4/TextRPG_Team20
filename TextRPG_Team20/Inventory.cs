@@ -89,6 +89,7 @@ namespace TextRPG_Team20
             string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
             return $"{(itemNum + 1).ToString().PadRight(5)} | " +
+            $"{ConsoleUI.PadRightDisplay(item.data.Class, 5)} |" + 
             $"{ConsoleUI.PadRightDisplay(equipMark + safeName + stackInfo, 25)} | " + 
             $"{ConsoleUI.PadRightDisplay(whatType, 8)} | " +
             $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt, -3}", 25)} | " +
