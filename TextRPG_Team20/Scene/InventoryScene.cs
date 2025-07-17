@@ -12,8 +12,7 @@ namespace TextRPG_Team20.Scene
     {
         private Inventory _inventory;
 
-        //Inventory equipInventory = new Inventory();          //장착 아이템
-        //Inventory consumableInventory = new Inventory();     //소비 아이템
+        
 
 
         public InventoryScene(Inventory inventory)
@@ -28,13 +27,9 @@ namespace TextRPG_Team20.Scene
 
             _inventory.AddItem(ItemManager.Instance.Create(4));
 
-            _inventory.AddItem(ItemManager.Instance.Create(1));
-
-            _inventory.AddItem(ItemManager.Instance.Create(2));
-
-            _inventory.AddItem(ItemManager.Instance.Create(3));
-
             _inventory.AddItem(ItemManager.Instance.Create(494));
+
+            _inventory.AddItem(ItemManager.Instance.Create(126));
 
 
 

@@ -21,6 +21,49 @@ namespace TextRPG_Team20.System
             }
         }
 
+        private ItemType ConvertStringToItemType(string itemTypeString)
+        {
+            return itemTypeString switch
+            {
+                "무기" => ItemType.Weapon,
+                "모자" => ItemType.Head,
+                "상의" => ItemType.Top,
+                "하의" => ItemType.Bottom,
+                "악세서리" => ItemType.Accessory,
+                "소모품" => ItemType.Consumable,
+                _ => ItemType.None
+            };
+        }
+
+        private List<JobType> ConvertClassStringToJobTypes(string? classString)
+        {
+            List<JobType> jobTypes = new List<JobType>();
+
+            if (string.IsNullOrEmpty(classString))
+            {
+                return jobTypes;
+            }
+
+            switch (classString)
+            {
+                case "공용":                 
+                    break;
+                case "전사":
+                    jobTypes.Add(JobType.Warrior);
+                    break;
+                case "궁수":
+                    jobTypes.Add(JobType.Archer);
+                    break;
+                case "마법사":
+                    jobTypes.Add(JobType.Mage);
+                    break;               
+                default:
+                    ConsoleUI.Instance.DrawTextInBox($"경고: 알 수 없는 직업 제한 '{classString}'이(가) 발견되었습니다.", ref ConsoleUI.logView);
+                    break;
+            }
+            return jobTypes;
+        }
+
         private ItemManager() 
         {
 
@@ -48,6 +91,9 @@ namespace TextRPG_Team20.System
                             {
                                 item.data = data;
                                 item.SetType();
+
+                                item.data.EquipableJobs = ConvertClassStringToJobTypes(data.Class);
+
                                 Register(item);
                             }
                             else
@@ -75,9 +121,13 @@ namespace TextRPG_Team20.System
             _prototypes[item.data.ID] = item;
         }
 
-        public Item.Item? Create(int id) 
-        { 
-            return _prototypes[id].Clone() as Item.Item;
+        public Item.Item? Create(int id)
+        {
+            if (_prototypes.TryGetValue(id, out var prototype)) 
+            {
+                return prototype.Clone() as Item.Item;
+            }
+            return null;
         }
 
         public Item.Item? FindItem(Predicate<Item.Item> predicate)
