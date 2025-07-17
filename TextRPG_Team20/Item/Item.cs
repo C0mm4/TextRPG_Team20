@@ -17,7 +17,8 @@ namespace TextRPG_Team20.Item
         public int Def { get; set; }
         public int HP { get; set; }
 
-        public int Type { get; set; }
+        public string Type { get; set; }
+        public float GoldUP {  get; set; }
 
         public string? ClassName { get; set; }   
 
