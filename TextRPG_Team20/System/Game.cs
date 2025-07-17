@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
-using TextRPG_Team20.Item;
 
 
 namespace TextRPG_Team20

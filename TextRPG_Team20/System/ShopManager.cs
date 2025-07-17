@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TextRPG_Team20.Item;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
 
@@ -73,7 +72,7 @@ namespace TextRPG_Team20
             player.DecreaseGold(itemToBuy.data.Gold);
 
             // 인벤토리에 아이템 추가
-            player.Inventory.AddItem((Item.Item)itemToBuy.Clone());
+            player.Inventory.AddItem((Item)itemToBuy.Clone());
 
             // 성공 메시지 출력
             string message = $"{AnsiColor.Cyan}{itemToBuy.data.Name}{AnsiColor.Reset}을(를) 구매했습니다.";

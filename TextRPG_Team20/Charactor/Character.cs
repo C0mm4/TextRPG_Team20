@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20;
 using TextRPG_Team20.Dungeon;
-using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20
 {

@@ -19,7 +19,6 @@ namespace TextRPG_Team20
             Items = new List<Item>();
         }
 
-        public int MaxCapacity { get; private set; }
 
         
 

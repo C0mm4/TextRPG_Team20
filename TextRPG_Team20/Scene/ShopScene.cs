@@ -129,7 +129,7 @@ namespace TextRPG_Team20.Scene
                 // 판매할 아이템 추가 하는 코드 ShopManager.SetSellItems() 에서 아이템 추가 가능
                 for (int i = 0; i < shopManager.sellItems.Count; i++)      
                 {
-                    Item.Item item = shopManager.sellItems[i];
+                    Item item = shopManager.sellItems[i];
                     ConsoleUI.Instance.DrawTextInBox($"- {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
                 }
 
@@ -142,7 +142,7 @@ namespace TextRPG_Team20.Scene
             {
                 for (int i = 0; i < shopManager.sellItems.Count; i++)
                 {
-                    Item.Item item = shopManager.sellItems[i];
+                    Item item = shopManager.sellItems[i];
                     ConsoleUI.Instance.DrawTextInBox($"[{i + 1}] {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
                 }
                  

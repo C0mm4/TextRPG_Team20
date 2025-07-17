@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Dungeon;
-using TextRPG_Team20.Item;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.Skill;
 using TextRPG_Team20.System;

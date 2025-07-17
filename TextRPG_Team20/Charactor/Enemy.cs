@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
-using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20
 {
