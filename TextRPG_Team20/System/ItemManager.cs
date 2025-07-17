@@ -34,7 +34,7 @@ namespace TextRPG_Team20.System
                     foreach (var data in wrapper.Items) 
                     {
                         // test
-                        string? className = "EquipItem"; //data.ClassName;
+                        string? className = data.ClassName;
                         // Get Application Domain Assemblies
                         Type? itemType = AppDomain.CurrentDomain
                                             .GetAssemblies()
