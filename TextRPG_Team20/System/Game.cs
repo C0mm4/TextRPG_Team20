@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
+using TextRPG_Team20.Item;
 
 
 namespace TextRPG_Team20
@@ -140,7 +141,7 @@ namespace TextRPG_Team20
         public void CreatePlayerInstance(string? name)
         {
             Status status = new Status(0, 1, 100, 5, 10, name, 0);
-            playerInstance = new Player(name ?? "", "Job", 0, status);
+            playerInstance = new Player(name ?? "", JobType.Warrior, 0, status);
         }
 
         public void SaveGame()
