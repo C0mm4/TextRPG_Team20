@@ -15,6 +15,8 @@ namespace TextRPG_Team20
         public Status status { get; set; }
         public Inventory Inventory { get; private set; }
 
+        
+
         public int x, y;
 
         protected int currentPosData;

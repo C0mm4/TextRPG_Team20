@@ -12,19 +12,16 @@ namespace TextRPG_Team20
 
         private Character _ownerCharacter;
 
-        public Inventory(Character owner)
+        public Inventory(Character owner, int capacity = 50)
         {
-            MaxCapacity = 50;
             _ownerCharacter = owner;
-        }
-
-        public int MaxCapacity { get; private set; } 
-
-        public Inventory(int capacity = 50) 
-        {
-            Items = new List<Item.Item>();
             MaxCapacity = capacity;
+            Items = new List<Item.Item>();
         }
+
+        public int MaxCapacity { get; private set; }
+
+        
 
         public string showItem(int itemNum)
         {
@@ -36,7 +33,22 @@ namespace TextRPG_Team20
             string whatType = "";
             string whatStatString = "";
             int whatStatInt = 0;
-            string stackInfo = ""; 
+            string stackInfo = "";
+            string jobRestrictInfo = "";
+
+            if (item.data.ItemEquipType != ItemType.Consumable)
+            {
+                if (item.data.EquipableJobs != null && item.data.EquipableJobs.Count > 0)
+                {
+                    // 직업 제한이 있는 경우
+                    jobRestrictInfo = $" ({string.Join("/", item.data.EquipableJobs)})"; 
+                }
+                else
+                {
+                    // 직업 제한이 없는 경우 (모든 직업 장착 가능)
+                    jobRestrictInfo = " (모든 직업)";
+                }
+            }
 
 
             if (item.data.ItemEquipType == ItemType.Consumable && item.CurrentStack > 1)
@@ -78,7 +90,7 @@ namespace TextRPG_Team20
                     {
                         whatType = "상자";
                         whatStatString = "내용물";
-                        whatStatInt = 0; 
+                        whatStatInt = 0;
                     }
                     else
                     {
@@ -98,10 +110,10 @@ namespace TextRPG_Team20
             string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
             return $"{(itemNum + 1).ToString().PadRight(5)} | " +
-            $"{ConsoleUI.PadRightDisplay(item.data.Class, 5)} |" + 
-            $"{ConsoleUI.PadRightDisplay(equipMark + safeName + stackInfo, 25)} | " + 
+            $"{ConsoleUI.PadRightDisplay(item.data.Class, 5)} |" +
+            $"{ConsoleUI.PadRightDisplay(equipMark + safeName + stackInfo, 25)} | " +
             $"{ConsoleUI.PadRightDisplay(whatType, 8)} | " +
-            $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt, -3}", 25)} | " +
+            $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt,-3}", 25)} | " +
             $"{safeDesc}{AnsiColor.Reset}";
         }
 
@@ -123,6 +135,33 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{selectedItem.data.Name} 은(는) 장착할 수 없는 아이템입니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                 return;
+            }
+
+            bool canEquip = false;
+            if (selectedItem.data.EquipableJobs == null || selectedItem.data.EquipableJobs.Count == 0 || selectedItem.data.EquipableJobs.Contains(JobType.None))
+            {
+                
+                canEquip = true;
+            }
+            else if (_ownerCharacter != null && selectedItem.data.EquipableJobs.Contains(_ownerCharacter.Job))
+            {
+                
+                canEquip = true;
+            }
+
+            if (!canEquip)
+            {
+                string allowedJobs = selectedItem.data.EquipableJobs.Count > 0 ? string.Join(", ", selectedItem.data.EquipableJobs) : "정보 없음";
+                if (selectedItem.data.EquipableJobs.Contains(JobType.None))
+                {
+                    allowedJobs = "모든 직업";
+                }
+
+                ConsoleUI.Instance.DrawTextInBox(
+                    $"{AnsiColor.Red}{_ownerCharacter?.Job}은(는) {selectedItem.data.Name}을(를) 장착할 수 없습니다. (가능 직업: {allowedJobs}){AnsiColor.Reset}",
+                    ref ConsoleUI.info2View);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                return; 
             }
 
             if (selectedItem.data.isEquipped)
@@ -267,7 +306,7 @@ namespace TextRPG_Team20
                     // 상자는 스택이 없다고 가정하고 바로 제거
                     RemoveItem(itemToUse);
                 }
-                else 
+                else
                 {
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} (x1) 을(를) 사용했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
                     Game.playerInstance.status.HP += itemToUse.data.HP;
@@ -295,11 +334,11 @@ namespace TextRPG_Team20
                     i.CurrentStack < i.data.MaxStackSize); // 스택이 가득 차지 않았는지
 
                 if (existingStack != null)
-                { 
-                    existingStack.CurrentStack++; 
+                {
+                    existingStack.CurrentStack++;
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} (x1) 을(를) 획득하여 기존 스택에 추가했습니다! (총 {existingStack.CurrentStack}개){AnsiColor.Reset}", ref ConsoleUI.info2View);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
-                    return; 
+                    return;
                 }
             }
 
@@ -332,29 +371,6 @@ namespace TextRPG_Team20
         {
             Items.Remove(item);
         }
-        public bool EquipItem(Item.Item item)
-        {
-            if (item is EquipableItem equipItem)
-            {
-                if (equipItem.EquipableJobs.Contains(_ownerCharacter.Job))
-                {
-                    ConsoleUI.Instance.DrawTextInBox($"{equipItem.Name}을(를) 장착했습니다!", ref ConsoleUI.logView);
-                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-                    return true;
-                }
-                else
-                {
-                    ConsoleUI.Instance.DrawTextInBox($"{_ownerCharacter.Job}은(는) {equipItem.Name}을(를) 장착할 수 없습니다.", ref ConsoleUI.logView);
-                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-                    return false;
-                }
-            }
-            else
-            {
-                ConsoleUI.Instance.DrawTextInBox($"{item.Name}은(는) 장착 가능한 아이템이 아닙니다.", ref ConsoleUI.logView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-                return false;
-            }
+    
         }
     }
-}
