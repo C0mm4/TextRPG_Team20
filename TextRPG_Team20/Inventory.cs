@@ -33,7 +33,7 @@ namespace TextRPG_Team20
             var item = Items[itemNum];
 
             string equipMark = item.data.isEquipped ? $"{AnsiColor.Green}[E]" : "";
-            string whatType = item.data.Type == 0 ? "무기" : "방어구";
+            string whatType = item.data.Type;
             string whatStatString = whatType == "무기" ? "공격력" : "방어력";
             int whatStatInt = whatType == "무기" ? item.data.Atk : item.data.Def;
 
@@ -69,7 +69,7 @@ namespace TextRPG_Team20
 
             if (doEquip == "장착")
             {
-                if (item.data.Type == 0)
+                if (item.data.Type == "무기")
                 {
                     Game.playerInstance.status.Atk += item.data.Atk;
                     Game.playerInstance.status.ExtraAtk += item.data.Atk;
@@ -83,7 +83,7 @@ namespace TextRPG_Team20
             }
             else if (doEquip == "해제")
             {
-                if (item.data.Type == 0)
+                if (item.data.Type == "무기")
                 {
                     Game.playerInstance.status.Atk -= item.data.Atk;
                     Game.playerInstance.status.ExtraAtk -= item.data.Atk;
