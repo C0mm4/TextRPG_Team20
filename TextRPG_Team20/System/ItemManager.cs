@@ -21,6 +21,19 @@ namespace TextRPG_Team20.System
             }
         }
 
+        private ItemType ConvertStringToItemType(string itemTypeString)
+        {
+            return itemTypeString switch
+            {
+                "무기" => ItemType.Weapon,
+                "모자" => ItemType.Head,
+                "상의" => ItemType.Top,
+                "하의" => ItemType.Bottom,
+                "악세서리" => ItemType.Accessory,
+                "소모품" => ItemType.Consumable,
+                _ => ItemType.None
+            };
+        }
         private ItemManager() 
         {
 

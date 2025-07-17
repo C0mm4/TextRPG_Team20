@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Item
 {
+    public enum JobType
+    {
+        None = 0,     // 기본값 또는 해당 없음 , 공용 아이템
+        Warrior = 1,  
+        Mage = 2,     
+        Archer = 3   
+    }
     public enum ItemType
     {
         Weapon = 0,     // 무기
@@ -14,7 +21,8 @@ namespace TextRPG_Team20.Item
         Top = 2,        // 상의
         Bottom = 3,     // 하의
         Accessory = 4,  // 장신구
-        Consumable = 5  // 소모품 (상자 포함)
+        Consumable = 5,  // 소모품 (상자 포함)
+        None = 999
     }
     internal class ItemData
     {
@@ -33,10 +41,13 @@ namespace TextRPG_Team20.Item
         public int MaxStackSize { get; set; } = 1;
         public float GoldUP {  get; set; }
 
-        public string? ClassName { get; set; }   
+        public string? ClassName { get; set; }
+        public List<JobType> EquipableJobs { get; set; } = new List<JobType>();
 
         public bool isEquipped = false;
+
         
+
         public ItemData() { }
         public ItemData(ItemData data)
         {
@@ -54,6 +65,10 @@ namespace TextRPG_Team20.Item
             MaxStackSize = data.MaxStackSize;
             GoldUP = data.GoldUP;
             ClassName = data.ClassName;
+
+            EquipableJobs = new List<JobType>(data.EquipableJobs);
+
+            isEquipped = data.isEquipped;
         }
     }
 
@@ -128,7 +143,8 @@ namespace TextRPG_Team20.Item
                 ItemEquipType = data.ItemEquipType,
                 MaxStackSize = data.MaxStackSize,
                 ClassName = data.ClassName,
-                isEquipped = false
+                EquipableJobs = new List<JobType>(data.EquipableJobs), 
+                isEquipped = data.isEquipped
             };
 
             clone.CurrentStack = 1;
