@@ -55,6 +55,7 @@ namespace TextRPG_Team20.Scene
                         {
                             var (success, message) = shopManager.SellItem(input - 1);
 
+                            //결과 메세지 log에 출력
                             ConsoleUI.Instance.DrawTextInBox(message, ref ConsoleUI.logView);
                             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
 
@@ -69,7 +70,7 @@ namespace TextRPG_Team20.Scene
                 }   
 
             }
-            else // if (BuyShop == true) // 구매 모드 (오류 방지를 위해 else로 처리)
+            else    //if (BuyShop == true) 구매 모드
             {
                 switch (input)
                 {
@@ -78,9 +79,22 @@ namespace TextRPG_Team20.Scene
                         return false;
                   
                     default:
-                // TODO: 아이템 구매 로직 구현 (예: shopManager.BuyItem(input - 1);)
-                        ((Scene)this).InvalidInput();
-                        return true;
+                        // 입력값이 1 이상이고 판매 아이템 개수 이하일 때 구매
+                        if (input > 0 && input <= shopManager.sellItems.Count)
+                        {
+                            var (success, message) = shopManager.BuyItem(input - 1);
+
+                            // 결과 메시지를 info2View에 표시
+                            ConsoleUI.Instance.DrawTextInBox(message, ref ConsoleUI.logView);
+                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+                            return false;
+                        }
+                        else
+                        {
+                            ((Scene)this).InvalidInput();
+                            return true;
+                        }
                 }
             }
         }

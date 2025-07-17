@@ -23,8 +23,16 @@ namespace TextRPG_Team20
         {
             Gold += gold;
         }
-        
-        public virtual void Action()
+		public void DecreaseGold(int gold)
+		{
+			Gold -= gold;
+            if (Gold <0)
+            {
+                Gold = 0;   // 혹시 모를 음수 방지
+            }
+		}
+
+		public virtual void Action()
         {
             Console.WriteLine();
         }

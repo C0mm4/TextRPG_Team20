@@ -34,7 +34,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.ReturnToLobby();
                     ConsoleUI.logView.ClearBuffer();
                     ConsoleUI.Instance.DrawTextInBox("어라.. 꿈이었나..", ref ConsoleUI.logView);
-                    Game.playerInstance.AddGold(-(int)(Game.playerInstance.Gold * 0.5));
+                    Game.playerInstance.DecreaseGold((int)(Game.playerInstance.Gold * 0.5));
                     return true; 
                 case 1:
                     Game.Instance.GameStart();
