@@ -27,7 +27,7 @@ namespace TextRPG_Team20.Item
         public int HP { get; set; }
 
         public ItemType ItemEquipType { get; set; }
-        public string? Type {  get; set; }
+        public string? ItemType {  get; set; }
         public string? Grade { get; set; }
         public string? Class { get; set; }
         public int MaxStackSize { get; set; } = 1;
@@ -48,7 +48,7 @@ namespace TextRPG_Team20.Item
             Def = data.Def;
             HP = data.HP;
             ItemEquipType = data.ItemEquipType;
-            Type = data.Type;
+            ItemType = data.ItemType;
             Grade = data.Grade;
             Class = data.Class;
             MaxStackSize = data.MaxStackSize;
@@ -67,7 +67,7 @@ namespace TextRPG_Team20.Item
 
         public void SetType()
         {
-            switch (data.Type)
+            switch (data.ItemType)
             {
                 case "무기":
                     data.ItemEquipType = ItemType.Weapon;
