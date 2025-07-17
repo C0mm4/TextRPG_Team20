@@ -29,7 +29,7 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    Game.Instance.ReturnToLobby();
+                    Game.Instance.ReturnToLobby();          
                     return true;
                 case 1:
 

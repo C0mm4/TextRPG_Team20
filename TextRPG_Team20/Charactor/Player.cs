@@ -119,6 +119,12 @@ namespace TextRPG_Team20
             base.AddGold(gold);
             LastBattleGold += gold;
         }
+  
+        public void ResetLastBattleGold()
+        {
+            
+            LastBattleGold = 0;
+        }
 
         public override void PrintData()
         {

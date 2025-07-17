@@ -97,7 +97,7 @@ namespace TextRPG_Team20
                 case SceneState.EquipControl:
                     break;
                 case SceneState.Status:
-                    newScene = new BattleScene(playerInstance, enemys); //newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 정상화
+                    newScene = new StatScene(playerInstance.status);
                     break;
                 case SceneState.SkillList:
                     break;
