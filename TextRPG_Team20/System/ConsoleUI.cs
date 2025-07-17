@@ -236,14 +236,14 @@ namespace TextRPG_Team20
                 int cursorY = startY + i;
 
                 Console.SetCursorPosition(cursorX, cursorY);
-                Console.Write(line);  // ❗ PadRightDisplay 제거
+                Console.Write(line);  //  PadRightDisplay 제거
 
                 // 마지막 커서 위치 기록
                 lastPrintedY = cursorY;
                 lastCursorX = cursorX + lineWidth;
             }
 
-            // ✅ 출력 후 위치 업데이트
+            //  출력 후 위치 업데이트
             rect.currentY = (lastPrintedY - rect.y) + 1;
             rect.currentX = lastCursorX;
 
@@ -312,6 +312,38 @@ namespace TextRPG_Team20
                 currentY = original.y,
                 lines = new List<string>()
             };
+        }
+
+        public static void SplitRect(Rect original, out List<Rect> rects, int horizon = 2, int vertical = 1)
+        {
+            rects = new List<Rect>();
+
+            if(horizon == 0 || vertical == 0)
+            {
+                ConsoleUI.Instance.DrawTextInBox("박스를 0개로 나눌 수 없습니다.", ref logView);
+            }
+
+            int splitWidth = original.width / horizon;
+            int splitHeight = original.height / vertical;
+
+            for (int i = 0; i < horizon; i++)
+            {
+                for(int j = 0 ; j < vertical; j++)
+                {
+                    Rect newRect = new Rect
+                    {
+                        x = original.x + splitWidth * i,
+                        y = original.y + splitHeight * j,
+                        width = splitWidth,
+                        height = splitHeight,
+                        currentX = original.x + splitWidth * i,
+                        currentY = original.y + splitHeight * j,
+                        lines = new List<string>()
+                    };
+                    rects.Add(newRect);
+                }
+            }
+
         }
     }
 }

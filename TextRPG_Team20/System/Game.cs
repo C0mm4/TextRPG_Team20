@@ -163,6 +163,14 @@ namespace TextRPG_Team20
             }
         }
 
+        public void ReturnToTitle()
+        {
+            while (_sceneStack.Count > 0)
+            {
+                PopScene();
+            }
+        }
+
         public void GameEnd()
         {
             while (_sceneStack.Count > 0)

@@ -18,6 +18,7 @@ namespace TextRPG_Team20
         public int ExtraAtk {  get; set; }
         public int ExtraDef {  get; set; }
         public string ClassName {  get; set; }
+        public int AddGold {  get; set; }
         
         public Status(int id, int level, int hp, int atk, int def, int extraAtk = 0, int extraDef = 0)
         {
@@ -36,6 +37,7 @@ namespace TextRPG_Team20
     public class StatusWrap() 
     {
         public List<Status> statuses {  get; set; }
-    }
 
+    }
+    
 }

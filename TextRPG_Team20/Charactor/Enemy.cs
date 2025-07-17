@@ -55,5 +55,10 @@ namespace TextRPG_Team20
         public override void PrintInField()
         {
         }
+
+        public void DrawAscii(ConsoleUI.Rect rect)
+        {
+
+        }
     }
 }
