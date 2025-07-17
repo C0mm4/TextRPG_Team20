@@ -8,7 +8,10 @@ namespace TextRPG_Team20.Item
 {
     internal class ConsumeItem : Item, ICommand
     {
+        public ConsumeItem(ItemData itemData) : base(itemData)
+        {
 
+        }
         public void Execute()
         {
             useitem();
@@ -26,7 +29,7 @@ namespace TextRPG_Team20.Item
             int PlayerMaxHp = 0;//최대 체력
 
             //아이템의 속성에 따라 회복한다
-            if (ItemType == 0)//0이 체력 회복 아이템이라 가정
+            if (ItemType == 5)//0이 체력 회복 아이템이라 가정
             {
                 PlayerNowHp = PlayerNowHp + ItemBig;
                 if (PlayerNowHp >= PlayerMaxHp)

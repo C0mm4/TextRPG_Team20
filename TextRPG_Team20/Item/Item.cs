@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20.Item
 {
+    public enum ItemType
+    {
+        Weapon = 0,     // 무기
+        Head = 1,       // 모자
+        Top = 2,        // 상의
+        Bottom = 3,     // 하의
+        Accessory = 4,  // 장신구
+        Consumable = 5  // 소모품 (상자 포함)
+    }
     internal class ItemData
     {
         public int ID { get; set; }
@@ -17,7 +26,9 @@ namespace TextRPG_Team20.Item
         public int Def { get; set; }
         public int HP { get; set; }
 
-        public int Type { get; set; }
+        public ItemType Type { get; set; }
+
+        public int MaxStackSize { get; set; } = 1;
 
         public string? ClassName { get; set; }   
 
@@ -29,9 +40,21 @@ namespace TextRPG_Team20.Item
     {
         public ItemData data = new();
 
-        public Item()
+        public int CurrentStack { get; set; } = 1;
+
+        public Item(ItemData itemData)
         {
-            // For Test Log
+            this.data = itemData;
+
+            if (this.data.Type == ItemType.Consumable && this.data.MaxStackSize > 1)
+            {
+                CurrentStack = 1;
+            }
+            else // 그 외의 아이템 (장비 등) 또는 스택 불가능한 소모품
+            {
+                CurrentStack = 1; // 스택 불가능 아이템도 일단 1개로 시작
+            }
+
             ConsoleUI.Instance.DrawTextInBox($"{GetType().Name}", ref ConsoleUI.logView);
         }
 
@@ -49,8 +72,13 @@ namespace TextRPG_Team20.Item
                 Def = data.Def,
                 HP = data.HP,
                 Type = data.Type,
-                isEquipped = data.isEquipped
+                MaxStackSize = data.MaxStackSize,
+                ClassName = data.ClassName,
+                isEquipped = false
             };
+
+            clone.CurrentStack = 1;
+
             return clone;
         }
 
