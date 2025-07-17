@@ -131,24 +131,19 @@ namespace TextRPG_Team20.Item
         public virtual object Clone()
         {
             var clone = Activator.CreateInstance(this.GetType()) as Item;
-            clone.data = new ItemData
+            if (clone != null)
             {
-                ID = data.ID,
-                Name = data.Name,
-                Description = data.Description,
-                Gold = data.Gold,
-                Atk = data.Atk,
-                Def = data.Def,
-                HP = data.HP,
-                ItemEquipType = data.ItemEquipType,
-                MaxStackSize = data.MaxStackSize,
-                Class = data.Class,
-                ClassName = data.ClassName,
-                EquipableJobs = new List<JobType>(data.EquipableJobs), 
-                isEquipped = data.isEquipped
-            };
+                
+                clone.data = new ItemData(this.data); 
 
-            clone.CurrentStack = 1;
+                // 클론된 아이템은 장착되지 않은 상태로 시작해야 하므로 isEquipped를 false로 명시
+                clone.data.isEquipped = false;
+
+                
+                clone.CurrentStack = 1;
+            }
+
+            
 
             return clone;
         }

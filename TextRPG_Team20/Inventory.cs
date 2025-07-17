@@ -8,7 +8,15 @@ namespace TextRPG_Team20
 {
     internal class Inventory
     {
-        public List<Item.Item> Items { get; private set; }
+        public List<Item.Item> Items { get; private set; } = new List<Item.Item>();
+
+        private Character _ownerCharacter;
+
+        public Inventory(Character owner)
+        {
+            _ownerCharacter = owner;
+        }
+
         public int MaxCapacity { get; private set; } 
 
         public Inventory(int capacity = 50) 
