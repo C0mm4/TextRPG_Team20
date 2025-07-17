@@ -20,14 +20,15 @@ namespace TextRPG_Team20.Item
         public int ID { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
-        public string? FlavorText { get; set; }
         public int Gold { get; set; }
         public int Atk { get; set; }
         public int Def { get; set; }
         public int HP { get; set; }
 
         public ItemType ItemType { get; set; }
-
+        public string? Type {  get; set; }
+        public string? Grade { get; set; }
+        public string? Class { get; set; }
         public int MaxStackSize { get; set; } = 1;
         public float GoldUP {  get; set; }
 
@@ -52,7 +53,7 @@ namespace TextRPG_Team20.Item
         {
             this.data = itemData;
 
-            if (this.data.Type == ItemType.Consumable && this.data.MaxStackSize > 1)
+            if (this.data.ItemType == ItemType.Consumable && this.data.MaxStackSize > 1)
             {
                 CurrentStack = 1;
             }
@@ -72,12 +73,11 @@ namespace TextRPG_Team20.Item
                 ID = data.ID,
                 Name = data.Name,
                 Description = data.Description,
-                FlavorText = data.FlavorText,
                 Gold = data.Gold,
                 Atk = data.Atk,
                 Def = data.Def,
                 HP = data.HP,
-                Type = data.Type,
+                ItemType = data.ItemType,
                 MaxStackSize = data.MaxStackSize,
                 ClassName = data.ClassName,
                 isEquipped = false

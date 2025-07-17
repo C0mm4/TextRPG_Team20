@@ -30,12 +30,12 @@ namespace TextRPG_Team20
             string stackInfo = ""; 
 
 
-            if (item.data.Type == ItemType.Consumable && item.CurrentStack > 1)
+            if (item.data.ItemType == ItemType.Consumable && item.CurrentStack > 1)
             {
                 stackInfo = $" (x{item.CurrentStack})";
             }
 
-            switch (item.data.Type)
+            switch (item.data.ItemType)
             {
                 case ItemType.Weapon:
                     whatType = "무기";
@@ -108,7 +108,7 @@ namespace TextRPG_Team20
 
             var selectedItem = Items[index];
 
-            if (selectedItem.data.Type == ItemType.Consumable)
+            if (selectedItem.data.ItemType == ItemType.Consumable)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{selectedItem.data.Name} 은(는) 장착할 수 없는 아이템입니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
@@ -126,7 +126,7 @@ namespace TextRPG_Team20
             }
 
             Item.Item equippedItemOfSameType = Items.FirstOrDefault(
-                i => i.data.isEquipped && i.data.Type == selectedItem.data.Type
+                i => i.data.isEquipped && i.data.ItemType == selectedItem.data.ItemType
             );
 
             if (equippedItemOfSameType != null)
@@ -150,7 +150,7 @@ namespace TextRPG_Team20
 
         private void ApplyEquipStats(Item.Item item)
         {
-            switch (item.data.Type)
+            switch (item.data.ItemType)
             {
                 case ItemType.Weapon:
                     Game.playerInstance.status.Atk += item.data.Atk;
@@ -165,8 +165,8 @@ namespace TextRPG_Team20
 
                     if (item.data.HP != 0)
                     {
-                        Game.playerInstance.status.MaxHp += item.data.HP;
-                        Game.playerInstance.status.Hp += item.data.HP;
+                        Game.playerInstance.status.MaxHP += item.data.HP;
+                        Game.playerInstance.status.HP += item.data.HP;
                     }
                     break;
                 case ItemType.Accessory:
@@ -182,8 +182,8 @@ namespace TextRPG_Team20
                     }
                     if (item.data.HP != 0)
                     {
-                        Game.playerInstance.status.MaxHp += item.data.HP;
-                        Game.playerInstance.status.Hp += item.data.HP;
+                        Game.playerInstance.status.MaxHP += item.data.HP;
+                        Game.playerInstance.status.HP += item.data.HP;
                     }
                     break;
             }
@@ -191,7 +191,7 @@ namespace TextRPG_Team20
 
         private void RemoveEquipStats(Item.Item item)
         {
-            switch (item.data.Type)
+            switch (item.data.ItemType)
             {
                 case ItemType.Weapon:
                     Game.playerInstance.status.Atk -= item.data.Atk;
@@ -206,11 +206,11 @@ namespace TextRPG_Team20
 
                     if (item.data.HP != 0)
                     {
-                        Game.playerInstance.status.MaxHp -= item.data.HP;
+                        Game.playerInstance.status.MaxHP -= item.data.HP;
 
-                        if (Game.playerInstance.status.Hp > Game.playerInstance.status.MaxHp)
+                        if (Game.playerInstance.status.HP > Game.playerInstance.status.MaxHP)
                         {
-                            Game.playerInstance.status.Hp = Game.playerInstance.status.MaxHp;
+                            Game.playerInstance.status.HP = Game.playerInstance.status.MaxHP;
                         }
                     }
                     break;
@@ -227,10 +227,10 @@ namespace TextRPG_Team20
                     }
                     if (item.data.HP != 0)
                     {
-                        Game.playerInstance.status.MaxHp -= item.data.HP;
-                        if (Game.playerInstance.status.Hp > Game.playerInstance.status.MaxHp)
+                        Game.playerInstance.status.MaxHP -= item.data.HP;
+                        if (Game.playerInstance.status.HP > Game.playerInstance.status.MaxHP)
                         {
-                            Game.playerInstance.status.Hp = Game.playerInstance.status.MaxHp;
+                            Game.playerInstance.status.HP = Game.playerInstance.status.MaxHP;
                         }
                     }
                     break;
@@ -249,7 +249,7 @@ namespace TextRPG_Team20
 
             var itemToUse = Items[index];
 
-            if (itemToUse.data.Type == ItemType.Consumable)
+            if (itemToUse.data.ItemType == ItemType.Consumable)
             {
                 if (itemToUse.data.ClassName != null && itemToUse.data.ClassName.Contains("Box"))
                 {
@@ -260,10 +260,10 @@ namespace TextRPG_Team20
                 else 
                 {
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} (x1) 을(를) 사용했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
-                    Game.playerInstance.status.Hp += itemToUse.data.HP;
-                    if (Game.playerInstance.status.Hp > Game.playerInstance.status.MaxHp)
+                    Game.playerInstance.status.HP += itemToUse.data.HP;
+                    if (Game.playerInstance.status.HP > Game.playerInstance.status.MaxHP)
                     {
-                        Game.playerInstance.status.Hp = Game.playerInstance.status.MaxHp;
+                        Game.playerInstance.status.HP = Game.playerInstance.status.MaxHP;
                     }
                     RemoveStack(itemToUse);
                 }
@@ -278,7 +278,7 @@ namespace TextRPG_Team20
         public void AddItem(Item.Item newItem)
         {
             // 소모품이고 스택 가능한 아이템인지 확인
-            if (newItem.data.Type == ItemType.Consumable && newItem.data.MaxStackSize > 1)
+            if (newItem.data.ItemType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
             {
                 Item.Item existingStack = Items.FirstOrDefault(i =>
                     i.data.ID == newItem.data.ID && // 같은 종류의 아이템인지 (ID로 비교)
