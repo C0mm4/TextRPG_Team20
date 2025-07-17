@@ -11,7 +11,7 @@ namespace TextRPG_Team20
         public List<Item.Item> Items { get; private set; }
         public int MaxCapacity { get; private set; } 
 
-        public Inventory(int capacity = 50) 
+        public Inventory(int capacity = 25) 
         {
             Items = new List<Item.Item>();
             MaxCapacity = capacity;

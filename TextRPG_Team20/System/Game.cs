@@ -139,9 +139,10 @@ namespace TextRPG_Team20
         }
 
         public void CreatePlayerInstance(string? name)
-        {
+        {   
+            // 초기 스테이터스
             Status status = new Status(0, 1, 100, 5, 10, name);
-            playerInstance = new Player(name ?? "", "Job", 0, status);
+            playerInstance = new Player(name ?? "", "Job", 50000, status);
         }
 
         public void SaveGame()
