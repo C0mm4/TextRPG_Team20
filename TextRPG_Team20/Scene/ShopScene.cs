@@ -81,9 +81,10 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref left);
             ConsoleUI.Instance.DrawTextInBox("[아이템 목록]", ref left);
 
-            if (BuyShop == false && SellShop == false)      //품목
+            if (BuyShop == false && SellShop == false)  
             {
-                for (int i = 0; i < shopManager.sellItems.Count; i++)
+                // 판매할 아이템 추가 하는 코드 ShopManager.SetSellItems() 에서 아이템 추가 가능
+                for (int i = 0; i < shopManager.sellItems.Count; i++)      
                 {
                     Item.Item item = shopManager.sellItems[i];
                     ConsoleUI.Instance.DrawTextInBox($"- {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
