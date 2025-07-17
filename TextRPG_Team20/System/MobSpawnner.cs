@@ -31,29 +31,35 @@ namespace TextRPG_Team20.System
                 StatusWrap? wrapper = JsonSerializer.Deserialize<StatusWrap>(enemyData);
                 if (wrapper != null)
                 {
-                        foreach (var data in wrapper.statuses)
+                    foreach (var data in wrapper.Enemy)
+                    {
+                        string? className = data.ClassName;
+                        Type? itemType = AppDomain.CurrentDomain
+                                            .GetAssemblies()
+                                            .SelectMany(a => a.GetTypes())
+                                            .FirstOrDefault(t => t.Name == className && typeof(Enemy).IsAssignableFrom(t));
+                        if (itemType != null)
                         {
-                            string? className = data.ClassName;
-                            Type? itemType = AppDomain.CurrentDomain
-                                                .GetAssemblies()
-                                                .SelectMany(a => a.GetTypes())
-                                                .FirstOrDefault(t => t.Name == className && typeof(Enemy).IsAssignableFrom(t));
-                            if (itemType != null)
+                            if (Activator.CreateInstance(itemType) is Enemy item)
                             {
-                                if (Activator.CreateInstance(itemType) is Enemy item)
-                                {
-                                    Register(item);
-                                }
-                                else
-                                {
-                                    ConsoleUI.Instance.DrawTextInBox($"{itemType.Name} 은 Item.Item 을 상속하지 않습니다.", ref ConsoleUI.logView);
-                                }
+                                item.status = data;
+                                Register(item);
                             }
                             else
                             {
-                                ConsoleUI.Instance.DrawTextInBox($"클래스 {data.ClassName} 을 찾을 수 없습니다.", ref ConsoleUI.logView);
+                                ConsoleUI.Instance.DrawTextInBox($"{itemType.Name} 은 Item.Item 을 상속하지 않습니다.", ref ConsoleUI.logView);
                             }
                         }
+                        else
+                        {
+                            ConsoleUI.Instance.DrawTextInBox($"클래스 {data.ClassName} 을 찾을 수 없습니다.", ref ConsoleUI.logView);
+                        }
+                    }
+
+                    foreach(var ascii in wrapper.AsciiData)
+                    {
+                        _prototypes[ascii.ID].asciiData = ascii.Data;
+                    }
                 }
 
             }

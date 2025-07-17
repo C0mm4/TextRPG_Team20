@@ -23,7 +23,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}STAT{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"{Nowstatus.Level} Lv", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"HP       : {Nowstatus.Hp}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"HP       : {Nowstatus.HP}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"ATK      : {Nowstatus.Atk}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"DEF      : {Nowstatus.Def}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"Extra ATK: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);

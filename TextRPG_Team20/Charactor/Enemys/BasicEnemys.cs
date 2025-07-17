@@ -8,7 +8,7 @@ namespace TextRPG_Team20.Charactor.Enemys
 {
     internal class BlueSnail : Enemy
     {    //id, level, hp, atk, def, extraAtk, extraDef
-        public BlueSnail() : base("파란 달팽이", 10, new Status(1, 1, 10, 5, 0))
+        public BlueSnail() : base("파란 달팽이", 10, new Status(1, 1, 10, 5, 0, "파란달팽이"))
         {
 
         }
@@ -16,7 +16,7 @@ namespace TextRPG_Team20.Charactor.Enemys
 
     internal class StoneGolem : Enemy
     {
-        public StoneGolem() : base("스톤 골램", 20, new Status(2, 1, 30, 5, 5))
+        public StoneGolem() : base("스톤 골램", 20, new Status(2, 1, 30, 5, 5, "스톤골렘"))
         {
 
         }
