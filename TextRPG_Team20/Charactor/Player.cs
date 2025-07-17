@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Dungeon;
+using TextRPG_Team20.Item;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.Skill;
 using TextRPG_Team20.System;
@@ -14,7 +15,7 @@ namespace TextRPG_Team20
     {
         List<Skill.Skill> skills = new();
 
-        public Player(string name, string job, int gold, Status status)  : base(name, job, gold, status)
+        public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
         {
             skills.Add(SkillManager.Instance.GetSkill(1));
         }
@@ -139,6 +140,12 @@ namespace TextRPG_Team20
         {
             base.AddGold(gold);
             LastBattleGold += gold;
+        }
+  
+        public void ResetLastBattleGold()
+        {
+            
+            LastBattleGold = 0;
         }
 
         public override void PrintData()

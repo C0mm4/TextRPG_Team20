@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TextRPG_Team20.System;
 
 namespace TextRPG_Team20.Scene
 {
     internal class IntroScene : Scene
     {
-        string? nameInput;
+        private  string? nameInput;
         public override bool Action(int input)
         {
             switch (input) 
@@ -17,7 +18,7 @@ namespace TextRPG_Team20.Scene
                     ConsoleUI.Instance.DrawTextInBox("Welcome", ref ConsoleUI.mainView);
                     // Add Player Instance Initialize
                     Game.Instance.CreatePlayerInstance(nameInput);
-                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+                    //ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     Game.Instance.SceneChange(Game.SceneState.Lobby);
                     return false;
                 case 2:

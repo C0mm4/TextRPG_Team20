@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
+using TextRPG_Team20.Item;
 
 namespace TextRPG_Team20
 {
@@ -15,7 +16,7 @@ namespace TextRPG_Team20
 
         public Enemy() { }
 
-        public Enemy(string name, int gold,  Status status) : base(name, "Enemy", gold, status)
+        public Enemy(string name, int gold,  Status status) : base(name, JobType.None, gold, status)
         {
 
         }
@@ -32,10 +33,12 @@ namespace TextRPG_Team20
                 status.Def,
                 status.Name,
                 status.Gold,
+                status.Spawn,
                 status.ExtraAtk,
                 status.ExtraDef
             );
             clone.asciiData = asciiData;
+            clone.Job = JobType.None;
             return clone;
         }
 

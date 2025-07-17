@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.System;
+using TextRPG_Team20.Item;
 
 
 namespace TextRPG_Team20
@@ -50,6 +51,7 @@ namespace TextRPG_Team20
             var a = ItemManager.Instance;
             var d = Dungeon.DungeonManager.Instance;
             var m = MobSpawnner.Instance;
+            var s = ShopManager.Instance;
             _sceneStack = new Stack<Scene.Scene>();
 
             SceneChange(SceneState.Title);
@@ -88,7 +90,7 @@ namespace TextRPG_Team20
                     newScene = new ResultScene();
                     break;
                 case SceneState.Shop:
-                    newScene = new ShopScene();
+                    newScene = new ShopScene(ShopManager.Instance);
                     break;
                 case SceneState.Inventory:
                     newScene = new InventoryScene(playerInstance.Inventory);   
@@ -96,7 +98,7 @@ namespace TextRPG_Team20
                 case SceneState.EquipControl:
                     break;
                 case SceneState.Status:
-                    newScene = new BattleScene(playerInstance); //newScene = new InventoryScene(playerInstance.Inventory);  // 몬스터와 충돌 구현 후 정상화
+                    newScene = new StatScene(playerInstance.status);
                     break;
                 case SceneState.SkillList:
                     break;
@@ -138,8 +140,59 @@ namespace TextRPG_Team20
 
         public void CreatePlayerInstance(string? name)
         {
-            Status status = new Status(0, 1, 100, 10, 10, name, 0);
-            playerInstance = new Player(name ?? "", "Job", 0, status);
+            string playerName = name ?? "플레이어";
+       
+            ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("1. 전사", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("2. 궁수", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("3. 마법사", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+            JobType selectedJob = JobType.None; 
+
+            
+            while (true)
+            {
+                string? input = Console.ReadLine();
+                if (int.TryParse(input, out int choice))
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            selectedJob = JobType.Warrior;
+                            break;
+                        case 2:
+                            selectedJob = JobType.Archer;
+                            break;
+                        case 3:
+                            selectedJob = JobType.Mage;
+                            break;
+                        default:
+                            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 1, 2, 3 중 하나를 입력해주세요.", ref ConsoleUI.logView);
+                            continue; 
+                    }
+                    if (selectedJob != JobType.None) 
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 숫자를 입력해주세요.", ref ConsoleUI.logView);
+                }
+               
+            }
+            // 캐릭터 초기 스텟
+            Status status = new Status(0, 1, 100, 5, 10, name, 50000, 0);
+            playerInstance = new Player(name ?? "", selectedJob, 50000, status);
+
+            
+
+            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob}으로 게임을 시작합니다!", ref ConsoleUI.logView);
+            Console.ReadKey(); 
+
         }
 
         public void SaveGame()

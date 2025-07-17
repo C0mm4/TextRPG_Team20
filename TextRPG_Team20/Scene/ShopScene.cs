@@ -8,6 +8,13 @@ namespace TextRPG_Team20.Scene
 {
     internal class ShopScene : Scene
     {
+        private ShopManager shopManager;    // 생성자에 ShopManager형태에 필드 선언
+        public ShopScene(ShopManager shopManager)       // 생성자에 ShopManager를 매개변수로 받아서, shopManager 필드에 저장
+        {
+            this.shopManager = shopManager;
+        }
+
+        
         private bool BuyShop = false;   //상점 구매전환 변수
         private bool SellShop = false;   //상점 판매전환 변수
 
@@ -34,21 +41,62 @@ namespace TextRPG_Team20.Scene
                         return true;
                 }
             }
-            else
+            else if (SellShop == true)
             {
                 switch (input)
                 {
                     case 0:
-                        BuyShop = false;
                         SellShop = false;
                         return false;
 
                     default:
-                        ((Scene)this).InvalidInput();
-                        return true;
+                        // 입력값이 1 이상이고 인벤토리 아이템 개수 이하일 때 판매
+                        if (input > 0 && input <= Game.playerInstance.Inventory.Items.Count)
+                        {
+                            var (success, message) = shopManager.SellItem(input - 1);
+
+                            //결과 메세지 log에 출력
+                            ConsoleUI.Instance.DrawTextInBox(message, ref ConsoleUI.logView);
+                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+                            return false;
+                        }
+                        else
+                        {
+                            ((Scene)this).InvalidInput();
+                            return true;
+                        }
+                        
+                }   
+
+            }
+            else    //if (BuyShop == true) 구매 모드
+            {
+                switch (input)
+                {
+                    case 0:
+                        BuyShop = false; // 구매 모드 종료
+                        return false;
+                  
+                    default:
+                        // 입력값이 1 이상이고 판매 아이템 개수 이하일 때 구매
+                        if (input > 0 && input <= shopManager.sellItems.Count)
+                        {
+                            var (success, message) = shopManager.BuyItem(input - 1);
+
+                            // 결과 메시지를 info2View에 표시
+                            ConsoleUI.Instance.DrawTextInBox(message, ref ConsoleUI.logView);
+                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+                            return false;
+                        }
+                        else
+                        {
+                            ((Scene)this).InvalidInput();
+                            return true;
+                        }
                 }
             }
-
         }
 
         //씬 출력 메서드
@@ -70,18 +118,20 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}상점-{AnsiColor.Red}판매{AnsiColor.Reset}", ref left);
             }
 
+
             ConsoleUI.Instance.DrawTextInBox("좋은 아이템? 운이지 뭐~.", ref left);
             ConsoleUI.Instance.DrawTextInBox("", ref left);
             ConsoleUI.Instance.DrawTextInBox("[아이템 목록]", ref left);
 
-            if (BuyShop == false && SellShop == false)      //품목
+
+            if (BuyShop == false && SellShop == false)  
             {
-                ConsoleUI.Instance.DrawTextInBox($"- [?]일반 무기 상자 \t\t| {AnsiColor.Yellow}50 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}500 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 무기 상자 \t\t{AnsiColor.Reset}| {AnsiColor.Yellow}5000 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]일반 방어구 상자 \t| {AnsiColor.Yellow}20 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Blue}레어 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}200 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"- [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
+                // 판매할 아이템 추가 하는 코드 ShopManager.SetSellItems() 에서 아이템 추가 가능
+                for (int i = 0; i < shopManager.sellItems.Count; i++)      
+                {
+                    Item.Item item = shopManager.sellItems[i];
+                    ConsoleUI.Instance.DrawTextInBox($"- {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                }
 
                 // info2View 출력         
                 ConsoleUI.Instance.DrawTextInBox("[1] 아이템 구매", ref ConsoleUI.info2View);
@@ -90,23 +140,38 @@ namespace TextRPG_Team20.Scene
             }
             else if (BuyShop == true)
             {
-                ConsoleUI.Instance.DrawTextInBox($"[1] [?]일반 무기 상자 \t| {AnsiColor.Yellow}50 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[2] [?]{AnsiColor.Blue}레어 무기 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}500 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[3] [?]{AnsiColor.Red}에픽 무기 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}5000 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[4] [?]일반 방어구 상자 \t| {AnsiColor.Yellow}20 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[5] [?]{AnsiColor.Blue}레어 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}200 G{AnsiColor.Reset}", ref left);
-                ConsoleUI.Instance.DrawTextInBox($"[6] [?]{AnsiColor.Red}에픽 방어구 상자 \t{AnsiColor.Reset}| {AnsiColor.Yellow}2000 G{AnsiColor.Reset}", ref left);
+                for (int i = 0; i < shopManager.sellItems.Count; i++)
+                {
+                    Item.Item item = shopManager.sellItems[i];
+                    ConsoleUI.Instance.DrawTextInBox($"[{i + 1}] {item.data.Name} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                }
+                 
 
                 // info2View 출력
                 ConsoleUI.Instance.DrawTextInBox("[0] 구매 종료", ref ConsoleUI.info2View);                
             }
-            else
+            else if (SellShop == true) 
             {
-                ConsoleUI.Instance.DrawTextInBox($"[1] {AnsiColor.Red}판매가능 품목 없음{AnsiColor.Reset}", ref left);
+                var inventory = Game.playerInstance.Inventory;
+                if (inventory.Items.Count == 0)
+                {
+                    ConsoleUI.Instance.DrawTextInBox($"[?] {AnsiColor.Red}판매할 아이템이 없습니다.{AnsiColor.Reset}", ref left);
+                }
+                else
+                {
+                    for (int i = 0; i < inventory.Items.Count; i++)
+                    {
+                        var item = inventory.Items[i];
+                        string equipMark = item.data.isEquipped ? $"{AnsiColor.Green}[E]{AnsiColor.Reset} " : "";
+                        ConsoleUI.Instance.DrawTextInBox($"[{i + 1}] {equipMark}{item.data.Name} | {AnsiColor.Yellow}{item.GetSellPrice()} G{AnsiColor.Reset}", ref left);
+                    }
+                }
 
-                ConsoleUI.Instance.DrawTextInBox("[0] 구매 종료", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox("[0] 판매 종료", ref ConsoleUI.info2View);
             }
 
+
+            // 메인뷰 우측에 슈피겔만 출력
             ConsoleUI.Instance.DrawTextInBox("", ref right);
             ConsoleUI.Instance.DrawTextInBox("", ref right);
 

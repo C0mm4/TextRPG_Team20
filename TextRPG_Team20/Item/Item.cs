@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace TextRPG_Team20
 {
+    public enum JobType
+    {
+        None = 0,     // 기본값 또는 해당 없음 , 공용 아이템
+        Warrior = 1,  
+        Mage = 2,     
+        Archer = 3   
+    }
     public enum ItemType
     {
         Weapon = 0,     // 무기
@@ -14,7 +21,8 @@ namespace TextRPG_Team20
         Top = 2,        // 상의
         Bottom = 3,     // 하의
         Accessory = 4,  // 장신구
-        Consumable = 5  // 소모품 (상자 포함)
+        Consumable = 5,  // 소모품 (상자 포함)
+        None = 999
     }
     internal class ItemData
     {
@@ -33,10 +41,13 @@ namespace TextRPG_Team20
         public int MaxStackSize { get; set; } = 1;
         public float GoldUP {  get; set; }
 
-        public string? ClassName { get; set; }   
+        public string? ClassName { get; set; }
+        public List<JobType> EquipableJobs { get; set; } = new List<JobType>();
 
         public bool isEquipped = false;
+
         
+
         public ItemData() { }
         public ItemData(ItemData data)
         {
@@ -54,6 +65,10 @@ namespace TextRPG_Team20
             MaxStackSize = data.MaxStackSize;
             GoldUP = data.GoldUP;
             ClassName = data.ClassName;
+
+            EquipableJobs = new List<JobType>(data.EquipableJobs);
+
+            isEquipped = data.isEquipped;
         }
     }
 
@@ -116,23 +131,19 @@ namespace TextRPG_Team20
         public virtual object Clone()
         {
             var clone = Activator.CreateInstance(this.GetType()) as Item;
-            clone.data = new ItemData
+            if (clone != null)
             {
-                ID = data.ID,
-                Name = data.Name,
-                Description = data.Description,
-                Gold = data.Gold,
-                Atk = data.Atk,
-                Def = data.Def,
-                HP = data.HP,
-                ItemEquipType = data.ItemEquipType,
-                MaxStackSize = data.MaxStackSize,
-                Class = data.Class,
-                ClassName = data.ClassName,
-                isEquipped = false
-            };
+                
+                clone.data = new ItemData(this.data); 
 
-            clone.CurrentStack = 1;
+                // 클론된 아이템은 장착되지 않은 상태로 시작해야 하므로 isEquipped를 false로 명시
+                clone.data.isEquipped = false;
+
+                
+                clone.CurrentStack = 1;
+            }
+
+            
 
             return clone;
         }
@@ -154,6 +165,11 @@ namespace TextRPG_Team20
         public void PrintInField()
         {
 
+        }
+
+        public int GetSellPrice()  
+        {
+            return (int)(data.Gold * 1);    // 판매 가격 설정 일단은 1로 해둠
         }
 
     }
