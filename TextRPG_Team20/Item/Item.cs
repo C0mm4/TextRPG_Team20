@@ -155,6 +155,11 @@ namespace TextRPG_Team20.Item
 
         }
 
+        public int GetSellPrice()  
+        {
+            return (int)(data.Gold * 1);    // 판매 가격 설정 일단은 1로 해둠
+        }
+
     }
 
     internal class ItemWrapper()
