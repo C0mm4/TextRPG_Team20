@@ -23,8 +23,10 @@ namespace TextRPG_Team20.Scene
         {
             return new List<Enemy>
     {
-                MobSpawnner.Instance.Create(1),
-                MobSpawnner.Instance.Create(2),
+                MobSpawnner.Instance.Create(0),
+
+                MobSpawnner.Instance.Create(0),
+                MobSpawnner.Instance.Create(0),
     };
         }
 

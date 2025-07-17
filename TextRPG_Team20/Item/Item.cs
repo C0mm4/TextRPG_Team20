@@ -32,8 +32,6 @@ namespace TextRPG_Team20.Item
 
         public Item()
         {
-            // For Test Log
-            ConsoleUI.Instance.DrawTextInBox($"{GetType().Name}", ref ConsoleUI.logView);
         }
 
         public virtual object Clone()

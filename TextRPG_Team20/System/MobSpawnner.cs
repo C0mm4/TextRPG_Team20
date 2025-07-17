@@ -58,7 +58,8 @@ namespace TextRPG_Team20.System
 
                     foreach(var ascii in wrapper.AsciiData)
                     {
-                        _prototypes[ascii.ID].asciiData = ascii.Data;
+                        if(_prototypes.ContainsKey(ascii.ID))
+                            _prototypes[ascii.ID].asciiData = ascii.Data;
                     }
                 }
 
