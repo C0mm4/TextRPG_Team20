@@ -20,19 +20,32 @@ namespace TextRPG_Team20
         }
         public override void useitem()
         {
-            // Get Weapon Items
-            List<Item> items = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Consumable);
 
-            
+            int recoverAmount = 0;
 
-            string quality = "";
-            Random random = new Random();
+            switch (data.Name)
+            {
+                case "빨간 포션":
+                    recoverAmount = 30;
+                    break;
 
-            // Get Target Quality Items
-            var targetItems = items.FindAll(item => item.data.Grade == quality);
-            Item item = targetItems[random.Next(targetItems.Count)];
+                case "하얀 포션":
+                    recoverAmount = 70;
+                    break;
 
-            Game.playerInstance.Inventory.AddItem(item);
+                case "파워엘릭서":
+                    recoverAmount = Game.playerInstance.status.MaxHP - Game.playerInstance.status.HP;
+                    break;
+
+                default:
+                    Console.WriteLine("알 수 없는 포션입니다.");
+                    return;
+            }
+
+            // 체력 회복
+            Game.playerInstance.IncreaseHp(recoverAmount);
+            Console.WriteLine($"{data.Name}을(를) 사용하여 {recoverAmount}만큼 체력을 회복했습니다!");
+
         }
     }
 }
