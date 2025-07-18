@@ -19,12 +19,8 @@ namespace TextRPG_Team20.Scene
 
         internal static List<Enemy> CreateEnemys()
         {
-            return new List<Enemy>
-    {
-                MobSpawnner.Instance.Create(0),
-                MobSpawnner.Instance.Create(0),
-                MobSpawnner.Instance.Create(0),
-    };
+            int currentFieldID = Game.Instance.GetCurrentFieldID();
+            return MobSpawnner.Instance.GetEnemiesForField(currentFieldID);
         }
 
 
@@ -43,7 +39,7 @@ namespace TextRPG_Team20.Scene
 
             // 모든 영역 초기화
 
-            ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, Battle.enemies.Count, 1);
+            ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, Math.Max(Battle.enemies.Count, 1), 1);
 
             for (int i = 0; i < Battle.enemies.Count; i++) 
             {
