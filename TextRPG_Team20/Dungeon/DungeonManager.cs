@@ -71,6 +71,7 @@ namespace TextRPG_Team20.Dungeon
                 isAbleDungeon[1] = true;
                 isAbleDungeon[2] = true;
                 isAbleDungeon[3] = true;
+                isAbleDungeon[4] = true;
             }
             catch (FileNotFoundException)
             {
