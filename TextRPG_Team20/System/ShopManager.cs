@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using TextRPG_Team20.Scene;
@@ -53,19 +54,52 @@ namespace TextRPG_Team20
                 return (false, $"{AnsiColor.Red}골드가 부족합니다.{AnsiColor.Reset}");
             }
 
+            // 스택 가능한 아이템이 이미 인벤토리에 있는지 확인
+            bool canStack = itemToBuy.data.ItemEquipType == ItemType.Consumable ? true : false;
+
             // 인벤토리 공간 확인
             if (player.Inventory.Items.Count >= player.Inventory.MaxCapacity)
             {
-                // 스택 가능한 아이템이 이미 인벤토리에 있는지 확인
-                bool canStack = player.Inventory.Items.Any(i =>
-                    i.data.ID == itemToBuy.data.ID &&
-                    i.data.MaxStackSize > 1 &&
-                    i.CurrentStack < i.data.MaxStackSize
-                );
-
+                canStack = player.Inventory.Items.Any(i =>
+                i.data.ID == itemToBuy.data.ID &&
+                i.data.MaxStackSize > 1 &&
+                i.CurrentStack < i.data.MaxStackSize
+            );
                 if (!canStack)
                 {
                     return (false, $"{AnsiColor.Red}인벤토리가 가득 찼습니다.{AnsiColor.Reset}");
+                }
+            }
+
+            if (canStack)
+            {
+                ConsoleUI.Instance.DrawTextInBox("구매 할 수량을 입력해주세요 >> ", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+
+                var n = ConsoleUI.Read(ref ConsoleUI.inputView);
+
+                bool canParse = int.TryParse(n, out int value);
+                if (canParse)
+                {
+                    if(player.status.Gold >= value * itemToBuy.data.Gold)
+                    {
+                        player.DecreaseGold(itemToBuy.data.Gold * value);
+                        for (int i = 0; i < value; i++)
+                        {
+                            player.Inventory.AddItem((Item)itemToBuy.Clone());
+                        }
+
+                        string ret = $"{AnsiColor.Cyan}{itemToBuy.data.Name}{AnsiColor.Reset}을(를) {value}개 구매했습니다.";
+                        return (true, ret);
+                    }
+                    else
+                    {
+                        return (false, $"{AnsiColor.Red}골드가 부족합니다.{AnsiColor.Reset}");
+                    }
+                }
+                else
+                {
+                    return (false, $"{AnsiColor.Red}잘못된 입력입니다.{AnsiColor.Reset}");
                 }
             }
 
@@ -91,6 +125,36 @@ namespace TextRPG_Team20
             }
 
             var itemToSell = inventory.Items[itemIndex];
+
+            if(itemToSell.data.ItemEquipType == ItemType.Consumable)
+            {
+                ConsoleUI.Instance.DrawTextInBox("구매 할 수량을 입력해주세요 >> ", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+
+                var n = ConsoleUI.Read(ref ConsoleUI.inputView);
+
+                bool canParse = int.TryParse(n, out int value);
+                if (canParse)
+                {
+                    if(itemToSell.CurrentStack < value)
+                    {
+                        return (false, "잘못된 입력입니다.");
+                    }
+                    string ret = $"{AnsiColor.Cyan}{itemToSell.data.Name}{AnsiColor.Reset}을(를) {value}개 판매했습니다.";
+                    for(int i = 0; i < value; i++)
+                    {
+                        int sell = itemToSell.GetSellPrice();
+                        Game.playerInstance.AddGold(sell);
+                        inventory.RemoveStack(itemToSell);
+                    }
+                    return (true, ret);
+                }
+                else
+                {
+                    return (false, $"{AnsiColor.Red}골드가 부족합니다.{AnsiColor.Reset}");
+                }
+            }
+            
 
             // 장착 중인 아이템 판매 불가
             if (itemToSell.data.isEquipped)
