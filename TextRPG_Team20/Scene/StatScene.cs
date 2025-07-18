@@ -50,7 +50,7 @@ namespace TextRPG_Team20.Scene
                 default:
                     ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}잘못된 입력입니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top"); 
-                    return true;
+                    return false;
             }
         }
     }
