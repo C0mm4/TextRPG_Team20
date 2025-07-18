@@ -61,6 +61,12 @@ namespace TextRPG_Team20.Scene
                 return;
             }
 
+            if(player.status.Gold < skill.Data.Cost)
+            {
+                ConsoleUI.Instance.DrawTextInBox("골드가 부족합니다!!.", ref ConsoleUI.logView);
+                return;
+            }
+
             range = skill.Data.Range;
 
             var target = SelectEnemy(enemies);
@@ -70,7 +76,11 @@ namespace TextRPG_Team20.Scene
                 return; // 스킬 사용을 취소하고 아무 일도 안 함
             }
             else
+            {
                 player.UseSkill(target, skill);
+                player.DecreaseGold(skill.Data.Cost);
+            }
+            
 
 
         }
