@@ -1,0 +1,86 @@
+{
+  "Dungeons": [
+    {
+      "DungeonID": 1,
+      "DungeonName": "불의 던전",
+      "StartX": 1,
+      "StartY": 1,
+      "Fields": [
+        {
+          "FieldID": 101,
+          "FieldName": "화염 통로",
+          "GridData": [
+            [0, 0, 0, 0, 2, 0, 0, 6, 0],
+            [0, 0, 0, 0, 2, 0 ,0 ,6 ,0],
+            [0, 0, 1, 0, 2, 0, 0, 6, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [3, 3, 1, 1, 5, 0, 0, 0, 0]
+          ],
+          "Connections": [
+            {
+              "FromCell": [4, 4],
+              "ToCell": [0, 0],
+              "ToFieldID": 102
+            }
+          ]
+        },
+        {
+          "FieldID": 102,
+          "FieldName": "용암 동굴",
+          "GridData": [
+            [5, 1, 1, 1, 1],
+            [0, 0, 0, 0, 1],
+            [1, 1, 1, 0, 1],
+            [1, 0, 1, 0, 1],
+            [1, 1, 1, 1, 1]
+          ],
+          "Connections": [
+            {
+              "FromCell": [0, 0],
+              "ToCell": [4, 4],
+              "ToFieldID": 101
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "DungeonID": 2,
+      "StartX": 0,
+      "StartY": 2,
+      "DungeonName": "얼음의 미궁",
+      "Fields": [
+        {
+          "FieldID": 201,
+          "FieldName": "얼어붙은 복도",
+          "GridData": [
+            [ 1, 0, 0, 1, 1 ],
+            [ 1, 1, 0, 0, 1 ],
+            [ 0, 1, 1, 1, 1 ],
+            [ 0, 0, 0, 0, 1 ],
+            [ 1, 1, 1, 1, 1 ]
+          ],
+          "Connections": [
+            {
+              "FromCell": [ 4, 4 ],
+              "ToCell": [ 0, 0 ],
+              "ToFieldID": 202
+            }
+          ]
+        },
+        {
+          "FieldID": 202,
+          "FieldName": "빙결의 제단",
+          "GridData": [
+            [ 1, 1, 1, 1, 1 ],
+            [ 1, 0, 0, 0, 1 ],
+            [ 1, 0, 3, 0, 1 ],
+            [ 1, 0, 0, 0, 1 ],
+            [ 1, 1, 1, 1, 1 ]
+          ],
+          "Connections": []
+        }
+      ]
+    }
+  ]
+}
