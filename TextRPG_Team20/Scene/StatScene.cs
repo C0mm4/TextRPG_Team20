@@ -23,13 +23,13 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}STAT{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"{Nowstatus.Level} Lv", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"HP       : {Nowstatus.HP}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"ATK      : {Nowstatus.Atk}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"DEF      : {Nowstatus.Def}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"Extra ATK: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox($"Extra DEF: {Nowstatus.ExtraDef}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. Go to Inventory", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Go to lobby", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"체력       : {Nowstatus.HP}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"공격력      : {Nowstatus.Atk}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"방어력      : {Nowstatus.Def}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"추가 공격력: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"추가 방어력: {Nowstatus.ExtraDef}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.인벤토리로 가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
 
@@ -48,7 +48,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
                 default:
-                    Console.WriteLine("Input Error!");
+                    Console.WriteLine("잘못된 입력입니다!");
                     return true;
             }
         }

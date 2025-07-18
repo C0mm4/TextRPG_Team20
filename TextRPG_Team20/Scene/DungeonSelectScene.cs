@@ -61,8 +61,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
 
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}Dungeon Select{AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("Choose a dungeon to enter:", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}던전 선택{AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("입장할 던전을 선택하세요:", ref ConsoleUI.mainView);
             for (int i = 0; i < DungeonManager.Instance.isAbleDungeon.Length; i++)
             {
                 if (DungeonManager.Instance.isAbleDungeon[i])
@@ -75,8 +75,9 @@ namespace TextRPG_Team20.Scene
                     break;
                 }
             }
+            
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Back to Lobby", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);

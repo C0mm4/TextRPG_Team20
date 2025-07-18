@@ -146,15 +146,15 @@ namespace TextRPG_Team20
         public void CreatePlayerInstance(string? name)
         {
             string playerName = name ?? "플레이어";
-       
-            ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox("1. 전사", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox("2. 궁수", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox("3. 마법사", ref ConsoleUI.logView);
-            ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.logView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-
+            ConsoleUI.mainView.ClearBuffer();
+            ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.전사", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2.궁수", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("3.마법사", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+            
             JobType selectedJob = JobType.None; 
 
             
@@ -175,7 +175,8 @@ namespace TextRPG_Team20
                             selectedJob = JobType.Mage;
                             break;
                         default:
-                            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 1, 2, 3 중 하나를 입력해주세요.", ref ConsoleUI.logView);
+                            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                             continue; 
                     }
                     if (selectedJob != JobType.None) 
@@ -185,7 +186,8 @@ namespace TextRPG_Team20
                 }
                 else
                 {
-                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다. 숫자를 입력해주세요.", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                 }
                
             }
@@ -193,10 +195,10 @@ namespace TextRPG_Team20
             Status status = new Status(0, 1, 100, 5, 10, name, 50000, 0);
             playerInstance = new Player(name ?? "", selectedJob, 50000, status);
 
-            
 
-            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob}으로 게임을 시작합니다!", ref ConsoleUI.logView);
-            Console.ReadKey(); 
+
+            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob.ToKoreanString()}로 게임을 시작합니다!", ref ConsoleUI.logView);
+            
 
         }
 
@@ -227,14 +229,24 @@ namespace TextRPG_Team20
             {
                 PopScene();
             }
+
+            ConsoleUI.logView.ClearBuffer();
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+            ConsoleUI.info1View.ClearBuffer();
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            playerInstance = null;
+            SceneChange(SceneState.Title);
         }
 
         public void GameEnd()
         {
             while (_sceneStack.Count > 0)
             {
-                PopScene();
+                _sceneStack.Pop();
             }
+
+            _currentScene = null;
         }
     }
 }
