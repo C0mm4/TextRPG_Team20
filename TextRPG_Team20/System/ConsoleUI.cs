@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
+
 namespace TextRPG_Team20
 {
     public class ConsoleUI
@@ -354,7 +355,8 @@ namespace TextRPG_Team20
 
         public static void RemoveLines(ref Rect rect, int lines = 1, RemoveLinePos pos = RemoveLinePos.back)
         {
-            if(rect.lines.Count >= lines)
+            lines = Math.Min(rect.lines.Count, lines);
+            if (rect.lines.Count >= lines)
             {
                 if(pos == RemoveLinePos.back)
                 {
@@ -372,5 +374,6 @@ namespace TextRPG_Team20
                 }
             }
         }
+
     }
 }

@@ -15,9 +15,16 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             //스킬 목록을 받아와서 출력한다.
 
+            for(int i = 0; i < Game.playerInstance.skills.Count; i++)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{ConsoleUI.PadRightDisplay(Game.playerInstance.skills[i].Data.Name, 15)} | {ConsoleUI.PadRightDisplay(Game.playerInstance.skills[i].Data.Description, 30)}", 
+                    ref ConsoleUI.mainView);
+            }
 
-            ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Go to lobby", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
         }
 
 

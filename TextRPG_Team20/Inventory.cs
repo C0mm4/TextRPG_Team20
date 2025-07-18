@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TextRPG_Team20.Scene; 
+using TextRPG_Team20.Scene;
+using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
@@ -40,7 +41,7 @@ namespace TextRPG_Team20
                 if (item.data.EquipableJobs != null && item.data.EquipableJobs.Count > 0)
                 {
                     // 직업 제한이 있는 경우
-                    jobRestrictInfo = $" ({string.Join("/", item.data.EquipableJobs)})"; 
+                    jobRestrictInfo = $" ({string.Join("/", item.data.EquipableJobs.Select(j => j.ToKoreanString()))})";
                 }
                 else
                 {
@@ -109,10 +110,11 @@ namespace TextRPG_Team20
             string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
             return $"{(itemNum + 1).ToString().PadRight(5)} | " +
-            $"{ConsoleUI.PadRightDisplay(item.data.Class, 5)} |" +
-            $"{ConsoleUI.PadRightDisplay(equipMark + safeName + stackInfo, 25)} | " +
+            $"{ConsoleUI.PadRightDisplay(equipMark + item.data.Class, 10)} |" +
+            $"{ConsoleUI.PadRightDisplay(safeName + stackInfo, 25)} | " +
             $"{ConsoleUI.PadRightDisplay(whatType, 8)} | " +
-            $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt,-3}", 25)} | " +
+            (item.data.ItemEquipType != ItemType.Consumable ? $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt,-3}", 25)} | " : "") + 
+            
             $"{safeDesc}{AnsiColor.Reset}";
         }
 
@@ -122,8 +124,8 @@ namespace TextRPG_Team20
 
             if (Items == null || index < 0 || index >= Items.Count)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}아이템이 없습니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}아이템이 없습니다.{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
                 return;
             }
 
@@ -157,11 +159,16 @@ namespace TextRPG_Team20
                 {
                     allowedJobs = "모든 직업";
                 }
+                else
+                {
+                    
+                    allowedJobs = string.Join(", ", selectedItem.data.EquipableJobs.Select(j => j.ToKoreanString()));
+                }
 
                 ConsoleUI.Instance.DrawTextInBox(
-                    $"{AnsiColor.Red}{_ownerCharacter?.Job}은(는) {selectedItem.data.Name}을(를) 장착할 수 없습니다. (가능 직업: {allowedJobs}){AnsiColor.Reset}",
-                    ref ConsoleUI.info2View);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                     $"{AnsiColor.Red}{_ownerCharacter?.Job.ToKoreanString()}은(는) {selectedItem.data.Name}을(를) 장착할 수 없습니다. (가능 직업: {allowedJobs}){AnsiColor.Reset}",
+                    ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
                 return; 
             }
 
@@ -170,8 +177,8 @@ namespace TextRPG_Team20
                 selectedItem.data.isEquipped = false;
                 RemoveEquipStats(selectedItem);
 
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{selectedItem.data.Name} 을(를) 해제했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{selectedItem.data.Name} 을(를) 해제했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
                 return;
             }
 
@@ -183,8 +190,8 @@ namespace TextRPG_Team20
             {
                 ConsoleUI.Instance.DrawTextInBox(
                     $"{AnsiColor.Yellow}{equippedItemOfSameType.data.Name} 을(를) 해제하고 {selectedItem.data.Name}을(를) 장착합니다.{AnsiColor.Reset}",
-                    ref ConsoleUI.info2View);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+                    ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
 
                 equippedItemOfSameType.data.isEquipped = false;
                 RemoveEquipStats(equippedItemOfSameType);
@@ -193,8 +200,11 @@ namespace TextRPG_Team20
             selectedItem.data.isEquipped = true;
             ApplyEquipStats(selectedItem);
 
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{selectedItem.data.Name} 을(를) 장착했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{selectedItem.data.Name} 을(를) 장착했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
+
+
+            Items.Sort();
         }
 
 
@@ -292,7 +302,7 @@ namespace TextRPG_Team20
 
             if (Items == null || index < 0 || index >= Items.Count)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}사용할 아이템이 없습니다.{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}사용할 아이템이 없습니다.{AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                 return;
             }
@@ -303,13 +313,13 @@ namespace TextRPG_Team20
             {
                 if (itemToUse.data.ClassName != null && itemToUse.data.ClassName.Contains("Box"))
                 {
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} 을(를) 열었습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} 을(를) 열었습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     // 상자는 스택이 없다고 가정하고 바로 제거
                     RemoveItem(itemToUse);
                 }
                 else
                 {
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} (x1) 을(를) 사용했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{itemToUse.data.Name} (x1) 을(를) 사용했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     Game.playerInstance.status.HP += itemToUse.data.HP;
                     if (Game.playerInstance.status.HP > Game.playerInstance.status.MaxHP)
                     {
@@ -321,23 +331,23 @@ namespace TextRPG_Team20
             }
             else
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{itemToUse.data.Name} 은(는) 사용할 수 없는 아이템입니다. {AnsiColor.Reset}", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{itemToUse.data.Name} 은(는) 사용할 수 없는 아이템입니다. {AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
         }
         public void AddItem(Item newItem)
         {
             // 소모품이고 스택 가능한 아이템인지 확인
-            if (newItem.data.ItemEquipType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
+            if (newItem.data.ItemEquipType == ItemType.Consumable)
             {
                 Item existingStack = Items.FirstOrDefault(i =>
                     i.data.ID == newItem.data.ID && // 같은 종류의 아이템인지 (ID로 비교)
-                    i.CurrentStack < i.data.MaxStackSize); // 스택이 가득 차지 않았는지
+                    i.CurrentStack < 99); // 스택이 가득 차지 않았는지
 
                 if (existingStack != null)
                 {
                     existingStack.CurrentStack++;
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} (x1) 을(를) 획득하여 기존 스택에 추가했습니다! (총 {existingStack.CurrentStack}개){AnsiColor.Reset}", ref ConsoleUI.info2View);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} 을(를) 획득했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                     return;
                 }
@@ -346,14 +356,16 @@ namespace TextRPG_Team20
             if (Items.Count < MaxCapacity)
             {
                 Items.Add(newItem);
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} 을(를) 획득했습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} 을(를) 획득했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
             else
             {
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}인벤토리가 가득 찼습니다!{AnsiColor.Reset}", ref ConsoleUI.info2View);
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}인벤토리가 가득 찼습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
+
+            Items.Sort();
         }
         private void RemoveStack(Item itemToReduce)
         {

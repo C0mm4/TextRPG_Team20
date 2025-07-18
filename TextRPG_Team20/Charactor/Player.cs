@@ -12,23 +12,48 @@ namespace TextRPG_Team20
 {
     internal class Player : Character
     {
-        List<Skill.Skill> skills = new();
+        public List<Skill.Skill> skills = new();
 
         public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
         {
-            skills.Add(SkillManager.Instance.GetSkill(1));
+            
         }
+        public void addSkill()
+        {
+            Skill.Skill skill = SkillManager.Instance.GetSkill(3);
+            if (skills.Any(s => s.Data.ID == skill.Data.ID))
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}이미 배운 스킬입니다.{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                Console.ReadKey();
+                return;
+            }
+            if (Game.playerInstance.Job == (JobType)skill.Data.Class)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{skill.Data.Name}을 습득했습니다!!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                Console.ReadKey();
+                skills.Add(skill);
+            }
+            else
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{skill.Data.Name}획득에 실패했습니다..{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                Console.ReadKey();                
+            }
 
+            skills.Sort();
+        }
         public Skill.Skill? SelectSkill()
         {
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.Instance.DrawTextInBox("=== 스킬 선택 ===", ref ConsoleUI.info2View);          //delete~
             for (int i = 0; i < skills.Count; i++)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name})", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name}", ref ConsoleUI.inputView);
             }
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("0. 취소", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("0.취소", ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
@@ -47,15 +72,15 @@ namespace TextRPG_Team20
         {
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.info2View);      
+            ConsoleUI.Instance.DrawTextInBox("1.일반 공격", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("2.스킬 사용", ref ConsoleUI.info2View);      
         }
 
         public override void CharacterInfo()
         {
             ConsoleUI.Instance.DrawTextInBox($"캐릭터 정보", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"Lv. {status.Level:D2}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job.ToKoreanString()}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.Atk} {(status.ExtraAtk == 0 ? "" : $" + ({status.ExtraAtk})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP}", ref ConsoleUI.info1View);
@@ -75,7 +100,7 @@ namespace TextRPG_Team20
         public void UseSkill(List<Enemy> target, ISkill skill)
         {
             skill.Action(target);
-
+            return;
         }
 
         public void playercollision(int x, int y)
@@ -129,6 +154,15 @@ namespace TextRPG_Team20
                     this.x = newpos[0];
                     this.y = newpos[1];
                 }
+                else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 7)
+                {
+                    DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
+                    ConsoleUI.Instance.DrawTextInBox("보스을 마주쳤다!", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.BossBattle);
+
+                    this.x = newpos[0];
+                    this.y = newpos[1];
+                }
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
@@ -139,6 +173,10 @@ namespace TextRPG_Team20
         {
             base.AddGold(gold);
             LastBattleGold += gold;
+            if(DungeonManager.Instance.currentDungeon != null)
+            {
+                DungeonManager.Instance.currentDungeon.GetGold += gold;
+            }
         }
   
         public void ResetLastBattleGold()

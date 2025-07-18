@@ -31,6 +31,9 @@ namespace TextRPG_Team20.Dungeon
         public Dungeon currentDungeon;
         public Field currentField;
 
+        public bool[] isDungeonClear { get; set; }
+        public bool[] isAbleDungeon { get; set; }
+
         /// <summary>
         /// JSON 파일에서 던전 데이터를 로드합니다.
         /// </summary>
@@ -41,19 +44,22 @@ namespace TextRPG_Team20.Dungeon
             {
                 string jsonString = JsonLoader.LoadJson(filePath);
                 _dungeonData = JsonSerializer.Deserialize<DungeonData>(jsonString);
-                Console.WriteLine("던전 데이터 로드 완료!");
+
+                isDungeonClear = new bool[_dungeonData.Dungeons.Count];
+                isAbleDungeon = new bool[_dungeonData.Dungeons.Count];
+                isAbleDungeon[0] = true;
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine($"오류: 파일을 찾을 수 없습니다 - {filePath}");
+                ConsoleUI.Instance.DrawTextInBox($"오류: 파일을 찾을 수 없습니다 - {filePath}", ref ConsoleUI.logView);
             }
             catch (JsonException ex)
             {
-                Console.WriteLine($"오류: JSON 파싱 중 오류 발생 - {ex.Message}");
+                ConsoleUI.Instance.DrawTextInBox($"오류: JSON 파싱 중 오류 발생 - {ex.Message}", ref ConsoleUI.logView);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"예기치 않은 오류 발생: {ex.Message}");
+                ConsoleUI.Instance.DrawTextInBox($"예기치 않은 오류 발생: {ex.Message}", ref ConsoleUI.logView);
             }
         }
 
@@ -125,6 +131,13 @@ namespace TextRPG_Team20.Dungeon
                 currentField = currentDungeon.GetFieldById(connection.ToFieldID);
                 Game.playerInstance.SetPos(connection.ToCell[0], connection.ToCell[1]);
             }
+        }
+
+        public void ClearDungeon(int ID)
+        {
+            isDungeonClear[ID - 1] = true;
+            if(isAbleDungeon.Length >= ID)
+                isAbleDungeon[ID] = true;
         }
     }
 }

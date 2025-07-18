@@ -116,8 +116,9 @@ namespace TextRPG_Team20
         {
             data = new ItemData(itemData);
 
-            if (this.data.ItemEquipType == ItemType.Consumable && this.data.MaxStackSize > 1)
+            if (this.data.ItemEquipType == ItemType.Consumable)
             {
+                data.MaxStackSize = 99;
                 CurrentStack = 1;
             }
             else // 그 외의 아이템 (장비 등) 또는 스택 불가능한 소모품
@@ -152,6 +153,19 @@ namespace TextRPG_Team20
         {
             if (other != null)
             {
+                // 장착 아이템 우선 정렬 (내림차순 앞번으로)
+                if (data.isEquipped)
+                {
+                    if (other.data.isEquipped)
+                    {
+                        return data.ID.CompareTo(other.data.ID);
+                    }
+                    return -1;
+                }
+                if (other.data.isEquipped)
+                {
+                    return 1;
+                }
                 return data.ID.CompareTo(other.data.ID);
             }
             return 0;

@@ -15,10 +15,14 @@ namespace TextRPG_Team20.Skill
     {
         public int ID {  get; set; }
         public string Name { get; set; }
+        public int Class {  get; set; }
         public string Description { get; set; }
         public int Range {  get; set; }
         public int Cost {  get; set; }
         public float AtkPercent {  get; set; }
+        public int HitCount {  get; set; }
+
+        public bool isEquipped = false;
         
     }
 
