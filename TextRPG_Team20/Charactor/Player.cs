@@ -28,7 +28,7 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name})", ref ConsoleUI.inputView);
             }
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
-            ConsoleUI.Instance.DrawTextInBox("0. 취소", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("0.취소", ref ConsoleUI.info2View);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
 
@@ -47,15 +47,15 @@ namespace TextRPG_Team20
         {
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{status.Name}의 차례입니다. 행동을 선택하세요.{AnsiColor.Reset}", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox("1. 일반 공격", ref ConsoleUI.info2View);
-            ConsoleUI.Instance.DrawTextInBox("2. 스킬 사용", ref ConsoleUI.info2View);      
+            ConsoleUI.Instance.DrawTextInBox("1.일반 공격", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox("2.스킬 사용", ref ConsoleUI.info2View);      
         }
 
         public override void CharacterInfo()
         {
             ConsoleUI.Instance.DrawTextInBox($"캐릭터 정보", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"Lv. {status.Level:D2}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job.ToKoreanString()}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.Atk} {(status.ExtraAtk == 0 ? "" : $" + ({status.ExtraAtk})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP}", ref ConsoleUI.info1View);

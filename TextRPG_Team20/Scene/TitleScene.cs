@@ -13,10 +13,10 @@ namespace TextRPG_Team20.Scene
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}게임 이름{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. 게임 시작", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.게임 시작", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("2.게임 재개", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. 게임 종료", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.게임 종료", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
 
 

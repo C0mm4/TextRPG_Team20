@@ -47,8 +47,8 @@ namespace TextRPG_Team20.Scene
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{nameInput}{AnsiColor.Reset} 이(가) 당신의 이름이 맞습니까?", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. 예", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("2. 아니요", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.예", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2.아니요", ref ConsoleUI.mainView);
             
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
         }

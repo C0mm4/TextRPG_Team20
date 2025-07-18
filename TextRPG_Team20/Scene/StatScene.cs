@@ -28,8 +28,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"방어력      : {Nowstatus.Def}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"추가 공격력: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"추가 방어력: {Nowstatus.ExtraDef}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. 인벤토리로 가기", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.인벤토리로 가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
 

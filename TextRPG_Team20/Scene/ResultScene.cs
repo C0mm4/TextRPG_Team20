@@ -34,7 +34,7 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.GameStart();
                     return false;
                 default:
-                    ConsoleUI.Instance.DrawTextInBox("입력이 잘못되었습니다. 다시 입력해주세요.", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다.", ref ConsoleUI.logView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                     return true;
             }
