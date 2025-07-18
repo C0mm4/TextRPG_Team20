@@ -7,14 +7,14 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class potion : ConsumeItem
+    internal class Potion : ConsumeItem
     {
-        public potion(ItemData itemData) : base(itemData)
+        public Potion(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public potion()
+        public Potion()
         {
 
         }

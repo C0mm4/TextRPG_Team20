@@ -7,14 +7,14 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class LowAmorBox : ConsumeItem
+    internal class MiddleArmorBox : ConsumeItem
     {
-        public LowAmorBox(ItemData itemData) : base(itemData)
+        public MiddleArmorBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public LowAmorBox()
+        public MiddleArmorBox()
         {
 
         }
@@ -28,15 +28,17 @@ namespace TextRPG_Team20
             string quality = "";
 
             Random random = new Random();
-            int percentage = random.Next(0, 100);
+            int percentage = random.Next(0, 1000);
 
-            // 2% Epic
-            if (percentage < 2)
+            if (percentage < 100)
+            {
+                quality = "유니크";
+            }
+            else if (percentage < 350)
             {
                 quality = "에픽";
             }
-            // 38% Rare
-            else if (percentage < 40) 
+            else if (percentage < 650)
             {
                 quality = "레어";
             }

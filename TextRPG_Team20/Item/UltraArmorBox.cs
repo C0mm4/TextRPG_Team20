@@ -7,14 +7,14 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class UltraAmorBox : ConsumeItem
+    internal class UltraArmorBox : ConsumeItem
     {
-        public UltraAmorBox(ItemData itemData) : base(itemData)
+        public UltraArmorBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public UltraAmorBox()
+        public UltraArmorBox()
         {
 
         }

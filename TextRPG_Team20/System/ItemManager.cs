@@ -111,6 +111,7 @@ namespace TextRPG_Team20.System
             {
                 ConsoleUI.Instance.DrawTextInBox("JSON 파일 파싱 중 오류 발생: " + ex.Message, ref ConsoleUI.logView);
             }
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
         }
 
         private readonly Dictionary<int, Item> _prototypes = new();
