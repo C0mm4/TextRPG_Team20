@@ -37,7 +37,7 @@ namespace TextRPG_Team20.Scene
                 Battle.enemies = CreateEnemys();
                 player.ResetLastBattleGold();
                 player.AddGold(2000000);
-                player.addSkill();
+                player.AddSkill();
             }
 
 

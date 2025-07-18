@@ -12,13 +12,13 @@ namespace TextRPG_Team20
 {
     internal class Player : Character
     {
-        List<Skill.Skill> skills = new();
+        List<Skill.Skill> skills = new List<Skill.Skill>();
 
         public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
         {
             
         }
-        public void addSkill()
+        public void AddSkill()
         {
             Skill.Skill skill = SkillManager.Instance.GetSkill(3);
             if (skills.Any(s => s.Data.ID == skill.Data.ID))
