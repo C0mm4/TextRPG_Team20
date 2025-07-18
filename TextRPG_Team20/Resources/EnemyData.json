@@ -292,7 +292,7 @@
       "Level": 5,
       "Atk": 800,
       "Def": 800,
-      "HP": 120000,
+      "HP": 200000,
       "ClassName": "Enemy",
       "Gold": 10000,
       "Spawn": 0
