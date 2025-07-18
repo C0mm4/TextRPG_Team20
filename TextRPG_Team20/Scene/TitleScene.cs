@@ -44,12 +44,33 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    
-                    ConsoleUI.Instance.DrawTextInBox("정말 종료하시겠습니까?", ref ConsoleUI.mainView);
-                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
-                    Console.SetCursorPosition(0, 49);
-                    Game.Instance.GameEnd();
-                    return false;
+
+                    //Game.Instance.PopScene();
+                    //ConsoleUI.mainView.ClearBuffer();
+                    //ConsoleUI.Instance.DrawTextInBox("정말 종료하시겠습니까?", ref ConsoleUI.mainView);
+                    //ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+                    //Console.SetCursorPosition(0, Console.WindowHeight - 1);
+
+                    //Console.CursorVisible = true;
+                    //Console.ReadLine();
+                    //Console.CursorVisible = false;
+
+                    ConsoleUI.mainView.ClearBuffer();
+                    ConsoleUI.Instance.DrawTextInBox("정말 종료하시겠습니까? (Y/N)", ref ConsoleUI.mainView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");                  
+                    Console.CursorVisible = true; 
+                    string? confirmInput = Console.ReadLine()?.ToLower();                   
+                    if (confirmInput == "y")
+                    {                        
+                        Game.Instance.GameEnd(); 
+                        return false; 
+                    }
+                    else 
+                    {
+                        ConsoleUI.Instance.DrawTextInBox("게임을 계속합니다.", ref ConsoleUI.logView);
+                        ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);                         
+                        return true; 
+                    }                   
                 case 1:
                     Game.Instance.GameStart();
                     return false;
