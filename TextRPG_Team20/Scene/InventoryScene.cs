@@ -53,7 +53,7 @@ namespace TextRPG_Team20.Scene
 
                     Game.Instance.PopScene();
                     return false;
-
+                        
                 default:
                     if (_inventory.Items == null)
                     {
