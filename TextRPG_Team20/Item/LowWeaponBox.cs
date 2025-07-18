@@ -7,14 +7,14 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class LowWeaonBox : ConsumeItem
+    internal class LowWeaponBox : ConsumeItem
     {
-        public LowWeaonBox(ItemData itemData) : base(itemData)
+        public LowWeaponBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public LowWeaonBox()
+        public LowWeaponBox()
         {
 
         }

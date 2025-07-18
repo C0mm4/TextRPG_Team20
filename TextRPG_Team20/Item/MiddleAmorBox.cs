@@ -7,34 +7,38 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class LowWeaonBox : ConsumeItem
+    internal class MiddleAmorBox : ConsumeItem
     {
-        public LowWeaonBox(ItemData itemData) : base(itemData)
+        public MiddleAmorBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public LowWeaonBox()
+        public MiddleAmorBox()
         {
 
         }
         public override void useitem()
         {
             // Get Weapon Items
-            List<Item> items = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Weapon);
+            List<Item> items = ItemManager.Instance.FindItems(item => (item.data.ItemEquipType == ItemType.Head ||
+            item.data.ItemEquipType == ItemType.Top || item.data.ItemEquipType == ItemType.Bottom));
+
 
             string quality = "";
 
             Random random = new Random();
-            int percentage = random.Next(0, 100);
+            int percentage = random.Next(0, 1000);
 
-            // 2% Epic
-            if (percentage < 2)
+            if (percentage < 100)
+            {
+                quality = "유니크";
+            }
+            else if (percentage < 350)
             {
                 quality = "에픽";
             }
-            // 38% Rare
-            else if (percentage < 40) 
+            else if (percentage < 650)
             {
                 quality = "레어";
             }
