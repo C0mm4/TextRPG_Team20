@@ -70,6 +70,7 @@ namespace TextRPG_Team20.Dungeon
                 // for map test
                 isAbleDungeon[1] = true;
                 isAbleDungeon[2] = true;
+                isAbleDungeon[3] = true;
             }
             catch (FileNotFoundException)
             {

@@ -131,7 +131,7 @@ namespace TextRPG_Team20.Dungeon
                             tile = "A";
                             break;
                     }
-                    sb.Append($"{ansi}{tile}{AnsiColor.Reset}");
+                    sb.Append($"{ansi}{tile}{tile}{AnsiColor.Reset}");
                 }
                 ret.Add(sb.ToString());
             }
