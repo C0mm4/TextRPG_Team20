@@ -47,24 +47,6 @@ namespace TextRPG_Team20.Scene
                 enemies.Remove(target);
             }
 
-            // 3. 승리 체크
-            if (enemies.Count == 0)
-            {
-                Game.Instance.SceneChange(Game.SceneState.Win);
-                return;
-            }
-
-            // 4. 남은 적들 턴
-            foreach (var enemy in enemies)
-            {
-                enemy.Attack(player);
-                if (player.status.HP <= 0)
-                {
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Defeat);
-                    return;
-                }
-            }
         }
 
 
@@ -91,22 +73,6 @@ namespace TextRPG_Team20.Scene
                 player.UseSkill(target, skill);
 
 
-            if (enemies.Count == 0)
-            {
-                Game.Instance.SceneChange(Game.SceneState.Win);
-                return;
-            }
-
-            foreach (var enemy in enemies)
-            {
-                enemy.Attack(player);
-                if (player.status.HP <= 0)
-                {
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                    Game.Instance.SceneChange(Game.SceneState.Defeat);
-                    return;
-                }
-            }
         }
 
         public static List<Enemy>? SelectEnemy(List<Enemy> enemies)

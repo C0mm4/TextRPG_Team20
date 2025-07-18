@@ -67,23 +67,38 @@ namespace TextRPG_Team20.Scene
 
         public override bool Action(int input)
         {
-            
-                switch (input)
+            switch (input)
+            {
+                case 1: // 공격
+                    Battle.OnNormalAttack(player, Battle.enemies);
+                    break;
+
+                case 2: //스킬사용
+                    Battle.OnSkillAttack(player, Battle.enemies);
+                    break;
+
+                default: // 잘못입력
+                    //Battle.Miss(player, enemys);
+                    ((Scene)this).InvalidInput();
+                    return true;
+            }
+
+            if (Battle.enemies.Count == 0)
+            {
+                Game.Instance.SceneChange(Game.SceneState.Win);
+                return true;
+            }
+
+            foreach (var enemy in Battle.enemies)
+            {
+                enemy.Attack(player);
+                if (player.status.HP <= 0)
                 {
-                    case 1: // 공격
-                        Battle.OnNormalAttack(player, Battle.enemies);
-                        break;
-
-                    case 2: //스킬사용
-                        Battle.OnSkillAttack(player, Battle.enemies);
-                        break;
-
-                    default: // 잘못입력
-                        //Battle.Miss(player, enemys);
-                        ((Scene)this).InvalidInput();
-                        break;
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Defeat);
+                    return true;
                 }
-            
+            }
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;

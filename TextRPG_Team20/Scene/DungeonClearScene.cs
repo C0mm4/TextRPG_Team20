@@ -15,7 +15,7 @@ namespace TextRPG_Team20.Scene
             {
                 default:
                     ConsoleUI.Instance.DrawTextInBox("로비로 돌아갑니다.", ref ConsoleUI.logView);
-                    DungeonManager.Instance.isDungeonClear[DungeonManager.Instance.currentDungeon.DungeonID - 1] = true;
+                    DungeonManager.Instance.ClearDungeon(DungeonManager.Instance.currentDungeon.DungeonID);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                     Game.Instance.ReturnToLobby();
                     return true;

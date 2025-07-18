@@ -32,9 +32,26 @@ namespace TextRPG_Team20.Scene
                     break;
             }
 
+            if (Battle.enemies.Count == 0)
+            {
+                Game.Instance.SceneChange(Game.SceneState.DungeonClear);
+                return true;
+            }
+
+            foreach (var enemy in Battle.enemies)
+            {
+                enemy.Attack(player);
+                if (player.status.HP <= 0)
+                {
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{player.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.Defeat);
+                    return true;
+                }
+            }
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
             return true;
+
         }
 
 

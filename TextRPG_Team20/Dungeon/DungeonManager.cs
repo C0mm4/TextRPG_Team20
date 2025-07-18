@@ -132,5 +132,12 @@ namespace TextRPG_Team20.Dungeon
                 Game.playerInstance.SetPos(connection.ToCell[0], connection.ToCell[1]);
             }
         }
+
+        public void ClearDungeon(int ID)
+        {
+            isDungeonClear[ID - 1] = true;
+            if(isAbleDungeon.Length >= ID)
+                isAbleDungeon[ID] = true;
+        }
     }
 }
