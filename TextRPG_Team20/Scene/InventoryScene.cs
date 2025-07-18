@@ -24,11 +24,6 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-            _inventory.AddItem(ItemManager.Instance.Create(446));
-            _inventory.AddItem(ItemManager.Instance.Create(463));
-            _inventory.AddItem(ItemManager.Instance.Create(469));
-            _inventory.AddItem(ItemManager.Instance.Create(475));
-            _inventory.AddItem(ItemManager.Instance.Create(493));
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}인벤토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("보유 중인 아이템을 관리할 수 있습니다.", ref ConsoleUI.mainView);
