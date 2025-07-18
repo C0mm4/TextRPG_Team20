@@ -87,7 +87,7 @@ namespace TextRPG_Team20
             var inventory = Game.playerInstance.Inventory;
             if (itemIndex < 0 || itemIndex >= inventory.Items.Count)
             {
-                return (false, "잘못된 번호입니다.");
+                return (false, "잘못된 입력입니다.");
             }
 
             var itemToSell = inventory.Items[itemIndex];
@@ -103,7 +103,14 @@ namespace TextRPG_Team20
             Game.playerInstance.AddGold(sellPrice);
 
             // 인벤토리 아이템 제거
-            inventory.RemoveItem(itemToSell);
+            if (itemToSell.data.ItemEquipType == ItemType.Consumable)
+            {
+                inventory.RemoveStack(itemToSell);
+            }
+            else
+            {
+                inventory.RemoveItem(itemToSell);
+            }
 
             // 성공 메시지 출력
             string message = $"{AnsiColor.Cyan}{itemToSell.data.Name}{AnsiColor.Reset}을(를) 판매하여 {AnsiColor.Yellow}{sellPrice} G{AnsiColor.Reset}를 얻었습니다.";

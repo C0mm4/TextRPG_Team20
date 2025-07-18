@@ -368,7 +368,7 @@ namespace TextRPG_Team20
 
             Items.Sort();
         }
-        private void RemoveStack(Item itemToReduce)
+        public void RemoveStack(Item itemToReduce)
         {
             if (itemToReduce == null) return;
 

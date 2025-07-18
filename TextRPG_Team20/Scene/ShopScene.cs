@@ -130,7 +130,7 @@ namespace TextRPG_Team20.Scene
                 for (int i = 0; i < shopManager.sellItems.Count; i++)      
                 {
                     Item item = shopManager.sellItems[i];
-                    ConsoleUI.Instance.DrawTextInBox($"- {ConsoleUI.PadRightDisplay(item.data.Name, 24)} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                    ConsoleUI.Instance.DrawTextInBox($"- {ConsoleUI.PadRightDisplay(item.data.Name, 30)} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
                 }
 
                 // info2View 출력         
@@ -143,7 +143,7 @@ namespace TextRPG_Team20.Scene
                 for (int i = 0; i < shopManager.sellItems.Count; i++)
                 {
                     Item item = shopManager.sellItems[i];
-                    ConsoleUI.Instance.DrawTextInBox($"{ConsoleUI.PadRightDisplay($"[{i + 1}]" + item.data.Name, 24)} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
+                    ConsoleUI.Instance.DrawTextInBox($"{ConsoleUI.PadRightDisplay($"[{i + 1}]" + item.data.Name, 30)} \t| {AnsiColor.Yellow}{item.data.Gold} G{AnsiColor.Reset}", ref left);
                 }
                  
 
@@ -163,7 +163,7 @@ namespace TextRPG_Team20.Scene
                     {
                         var item = inventory.Items[i];
                         string equipMark = item.data.isEquipped ? $"{AnsiColor.Green}[E]{AnsiColor.Reset} " : "";
-                        ConsoleUI.Instance.DrawTextInBox($"{ConsoleUI.PadRightDisplay($"[{i+1}] "+equipMark+item.data.Name, 24)} | {AnsiColor.Yellow}{item.GetSellPrice()} G{AnsiColor.Reset}", ref left);
+                        ConsoleUI.Instance.DrawTextInBox($"{ConsoleUI.PadRightDisplay($"[{i+1}] "+equipMark+item.data.Name + (item.data.ItemEquipType==ItemType.Consumable? $" (x{item.CurrentStack})" : ""), 30)} | {AnsiColor.Yellow}{item.GetSellPrice()} G{AnsiColor.Reset}", ref left);
                     }
                 }
 
