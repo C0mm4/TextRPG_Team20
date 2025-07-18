@@ -337,7 +337,7 @@ namespace TextRPG_Team20
                 if (existingStack != null)
                 {
                     existingStack.CurrentStack++;
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} (x1) 을(를) 획득하여 기존 스택에 추가했습니다! (총 {existingStack.CurrentStack}개){AnsiColor.Reset}", ref ConsoleUI.info2View);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} (x1) 을(를) 획득하여 기존 아이템에 추가했습니다! (총 {existingStack.CurrentStack}개){AnsiColor.Reset}", ref ConsoleUI.info2View);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                     return;
                 }

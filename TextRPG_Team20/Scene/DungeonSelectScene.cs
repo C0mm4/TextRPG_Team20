@@ -20,7 +20,7 @@ namespace TextRPG_Team20.Scene
                     return false;
 
                 case 1:
-                    Console.WriteLine("Enetering Dungeon...");
+                    Console.WriteLine("던전에 입장합니다...");
                     DungeonManager.Instance.StartDungone(1);
                     Game.Instance.SceneChange(Game.SceneState.InField);
                     return true;
@@ -41,10 +41,10 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.inputView.ClearBuffer();
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}Dungeon Select{AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("Choose a dungeon to enter:", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. Dungeon", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("입장할 던전을 선택하세요:", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1. 던전", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Back to Lobby", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);

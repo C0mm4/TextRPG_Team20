@@ -17,7 +17,7 @@ namespace TextRPG_Team20.Scene
 
 
             ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Go to lobby", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
         }
 
 

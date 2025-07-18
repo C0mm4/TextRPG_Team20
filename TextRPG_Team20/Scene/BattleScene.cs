@@ -53,7 +53,7 @@ namespace TextRPG_Team20.Scene
             }
 
             // 메인 뷰: 전투 메뉴
-            ConsoleUI.Instance.DrawTextInBox("=== Battle Scene ===", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("=== 전투 장면 ===", ref ConsoleUI.mainView);
             Battle.OnBattle(player, Battle.enemies);
 
             // 플레이어 정보
