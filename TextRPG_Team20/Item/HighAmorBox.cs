@@ -34,11 +34,10 @@ namespace TextRPG_Team20
                 quality = "에픽";
             }
             // 38% Rare
-            else if (percentage < 38) 
+            else if (percentage < 40) 
             {
                 quality = "레어";
             }
-            // 60% Normal
             else
             {
                 quality = "일반";
