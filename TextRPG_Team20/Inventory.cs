@@ -109,10 +109,11 @@ namespace TextRPG_Team20
             string safeDesc = (item.data.Description ?? "").Replace("\n", " ").Replace("\r", " ");
 
             return $"{(itemNum + 1).ToString().PadRight(5)} | " +
-            $"{ConsoleUI.PadRightDisplay(item.data.Class, 5)} |" +
-            $"{ConsoleUI.PadRightDisplay(equipMark + safeName + stackInfo, 25)} | " +
+            $"{ConsoleUI.PadRightDisplay(equipMark + item.data.Class, 10)} |" +
+            $"{ConsoleUI.PadRightDisplay(safeName + stackInfo, 25)} | " +
             $"{ConsoleUI.PadRightDisplay(whatType, 8)} | " +
-            $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt,-3}", 25)} | " +
+            (item.data.ItemEquipType != ItemType.Consumable ? $"{ConsoleUI.PadRightDisplay($"{whatStatString} + {whatStatInt,-3}", 25)} | " : "") + 
+            
             $"{safeDesc}{AnsiColor.Reset}";
         }
 
@@ -195,6 +196,9 @@ namespace TextRPG_Team20
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{selectedItem.data.Name} 을(를) 장착했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
+
+
+            Items.Sort();
         }
 
 
@@ -328,16 +332,16 @@ namespace TextRPG_Team20
         public void AddItem(Item newItem)
         {
             // 소모품이고 스택 가능한 아이템인지 확인
-            if (newItem.data.ItemEquipType == ItemType.Consumable && newItem.data.MaxStackSize > 1)
+            if (newItem.data.ItemEquipType == ItemType.Consumable)
             {
                 Item existingStack = Items.FirstOrDefault(i =>
                     i.data.ID == newItem.data.ID && // 같은 종류의 아이템인지 (ID로 비교)
-                    i.CurrentStack < i.data.MaxStackSize); // 스택이 가득 차지 않았는지
+                    i.CurrentStack < 99); // 스택이 가득 차지 않았는지
 
                 if (existingStack != null)
                 {
                     existingStack.CurrentStack++;
-                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} (x1) 을(를) 획득하여 기존 아이템에 추가했습니다! (총 {existingStack.CurrentStack}개){AnsiColor.Reset}", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{newItem.data.Name} 을(를) 획득했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
                     return;
                 }
@@ -354,6 +358,8 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}인벤토리가 가득 찼습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View, "left", "top");
             }
+
+            Items.Sort();
         }
         private void RemoveStack(Item itemToReduce)
         {

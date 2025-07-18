@@ -29,6 +29,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"추가 공격력: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"추가 방어력: {Nowstatus.ExtraDef}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1.인벤토리로 가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2.스킬 확인", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
@@ -47,6 +49,10 @@ namespace TextRPG_Team20.Scene
                 case 1:
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
+                case 2:
+                    Game.Instance.SceneChange(Game.SceneState.SkillList);
+                    return false;
+
                 default:
                     Console.WriteLine("잘못된 입력입니다!");
                     return true;

@@ -21,6 +21,8 @@ namespace TextRPG_Team20.Skill
         public int Cost {  get; set; }
         public float AtkPercent {  get; set; }
         public int HitCount {  get; set; }
+
+        public bool isEquipped = false;
         
     }
 

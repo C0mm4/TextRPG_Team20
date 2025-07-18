@@ -8,7 +8,7 @@ using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20.Skill
 {
-    internal class Skill : ISkill
+    internal class Skill : ISkill, IComparable<Skill>   
     {
         public SkillData Data { get; set; }
 
@@ -40,6 +40,23 @@ namespace TextRPG_Team20.Skill
                     Battle.enemies.Remove(targets[i]);
                 }
             }
+        }
+
+        public int CompareTo(Skill? other)
+        {
+            if (Data.isEquipped)
+            {
+                if (other.Data.isEquipped)
+                {
+                    return Data.ID.CompareTo(other.Data.ID);
+                }
+                return -1;
+            }
+            if (other.Data.isEquipped)
+            {
+                return 1;
+            }
+            return Data.ID.CompareTo(other.Data.ID);
         }
     }
 }
