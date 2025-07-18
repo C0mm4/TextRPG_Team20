@@ -31,17 +31,18 @@ namespace TextRPG_Team20
 
         private void SetSellItems()
         {
-            List<int> sellItemIds = new List<int> { 300, 301, 302 };
+            /*List<int> sellItemIds = new List<int> { 300, 301, 302 };
 
             sellItems = ItemManager.Instance.FindItems(item => sellItemIds.Contains(item.data.ID));
-            //sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == Item.ItemType.Consumable);
+            */
+            sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Consumable);
         }
 
         public (bool, string) BuyItem(int itemIndex)
         {
             if (itemIndex < 0 || itemIndex >= sellItems.Count)
             {
-                return (false, "잘못된 번호입니다.");
+                return (false, "잘못된 입력입니다.");
             }
 
             var itemToBuy = sellItems[itemIndex];
@@ -64,7 +65,7 @@ namespace TextRPG_Team20
 
                 if (!canStack)
                 {
-                    return (false, $"{AnsiColor.Red}인벤토가 가득 찼습니다.{AnsiColor.Reset}");
+                    return (false, $"{AnsiColor.Red}인벤토리가 가득 찼습니다.{AnsiColor.Reset}");
                 }
             }
 

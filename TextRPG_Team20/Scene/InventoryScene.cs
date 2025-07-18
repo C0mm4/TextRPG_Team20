@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,6 @@ namespace TextRPG_Team20.Scene
         public InventoryScene(Inventory inventory)
         {
             _inventory = inventory;
-            for (int i = 0; i < 500; i++)
-                _inventory.AddItem(ItemManager.Instance.Create(500));
-            _inventory.AddItem(ItemManager.Instance.Create(512));
-
         }   
             
 

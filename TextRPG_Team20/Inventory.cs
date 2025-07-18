@@ -179,6 +179,7 @@ namespace TextRPG_Team20
 
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}{selectedItem.data.Name} 을(를) 해제했습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
+                Items.Sort();
                 return;
             }
 
@@ -383,6 +384,7 @@ namespace TextRPG_Team20
         public void RemoveItem(Item item)
         {
             Items.Remove(item);
+            Items.Sort();
         }
     
         }

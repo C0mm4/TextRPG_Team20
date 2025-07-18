@@ -79,6 +79,7 @@ namespace TextRPG_Team20
         public void IncreaseHp(int amount)
         {
             status.HP += amount;
+            status.HP = Math.Min(status.MaxHP, status.HP);
             //Console.WriteLine($"{status.Name}의 체력이 {amount}만큼 회복되어 {status.Hp}가 되었습니다.");
         }
 
