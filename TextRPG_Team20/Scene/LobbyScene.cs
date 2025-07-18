@@ -14,7 +14,7 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    Game.Instance.PopScene();
+                    Game.Instance.ReturnToTitle();
                     return false;
                 case 1:
                     Game.Instance.SceneChange(Game.SceneState.DungeonSelect);
@@ -36,14 +36,14 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}Lobby{AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}로비{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("Please input your action", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1. Enter Dungeon", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("2. Enter Shop", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("3. View Status", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("4. Inventory", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. Go to Title", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("원하시는 행동을 입력해주세요", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("1.던전 입장", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("2.상점 입장", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("3.상태창 보기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("4.인벤토리", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.타이틀로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
         }

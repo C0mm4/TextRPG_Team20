@@ -43,7 +43,7 @@ namespace TextRPG_Team20.Scene
 
         public virtual int GetAction()
         {
-            ConsoleUI.Instance.DrawTextInBox("Please input your action >>", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox("원하시는 행동을 입력해주세요 >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
             string? s = ConsoleUI.Read(ref ConsoleUI.inputView);
             var isAble = int.TryParse(s, out var action);
@@ -58,7 +58,7 @@ namespace TextRPG_Team20.Scene
         }
         public void InvalidInput()
         {
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}Input Error!{AnsiColor.Reset}", ref ConsoleUI.inputView);
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}잘못된 입력입니다!{AnsiColor.Reset}", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");
         }
 
