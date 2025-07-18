@@ -24,10 +24,14 @@ namespace TextRPG_Team20.Skill
             for (int i = 0; i < targets.Count; i++)
             {
                 int actualDamage = Math.Max(1, (int)(Data.AtkPercent * Game.playerInstance.status.Atk) - targets[i].status.Def);
-                targets[i].DecreaseHp(actualDamage);
+
 
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}{Game.playerInstance.status.Name}의 {Data.Name} 스킬 사용!{AnsiColor.Reset}", ref ConsoleUI.logView);
-                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{targets[i].status.Name}에게 {actualDamage}의 피해를 입혔습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                for (int j = 0; j < Data.HitCount; j++)
+                {
+                    targets[i].DecreaseHp(actualDamage);
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{targets[i].status.Name}에게 {actualDamage}의 피해를 입혔습니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                }
 
                 if (targets[i].status.HP <= 0)
                 {
