@@ -191,7 +191,7 @@ namespace TextRPG_Team20
 
 
 
-            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob.ToKoreanString()}으로 게임을 시작합니다!", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob.ToKoreanString()}로 게임을 시작합니다!", ref ConsoleUI.logView);
             
 
         }
