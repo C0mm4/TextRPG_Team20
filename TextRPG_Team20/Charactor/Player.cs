@@ -50,7 +50,7 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox("=== 스킬 선택 ===", ref ConsoleUI.info2View);          //delete~
             for (int i = 0; i < skills.Count; i++)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name})", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name}", ref ConsoleUI.inputView);
             }
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.DrawTextInBox("0.취소", ref ConsoleUI.info2View);
@@ -154,6 +154,15 @@ namespace TextRPG_Team20
                     this.x = newpos[0];
                     this.y = newpos[1];
                 }
+                else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 7)
+                {
+                    DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
+                    ConsoleUI.Instance.DrawTextInBox("보스을 마주쳤다!", ref ConsoleUI.logView);
+                    Game.Instance.SceneChange(Game.SceneState.BossBattle);
+
+                    this.x = newpos[0];
+                    this.y = newpos[1];
+                }
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
@@ -164,6 +173,10 @@ namespace TextRPG_Team20
         {
             base.AddGold(gold);
             LastBattleGold += gold;
+            if(DungeonManager.Instance.currentDungeon != null)
+            {
+                DungeonManager.Instance.currentDungeon.GetGold += gold;
+            }
         }
   
         public void ResetLastBattleGold()

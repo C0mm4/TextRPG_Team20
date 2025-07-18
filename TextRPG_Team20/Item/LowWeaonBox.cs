@@ -38,6 +38,7 @@ namespace TextRPG_Team20
             {
                 quality = "레어";
             }
+            // 60% Normal
             else
             {
                 quality = "일반";

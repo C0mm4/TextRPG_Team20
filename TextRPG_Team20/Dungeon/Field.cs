@@ -24,6 +24,9 @@ namespace TextRPG_Team20.Dungeon
         public List<Field> Fields { get; set; }
         public int StartX {  get; set; }
         public int StartY { get; set; }
+        public int BossID {  get; set; }
+
+        public int GetGold = 0;
 
         // 기본 생성자 (JSON 역직렬화용)
         public Dungeon() { }
@@ -33,6 +36,9 @@ namespace TextRPG_Team20.Dungeon
         {
             DungeonID = original.DungeonID;
             DungeonName = original.DungeonName;
+            StartX = original.StartX;
+            StartY = original.StartY;
+            BossID = original.BossID;
             // Fields는 각 Field 객체를 깊은 복사해야 합니다.
             Fields = original.Fields?.Select(f => new Field(f)).ToList();
         }
@@ -119,6 +125,10 @@ namespace TextRPG_Team20.Dungeon
                             break;
                         case 6:
                             ansi = AnsiColor.Red;
+                            tile = "@";
+                            break;
+                        case 7:
+                            ansi = AnsiColor.Magenta;
                             tile = "@";
                             break;
                         case 0:

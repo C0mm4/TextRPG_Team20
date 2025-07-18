@@ -20,9 +20,30 @@ namespace TextRPG_Team20.Scene
                     return false;
 
                 case 1:
-                    Console.WriteLine("던전에 입장합니다...");
-                    DungeonManager.Instance.StartDungone(1);
-                    Game.Instance.SceneChange(Game.SceneState.InField);
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    if(DungeonManager.Instance.isAbleDungeon.Length >= input)
+                    {
+                        if (DungeonManager.Instance.isAbleDungeon[input-1])
+                        {
+                            ConsoleUI.Instance.DrawTextInBox("Enetering Dungeon...", ref ConsoleUI.inputView);
+                            DungeonManager.Instance.StartDungone(input);
+                            Game.Instance.SceneChange(Game.SceneState.InField);
+
+                        }
+                        else
+                        {
+                            InvalidInput();
+                        }
+                    }
+                    else
+                    {
+                        InvalidInput();
+                    }
+
                     return true;
 
 
@@ -42,7 +63,19 @@ namespace TextRPG_Team20.Scene
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}던전 선택{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("입장할 던전을 선택하세요:", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1.던전", ref ConsoleUI.mainView);
+            for (int i = 0; i < DungeonManager.Instance.isAbleDungeon.Length; i++)
+            {
+                if (DungeonManager.Instance.isAbleDungeon[i])
+                {
+
+                    ConsoleUI.Instance.DrawTextInBox($"{i+1}. {DungeonManager.Instance.GetDungeon(i+1).DungeonName}", ref ConsoleUI.mainView);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
