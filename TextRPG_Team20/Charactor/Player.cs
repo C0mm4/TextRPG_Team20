@@ -12,7 +12,7 @@ namespace TextRPG_Team20
 {
     internal class Player : Character
     {
-        List<Skill.Skill> skills = new List<Skill.Skill>();
+        public List<Skill.Skill> skills = new();
 
         public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
         {
@@ -42,7 +42,7 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);              
             }
 
-          
+            skills.Sort();
         }
         public Skill.Skill? SelectSkill()
         {

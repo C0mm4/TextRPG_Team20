@@ -103,6 +103,7 @@ namespace TextRPG_Team20
                     newScene = new StatScene(playerInstance.status);
                     break;
                 case SceneState.SkillList:
+                    newScene = new SkillListScene();
                     break;
                 case SceneState.UseItem:
                     break;
