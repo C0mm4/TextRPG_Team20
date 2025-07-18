@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TextRPG_Team20.Scene; 
+using TextRPG_Team20.Scene;
+using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
@@ -40,7 +41,7 @@ namespace TextRPG_Team20
                 if (item.data.EquipableJobs != null && item.data.EquipableJobs.Count > 0)
                 {
                     // 직업 제한이 있는 경우
-                    jobRestrictInfo = $" ({string.Join("/", item.data.EquipableJobs)})"; 
+                    jobRestrictInfo = $" ({string.Join("/", item.data.EquipableJobs.Select(j => j.ToKoreanString()))})";
                 }
                 else
                 {
@@ -158,9 +159,14 @@ namespace TextRPG_Team20
                 {
                     allowedJobs = "모든 직업";
                 }
+                else
+                {
+                    
+                    allowedJobs = string.Join(", ", selectedItem.data.EquipableJobs.Select(j => j.ToKoreanString()));
+                }
 
                 ConsoleUI.Instance.DrawTextInBox(
-                    $"{AnsiColor.Red}{_ownerCharacter?.Job}은(는) {selectedItem.data.Name}을(를) 장착할 수 없습니다. (가능 직업: {allowedJobs}){AnsiColor.Reset}",
+                     $"{AnsiColor.Red}{_ownerCharacter?.Job.ToKoreanString()}은(는) {selectedItem.data.Name}을(를) 장착할 수 없습니다. (가능 직업: {allowedJobs}){AnsiColor.Reset}",
                     ref ConsoleUI.logView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top");
                 return; 

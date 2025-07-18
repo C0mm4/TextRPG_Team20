@@ -53,8 +53,8 @@ namespace TextRPG_Team20.Scene
                 case 0:
 
                     Game.Instance.PopScene();
-                    return true;
-
+                    return false;
+                        
                 default:
                     if (_inventory.Items == null)
                     {
@@ -65,7 +65,7 @@ namespace TextRPG_Team20.Scene
                         _inventory.EquipItem(input);
                         
                     }
-                    return true;
+                    return false;
             }
         }
 
