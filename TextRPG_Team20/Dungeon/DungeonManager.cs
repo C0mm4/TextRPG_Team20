@@ -48,6 +48,8 @@ namespace TextRPG_Team20.Dungeon
                 isDungeonClear = new bool[_dungeonData.Dungeons.Count];
                 isAbleDungeon = new bool[_dungeonData.Dungeons.Count];
                 isAbleDungeon[0] = true;
+                // for map test
+                isAbleDungeon[1] = true;
             }
             catch (FileNotFoundException)
             {
