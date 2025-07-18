@@ -48,8 +48,9 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
                 default:
-                    Console.WriteLine("잘못된 입력입니다!");
-                    return true;
+                    ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}잘못된 입력입니다!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView, "left", "top"); 
+                    return false;
             }
         }
     }
