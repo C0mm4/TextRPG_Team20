@@ -57,5 +57,11 @@ namespace TextRPG_Team20.System
                 return _skills[index];
             return null;
         }
+
+        public Skill.Skill? GetRandomSkill()
+        {
+            if (_skills.Count == 0) return null;
+            return _skills[new Random().Next(1,_skills.Count)];
+        }
     }
 }
