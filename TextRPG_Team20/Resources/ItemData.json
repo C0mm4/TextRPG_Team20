@@ -7110,7 +7110,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "RedPotion"
     },
     {
       "ID": 514,
@@ -7124,7 +7124,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "WhitePotion"
     },
     {
       "ID": 515,
@@ -7138,7 +7138,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "PowerElixir"
     }
   ]
 }

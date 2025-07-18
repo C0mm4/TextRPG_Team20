@@ -7,21 +7,21 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class LowWeaonBox : ConsumeItem
+    internal class LowAccesoriesBox : ConsumeItem
     {
-        public LowWeaonBox(ItemData itemData) : base(itemData)
+        public LowAccesoriesBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public LowWeaonBox()
+        public LowAccesoriesBox()
         {
 
         }
         public override void useitem()
         {
             // Get Weapon Items
-            List<Item> items = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Weapon);
+            List<Item> items = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Accessory);
 
             string quality = "";
 
