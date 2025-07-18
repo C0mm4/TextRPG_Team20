@@ -30,7 +30,7 @@
     {
       "FieldID": 104,
       "SpawnSetting": {
-        "EnemysID": [ 2,3,4 ],
+        "EnemysID": [ 2, 3, 4 ],
         "MinCount": 1,
         "MaxCount": 2,
         "IsRandom": false
@@ -39,7 +39,7 @@
     {
       "FieldID": 105,
       "SpawnSetting": {
-        "EnemysID": [ 3,4 ],
+        "EnemysID": [ 3, 4 ],
         "MinCount": 2,
         "MaxCount": 3,
         "IsRandom": true
@@ -66,7 +66,7 @@
     {
       "FieldID": 203,
       "SpawnSetting": {
-        "EnemysID": [ 6, 7, 8 ],
+        "EnemysID": [ 5, 6, 7 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -75,7 +75,7 @@
     {
       "FieldID": 204,
       "SpawnSetting": {
-        "EnemysID": [ 7, 8, 9 ],
+        "EnemysID": [ 6, 7 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -83,6 +83,78 @@
     },
     {
       "FieldID": 205,
+      "SpawnSetting": {
+        "EnemysID": [ 6, 7 ],
+        "MinCount": 2,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 206,
+      "SpawnSetting": {
+        "EnemysID": [ 6, 7, 8 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 207,
+      "SpawnSetting": {
+        "EnemysID": [ 6, 7, 8 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 208,
+      "SpawnSetting": {
+        "EnemysID": [ 7, 8 ],
+        "MinCount": 2,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 209,
+      "SpawnSetting": {
+        "EnemysID": [ 7, 8 ],
+        "MinCount": 2,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 210,
+      "SpawnSetting": {
+        "EnemysID": [ 7, 8, 9 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 211,
+      "SpawnSetting": {
+        "EnemysID": [ 7, 8, 9 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 212,
+      "SpawnSetting": {
+        "EnemysID": [ 8, 9 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 213,
       "SpawnSetting": {
         "EnemysID": [ 8, 9 ],
         "MinCount": 2,
@@ -111,7 +183,7 @@
     {
       "FieldID": 303,
       "SpawnSetting": {
-        "EnemysID": [ 11, 12, 13 ],
+        "EnemysID": [ 11, 12 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -120,7 +192,7 @@
     {
       "FieldID": 304,
       "SpawnSetting": {
-        "EnemysID": [ 12, 13, 14 ],
+        "EnemysID": [ 11, 12, 13 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -129,7 +201,34 @@
     {
       "FieldID": 305,
       "SpawnSetting": {
-        "EnemysID": [ 13,14 ],
+        "EnemysID": [ 12, 13 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 306,
+      "SpawnSetting": {
+        "EnemysID": [ 12, 13, 14 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 307,
+      "SpawnSetting": {
+        "EnemysID": [ 13, 14 ],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 308,
+      "SpawnSetting": {
+        "EnemysID": [ 13, 14 ],
         "MinCount": 2,
         "MaxCount": 3,
         "IsRandom": true
@@ -138,7 +237,7 @@
     {
       "FieldID": 401,
       "SpawnSetting": {
-        "EnemysID": [ 15, 16, 17],
+        "EnemysID": [ 15, 16, 17 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -147,7 +246,7 @@
     {
       "FieldID": 402,
       "SpawnSetting": {
-        "EnemysID": [ 15,16,17 ],
+        "EnemysID": [ 15, 16, 17 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -156,7 +255,7 @@
     {
       "FieldID": 403,
       "SpawnSetting": {
-        "EnemysID": [ 16,17,18 ],
+        "EnemysID": [ 16, 17, 18 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -165,7 +264,7 @@
     {
       "FieldID": 404,
       "SpawnSetting": {
-        "EnemysID": [ 17,18,19 ],
+        "EnemysID": [ 17, 18, 19 ],
         "MinCount": 1,
         "MaxCount": 3,
         "IsRandom": true
@@ -174,7 +273,7 @@
     {
       "FieldID": 405,
       "SpawnSetting": {
-        "EnemysID": [ 18,19 ],
+        "EnemysID": [ 18, 19 ],
         "MinCount": 2,
         "MaxCount": 3,
         "IsRandom": true

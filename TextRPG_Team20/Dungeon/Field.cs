@@ -12,7 +12,7 @@ namespace TextRPG_Team20.Dungeon
     {
         public int DungeonID {  get; set; }
         public string DungeonName {  get; set; }
-        public List<Field> Fields { get; set; }
+        public List<Field> Fields { get; set; }   //필드에서 몇다시몇좌표 current던전->필드데이터->
         public int StartX {  get; set; }
         public int StartY { get; set; }
         public int BossID {  get; set; }
@@ -21,6 +21,8 @@ namespace TextRPG_Team20.Dungeon
 
         // 기본 생성자 (JSON 역직렬화용)
         public Dungeon() { }
+
+        
 
         // 복사 생성자
         public Dungeon(Dungeon original)
