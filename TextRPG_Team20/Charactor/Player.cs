@@ -105,6 +105,7 @@ namespace TextRPG_Team20
 
         public void playercollision(int x, int y)
         {
+            var CurrentDungeon = DungeonManager.Instance.currentDungeon;
             var CurrentField = DungeonManager.Instance.currentField;
             DungeonManager.Instance.currentField[this.y, this.x] = currentPosData;
             int[] newpos = { this.x + x, this.y + y };
@@ -133,8 +134,11 @@ namespace TextRPG_Team20
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 4)
                 {
-                    Console.WriteLine("발판이 눌렸습니다 어딘가의 문이나 상자가 열렸을지도 모르겠네요.");
+                    ConsoleUI.Instance.DrawTextInBox("발판이 눌렸습니다 어딘가의 문이나 상자가 열렸을지도 모르겠네요.", ref ConsoleUI.logView);
                     DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
+
+                    DungeonManager.Instance.OpenAllDoorsInDungeon(CurrentDungeon);
+
 
                     this.x = newpos[0];
                     this.y = newpos[1];

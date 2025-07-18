@@ -20,6 +20,25 @@ namespace TextRPG_Team20.Dungeon
             }
         }
 
+        public void OpenAllDoorsInDungeon(Dungeon dungeon)
+        {
+            foreach (var field in dungeon.Fields)
+            {
+                for (int y = 0; y < field.GetLength(0); y++)
+                {
+                    for (int x = 0; x < field.GetLength(1); x++)
+                    {
+                        if (field[y, x] == 3)
+                        {
+                            field[y, x] = 0;
+                            ConsoleUI.Instance.DrawTextInBox(
+                                $"[문 열림] {field.FieldName} 필드의 위치 ({x}, {y})", ref ConsoleUI.logView);
+                        }
+                    }
+                }
+            }
+        }
+
         private DungeonData _dungeonData;
 
         public DungeonManager()

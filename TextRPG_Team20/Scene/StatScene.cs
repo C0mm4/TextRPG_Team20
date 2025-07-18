@@ -18,7 +18,7 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-            
+
             Game.playerInstance.AddGold(20000000);
             Game.playerInstance.AddSkill();
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}STAT{AnsiColor.Reset}", ref ConsoleUI.mainView);
