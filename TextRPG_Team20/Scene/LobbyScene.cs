@@ -14,7 +14,7 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    Game.Instance.PopScene();
+                    Game.Instance.ReturnToTitle();
                     return false;
                 case 1:
                     Game.Instance.SceneChange(Game.SceneState.DungeonSelect);

@@ -14,7 +14,7 @@ namespace TextRPG_Team20.Scene
 
             //획득한 골드
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}이번 던전에서 얻은 골드는 {/*얼마*/""} 입니다.{AnsiColor.Reset}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0. 로비로 돌아가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);

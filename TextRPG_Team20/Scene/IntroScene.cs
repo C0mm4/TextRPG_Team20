@@ -35,7 +35,7 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {            
-            ConsoleUI.Instance.DrawTextInBox("게임에 오신걸 환영합니다", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("페이팔스토리에 오신걸 환영합니다", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("이름을 입력해주세요 >> ", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView, "left", "top");

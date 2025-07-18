@@ -148,7 +148,7 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox("3.마법사", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
-
+            
             JobType selectedJob = JobType.None; 
 
             
@@ -221,6 +221,14 @@ namespace TextRPG_Team20
             {
                 PopScene();
             }
+
+            ConsoleUI.logView.ClearBuffer();
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+
+            ConsoleUI.info1View.ClearBuffer();
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            playerInstance = null;
+            SceneChange(SceneState.Title);
         }
 
         public void GameEnd()

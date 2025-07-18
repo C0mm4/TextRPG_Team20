@@ -11,7 +11,19 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}게임 이름{AnsiColor.Reset}", ref ConsoleUI.mainView);
+            ConsoleUI.mainView.ClearBuffer();
+            ConsoleUI.logView.ClearBuffer();
+            ConsoleUI.info1View.ClearBuffer();
+            ConsoleUI.info2View.ClearBuffer();
+            ConsoleUI.inputView.ClearBuffer();
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+
+            ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}페이팔스토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1.게임 시작", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("2.게임 재개", ref ConsoleUI.mainView);
@@ -19,8 +31,11 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("0.게임 종료", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
 
+           
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+
+            Console.SetCursorPosition(0, Console.WindowHeight - 1);
         }
 
 
@@ -30,7 +45,7 @@ namespace TextRPG_Team20.Scene
             {
                 case 0:
                     Game.Instance.PopScene();
-                    ConsoleUI.Instance.DrawTextInBox("당신의 다음 도전을 기다리겠습니다.", ref ConsoleUI.mainView);
+                    ConsoleUI.Instance.DrawTextInBox("정말 종료하시겠습니까?", ref ConsoleUI.mainView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     Console.SetCursorPosition(0, 49);
                     return true;
