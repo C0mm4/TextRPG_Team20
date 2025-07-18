@@ -73,49 +73,8 @@ namespace TextRPG_Team20.Dungeon
             return new Dungeon(_dungeonData?.GetDungeonById(dungeonId));
         }
 
-        // 예시: 현재 필드 정보를 출력하는 메서드 (게임 로직에서 활용)
-        public void PrintField(Field field)
-        {
-            if (field == null)
-            {
-                Console.WriteLine("필드를 찾을 수 없습니다.");
-                return;
-            }
+       
 
-            Console.WriteLine($"\n--- 필드: {field.FieldName} (ID: {field.FieldID}) ---");
-            for (int r = 0; r < 5; r++)
-            {
-                for (int c = 0; c < 5; c++)
-                {
-                    CellType cell = (CellType)field[r, c];
-                    switch (cell)
-                    {
-                        case CellType.Empty:
-                            Console.Write(" . "); // 이동 가능
-                            break;
-                        case CellType.Wall:
-                            Console.Write(" # "); // 벽
-                            break;
-                        case CellType.Enemy:
-                            Console.Write(" E "); // 적
-                            break;
-                        case CellType.ItemBox:
-                            Console.Write(" B "); // 아이템 상자
-                            break;
-                        case CellType.ConnectionPortal:
-                            Console.Write(" P "); // 연결 통로
-                            break;
-                        case CellType.Trap:
-                            Console.Write(" T "); // 함정
-                            break;
-                        default:
-                            Console.Write(" ? "); // 알 수 없음
-                            break;
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
         
         public void StartDungone(int DungeonID)
         {

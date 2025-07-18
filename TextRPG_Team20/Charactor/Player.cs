@@ -142,7 +142,8 @@ namespace TextRPG_Team20
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 5)
                 {
                     ConsoleUI.Instance.DrawTextInBox("다음방으로 넘어갑니다.", ref ConsoleUI.logView);
-                    DungeonManager.Instance.MoveField(CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[1] && c.FromCell[1] == newpos[0])));
+                    var moveToField = CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[0] && c.FromCell[1] == newpos[1]));
+                    DungeonManager.Instance.MoveField(moveToField);
                     return;
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 6)

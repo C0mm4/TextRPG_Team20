@@ -7,15 +7,6 @@ using TextRPG_Team20.Scene;
 
 namespace TextRPG_Team20.Dungeon
 {
-    public enum CellType
-    {
-        Empty = 0,
-        Wall = 1,
-        Enemy = 2,
-        ItemBox = 3,
-        ConnectionPortal = 4,
-        Trap = 5 // 추가적인 CellType
-    }
 
     public class Dungeon
     {

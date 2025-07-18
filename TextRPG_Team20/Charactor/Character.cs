@@ -61,11 +61,11 @@ namespace TextRPG_Team20
 
         public void SetPos(int x, int y)
         {
-            currentPosData = DungeonManager.Instance.currentField[x, y];
+            currentPosData = DungeonManager.Instance.currentField[y, x];
 
             this.x = x; this.y = y;
 
-            DungeonManager.Instance.currentField[x, y] = -1;
+            DungeonManager.Instance.currentField[y, x] = -1;
 
         }
 
