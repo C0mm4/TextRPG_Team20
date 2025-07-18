@@ -31,7 +31,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, BossBattle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat, DungeonClear
         }
 
         private Stack<Scene.Scene> _sceneStack;
@@ -85,6 +85,9 @@ namespace TextRPG_Team20
                 case SceneState.Battle:
                     newScene = new BattleScene(playerInstance);
                     break;
+                case SceneState.BossBattle:
+                    newScene = new BossBattleScene();
+                    break;
                 case SceneState.Result:
                     newScene = new ResultScene();
                     break;
@@ -108,6 +111,9 @@ namespace TextRPG_Team20
                     break;
                 case SceneState.Defeat:
                     newScene = new DefeatScene();
+                    break;
+                case SceneState.DungeonClear:
+                    newScene = new DungeonClearScene();
                     break;
             }
             if (newScene != null) 

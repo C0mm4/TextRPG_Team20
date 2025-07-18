@@ -1,40 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using TextRPG_Team20.Charactor.Enemys;
+using TextRPG_Team20.Dungeon;
 using TextRPG_Team20.System;
 
 namespace TextRPG_Team20.Scene
 {
-    internal class BattleScene : Scene
+    internal class BossBattleScene : Scene
     {
+
         private Player player;
 
-        public BattleScene(Player player)
+        public override bool Action(int input)
         {
-            this.player = player;
+            switch (input)
+            {
+                case 1: // 공격
+                    Battle.OnNormalAttack(player, Battle.enemies);
+                    break;
+
+                case 2: //스킬사용
+                    Battle.OnSkillAttack(player, Battle.enemies);
+                    break;
+
+                default: // 잘못입력
+                         //Battle.Miss(player, enemys);
+                    ((Scene)this).InvalidInput();
+                    break;
+            }
+
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+            return true;
         }
+
 
         internal static List<Enemy> CreateEnemys()
         {
             return new List<Enemy>
-    {
-                MobSpawnner.Instance.Create(0),
-                MobSpawnner.Instance.Create(0),
-                MobSpawnner.Instance.Create(0),
-    };
+            {
+                MobSpawnner.Instance.Create(DungeonManager.Instance.currentDungeon.BossID)
+            };
         }
 
-
         public override void PrintScene()
-
         {
+
             if (Battle.enemies == null || Battle.enemies.Count == 0)
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}적을 마주쳤습니다!!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 Battle.enemies = CreateEnemys();
+                player = Game.playerInstance;
                 player.ResetLastBattleGold();
             }
 
@@ -43,7 +62,7 @@ namespace TextRPG_Team20.Scene
 
             ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, Battle.enemies.Count, 1);
 
-            for (int i = 0; i < Battle.enemies.Count; i++) 
+            for (int i = 0; i < Battle.enemies.Count; i++)
             {
                 ConsoleUI.Rect rect = rects[i];
                 if (Battle.enemies[i] != null)
@@ -63,30 +82,6 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
 
 
-        }
-
-        public override bool Action(int input)
-        {
-            
-                switch (input)
-                {
-                    case 1: // 공격
-                        Battle.OnNormalAttack(player, Battle.enemies);
-                        break;
-
-                    case 2: //스킬사용
-                        Battle.OnSkillAttack(player, Battle.enemies);
-                        break;
-
-                    default: // 잘못입력
-                        //Battle.Miss(player, enemys);
-                        ((Scene)this).InvalidInput();
-                        break;
-                }
-            
-
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-            return true;
         }
     }
 }

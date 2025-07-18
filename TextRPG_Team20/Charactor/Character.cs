@@ -21,6 +21,7 @@ namespace TextRPG_Team20
 		public virtual void AddGold(int gold)
 		{
 			status.Gold += gold;
+
 		}
 		public void DecreaseGold(int gold)
 		{

@@ -17,6 +17,7 @@ namespace TextRPG_Team20.Scene
             PrintScene();
             var input = GetAction();
             var isDelay = Action(input);
+            PrintUIViews();
             if(isDelay)
                 Thread.Sleep(500);
         }
