@@ -3,7 +3,7 @@
     {
       "ID": 1,
       "Name": "파워 스트라이크",
-      "Class": "전사",
+      "Class": 1,
       "Description": "강하게 내려쳐 적에게 피해를 준다",
       "Range": 1,
       "Cost": 100,
@@ -13,7 +13,7 @@
     {
       "ID": 2,
       "Name": "콤보 데스폴트",
-      "Class": "전사",
+      "Class": 1,
       "Description": "콤보 공격으로 강력한 일격을 가한다",
       "Range": 2,
       "Cost": 10000,
@@ -23,7 +23,7 @@
     {
       "ID": 3,
       "Name": "스피릿 칼리버",
-      "Class": "전사",
+      "Class": 1,
       "Description": "영혼의 힘을 담아 날카로운 검격을 휘두른다",
       "Range": 3,
       "Cost": 100000,
@@ -34,7 +34,7 @@
     {
       "ID": 4,
       "Name": "더블 샷",
-      "Class": "궁수",
+      "Class": 3,
       "Description": "두 개의 화살을 빠르게 발사한다",
       "Range": 1,
       "Cost": 100,
@@ -44,7 +44,7 @@
     {
       "ID": 5,
       "Name": "애로우 레인",
-      "Class": "궁수",
+      "Class": 3,
       "Description": "하늘에서 화살비를 쏟아 넓은 지역을 공격한다",
       "Range": 2,
       "Cost": 10000,
@@ -54,9 +54,9 @@
     {
       "ID": 6,
       "Name": "어센던트 셰이드",
-      "Class": "궁수",
+      "Class": 3,
       "Description": "궁극의 화살을 소환하여 폭발적인 피해를 입힌다",
-      "Range": 3,
+      "Range": 2,
       "Cost": 100000,
       "AtkPercent": 3.3,
       "HitCount": 10
@@ -65,9 +65,9 @@
     {
       "ID": 7,
       "Name": "에너지 볼트",
-      "Class": "마법사",
+      "Class": 2,
       "Description": "에너지 구체를 날려 적을 타격한다",
-      "Range": 1,
+      "Range": 2,
       "Cost": 100,
       "AtkPercent": 1.3,
       "HitCount": 1
@@ -75,7 +75,7 @@
     {
       "ID": 8,
       "Name": "퓨리 오브 이프리트",
-      "Class": "마법사",
+      "Class": 2,
       "Description": "불의 정령 이프리트의 분노를 소환해 공격한다",
       "Range": 2,
       "Cost": 10000,
@@ -85,9 +85,9 @@
     {
       "ID": 9,
       "Name": "인페르날 베놈",
-      "Class": "마법사",
+      "Class": 2,
       "Description": "지옥의 독을 퍼뜨려 적에게 막대한 피해를 준다",
-      "Range": 3,
+      "Range": 2,
       "Cost": 100000,
       "AtkPercent": 3.8,
       "HitCount": 10

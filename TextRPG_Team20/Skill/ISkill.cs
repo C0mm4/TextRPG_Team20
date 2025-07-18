@@ -15,7 +15,7 @@ namespace TextRPG_Team20.Skill
     {
         public int ID {  get; set; }
         public string Name { get; set; }
-        public string Class {  get; set; }
+        public int Class {  get; set; }
         public string Description { get; set; }
         public int Range {  get; set; }
         public int Cost {  get; set; }

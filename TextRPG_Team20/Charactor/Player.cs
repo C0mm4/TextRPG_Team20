@@ -18,10 +18,23 @@ namespace TextRPG_Team20
         {
             
         }
-
         public void addSkill()
         {
-            skills.Add(SkillManager.Instance.GetSkill(3));
+            Skill.Skill skill = SkillManager.Instance.GetSkill(3);
+            if (Game.playerInstance.Job == (JobType)skill.Data.Class)
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{skill.Data.Name}을 습득했습니다!!{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                Console.ReadKey();
+                skills.Add(skill);
+            }
+            else
+            {
+                ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}{skill.Data.Name}획득에 실패했습니다..{AnsiColor.Reset}", ref ConsoleUI.logView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                Console.ReadKey();                
+            }
+          
         }
         public Skill.Skill? SelectSkill()
         {
