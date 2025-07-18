@@ -170,6 +170,7 @@ namespace TextRPG_Team20
                             break;
                         default:
                             ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                             continue; 
                     }
                     if (selectedJob != JobType.None) 
@@ -180,6 +181,7 @@ namespace TextRPG_Team20
                 else
                 {
                     ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                 }
                
             }
@@ -235,8 +237,10 @@ namespace TextRPG_Team20
         {
             while (_sceneStack.Count > 0)
             {
-                PopScene();
+                _sceneStack.Pop();
             }
+
+            _currentScene = null;
         }
     }
 }

@@ -44,11 +44,12 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 0:
-                    Game.Instance.PopScene();
+                    
                     ConsoleUI.Instance.DrawTextInBox("정말 종료하시겠습니까?", ref ConsoleUI.mainView);
                     ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
                     Console.SetCursorPosition(0, 49);
-                    return true;
+                    Game.Instance.GameEnd();
+                    return false;
                 case 1:
                     Game.Instance.GameStart();
                     return false;
