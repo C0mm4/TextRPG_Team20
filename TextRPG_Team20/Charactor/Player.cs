@@ -16,9 +16,13 @@ namespace TextRPG_Team20
 
         public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
         {
-            skills.Add(SkillManager.Instance.GetSkill(1));
+            
         }
 
+        public void addSkill()
+        {
+            skills.Add(SkillManager.Instance.GetSkill(3));
+        }
         public Skill.Skill? SelectSkill()
         {
             ConsoleUI.info2View.ClearBuffer();
@@ -75,7 +79,7 @@ namespace TextRPG_Team20
         public void UseSkill(List<Enemy> target, ISkill skill)
         {
             skill.Action(target);
-
+            return;
         }
 
         public void playercollision(int x, int y)

@@ -36,6 +36,8 @@ namespace TextRPG_Team20.Scene
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}적을 마주쳤습니다!!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 Battle.enemies = CreateEnemys();
                 player.ResetLastBattleGold();
+                player.AddGold(2000000);
+                player.addSkill();
             }
 
 
