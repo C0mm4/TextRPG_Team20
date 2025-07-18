@@ -23,8 +23,7 @@ namespace TextRPG_Team20.Scene
 
 
         public override void PrintScene()
-        {
-
+        {  
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}인벤토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("보유 중인 아이템을 관리할 수 있습니다.", ref ConsoleUI.mainView);

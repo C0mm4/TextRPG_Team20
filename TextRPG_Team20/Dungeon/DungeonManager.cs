@@ -116,8 +116,10 @@ namespace TextRPG_Team20.Dungeon
 
         public void ClearDungeon(int ID)
         {
-            isDungeonClear[ID - 1] = true;
-            if(isAbleDungeon.Length >= ID)
+            if (isDungeonClear != null && ID - 1 >= 0 && ID - 1 < isDungeonClear.Length)
+                isDungeonClear[ID - 1] = true;
+
+            if (isAbleDungeon != null && ID >= 0 && ID < isAbleDungeon.Length)
                 isAbleDungeon[ID] = true;
         }
     }

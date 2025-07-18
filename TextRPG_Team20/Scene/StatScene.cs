@@ -18,7 +18,6 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}STAT{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"{Nowstatus.Level} Lv", ref ConsoleUI.mainView);
