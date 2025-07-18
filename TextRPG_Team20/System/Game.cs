@@ -248,5 +248,10 @@ namespace TextRPG_Team20
 
             _currentScene = null;
         }
+
+        public int GetCurrentFieldID()      // 현재 플레이어가 있는 필드의 ID 가져오는 메서드 
+        {
+            return Dungeon.DungeonManager.Instance.currentField?.FieldID ?? 1;
+        }
     }
 }

@@ -1,0 +1,49 @@
+{
+  "FieldSpawns": [
+    {
+      "FieldID": 101,
+      "SpawnSetting": {
+        "EnemysID": [0, 1, 2],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 102,
+      "SpawnSetting": {
+        "EnemysID": [0, 1, 2],
+        "MinCount": 1,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 3,
+      "SpawnSetting": {
+        "EnemysID": [1, 2, 3],
+        "MinCount": 2,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    },
+    {
+      "FieldID": 4,
+      "SpawnSetting": {
+        "EnemysID": [3, 4],
+        "MinCount": 1,
+        "MaxCount": 2,
+        "IsRandom": false
+      }
+    },
+    {
+      "FieldID": 5,
+      "SpawnSetting": {
+        "EnemysID": [4, 5],
+        "MinCount": 2,
+        "MaxCount": 3,
+        "IsRandom": true
+      }
+    }
+  ]
+}
