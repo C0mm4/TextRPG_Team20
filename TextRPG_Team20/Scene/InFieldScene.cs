@@ -52,6 +52,14 @@ namespace TextRPG_Team20.Scene
             }
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+
+            ConsoleUI.Instance.DrawTextInBox($"===현재 던전=== ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"{DungeonManager.Instance.currentDungeon.DungeonName} ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"===현재 필드=== ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"{DungeonManager.Instance.currentField.FieldName} ", ref ConsoleUI.info2View);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
         }
 
         public override void Print()
@@ -158,7 +166,7 @@ namespace TextRPG_Team20.Scene
                             ConsoleUI.ClearView(right);
                             right.ClearBuffer();
                             ConsoleUI.Instance.DrawTextInBox("사용할 포션을 선택하세요", ref right);
-
+                            
                             for (int i = 0; i < potions.Count; i++)
                             {
                                 var potion = potions[i];

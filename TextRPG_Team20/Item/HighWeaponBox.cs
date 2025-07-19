@@ -25,7 +25,7 @@ namespace TextRPG_Team20
 
             string quality = "";
 
-            Random random = new Random();
+            Random random = Game.random;
             int percentage = random.Next(0, 100);
 
             if (percentage < 15)

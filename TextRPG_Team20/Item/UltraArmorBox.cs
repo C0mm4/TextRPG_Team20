@@ -27,7 +27,7 @@ namespace TextRPG_Team20
 
             string quality = "레전더리";
 
-            Random random = new Random();
+            Random random = Game.random;
 
             // Get Target Quality Items
             var targetItems = items.FindAll(item => item.data.Grade == quality);

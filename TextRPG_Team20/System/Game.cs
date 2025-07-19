@@ -27,7 +27,7 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-        
+        public static Random random = new Random();
 
         public enum SceneState
         {
