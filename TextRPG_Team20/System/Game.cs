@@ -27,7 +27,7 @@ namespace TextRPG_Team20
         }
 
         internal static Player? playerInstance;
-        
+        public static Random random = new Random();
 
         public enum SceneState
         {
@@ -144,73 +144,78 @@ namespace TextRPG_Team20
             SceneChange(SceneState.Intro);
         }
 
-        public void CreatePlayerInstance(string? name)
+        public void CreatePlayerInstance(string? name, JobType job = JobType.None, int gold = 50000)
         {
-            string playerName = name ?? "플레이어";
-            ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("1.전사", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("2.궁수", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("3.마법사", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
-            
-            JobType selectedJob = JobType.None; 
-
-            
-            while (true)
+            if(job == JobType.None)
             {
-                string? input = Console.ReadLine();
-                if (int.TryParse(input, out int choice))
+
+                string playerName = name ?? "플레이어";
+                ConsoleUI.mainView.ClearBuffer();
+                ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.DrawTextInBox("1.전사", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.DrawTextInBox("2.궁수", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.DrawTextInBox("3.마법사", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.mainView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+
+                job = JobType.None;
+
+
+                while (true)
                 {
-                    switch (choice)
+                    string? input = Console.ReadLine();
+                    if (int.TryParse(input, out int choice))
                     {
-                        case 1:
-                            selectedJob = JobType.Warrior;
+                        switch (choice)
+                        {
+                            case 1:
+                                job = JobType.Warrior;
+                                break;
+                            case 2:
+                                job = JobType.Archer;
+                                break;
+                            case 3:
+                                job = JobType.Mage;
+                                break;
+                            default:
+                                ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                                ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
+                                continue;
+                        }
+                        if (job != JobType.None)
+                        {
                             break;
-                        case 2:
-                            selectedJob = JobType.Archer;
-                            break;
-                        case 3:
-                            selectedJob = JobType.Mage;
-                            break;
-                        default:
-                            ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
-                            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-                            continue; 
+                        }
                     }
-                    if (selectedJob != JobType.None) 
+                    else
                     {
-                        break;
+                        ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
+                        ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                     }
+
                 }
-                else
-                {
-                    ConsoleUI.Instance.DrawTextInBox("잘못된 입력입니다!", ref ConsoleUI.logView);
-                    ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-                }
-               
             }
             // 캐릭터 초기 스텟
-            Status status = new Status(0, 1, 100, 5, 10, name, 50000, 0);
-            playerInstance = new Player(name ?? "", selectedJob, 50000, status);
+            Status status = new Status(0, 1, 100, 5, 10, name ?? "", gold, 0);
+            playerInstance = new Player(job, status);
 
 
 
-            ConsoleUI.Instance.DrawTextInBox($"{playerName}, {selectedJob.ToKoreanString()}로 게임을 시작합니다!", ref ConsoleUI.logView);
+            ConsoleUI.Instance.DrawTextInBox($"{name}, {job.ToKoreanString()}로 게임을 시작합니다!", ref ConsoleUI.logView);
             
 
         }
 
         public void SaveGame()
         {
-
+            SaveData.Instance.Save();
         }
 
         public void LoadGame() 
         {
-
+            SaveData.Instance.Load();
+            SceneChange(SceneState.Lobby);
         }
 
         public void ReturnToLobby()
@@ -236,6 +241,8 @@ namespace TextRPG_Team20
 
             ConsoleUI.info1View.ClearBuffer();
             ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
+
+            SaveGame();
             playerInstance = null;
             SceneChange(SceneState.Title);
         }
@@ -248,6 +255,11 @@ namespace TextRPG_Team20
             }
 
             _currentScene = null;
+        }
+
+        public int GetCurrentFieldID()      // 현재 플레이어가 있는 필드의 ID 가져오는 메서드 
+        {
+            return Dungeon.DungeonManager.Instance.currentField?.FieldID ?? 1;
         }
     }
 }

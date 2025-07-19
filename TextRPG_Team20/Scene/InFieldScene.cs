@@ -15,7 +15,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.SplitRectHorizontal(ConsoleUI.inputView, out left, out right);
 
             ConsoleUI.Instance.DrawTextInBox("           ↑위로 이동", ref left);
-            ConsoleUI.Instance.DrawTextInBox("←왼쪽 이동           →오른쪽 이동", ref left);
+            ConsoleUI.Instance.DrawTextInBox("←왼쪽 이동           →오른쪽 이동       1 : 포션 사용", ref left);
             ConsoleUI.Instance.DrawTextInBox("           ↓하단 이동                    0 : 던전 탈출", ref left);
 
             ConsoleUI.Instance.PrintView(ref left, "left", "middle");
@@ -35,7 +35,9 @@ namespace TextRPG_Team20.Scene
                 case ConsoleKey.NumPad0:
                 case ConsoleKey.D0:
                     return 4;
-                    break;
+                case ConsoleKey.NumPad1:
+                case ConsoleKey.D1:
+                    return 5;
             }
 
             return -1;
@@ -50,12 +52,39 @@ namespace TextRPG_Team20.Scene
             }
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
+
+            ConsoleUI.Instance.DrawTextInBox($"===현재 던전=== ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"{DungeonManager.Instance.currentDungeon.DungeonName} ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"===현재 필드=== ", ref ConsoleUI.info2View);
+            ConsoleUI.Instance.DrawTextInBox($"{DungeonManager.Instance.currentField.FieldName} ", ref ConsoleUI.info2View);
+
+            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
         }
 
+        public override void Print()
+        {
+            int input = 0;
+            while (input != 4)
+            {
+                ClearBuffer();
+                SetPlayerInfo();
+                PrintUIViews();
+                PrintScene();
+                input = GetAction();
+                Action(input);
+
+                if (Game.playerInstance.playercollision(deltaX, deltaY))
+                    break;
+            }
+        }
+
+        int deltaX = 0;
+        int deltaY = 0;
         public override bool Action(int input)
         {
-            int deltaX = 0;
-            int deltaY = 0;
+            deltaX = 0;
+            deltaY = 0;
             switch (input)
             {
                 case 0:
@@ -112,13 +141,82 @@ namespace TextRPG_Team20.Scene
                             return false;
                         }
                     }
+                case 5:
+                    {
+
+                        List<Item> potions = Game.playerInstance.Inventory.Items
+            .Where(i => i.data.Name.Contains("포션") || i.data.Name.Contains("엘릭서"))
+            .ToList();
+
+                        if (potions.Count == 0)
+                        {
+                            ConsoleUI.Instance.DrawTextInBox("사용 가능한 포션이 없습니다.", ref right);
+                            ConsoleUI.Instance.PrintView(ref right, "left", "middle");
+                            Thread.Sleep(1500);
+                            ConsoleUI.ClearView(right);
+                            return false;
+                        }
+
+                        int index = 0;
+                        string cursor = ">>";
+                        string notcursor = "  ";
+
+                        while (true)
+                        {
+                            ConsoleUI.ClearView(right);
+                            right.ClearBuffer();
+                            ConsoleUI.Instance.DrawTextInBox("사용할 포션을 선택하세요", ref right);
+                            
+                            for (int i = 0; i < potions.Count; i++)
+                            {
+                                var potion = potions[i];
+                                string line = (index == i ? cursor : notcursor) +
+                                              $" {potion.data.Name} (보유량 : {potion.CurrentStack}개)";
+                                ConsoleUI.Instance.DrawTextInBox(line, ref right);
+                            }
+
+                            ConsoleUI.Instance.PrintView(ref right, "left", "middle");
+
+                            var key = Console.ReadKey(true);
+
+                            if (key.Key == ConsoleKey.Enter)
+                            {
+                                ConsumeItem selected = potions[index] as ConsumeItem;
+                                if (selected.CurrentStack > 0)
+                                {
+                                    selected.Execute();
+                                    return true;
+                                }
+                                else
+                                {
+                                    ConsoleUI.ClearView(right);
+                                    ConsoleUI.Instance.DrawTextInBox("보유 수량이 없습니다!", ref ConsoleUI.logView);
+                                    ConsoleUI.Instance.PrintView(ref right, "left", "middle");
+                                    return true;
+                                }
+                            }
+                            else if (key.Key == ConsoleKey.Escape)
+                            {
+                                ConsoleUI.ClearView(right);
+                                return false;
+                            }
+                            else if (key.Key == ConsoleKey.UpArrow)
+                            {
+                                index = (index - 1 + potions.Count) % potions.Count;
+                            }
+                            else if (key.Key == ConsoleKey.DownArrow)
+                            {
+                                index = (index + 1) % potions.Count;
+                            }
+                        }
+                    }
+                    break;
                 default:
                     InvalidInput();
-                    return true;
+                    return false;
 
             }
 
-            Game.playerInstance.playercollision(deltaX, deltaY);
             return false;
         }
     }

@@ -15,7 +15,7 @@ namespace TextRPG_Team20
 
         public Enemy() { }
 
-        public Enemy(string name, int gold,  Status status) : base(name, JobType.None, gold, status)
+        public Enemy(Status status) : base(JobType.None, status)
         {
 
         }
@@ -70,12 +70,22 @@ namespace TextRPG_Team20
         {
             targetRect = rect;
 
-            ConsoleUI.Instance.DrawTextInBox("", ref rect);
-            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+            var blank = new List<string> { new string(' ', rect.width) };
 
+            ConsoleUI.Instance.InsertTextInBox(blank, ref rect);
+            ConsoleUI.Instance.InsertTextInBox(blank, ref rect);
             ConsoleUI.Instance.InsertTextInBox(asciiData, ref rect);
-            ConsoleUI.Instance.DrawTextInBox("", ref rect);
-            ConsoleUI.Instance.DrawTextInBox("", ref rect);
+            ConsoleUI.Instance.InsertTextInBox(blank, ref rect);
+
+            int barLength = 30;
+
+            double hpRatio = (double)status.HP / status.MaxHP;
+
+            int filledLength = (int)(hpRatio * barLength);
+            int emptyLength = barLength - filledLength;
+            string bar = "[" + AnsiColor.Green + new string('=', filledLength) + new string(' ', emptyLength) + $"{AnsiColor.Reset}] {status.HP}/{status.MaxHP} ";
+
+            ConsoleUI.Instance.DrawTextInBox($"[{bar}]", ref rect); 
             ConsoleUI.Instance.PrintView(ref rect, "center", "middle");
 
         }

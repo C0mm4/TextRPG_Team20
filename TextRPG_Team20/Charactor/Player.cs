@@ -14,7 +14,7 @@ namespace TextRPG_Team20
     {
         public List<Skill.Skill> skills = new();
 
-        public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
+        public Player(JobType jobType, Status status)  : base(jobType, status)
         {
             
         }
@@ -50,7 +50,7 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox("=== 스킬 선택 ===", ref ConsoleUI.info2View);          //delete~
             for (int i = 0; i < skills.Count; i++)
             {
-                ConsoleUI.Instance.DrawTextInBox($"{i + 1}. {skills[i].Data.Name}", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox($" {ConsoleUI.PadRightDisplay($"{i + 1}. {skills[i].Data.Name}", 30)} | 소모 골드 : {skills[i].Data.Cost}", ref ConsoleUI.inputView);
             }
             ConsoleUI.Instance.DrawTextInBox("선택 >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.DrawTextInBox("0.취소", ref ConsoleUI.info2View);
@@ -79,11 +79,10 @@ namespace TextRPG_Team20
         public override void CharacterInfo()
         {
             ConsoleUI.Instance.DrawTextInBox($"캐릭터 정보", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"Lv. {status.Level:D2}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"{status.Name} {Job.ToKoreanString()}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"공격력 : {status.Atk} {(status.ExtraAtk == 0 ? "" : $" + ({status.ExtraAtk})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
-            ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP}", ref ConsoleUI.info1View);
+            ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP} / {status.MaxHP}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"Gold : {status.Gold} G", ref ConsoleUI.info1View);
         }
 
@@ -103,8 +102,9 @@ namespace TextRPG_Team20
             return;
         }
 
-        public void playercollision(int x, int y)
+        public bool playercollision(int x, int y)
         {
+            var CurrentDungeon = DungeonManager.Instance.currentDungeon;
             var CurrentField = DungeonManager.Instance.currentField;
             DungeonManager.Instance.currentField[this.y, this.x] = currentPosData;
             int[] newpos = { this.x + x, this.y + y };
@@ -121,6 +121,7 @@ namespace TextRPG_Team20
 
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 2)
                 {
+
                     ConsoleUI.Instance.DrawTextInBox("상자를 발견했습니다. 축하합니다 5골드를 획득하셨습니다.", ref ConsoleUI.logView);
                     DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
                     this.x = newpos[0];
@@ -133,8 +134,11 @@ namespace TextRPG_Team20
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 4)
                 {
-                    Console.WriteLine("발판이 눌렸습니다 어딘가의 문이나 상자가 열렸을지도 모르겠네요.");
+                    ConsoleUI.Instance.DrawTextInBox("발판이 눌렸습니다 어딘가의 문이나 상자가 열렸을지도 모르겠네요.", ref ConsoleUI.logView);
                     DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
+
+                    DungeonManager.Instance.OpenAllDoorsInDungeon(CurrentDungeon);
+
 
                     this.x = newpos[0];
                     this.y = newpos[1];
@@ -142,8 +146,9 @@ namespace TextRPG_Team20
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 5)
                 {
                     ConsoleUI.Instance.DrawTextInBox("다음방으로 넘어갑니다.", ref ConsoleUI.logView);
-                    DungeonManager.Instance.MoveField(CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[1] && c.FromCell[1] == newpos[0])));
-                    return;
+                    var moveToField = CurrentField.Connections.FirstOrDefault(c => (c.FromCell[0] == newpos[0] && c.FromCell[1] == newpos[1]));
+                    DungeonManager.Instance.MoveField(moveToField);
+                    return true;
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 6)
                 {
@@ -153,6 +158,9 @@ namespace TextRPG_Team20
 
                     this.x = newpos[0];
                     this.y = newpos[1];
+                    currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
+                    DungeonManager.Instance.currentField[this.y, this.x] = -1;
+                    return true;
                 }
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 7)
                 {
@@ -162,10 +170,14 @@ namespace TextRPG_Team20
 
                     this.x = newpos[0];
                     this.y = newpos[1];
+                    currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
+                    DungeonManager.Instance.currentField[this.y, this.x] = -1;
+                    return true;
                 }
             }
             currentPosData = DungeonManager.Instance.currentField[this.y, this.x];
             DungeonManager.Instance.currentField[this.y, this.x] = -1;
+            return false;
         }
 
         public int LastBattleGold { get; private set; }

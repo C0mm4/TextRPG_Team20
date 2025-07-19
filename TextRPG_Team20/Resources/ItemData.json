@@ -6928,7 +6928,7 @@
       "HP": 0,
       "Gold": 50,
       "GoldUP": 0,
-      "ClassName": "LowWeaonBox"
+      "ClassName": "LowWeaponBox"
     },
     {
       "ID": 501,
@@ -6942,7 +6942,7 @@
       "HP": 0,
       "Gold": 5000,
       "GoldUP": 0,
-      "ClassName": "MiddleWeaonBox"
+      "ClassName": "MiddleWeaponBox"
     },
     {
       "ID": 502,
@@ -6956,7 +6956,7 @@
       "HP": 0,
       "Gold": 50000,
       "GoldUP": 0,
-      "ClassName": "HighWeaonBox"
+      "ClassName": "HighWeaponBox"
     },
     {
       "ID": 503,
@@ -6970,7 +6970,7 @@
       "HP": 0,
       "Gold": 200000,
       "GoldUP": 0,
-      "ClassName": "UltraWeaonBox"
+      "ClassName": "UltraWeaponBox"
     },
     {
       "ID": 504,
@@ -7110,7 +7110,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "Potion"
     },
     {
       "ID": 514,
@@ -7124,7 +7124,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "Potion"
     },
     {
       "ID": 515,
@@ -7138,7 +7138,7 @@
       "HP": 0,
       "Gold": 15000,
       "GoldUP": 0,
-      "ClassName": "SkillBook"
+      "ClassName": "Potion"
     }
   ]
 }

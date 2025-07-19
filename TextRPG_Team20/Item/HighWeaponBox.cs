@@ -7,14 +7,14 @@ using TextRPG_Team20.System;
 
 namespace TextRPG_Team20
 {
-    internal class LowWeaonBox : ConsumeItem
+    internal class HighWeaponBox : ConsumeItem
     {
-        public LowWeaonBox(ItemData itemData) : base(itemData)
+        public HighWeaponBox(ItemData itemData) : base(itemData)
         {
 
         }
 
-        public LowWeaonBox()
+        public HighWeaponBox()
         {
 
         }
@@ -25,20 +25,25 @@ namespace TextRPG_Team20
 
             string quality = "";
 
-            Random random = new Random();
+            Random random = Game.random;
             int percentage = random.Next(0, 100);
 
-            // 2% Epic
-            if (percentage < 2)
+            if (percentage < 15)
+            {
+                quality = "레전더리";
+            }
+            else if (percentage < 200)
+            {
+                quality = "유니크";
+            }
+            else if (percentage < 450)
             {
                 quality = "에픽";
             }
-            // 38% Rare
-            else if (percentage < 38) 
+            else if (percentage < 700)
             {
                 quality = "레어";
             }
-            // 60% Normal
             else
             {
                 quality = "일반";

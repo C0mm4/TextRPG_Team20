@@ -77,7 +77,7 @@ namespace TextRPG_Team20.Scene
 
             // 모든 영역 초기화
 
-            ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, Battle.enemies.Count, 1);
+            ConsoleUI.SplitRect(ConsoleUI.mainView, out List<ConsoleUI.Rect> rects, Math.Max(Battle.enemies.Count, 1), 1);
 
             for (int i = 0; i < Battle.enemies.Count; i++)
             {

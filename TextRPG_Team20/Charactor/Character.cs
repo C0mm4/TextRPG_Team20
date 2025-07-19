@@ -42,18 +42,9 @@ namespace TextRPG_Team20
             Job = JobType.None;
         }
 
-        public Character(string? name, JobType jobType, int gold, Status status)
+        public Character(JobType jobType, Status status)
         {
-            if (name == null)
-            {
-                status.Name = "";
-            }
-            else
-            {
-                status.Name = name;
-            }
             Job = jobType;
-            status.Gold = gold;
             this.status = status;
 
             Inventory = new Inventory(this);
@@ -61,11 +52,11 @@ namespace TextRPG_Team20
 
         public void SetPos(int x, int y)
         {
-            currentPosData = DungeonManager.Instance.currentField[x, y];
+            currentPosData = DungeonManager.Instance.currentField[y, x];
 
             this.x = x; this.y = y;
 
-            DungeonManager.Instance.currentField[x, y] = -1;
+            DungeonManager.Instance.currentField[y, x] = -1;
 
         }
 
@@ -79,6 +70,7 @@ namespace TextRPG_Team20
         public void IncreaseHp(int amount)
         {
             status.HP += amount;
+            status.HP = Math.Min(status.MaxHP, status.HP);
             //Console.WriteLine($"{status.Name}의 체력이 {amount}만큼 회복되어 {status.Hp}가 되었습니다.");
         }
 

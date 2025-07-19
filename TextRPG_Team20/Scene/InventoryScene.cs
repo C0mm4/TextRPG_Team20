@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,17 +18,12 @@ namespace TextRPG_Team20.Scene
         public InventoryScene(Inventory inventory)
         {
             _inventory = inventory;
-            for (int i = 0; i < 500; i++)
-                _inventory.AddItem(ItemManager.Instance.Create(500));
-            _inventory.AddItem(ItemManager.Instance.Create(512));
-
         }   
             
 
 
         public override void PrintScene()
         {
-            
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}인벤토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("보유 중인 아이템을 관리할 수 있습니다.", ref ConsoleUI.mainView);

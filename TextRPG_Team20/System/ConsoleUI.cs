@@ -323,6 +323,7 @@ namespace TextRPG_Team20
             if(horizon == 0 || vertical == 0)
             {
                 ConsoleUI.Instance.DrawTextInBox("박스를 0개로 나눌 수 없습니다.", ref logView);
+                return;
             }
 
             int splitWidth = original.width / horizon;
