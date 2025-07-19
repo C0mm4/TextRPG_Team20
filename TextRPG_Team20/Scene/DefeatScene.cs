@@ -9,7 +9,10 @@ namespace TextRPG_Team20.Scene
 {
     internal class DefeatScene : Scene
     {
-
+        public DefeatScene()
+        {
+            Battle.enemies.Clear();
+        }
 
         public override void PrintScene()
         {

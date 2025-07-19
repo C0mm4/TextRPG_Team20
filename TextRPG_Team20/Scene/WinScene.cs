@@ -9,6 +9,11 @@ namespace TextRPG_Team20.Scene
 {
     internal class WinScene : Scene
     {
+        public WinScene() 
+        {
+            Battle.enemies.Clear();
+        }
+
         public override void PrintScene()
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}전투에서 승리했습니다!{AnsiColor.Reset}", ref ConsoleUI.mainView);

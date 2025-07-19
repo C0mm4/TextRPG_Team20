@@ -4,7 +4,7 @@
       "FieldID": 101,
       "SpawnSetting": {
         "EnemysID": [ 0, 1, 2 ],
-        "MinCount": 1,
+        "MinCount": 3,
         "MaxCount": 3,
         "IsRandom": true
       }

@@ -68,11 +68,17 @@ namespace TextRPG_Team20.Scene
             switch (input)
             {
                 case 1: // 공격
-                    Battle.OnNormalAttack(player, Battle.enemies);
+                    if(!Battle.OnNormalAttack(player, Battle.enemies))
+                    {
+                        return true;
+                    }
                     break;
 
                 case 2: //스킬사용
-                    Battle.OnSkillAttack(player, Battle.enemies);
+                    if (!Battle.OnSkillAttack(player, Battle.enemies))
+                    {
+                        return true;
+                    }
                     break;
 
                 default: // 잘못입력

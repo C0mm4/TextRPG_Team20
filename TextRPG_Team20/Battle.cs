@@ -23,16 +23,16 @@ namespace TextRPG_Team20.Scene
         }
 
 
-        public static void OnNormalAttack(Player player, List<Enemy> enemies)
+        public static bool OnNormalAttack(Player player, List<Enemy> enemies)
         {
-            if (enemies.Count == 0) return;
+            if (enemies.Count == 0) return true;
             range = 1;
             // 1. 플레이어가 때릴 적 선택
             var targets = SelectEnemy(enemies);
             if (targets == null)
             {
                 ConsoleUI.Instance.DrawTextInBox("공격을 취소했습니다.", ref ConsoleUI.logView);
-                return; // 공격 사용을 취소하고 아무 일도 안 함
+                return false; // 공격 사용을 취소하고 아무 일도 안 함
             }
             else
                 player.Attack(targets[0]);
@@ -46,25 +46,30 @@ namespace TextRPG_Team20.Scene
                 player.AddGold(target.status.Gold);
                 enemies.Remove(target);
             }
-
+            return true;
         }
 
 
-        public static void OnSkillAttack(Player player, List<Enemy> enemies)
+        public static bool OnSkillAttack(Player player, List<Enemy> enemies)
         {
-            if (enemies.Count == 0) return;
+            if (enemies.Count == 0) return true;
 
+            if (player.skills.Count == 0)
+            {
+                ConsoleUI.Instance.DrawTextInBox("사용할 수 있는 스킬이 없습니다.", ref ConsoleUI.logView);
+                return false;
+            }
             Skill.Skill? skill = player.SelectSkill();
             if (skill == null)
             {
                 ConsoleUI.Instance.DrawTextInBox("스킬사용을 취소했습니다.", ref ConsoleUI.logView);
-                return;
+                return false;
             }
 
             if(player.status.Gold < skill.Data.Cost)
             {
                 ConsoleUI.Instance.DrawTextInBox("골드가 부족합니다!!.", ref ConsoleUI.logView);
-                return;
+                return false;
             }
 
             range = skill.Data.Range;
@@ -73,15 +78,15 @@ namespace TextRPG_Team20.Scene
             if (target == null)
             {
                 ConsoleUI.Instance.DrawTextInBox("스킬사용을 취소했습니다.", ref ConsoleUI.logView);
-                return; // 스킬 사용을 취소하고 아무 일도 안 함
+                return false; // 스킬 사용을 취소하고 아무 일도 안 함
             }
             else
             {
                 player.UseSkill(target, skill);
                 player.DecreaseGold(skill.Data.Cost);
             }
-            
 
+            return true;
 
         }
 
@@ -101,9 +106,10 @@ namespace TextRPG_Team20.Scene
                 }
 
                 var keyValue = Console.ReadKey();
-
+                
                 for (int i = Math.Max(0, selectIndex - range + 1); i < Math.Min(enemies.Count, selectIndex + range); i++)
                 {
+                    ConsoleUI.ClearView(enemies[i].targetRect);
                     ConsoleUI.RemoveLines(ref enemies[i].targetRect, 3);
                     ConsoleUI.Instance.PrintView(ref enemies[i].targetRect, "center", "middle");
 
@@ -121,6 +127,13 @@ namespace TextRPG_Team20.Scene
                         selectIndex = Math.Min(enemies.Count - 1, selectIndex + 1);
                         break;
                     case ConsoleKey.Escape:
+                        for (int i = Math.Max(0, selectIndex - range + 1); i < Math.Min(enemies.Count, selectIndex + range); i++)
+                        {
+                            ConsoleUI.ClearView(enemies[i].targetRect);
+
+                            // 화살표 없이 정상적으로 출력
+                            ConsoleUI.Instance.PrintView(ref enemies[i].targetRect, "center", "middle");
+                        }
                         return null;
                         
                 }

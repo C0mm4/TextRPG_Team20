@@ -31,8 +31,6 @@ namespace TextRPG_Team20.Dungeon
                         if (field[y, x] == 3)
                         {
                             field[y, x] = 0;
-                            ConsoleUI.Instance.DrawTextInBox(
-                                $"[문 열림] {field.FieldName} 필드의 위치 ({x}, {y})", ref ConsoleUI.logView);
                         }
                     }
                 }
@@ -67,11 +65,7 @@ namespace TextRPG_Team20.Dungeon
                 isDungeonClear = new bool[_dungeonData.Dungeons.Count];
                 isAbleDungeon = new bool[_dungeonData.Dungeons.Count];
                 isAbleDungeon[0] = true;
-                // for map test
-                isAbleDungeon[1] = true;
-                isAbleDungeon[2] = true;
-                isAbleDungeon[3] = true;
-                isAbleDungeon[4] = true;
+
             }
             catch (FileNotFoundException)
             {

@@ -44,7 +44,7 @@ namespace TextRPG_Team20
 
             // 체력 회복
             Game.playerInstance.IncreaseHp(recoverAmount);
-            Console.WriteLine($"{data.Name}을(를) 사용하여 {recoverAmount}만큼 체력을 회복했습니다!");
+            ConsoleUI.Instance.DrawTextInBox($"{data.Name}을(를) 사용하여 {recoverAmount}만큼 체력을 회복했습니다!", ref ConsoleUI.logView);
 
         }
     }

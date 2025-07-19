@@ -9,6 +9,10 @@ namespace TextRPG_Team20.Scene
 {
     internal class DungeonClearScene : Scene
     {
+        public DungeonClearScene()
+        {
+            Battle.enemies.Clear();
+        }
         public override bool Action(int input)
         {
             switch (input)
