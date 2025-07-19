@@ -15,7 +15,7 @@ namespace TextRPG_Team20
 
         public Enemy() { }
 
-        public Enemy(string name, int gold,  Status status) : base(name, JobType.None, gold, status)
+        public Enemy(Status status) : base(JobType.None, status)
         {
 
         }

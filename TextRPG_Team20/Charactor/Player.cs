@@ -14,7 +14,7 @@ namespace TextRPG_Team20
     {
         public List<Skill.Skill> skills = new();
 
-        public Player(string name, JobType jobType, int gold, Status status)  : base(name, jobType, gold, status)
+        public Player(JobType jobType, Status status)  : base(jobType, status)
         {
             
         }

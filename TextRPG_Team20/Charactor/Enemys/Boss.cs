@@ -10,7 +10,7 @@ namespace TextRPG_Team20.Charactor
     {
         public Boss() : base() { }
 
-        public Boss(string name, int gold, Status status) : base(name, gold, status)
+        public Boss(Status status) : base(status)
         {
 
         }

@@ -42,18 +42,9 @@ namespace TextRPG_Team20
             Job = JobType.None;
         }
 
-        public Character(string? name, JobType jobType, int gold, Status status)
+        public Character(JobType jobType, Status status)
         {
-            if (name == null)
-            {
-                status.Name = "";
-            }
-            else
-            {
-                status.Name = name;
-            }
             Job = jobType;
-            status.Gold = gold;
             this.status = status;
 
             Inventory = new Inventory(this);

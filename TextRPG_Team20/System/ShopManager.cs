@@ -81,6 +81,10 @@ namespace TextRPG_Team20
                 bool canParse = int.TryParse(n, out int value);
                 if (canParse)
                 {
+                    if(value == 0)
+                    {
+                        return (false, "");
+                    }
                     if(player.status.Gold >= value * itemToBuy.data.Gold)
                     {
                         player.DecreaseGold(itemToBuy.data.Gold * value);
@@ -128,7 +132,7 @@ namespace TextRPG_Team20
 
             if(itemToSell.data.ItemEquipType == ItemType.Consumable)
             {
-                ConsoleUI.Instance.DrawTextInBox("구매 할 수량을 입력해주세요 >> ", ref ConsoleUI.inputView);
+                ConsoleUI.Instance.DrawTextInBox("판매 할 수량을 입력해주세요 >> ", ref ConsoleUI.inputView);
                 ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
 
                 var n = ConsoleUI.Read(ref ConsoleUI.inputView);
@@ -139,6 +143,10 @@ namespace TextRPG_Team20
                     if(itemToSell.CurrentStack < value)
                     {
                         return (false, "잘못된 입력입니다.");
+                    }
+                    if(value == 0)
+                    {
+                        return (false, "");
                     }
                     string ret = $"{AnsiColor.Cyan}{itemToSell.data.Name}{AnsiColor.Reset}을(를) {value}개 판매했습니다.";
                     for(int i = 0; i < value; i++)

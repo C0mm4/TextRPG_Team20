@@ -18,8 +18,9 @@ namespace TextRPG_Team20.Scene
         {
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Red}패배했습니다.{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("로비로 돌아가시겠습니까?", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1.타이틀로 돌아가기", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
             
         }
@@ -39,7 +40,7 @@ namespace TextRPG_Team20.Scene
                     Game.playerInstance.DecreaseGold((int)(Game.playerInstance.status.Gold * 0.5));
                     return true; 
                 case 1:
-                    Game.Instance.GameStart();
+                    Game.Instance.ReturnToTitle();
                     return false;
                 default:
                     Console.WriteLine("잘못된 입력입니다!");
