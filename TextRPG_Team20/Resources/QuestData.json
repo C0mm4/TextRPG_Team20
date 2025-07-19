@@ -1,0 +1,26 @@
+{
+  "Quests": [
+    {
+      "ID": 1,
+      "Name": "버섯을 잡아줘!",
+      "Description": "최근 마을 주변에 버섯이 너무 많이 나와. 버섯을 잡아줬으면 해",
+      "isClear": false,
+      "Conditions": [
+        {
+          "ID": 0,
+          "RequireCount": 1
+
+        },
+        {
+          "ID": 1,
+          "RequireCount": 1
+        },
+        {
+          "ID": 2,
+          "RequireCount": 1
+        }
+      ],
+      "Rewards": 1000
+    }
+  ]
+}

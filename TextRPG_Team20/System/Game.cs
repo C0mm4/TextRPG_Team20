@@ -31,7 +31,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, BossBattle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat, DungeonClear
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, BossBattle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat, DungeonClear, Quest
         }
 
         private Stack<Scene.Scene> _sceneStack;
@@ -116,6 +116,9 @@ namespace TextRPG_Team20
                 case SceneState.DungeonClear:
                     newScene = new DungeonClearScene();
                     break;
+                case SceneState.Quest:
+                    newScene = new QuestListScene();
+                    break;
             }
             if (newScene != null) 
             {
@@ -141,6 +144,7 @@ namespace TextRPG_Team20
 
         public void GameStart()
         {
+            QuestManager.Instance.GenerateQuests();
             SceneChange(SceneState.Intro);
         }
 

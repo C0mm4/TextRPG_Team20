@@ -123,6 +123,15 @@ namespace TextRPG_Team20.System
             return items.FindAll(match);
         }
 
+        public string GetEnemyName(int id)
+        {
+            if (_prototypes.ContainsKey(id))
+            {
+                return _prototypes[id].status.Name;
+            }
+            return "";
+        }
+
         private void LoadSpawnData(string filePath)
         {
             try

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TextRPG_Team20.Charactor.Enemys;
 using TextRPG_Team20.Scene;
 using TextRPG_Team20.Skill;
+using TextRPG_Team20.System;
 using static TextRPG_Team20.ConsoleUI;
 
 namespace TextRPG_Team20.Scene
@@ -44,6 +45,7 @@ namespace TextRPG_Team20.Scene
             {
                 ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Green}{target.status.Name}이(가) 쓰러졌다!{AnsiColor.Reset}", ref ConsoleUI.logView);
                 player.AddGold(target.status.Gold);
+                QuestManager.Instance.KillEnemy(target.status.ID);
                 enemies.Remove(target);
             }
             return true;

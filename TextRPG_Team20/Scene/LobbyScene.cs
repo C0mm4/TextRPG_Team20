@@ -28,6 +28,9 @@ namespace TextRPG_Team20.Scene
                 case 4:
                     Game.Instance.SceneChange(Game.SceneState.Inventory);
                     return false;
+                case 5:
+                    Game.Instance.SceneChange(Game.SceneState.Quest);
+                    return false;
                 default:
                     ((Scene)this).InvalidInput();
                     return true;
@@ -43,6 +46,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("2.상점 입장", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("3.상태창 보기", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("4.인벤토리", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("5.퀘스트", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0.타이틀로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
