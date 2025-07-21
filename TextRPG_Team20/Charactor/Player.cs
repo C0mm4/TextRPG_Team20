@@ -84,6 +84,21 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.DrawTextInBox($"방어력 : {status.Def} {(status.ExtraDef == 0 ? "" : $" + ({status.ExtraDef})")}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"체력 : {status.HP} / {status.MaxHP}", ref ConsoleUI.info1View);
             ConsoleUI.Instance.DrawTextInBox($"Gold : {status.Gold} G", ref ConsoleUI.info1View);
+        }       
+        
+        /// <summary>
+        /// 필드에서 위치 지정 (포탈 및 시작 시) 플레이어만 사용
+        /// </summary>
+        /// <param name="x">x위치</param>
+        /// <param name="y">y위치</param>
+        public void SetPos(int x, int y)
+        {
+            currentPosData = DungeonManager.Instance.currentField[y, x];
+
+            this.x = x; this.y = y;
+
+            DungeonManager.Instance.currentField[y, x] = -1;
+
         }
 
         public override void Attack(Character target)

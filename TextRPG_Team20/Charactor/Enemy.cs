@@ -58,6 +58,10 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
         }
 
+        /// <summary>
+        /// 적 아스키 그리기
+        /// </summary>
+        /// <param name="rect"></param>
         public void DrawAscii(ref ConsoleUI.Rect rect)
         {
             targetRect = rect;
@@ -69,8 +73,8 @@ namespace TextRPG_Team20
             ConsoleUI.Instance.InsertTextInBox(asciiData, ref rect);
             ConsoleUI.Instance.InsertTextInBox(blank, ref rect);
 
+            // HP 바 추가
             int barLength = 30;
-
             double hpRatio = (double)status.HP / status.MaxHP;
 
             int filledLength = (int)(hpRatio * barLength);

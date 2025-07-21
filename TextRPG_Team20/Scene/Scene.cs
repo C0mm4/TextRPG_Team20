@@ -11,7 +11,11 @@ namespace TextRPG_Team20.Scene
         public virtual void Print()
         {
             Console.Clear();
-            ClearBuffer();
+            if (!ClearBuffer())
+            {
+                Thread.Sleep(50);
+                return;
+            }
             SetPlayerInfo();
             PrintUIViews();
             PrintScene();
@@ -22,7 +26,7 @@ namespace TextRPG_Team20.Scene
                 Thread.Sleep(500);
         }
 
-        public void ClearBuffer()
+        public bool ClearBuffer()
         {
             // 혹시 모를 싱글톤 생성 전 Clear 방지 위한 싱글톤 호출
             var c = ConsoleUI.Instance;
@@ -31,11 +35,22 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.info2View.ClearBuffer();
             ConsoleUI.inputView.ClearBuffer();
 
-            ConsoleUI.mainView.DrawRect();
-            ConsoleUI.info1View.DrawRect();
-            ConsoleUI.info2View.DrawRect();
-            ConsoleUI.inputView.DrawRect();
-            ConsoleUI.logView.DrawRect();
+            bool ret = true;
+
+            ret &= ConsoleUI.mainView.DrawRect();
+            ret &= ConsoleUI.info1View.DrawRect();
+            ret &= ConsoleUI.info2View.DrawRect();
+            ret &= ConsoleUI.inputView.DrawRect();
+            ret &= ConsoleUI.logView.DrawRect();
+
+            if (!ret)
+            {
+                Console.Clear();
+                Console.WriteLine("콘솔 UI 크기를 초과했습니다. 해상도나 콘솔 설정을 확인하세요.");
+                return false;
+            }
+
+            return true;
         }
 
 

@@ -52,7 +52,7 @@ namespace TextRPG_Team20
             var targetItems = items.FindAll(item => item.data.Grade == quality);
             Item item = targetItems[random.Next(targetItems.Count)];
 
-            Game.playerInstance.Inventory.AddItem(item);
+            Game.playerInstance.Inventory.AddItem(item.Clone() as Item);
         }
     }
 }

@@ -145,8 +145,8 @@ namespace TextRPG_Team20.Scene
                     {
 
                         List<Item> potions = Game.playerInstance.Inventory.Items
-            .Where(i => i.data.Name.Contains("포션") || i.data.Name.Contains("엘릭서"))
-            .ToList();
+                            .Where(i => i.data.Name.Contains("포션") || i.data.Name.Contains("엘릭서"))
+                            .ToList();
 
                         if (potions.Count == 0)
                         {
@@ -210,7 +210,6 @@ namespace TextRPG_Team20.Scene
                             }
                         }
                     }
-                    break;
                 default:
                     InvalidInput();
                     return false;

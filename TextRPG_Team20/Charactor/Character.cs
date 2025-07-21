@@ -50,20 +50,13 @@ namespace TextRPG_Team20
             Inventory = new Inventory(this);
         }
 
-        public void SetPos(int x, int y)
-        {
-            currentPosData = DungeonManager.Instance.currentField[y, x];
-
-            this.x = x; this.y = y;
-
-            DungeonManager.Instance.currentField[y, x] = -1;
-
-        }
-
+        /// <summary>
+        /// target 캐릭터 공격
+        /// </summary>
+        /// <param name="target">공격 대상</param>
         public virtual void Attack(Character target)
         {
             int damage = status.TotalAtk;
-            //Console.WriteLine($"{status.Name}이(가) {target.status.Name}을(를) 공격했습니다! ({damage} 데미지)");
             target.DecreaseHp(damage);
         }
 
@@ -71,7 +64,6 @@ namespace TextRPG_Team20
         {
             status.HP += amount;
             status.HP = Math.Min(status.MaxHP, status.HP);
-            //Console.WriteLine($"{status.Name}의 체력이 {amount}만큼 회복되어 {status.Hp}가 되었습니다.");
         }
 
         public void DecreaseHp(int amount)
@@ -79,17 +71,10 @@ namespace TextRPG_Team20
             status.HP -= amount;
             if (status.HP < 0) status.HP = 0;
 
-            //Console.WriteLine($"{status.Name}이(가) {amount}의 피해를 입었습니다. 현재 체력: {status.Hp}");
         }
 
         public virtual void CharacterInfo()
         {
-            Console.WriteLine($"Lv. {status.Level:D2}");
-            Console.WriteLine($"{status.Name} {{ {Job} }}");
-            Console.WriteLine($"공격력 : {status.TotalAtk}");
-            Console.WriteLine($"방어력 : {status.TotalDef}");
-            Console.WriteLine($"체력 : {status.HP}");
-            Console.WriteLine($"Gold : {status.Gold} G");
         }
   
     }
