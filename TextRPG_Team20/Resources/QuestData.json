@@ -8,16 +8,16 @@
       "Conditions": [
         {
           "ID": 0,
-          "RequireCount": 1
+          "RequireCount": 5
 
         },
         {
           "ID": 1,
-          "RequireCount": 1
+          "RequireCount": 5
         },
         {
           "ID": 2,
-          "RequireCount": 1
+          "RequireCount": 5
         }
       ],
       "Rewards": 1000

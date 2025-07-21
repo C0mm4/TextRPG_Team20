@@ -31,7 +31,12 @@ namespace TextRPG_Team20.Scene
                 case 5:
                     Game.Instance.SceneChange(Game.SceneState.Quest);
                     return false;
+                case 999:
+                    Game.playerInstance.AddGold(9999999);
+                    ConsoleUI.Instance.DrawTextInBox("치트 발생. 9999999G를 획득합니다", ref ConsoleUI.logView);
+                    return false;
                 default:
+
                     ((Scene)this).InvalidInput();
                     return true;
             }

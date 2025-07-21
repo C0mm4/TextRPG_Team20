@@ -81,7 +81,7 @@ namespace TextRPG_Team20.System
                             if(condition.currentCount < condition.RequireCount)
                             {
                                 condition.currentCount++;
-
+                                ConsoleUI.Instance.DrawTextInBox($"{item.Name} 진행도 업데이트", ref ConsoleUI.logView);
                                 ConsoleUI.Instance.DrawTextInBox($"{MobSpawnner.Instance.GetEnemyName(ID)} 처치 {condition.currentCount} / {condition.RequireCount}", ref ConsoleUI.logView);
                                 if (condition.currentCount != condition.RequireCount)
                                 {
@@ -101,7 +101,7 @@ namespace TextRPG_Team20.System
                     if (checkCondition)
                     {
                         item.isClear = true;
-                        ConsoleUI.Instance.DrawTextInBox($"퀘스트 성공! {item.Rewards}G를 획득합니다.", ref ConsoleUI.logView);
+                        ConsoleUI.Instance.DrawTextInBox($"{item.Name} 퀘스트 성공! {item.Rewards}G를 획득합니다.", ref ConsoleUI.logView);
                         ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
                         Game.playerInstance.AddGold(item.Rewards);
                     }

@@ -197,14 +197,5 @@ namespace TextRPG_Team20
             LastBattleGold = 0;
         }
 
-        public override void PrintData()
-        {
-
-        }
-
-        public override void PrintInField()
-        {
-
-        }
     }
 }

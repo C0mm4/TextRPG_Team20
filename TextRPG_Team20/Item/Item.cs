@@ -72,7 +72,7 @@ namespace TextRPG_Team20
         }
     }
 
-    internal class Item : IComponent, IComparable<Item>, ICloneable
+    internal class Item : IComparable<Item>, ICloneable
     {
         public ItemData data = new();
 
@@ -169,16 +169,6 @@ namespace TextRPG_Team20
                 return data.ID.CompareTo(other.data.ID);
             }
             return 0;
-        }
-
-        public void PrintData()
-        {
-
-        }
-
-        public void PrintInField()
-        {
-
         }
 
         public int GetSellPrice()  
