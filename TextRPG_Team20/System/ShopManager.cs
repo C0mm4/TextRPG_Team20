@@ -37,6 +37,7 @@ namespace TextRPG_Team20
             sellItems = ItemManager.Instance.FindItems(item => sellItemIds.Contains(item.data.ID));
             */
             sellItems = ItemManager.Instance.FindItems(item => item.data.ItemEquipType == ItemType.Consumable);
+            sellItems.Add(ItemManager.Instance.FindItem(item => item.data.ID == 494));
         }
 
         public (bool, string) BuyItem(int itemIndex)

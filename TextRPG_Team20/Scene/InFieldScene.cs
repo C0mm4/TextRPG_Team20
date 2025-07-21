@@ -152,7 +152,7 @@ namespace TextRPG_Team20.Scene
                         {
                             ConsoleUI.Instance.DrawTextInBox("사용 가능한 포션이 없습니다.", ref right);
                             ConsoleUI.Instance.PrintView(ref right, "left", "middle");
-                            Thread.Sleep(1500);
+                            Thread.Sleep(1000);
                             ConsoleUI.ClearView(right);
                             return false;
                         }

@@ -31,7 +31,7 @@ namespace TextRPG_Team20
 
         public enum SceneState
         {
-            Title, Intro, Lobby, DungeonSelect, InField, Battle, BossBattle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat, DungeonClear
+            Title, Intro, Lobby, DungeonSelect, InField, Battle, BossBattle, Result, Shop, Inventory, EquipControl, Status, SkillList, UseItem, Win, Defeat, DungeonClear, Quest
         }
 
         private Stack<Scene.Scene> _sceneStack;
@@ -116,6 +116,9 @@ namespace TextRPG_Team20
                 case SceneState.DungeonClear:
                     newScene = new DungeonClearScene();
                     break;
+                case SceneState.Quest:
+                    newScene = new QuestListScene();
+                    break;
             }
             if (newScene != null) 
             {
@@ -141,6 +144,7 @@ namespace TextRPG_Team20
 
         public void GameStart()
         {
+            QuestManager.Instance.GenerateQuests();
             SceneChange(SceneState.Intro);
         }
 
@@ -149,7 +153,7 @@ namespace TextRPG_Team20
             if(job == JobType.None)
             {
 
-                string playerName = name ?? "플레이어";
+                string playerName = name.Trim() ?? "플레이어";
                 ConsoleUI.mainView.ClearBuffer();
                 ConsoleUI.Instance.DrawTextInBox($"캐릭터 이름: {playerName}", ref ConsoleUI.mainView);
                 ConsoleUI.Instance.DrawTextInBox("직업을 선택해주세요:", ref ConsoleUI.mainView);
@@ -157,7 +161,7 @@ namespace TextRPG_Team20
                 ConsoleUI.Instance.DrawTextInBox("2.궁수", ref ConsoleUI.mainView);
                 ConsoleUI.Instance.DrawTextInBox("3.마법사", ref ConsoleUI.mainView);
                 ConsoleUI.Instance.DrawTextInBox("원하는 직업의 번호를 입력하세요: ", ref ConsoleUI.mainView);
-                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
+                ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView, "center", "middle");
 
                 job = JobType.None;
 
@@ -197,7 +201,7 @@ namespace TextRPG_Team20
                 }
             }
             // 캐릭터 초기 스텟
-            Status status = new Status(0, 1, 100, 5, 10, name ?? "", gold, 0);
+            Status status = new Status(0, 1, 100, 5, 10, name.Trim() ?? "", gold, 0);
             playerInstance = new Player(job, status);
 
 

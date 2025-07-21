@@ -6917,6 +6917,20 @@
       "ClassName": "EquipItem"
     },
     {
+      "ID": 494,
+      "ItemType": "무기",
+      "Grade": "레전더리",
+      "Class": "공용",
+      "Name": "제네시스 무기",
+      "Description": "5000쁠마단의 정수가 남아있는 무기다. 검밑솔을 편하게 해준다",
+      "Atk": 9999,
+      "Def": 9999,
+      "HP": 9999,
+      "Gold": 2000000,
+      "GoldUP": 3,
+      "ClassName": "EquipItem"
+    },
+    {
       "ID": 500,
       "ItemType": "소모품",
       "Grade": "일반",
@@ -7094,7 +7108,7 @@
       "Atk": 0,
       "Def": 0,
       "HP": 0,
-      "Gold": 15000,
+      "Gold": 10000,
       "GoldUP": 0,
       "ClassName": "SkillBook"
     },
@@ -7108,7 +7122,7 @@
       "Atk": 0,
       "Def": 0,
       "HP": 0,
-      "Gold": 15000,
+      "Gold": 5000,
       "GoldUP": 0,
       "ClassName": "Potion"
     },
@@ -7122,7 +7136,7 @@
       "Atk": 0,
       "Def": 0,
       "HP": 0,
-      "Gold": 15000,
+      "Gold": 7000,
       "GoldUP": 0,
       "ClassName": "Potion"
     },
@@ -7136,7 +7150,7 @@
       "Atk": 0,
       "Def": 0,
       "HP": 0,
-      "Gold": 15000,
+      "Gold": 10000,
       "GoldUP": 0,
       "ClassName": "Potion"
     }

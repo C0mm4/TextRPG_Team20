@@ -25,11 +25,6 @@ namespace TextRPG_Team20.Scene
             
         }
 
-
-
-
-
-
         public override bool Action(int input)
         {
             switch (input)

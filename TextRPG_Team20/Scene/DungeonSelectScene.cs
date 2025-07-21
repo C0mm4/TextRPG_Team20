@@ -55,11 +55,6 @@ namespace TextRPG_Team20.Scene
         }
         public override void PrintScene()
         {
-            ConsoleUI.mainView.ClearBuffer();
-            ConsoleUI.logView.ClearBuffer();
-            ConsoleUI.info1View.ClearBuffer();
-            ConsoleUI.info2View.ClearBuffer();
-            ConsoleUI.inputView.ClearBuffer();
 
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Cyan}던전 선택{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("입장할 던전을 선택하세요:", ref ConsoleUI.mainView);
@@ -80,10 +75,6 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox("0.로비로 돌아가기", ref ConsoleUI.mainView);
 
             ConsoleUI.Instance.PrintView(ref ConsoleUI.mainView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.logView);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.info1View);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.info2View);
-            ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
         }
     }
     

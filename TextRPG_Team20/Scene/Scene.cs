@@ -46,6 +46,10 @@ namespace TextRPG_Team20.Scene
         {
             ConsoleUI.Instance.DrawTextInBox("원하시는 행동을 입력해주세요 >>", ref ConsoleUI.inputView);
             ConsoleUI.Instance.PrintView(ref ConsoleUI.inputView);
+            while (Console.KeyAvailable)
+            {
+                Console.ReadKey(true); 
+            }
             string? s = ConsoleUI.Read(ref ConsoleUI.inputView);
             var isAble = int.TryParse(s, out var action);
             if (isAble)

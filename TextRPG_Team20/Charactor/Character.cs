@@ -8,7 +8,7 @@ using TextRPG_Team20.Dungeon;
 
 namespace TextRPG_Team20
 {
-    internal abstract class Character : IComponent
+    internal abstract class Character
     {
 		public JobType Job { get; protected set; }
 		public Status status { get; set; }
@@ -92,10 +92,5 @@ namespace TextRPG_Team20
             Console.WriteLine($"Gold : {status.Gold} G");
         }
   
-
-
-        public abstract void PrintData();
-
-        public abstract void PrintInField();
     }
 }

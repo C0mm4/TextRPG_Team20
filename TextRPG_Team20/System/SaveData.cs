@@ -35,6 +35,8 @@ namespace TextRPG_Team20
         public int Job { get; set; }
         public List<int> skills { get; set; }
 
+        public List<Quest> Quests { get; set; }
+
         private static readonly string SavePath = "SaveData.json";
         public void Save()
         {
@@ -57,7 +59,7 @@ namespace TextRPG_Team20
             Job = (int)Game.playerInstance.Job;
             skills = Game.playerInstance.skills
                 .Select(skill => skill.Data.ID).ToList();
-
+            Quests = QuestManager.Instance.GetAllQuests();
 
             var options = new JsonSerializerOptions
             {
@@ -124,6 +126,8 @@ namespace TextRPG_Team20
             // 클리어 데이터 복구
             DungeonManager.Instance.isDungeonClear = loadedData.ClearData.ToArray();
             DungeonManager.Instance.isAbleDungeon = loadedData.AbleData.ToArray();
+            this.Quests = loadedData.Quests;
+            QuestManager.Instance.LoadQuestData();
 //            DungeonManager.Instance.isDungeonClear = new BitArray(loadedData.ClearData.ToArray());
         }
         
