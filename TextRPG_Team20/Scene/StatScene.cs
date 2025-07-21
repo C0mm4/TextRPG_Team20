@@ -18,8 +18,6 @@ namespace TextRPG_Team20.Scene
 
         public override void PrintScene()
         {
-            Game.playerInstance.AddGold(20000000);
-            Game.playerInstance.AddSkill();
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}STAT{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"{Nowstatus.Level} Lv", ref ConsoleUI.mainView);
@@ -28,6 +26,7 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"방어력      : {Nowstatus.Def}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"추가 공격력: {Nowstatus.ExtraAtk}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox($"추가 방어력: {Nowstatus.ExtraDef}", ref ConsoleUI.mainView);
+            ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1.인벤토리로 가기", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("2.스킬 확인", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);

@@ -201,7 +201,7 @@ namespace TextRPG_Team20
                 }
             }
             // 캐릭터 초기 스텟
-            Status status = new Status(0, 1, 100, 5, 10, name ?? "", gold, 0);
+            Status status = new Status(0, 1, 100, 5, 10, name.Trim() ?? "", gold, 0);
             playerInstance = new Player(job, status);
 
 
