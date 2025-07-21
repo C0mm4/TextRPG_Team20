@@ -136,8 +136,10 @@ namespace TextRPG_Team20
 
                 else if (DungeonManager.Instance.currentField[newpos[1], newpos[0]] == 2)
                 {
-
-                    ConsoleUI.Instance.DrawTextInBox("상자를 발견했습니다. 축하합니다 5골드를 획득하셨습니다.", ref ConsoleUI.logView);
+                    int maxGold = DungeonManager.Instance.currentDungeon.DungeonID * DungeonManager.Instance.currentDungeon.DungeonID *5;
+                    int getGold = Game.random.Next(1, maxGold);
+                    ConsoleUI.Instance.DrawTextInBox($"상자를 발견했습니다. 축하합니다 {getGold}골드를 획득하셨습니다.", ref ConsoleUI.logView);
+                    AddGold(getGold);
                     DungeonManager.Instance.currentField[newpos[1], newpos[0]] = 0;
                     this.x = newpos[0];
                     this.y = newpos[1];

@@ -113,6 +113,7 @@ namespace TextRPG_Team20
                 Item equipItem = ItemManager.Instance.Create(equipID);
                 equipItem.data.isEquipped = true;
                 Game.playerInstance.Inventory.AddItem(equipItem);
+                Game.playerInstance.Inventory.ApplyEquipStats(equipItem);
             }
 
             // 스킬 복구

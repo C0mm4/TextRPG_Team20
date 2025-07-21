@@ -209,7 +209,7 @@ namespace TextRPG_Team20
         }
 
 
-        private void ApplyEquipStats(Item item)
+        public void ApplyEquipStats(Item item)
         {
             switch (item.data.ItemEquipType)
             {
