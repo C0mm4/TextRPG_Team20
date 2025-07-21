@@ -27,7 +27,8 @@ namespace TextRPG_Team20.Scene
             ConsoleUI.Instance.DrawTextInBox($"{AnsiColor.Yellow}페이팔스토리{AnsiColor.Reset}", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("1.게임 시작", ref ConsoleUI.mainView);
-            ConsoleUI.Instance.DrawTextInBox("2.게임 재개", ref ConsoleUI.mainView);
+            if (File.Exists("SaveData.json"))
+                ConsoleUI.Instance.DrawTextInBox("2.게임 재개", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("0.게임 종료", ref ConsoleUI.mainView);
             ConsoleUI.Instance.DrawTextInBox("", ref ConsoleUI.mainView);
@@ -65,8 +66,15 @@ namespace TextRPG_Team20.Scene
                     Game.Instance.GameStart();
                     return false;
                 case 2:
-                    Game.Instance.LoadGame();
-                    return false;
+
+                    if (File.Exists("SaveData.json"))
+                    {
+
+                        Game.Instance.LoadGame();
+                        return false;
+                    }
+                    InvalidInput();
+                    return true;
                 default:
                     ((Scene)this).InvalidInput();
                     return true;
