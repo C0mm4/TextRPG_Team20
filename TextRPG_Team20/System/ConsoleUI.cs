@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -62,52 +61,41 @@ namespace TextRPG_Team20
                 ResetCursor();
             }
 
-            public bool DrawRect()
+            public void DrawRect()
             {
                 int border = 0;
                 char text = '=';
-                try
+                for (int j = y - 1; j <= y + height; j++)
                 {
-
-                    for (int j = y - 1; j <= y + height; j++)
+                    if (j > y - 1 && j < y + height)
+                        border = 2;
+                    else 
+                        border = 0;
+                    for (int i = x - 2; i <= x + width; i ++)
                     {
-                        if (j > y - 1 && j < y + height)
-                            border = 2;
-                        else
-                            border = 0;
-                        for (int i = x - 2; i <= x + width; i++)
+                        switch (border)
                         {
-                            switch (border)
-                            {
-                                case 2:
-                                    if (i > x - 2 && i < x + width)
-                                    {
-                                        i = x + width - 1;
-                                        continue;
-                                    }
-                                    else
-                                    {
-                                        text = '│';
-                                    }
-                                    break;
-                                default:
-                                    text = '=';
-                                    break;
-                            }
-                            Console.SetCursorPosition(i, j);
-                            Console.Write(text);
+                            case 2:
+                                if (i > x-2 && i < x + width)
+                                {
+                                    i = x + width-1;
+                                    continue;
+                                }
+                                else
+                                {
+                                    text = '│';
+                                }
+                                break;
+                            default:
+                                text = '=';
+                                break;
                         }
+                        Console.SetCursorPosition(i, j);
+                        Console.Write(text);
                     }
+                
                 }
-                catch (Exception e)
-                {
-                    Console.SetCursorPosition(0, 0);
-                    Console.WriteLine($"{e.Message}");
-                    return false;
-                }
-                return true;
             }
-            
         }
 
         public static Rect mainView, logView, info1View, info2View, inputView;
